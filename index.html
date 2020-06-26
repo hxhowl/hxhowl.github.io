@@ -192,7 +192,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">1</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -225,7 +225,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/26/test/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/4a17b156/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/owl_avatar.png">
@@ -239,70 +239,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/06/26/test/" class="post-title-link" itemprop="url">test</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-06-26 17:10:54 / 修改时间：18:19:02" itemprop="dateCreated datePublished" datetime="2020-06-26T17:10:54+08:00">2020-06-26</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>shiro权限标志符请使用<code>path/path:operator</code> 格式或者<code>path/path/operator</code>，推荐使用 <code>path/path:operator</code>，能清晰的分辨出操作权限</p>
-<p>如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(value = <span class="string">"/test1"</span>, method = RequestMethod.GET)</span><br><span class="line">   <span class="meta">@RequiresPermissions</span>(<span class="string">"user/test1"</span>)</span><br><span class="line">   <span class="function"><span class="keyword">public</span> Object <span class="title">test1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="string">"user/test1"</span>;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="meta">@RequestMapping</span>(value = <span class="string">"/test1"</span>, method = RequestMethod.PUT)</span><br><span class="line">   <span class="meta">@RequiresPermissions</span>(<span class="string">"user/test1:add"</span>)</span><br><span class="line">   <span class="function"><span class="keyword">public</span> Object <span class="title">test1Add</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="string">"user/test1/Add"</span>;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="meta">@RequestMapping</span>(value = <span class="string">"/test1"</span>, method = RequestMethod.POST)</span><br><span class="line">   <span class="meta">@RequiresPermissions</span>(<span class="string">"user/test1:update"</span>)</span><br><span class="line">   <span class="function"><span class="keyword">public</span> Object <span class="title">test1Update</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="string">"user/test1/update"</span>;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="meta">@RequestMapping</span>(value = <span class="string">"/test1"</span>, method = RequestMethod.DELETE)</span><br><span class="line">   <span class="meta">@RequiresPermissions</span>(<span class="string">"user/test1:delete"</span>)</span><br><span class="line">   <span class="function"><span class="keyword">public</span> Object <span class="title">test1Delete</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="string">"user/test1/delete"</span>;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="meta">@RequestMapping</span>(value = <span class="string">"/test2"</span>, method = RequestMethod.GET)</span><br><span class="line">   <span class="meta">@RequiresPermissions</span>(<span class="string">"user/test2"</span>)</span><br><span class="line">   <span class="function"><span class="keyword">public</span> Object <span class="title">test2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="string">"user/test2"</span>;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="meta">@RequestMapping</span>(value = <span class="string">"/test3"</span>, method = RequestMethod.GET)</span><br><span class="line">   <span class="meta">@RequiresPermissions</span>(<span class="string">"user/test2/sub"</span>)</span><br><span class="line">   <span class="function"><span class="keyword">public</span> Object <span class="title">test3</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="string">"user/test2/sub"</span>;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-
-<p>如果这里用<code>path:path:path</code>的格式去写，比如<code>test2</code>方法，标志符写<code>user:test2</code>,另外一个<code>test3</code>方法，假如要写成<code>user:test2:sub</code>,这里如果给<code>test2</code>授权，<code>test3</code>不授权，shiro鉴权的话，将同样<code>test3</code>授权，猜测鉴权字符串匹配方式是<code>:</code>后面全部匹配。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/23/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/owl_avatar.png">
-      <meta itemprop="name" content="hxhowl">
-      <meta itemprop="description" content="A personal study blog about coding and life,keep blogging">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="飞不动的猫">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/23/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
+            <a href="/posts/4a17b156/" class="post-title-link" itemprop="url">Hello World</a>
         </h2>
 
         <div class="post-meta">
@@ -314,6 +251,13 @@
 
               <time title="创建时间：2020-06-23 23:48:09" itemprop="dateCreated datePublished" datetime="2020-06-23T23:48:09+08:00">2020-06-23</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-26 19:12:43" itemprop="dateModified" datetime="2020-06-26T19:12:43+08:00">2020-06-26</time>
+              </span>
 
           
 
