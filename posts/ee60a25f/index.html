@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/owl_128x128.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/owl_32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/owl_16x16.png">
+  <link rel="mask-icon" href="/images/owl_logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.min.css">
+  <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"8.0.0-rc.3","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Windows环境下配置hexo，并发布到github.io。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="blog - Windows下hexo+github">
+<meta property="og:url" content="http://yoursite.com/posts/ee60a25f/index.html">
+<meta property="og:site_name" content="飞不动的猫">
+<meta property="og:description" content="Windows环境下配置hexo，并发布到github.io。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-06-27T10:34:22.362Z">
+<meta property="article:modified_time" content="2020-06-27T10:50:25.270Z">
+<meta property="article:author" content="hxhowl">
+<meta property="article:tag" content="blog">
+<meta property="article:tag" content="Windows">
+<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="next">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/posts/ee60a25f/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>blog - Windows下hexo+github | 飞不动的猫</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before, .use-motion .logo-line-after {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="飞不动的猫" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line toggle-line-first"></span>
+        <span class="toggle-line toggle-line-middle"></span>
+        <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line-before"></i>
+      <h1 class="site-title">飞不动的猫</h1>
+      <i class="logo-line-after"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Start from 2020</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">4</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">1</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">3</span></a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo安装"><span class="nav-number">1.</span> <span class="nav-text">Hexo安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#github配置"><span class="nav-number">2.</span> <span class="nav-text">github配置</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="hxhowl"
+      src="/images/owl_533x533.png">
+  <p class="site-author-name" itemprop="name">hxhowl</p>
+  <div class="site-description" itemprop="description">A personal study blog about coding and life,keep blogging</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/hxhowl" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;hxhowl" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </header>
+
+      
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+      <div class="main-inner">
+        
+
+        <div class="content post posts-expand">
+          
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/ee60a25f/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/owl_533x533.png">
+      <meta itemprop="name" content="hxhowl">
+      <meta itemprop="description" content="A personal study blog about coding and life,keep blogging">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞不动的猫">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          blog - Windows下hexo+github
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-27 18:34:22 / 修改时间：18:50:25" itemprop="dateCreated datePublished" datetime="2020-06-27T18:34:22+08:00">2020-06-27</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/hexo/" itemprop="url" rel="index"><span itemprop="name">hexo</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>Windows环境下配置<code>hexo</code>，并发布到<code>github.io</code>。</p>
+<a id="more"></a>
+
+<h3 id="Hexo安装"><a href="#Hexo安装" class="headerlink" title="Hexo安装"></a>Hexo安装</h3><p>参考<a href="https://hexo.io/docs/" target="_blank" rel="noopener">hexo官方文档</a>,Windows下配置<code>hexo</code>，我这边命令行工具用的是自带的<code>PowerShell</code>。</p>
+<ol>
+<li>安装先下载安装<a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a>和<a href="https://git-scm.com/" target="_blank" rel="noopener">git</a>。在安装<code>node.js</code>时，记得勾选<code>Add to PATH</code>，否则要手动配置环境变量。安装完分别在<code>PowerShell</code>查看版本，查看是否安装成功：<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">version</span></span><br><span class="line"><span class="keyword">node</span> <span class="title">-v</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>npm全局安装hexo命令，如果安装失败出现权限问题，试试前面加上<code>sudo</code>（命令需要先安装），或者以管理员身份打开<code>PowerShell</code>，然后执行命令。<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-<span class="keyword">cli</span></span><br></pre></td></tr></table></figure></li>
+<li>创建一个文件夹，用于存放hexo文件,这里以<code>D:\blog\hexo</code>为例。</li>
+<li><code>hexo -v</code>检查版本，确认hexo命令是否安装成功，执行记录如下<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">PS</span> <span class="string">D:\blog\hexo&gt;</span> <span class="string">hexo</span> <span class="string">-v</span></span><br><span class="line"><span class="attr">hexo-cli:</span> <span class="number">3.1</span><span class="number">.0</span></span><br><span class="line"><span class="attr">os:</span> <span class="string">Windows_NT</span> <span class="number">10.0</span><span class="number">.18363</span> <span class="string">win32</span> <span class="string">x64</span></span><br><span class="line"><span class="attr">node:</span> <span class="number">14.2</span><span class="number">.0</span></span><br><span class="line"><span class="attr">v8:</span> <span class="number">8.1</span><span class="number">.307</span><span class="number">.31</span><span class="string">-node.33</span></span><br><span class="line"><span class="attr">uv:</span> <span class="number">1.37</span><span class="number">.0</span></span><br><span class="line"><span class="attr">zlib:</span> <span class="number">1.2</span><span class="number">.11</span></span><br><span class="line"><span class="attr">brotli:</span> <span class="number">1.0</span><span class="number">.7</span></span><br><span class="line"><span class="attr">ares:</span> <span class="number">1.16</span><span class="number">.0</span></span><br><span class="line"><span class="attr">modules:</span> <span class="number">83</span></span><br><span class="line"><span class="attr">nghttp2:</span> <span class="number">1.40</span><span class="number">.0</span></span><br><span class="line"><span class="attr">napi:</span> <span class="number">6</span></span><br><span class="line"><span class="attr">llhttp:</span> <span class="number">2.0</span><span class="number">.4</span></span><br><span class="line"><span class="attr">openssl:</span> <span class="number">1.1</span><span class="string">.1g</span></span><br><span class="line"><span class="attr">cldr:</span> <span class="number">36.1</span></span><br><span class="line"><span class="attr">icu:</span> <span class="number">66.1</span></span><br><span class="line"><span class="attr">tz:</span> <span class="string">2019c</span></span><br><span class="line"><span class="attr">unicode:</span> <span class="number">13.0</span></span><br></pre></td></tr></table></figure></li>
+<li>在前面创建好的文件夹下执行<code>hexo init</code></li>
+<li>测试配置是否成功，依次执行<code>hexo clean</code>,<code>hexo generate</code>,<code>hexo server</code>。然后在浏览器打开<code>http://localhost:4000</code>，成功显示网页说明配置成功。如果有遇到下面警告，参考<a href="https://zhuanlan.zhihu.com/p/136552969" target="_blank" rel="noopener">部署Hexo踩过的坑—node14.0配置hexo</a> ，应该是nodejs版本过高导致的，不过感觉不影响使用。<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">node</span><span class="title">:9968</span>) Warning: Accessing non-existent <span class="keyword">property</span><span class="title"> </span>'lineno' of module exports inside circular dependency</span><br><span class="line">(<span class="keyword">node</span><span class="title">:9968</span>) Warning: Accessing non-existent <span class="keyword">property</span><span class="title"> </span>'column' of module exports inside circular dependency</span><br><span class="line">(<span class="keyword">node</span><span class="title">:9968</span>) Warning: Accessing non-existent <span class="keyword">property</span><span class="title"> </span>'filename' of module exports inside circular dependency</span><br><span class="line">(<span class="keyword">node</span><span class="title">:9968</span>) Warning: Accessing non-existent <span class="keyword">property</span><span class="title"> </span>'lineno' of module exports inside circular dependency</span><br><span class="line">(<span class="keyword">node</span><span class="title">:9968</span>) Warning: Accessing non-existent <span class="keyword">property</span><span class="title"> </span>'column' of module exports inside circular dependency</span><br><span class="line">(<span class="keyword">node</span><span class="title">:9968</span>) Warning: Accessing non-existent <span class="keyword">property</span><span class="title"> </span>'filename' of module exports inside circular dependency</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+</li>
+</ol>
+<ol start="7">
+<li>换主题以<code>next</code>主题为例,在<code>D:\blog\hexo</code>下载主题，操作记录如下：<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PS D:\blog\hexo&gt; git clone http<span class="variable">s:</span>//github.<span class="keyword">com</span>/<span class="keyword">next</span>-theme/hexo-theme-<span class="keyword">next</span> themes/<span class="keyword">next</span></span><br></pre></td></tr></table></figure>
+然后在<code>D:\blog\hexo</code>下<code>_config.yml</code>文件内找到<code>theme: landscape</code>,修改为<code>theme: next</code>,将默认主题改为next。</li>
+</ol>
+<h3 id="github配置"><a href="#github配置" class="headerlink" title="github配置"></a>github配置</h3><ol>
+<li><p>创建一个repo，名称为<code>yourname.github.io</code>, 其中<code>yourname</code>是你的github名称,不可以为其他名称。项目为公开项目，否则后面发布后会404。</p>
+</li>
+<li><p>在<code>powershell</code>下配置git用户名和邮箱，可以和github一致。</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git<span class="built_in"> config </span>--global user.name <span class="string">"yourname"</span></span><br><span class="line">git<span class="built_in"> config </span>--global user.email <span class="string">"yourmail"</span></span><br></pre></td></tr></table></figure></li>
+<li><p>指定邮箱生成ssh秘钥，秘钥默认存放在<code>C:\Users\huangchp\.ssh</code>。</p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"youremail@example.com</span></span><br></pre></td></tr></table></figure></li>
+<li><p>将上面获取的ssh放到github中，操作如下：右上角头像右键-&gt;<code>Settings</code>-&gt;<code>SSH and GPG keys</code> -&gt; <code>New SSH key</code>,把刚刚ssh用的邮箱填入<code>Title</code>框内，ssh生成的<code>id_rsa.pub</code>内容填入<code>Key</code>框内，点击<code>Add ssh key</code>保存。</p>
+</li>
+<li><p><code>PowerShell</code>执行<code>ssh -T git@github.com</code>验证ssh配置</p>
+</li>
+<li><p><code>hexo</code>目录下<code>_config.yml</code>添加发布配置</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line">  <span class="attribute">type</span>: git</span><br><span class="line">  <span class="attribute">repo</span>: <span class="attribute">https</span>:<span class="comment">//github.com/YourgithubName/YourgithubName.github.io.git</span></span><br><span class="line">  <span class="attribute">branch</span>: master</span><br></pre></td></tr></table></figure></li>
+<li><p><code>hexo</code>目录下，安装发布插件<code>npm install hexo-deployer-git --save</code>，然后执行发布</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">hexo</span> <span class="string">clean</span></span><br><span class="line"><span class="attr">hexo</span> <span class="string">g</span></span><br><span class="line"><span class="attr">hexo</span> <span class="string">d</span></span><br></pre></td></tr></table></figure>
+<p>打开<code>YourgithubName.github.io.git</code>你的地址验证如果和本地一样打开，就成了，如果404，确定<code>_config.yml</code>有没有写错。</p>
+</li>
+</ol>
+<p>另外我还遇到过一个地方不配置也出现了404：github项目仓库打开，标题下面一排菜单中最右边<code>Setting</code>-&gt;左边<code>Manage access</code>-&gt;<code>Who has access</code>下点击<code>manage</code>,<code>GitHub Pages</code>下<code>Theme Chooser</code>，然后选择一个主题，之前不选主题出现了404。</p>
+<p>在<code>Theme Chooser</code>下方<code>Custom domain</code>可以填写自己单独的域名，如果有独立域名的话。</p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>hxhowl
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://yoursite.com/posts/ee60a25f/" title="blog - Windows下hexo+github">http://yoursite.com/posts/ee60a25f/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/blog/" rel="tag"># blog</a>
+              <a href="/tags/Windows/" rel="tag"># Windows</a>
+              <a href="/tags/hexo/" rel="tag"># hexo</a>
+              <a href="/tags/next/" rel="tag"># next</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/4a17b156/" rel="prev" title="Hello World">
+      <i class="fa fa-chevron-left"></i> Hello World
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/posts/e6f9a475/" rel="next" title="blog - hexo NexT主题下配置和美化">
+      blog - hexo NexT主题下配置和美化 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+        </div>
+        
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-sun"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">hxhowl</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">12k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">11 分钟</span>
+</div><script color="0,0,255" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
+</html>
