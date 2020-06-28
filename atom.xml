@@ -5,9 +5,9 @@
   <subtitle>Start from 2020</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://mikado_q.gitee.io/mikado_q/"/>
+  <link href="https://mikado_q.gitee.io/"/>
   <updated>2020-06-27T11:36:46.830Z</updated>
-  <id>https://mikado_q.gitee.io/mikado_q/</id>
+  <id>https://mikado_q.gitee.io/</id>
   
   <author>
     <name>hxhowl</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>blog - hexo NexT主题下配置和美化</title>
-    <link href="https://mikado_q.gitee.io/mikado_q/posts/e6f9a475/"/>
-    <id>https://mikado_q.gitee.io/mikado_q/posts/e6f9a475/</id>
+    <link href="https://mikado_q.gitee.io/posts/e6f9a475/"/>
+    <id>https://mikado_q.gitee.io/posts/e6f9a475/</id>
     <published>2020-06-27T10:45:05.010Z</published>
     <updated>2020-06-27T11:36:46.830Z</updated>
     
@@ -30,23 +30,23 @@
     </summary>
     
     
-      <category term="hexo" scheme="https://mikado_q.gitee.io/mikado_q/categories/hexo/"/>
+      <category term="hexo" scheme="https://mikado_q.gitee.io/categories/hexo/"/>
     
     
-      <category term="blog" scheme="https://mikado_q.gitee.io/mikado_q/tags/blog/"/>
+      <category term="blog" scheme="https://mikado_q.gitee.io/tags/blog/"/>
     
-      <category term="Windows" scheme="https://mikado_q.gitee.io/mikado_q/tags/Windows/"/>
+      <category term="Windows" scheme="https://mikado_q.gitee.io/tags/Windows/"/>
     
-      <category term="hexo" scheme="https://mikado_q.gitee.io/mikado_q/tags/hexo/"/>
+      <category term="hexo" scheme="https://mikado_q.gitee.io/tags/hexo/"/>
     
-      <category term="next" scheme="https://mikado_q.gitee.io/mikado_q/tags/next/"/>
+      <category term="next" scheme="https://mikado_q.gitee.io/tags/next/"/>
     
   </entry>
   
   <entry>
     <title>blog - Windows下hexo+github</title>
-    <link href="https://mikado_q.gitee.io/mikado_q/posts/ee60a25f/"/>
-    <id>https://mikado_q.gitee.io/mikado_q/posts/ee60a25f/</id>
+    <link href="https://mikado_q.gitee.io/posts/ee60a25f/"/>
+    <id>https://mikado_q.gitee.io/posts/ee60a25f/</id>
     <published>2020-06-27T10:34:22.362Z</published>
     <updated>2020-06-27T10:50:25.270Z</updated>
     
@@ -57,23 +57,23 @@
     </summary>
     
     
-      <category term="hexo" scheme="https://mikado_q.gitee.io/mikado_q/categories/hexo/"/>
+      <category term="hexo" scheme="https://mikado_q.gitee.io/categories/hexo/"/>
     
     
-      <category term="blog" scheme="https://mikado_q.gitee.io/mikado_q/tags/blog/"/>
+      <category term="blog" scheme="https://mikado_q.gitee.io/tags/blog/"/>
     
-      <category term="Windows" scheme="https://mikado_q.gitee.io/mikado_q/tags/Windows/"/>
+      <category term="Windows" scheme="https://mikado_q.gitee.io/tags/Windows/"/>
     
-      <category term="hexo" scheme="https://mikado_q.gitee.io/mikado_q/tags/hexo/"/>
+      <category term="hexo" scheme="https://mikado_q.gitee.io/tags/hexo/"/>
     
-      <category term="next" scheme="https://mikado_q.gitee.io/mikado_q/tags/next/"/>
+      <category term="next" scheme="https://mikado_q.gitee.io/tags/next/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="https://mikado_q.gitee.io/mikado_q/posts/4a17b156/"/>
-    <id>https://mikado_q.gitee.io/mikado_q/posts/4a17b156/</id>
+    <link href="https://mikado_q.gitee.io/posts/4a17b156/"/>
+    <id>https://mikado_q.gitee.io/posts/4a17b156/</id>
     <published>2020-06-23T15:48:09.353Z</published>
     <updated>2020-06-27T04:14:25.898Z</updated>
     
