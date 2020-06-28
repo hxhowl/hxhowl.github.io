@@ -1316,7 +1316,7 @@ pre code {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #5ebde3;
+  background: #a3bf36;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2840,7 +2840,7 @@ body {
   background-position: 50% 50%;
 }
 .main-inner {
-  opacity: 1;
+  opacity: 1.2;
 }
 .sidebar {
   opacity: 0.8;
