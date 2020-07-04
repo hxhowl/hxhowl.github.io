@@ -78,7 +78,7 @@
   <entry>
     <title>blog - hexo NexT主题下配置和美化</title>
     <url>/posts/e6f9a475/</url>
-    <content><![CDATA[<p>基于<code>next8.0</code>的<code>hexo</code>配置和美化</p>
+    <content><![CDATA[<p>基于<code>next8.0</code>的<code>hexo</code>配置和美化。</p>
 <a id="more"></a>
 
 <h3 id="NexT主题代码高亮显示配置问题"><a href="#NexT主题代码高亮显示配置问题" class="headerlink" title="NexT主题代码高亮显示配置问题"></a>NexT主题代码高亮显示配置问题</h3><p>参考<a href="https://blog.csdn.net/u011240016/article/details/79422448" target="_blank" rel="noopener">next主题设定代码高亮格式</a></p>
@@ -200,6 +200,109 @@
         <tag>Windows</tag>
         <tag>hexo</tag>
         <tag>next</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>tools - chocolatey</title>
+    <url>/posts/af013f3b/</url>
+    <content><![CDATA[<p>Windows 基础开发环境包管理工具<code>chocolatey</code>。</p>
+<a id="more"></a>
+
+<h4 id="安装chocolatey"><a href="#安装chocolatey" class="headerlink" title="安装chocolatey"></a>安装chocolatey</h4><p>以管理员权限运行cmd.exe或powershell.exe</p>
+<p>cmd运行：</p>
+<figure class="highlight mel"><table><tr><td class="code"><pre><span class="line">@"%SystemRoot%\System32\WindowsPowerShell\v1<span class="number">.0</span>\powershell.exe<span class="string">" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "</span>iex ((New-Object System.Net.WebClient).DownloadString(<span class="string">'https://chocolatey.org/install.ps1'</span>))<span class="string">" &amp;&amp; SET "</span>PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin<span class="string">"</span></span><br></pre></td></tr></table></figure>
+<p>powershell运行：</p>
+<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).<span class="constructor">DownloadString('<span class="params">https</span>:<span class="operator">/</span><span class="operator">/</span><span class="params">chocolatey</span>.<span class="params">org</span><span class="operator">/</span><span class="params">install</span>.<span class="params">ps1</span>')</span>)</span><br></pre></td></tr></table></figure>
+<p>安装完成，运行choco 或 choco -?检查一下是否安装正确</p>
+<p>chocolatey安装位置：<code>C:\ProgramData\Chocolatey</code>。无法配置包安装位置。<br>参考文章<a href="https://blog.csdn.net/u013205877/article/details/78993311" target="_blank" rel="noopener">Windows 神器 Cmder Scoop Chocolatey Listary Seer</a>，可安装的应用程序默认安装在 <code>C:\Program Files\</code>，实际待考究。</p>
+<h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">search - 搜索包 choco search something</span><br><span class="line">list - 列出包 choco list -lo 或者 choco list --local-only</span><br><span class="line">install - 安装 choco install baretail</span><br><span class="line">pin - 固定包的版本，防止包被升级 choco pin windirstat</span><br><span class="line">upgrade - 安装包的升级 choco<span class="built_in"> upgrade </span>baretail</span><br><span class="line">uninstall - 安装包的卸载 choco uninstall baretail</span><br><span class="line">安装Ruby Gem - choco install compass -source ruby</span><br><span class="line">安装Python Egg - choco install sphynx -source python</span><br><span class="line">安装IIS服务器特性 - choco install IIS -source windowsfeatures</span><br><span class="line">安装Webpi特性 - choco install IIS7.5Express -source webpi</span><br><span class="line"></span><br><span class="line">列出Windows系统已安装的软件 - choco list -li 或者 choco list -lai</span><br><span class="line">升级所有已安装的包 - choco<span class="built_in"> upgrade </span>all -y</span><br></pre></td></tr></table></figure>
+
+<p>window 下开发常用的开发环境应用</p>
+<figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line">choco <span class="keyword">install </span>autohotkey.portable    <span class="comment">#安装 AutoHotkey (Portable)</span></span><br><span class="line">choco <span class="keyword">install </span>nodejs.<span class="keyword">install </span> <span class="comment">#安装 node</span></span><br><span class="line">choco <span class="keyword">install </span>git.<span class="keyword">install </span>    <span class="comment">#安装 git</span></span><br><span class="line">choco <span class="keyword">install </span>ruby            <span class="comment">#安装 ruby</span></span><br><span class="line">choco <span class="keyword">install </span>python          <span class="comment">#安装 python</span></span><br><span class="line">choco <span class="keyword">install </span><span class="keyword">jdk8 </span>           <span class="comment">#安装 JDK8</span></span><br><span class="line">choco <span class="keyword">install </span>googlechrome    <span class="comment">#安装 Chrome</span></span><br><span class="line">choco <span class="keyword">install </span>google-chrome-x64 <span class="comment">#Google Chrome (64-bit only)</span></span><br><span class="line">choco <span class="keyword">install </span>firefox         <span class="comment">#安装 firefox</span></span><br><span class="line">choco <span class="keyword">install </span>notepadplusplus.<span class="keyword">install </span><span class="comment">#安装 notepad++</span></span><br><span class="line">choco <span class="keyword">install </span>Atom                    <span class="comment">#安装 Atom</span></span><br><span class="line">choco <span class="keyword">install </span><span class="keyword">SublimeText3 </span>           <span class="comment">#安装 SublimeText3</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>tools</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+        <tag>tools</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>tools - scoop</title>
+    <url>/posts/d89cad7e/</url>
+    <content><![CDATA[<p>Windows 基础开发环境包管理工具<code>scoop</code>。</p>
+<a id="more"></a>
+
+<p>参考：<a href="https://blog.csdn.net/fcymk2/article/details/86653207" target="_blank" rel="noopener">用scoop代替chocolatey做Windows包管理器</a></p>
+<p>软件包管理工具<code>scoop</code>，类似<code>chocolatey</code>,<code>chocolatey</code>很多软件安装位置不固定, 会污染<code>Path</code>，推荐能用<code>scoop</code>安装。<code>scoop</code>会统一安装到一个路径下。<code>chocolatey</code>权限要求高, <code>scoop</code> 使用<code>-g</code>安装才需要管理员权限, 默认普通用户权限.</p>
+<h3 id="scoop-安装"><a href="#scoop-安装" class="headerlink" title="scoop 安装"></a>scoop 安装</h3><p>设置<code>powershell</code></p>
+<figure class="highlight dsconfig"><table><tr><td class="code"><pre><span class="line"><span class="built_in">set-executionpolicy</span> <span class="string">remotesigned </span>-s <span class="string">currentuser</span></span><br></pre></td></tr></table></figure>
+<p>默认安装(安装到<code>C:\Users\&lt;user&gt;\scoop)</code>, 在<code>powershell</code>里面运行:</p>
+<figure class="highlight ceylon"><table><tr><td class="code"><pre><span class="line">iex (<span class="keyword">new</span>-<span class="keyword">object</span> net.webclient).downloadstring(<span class="string">'https://get.scoop.sh'</span>)</span><br></pre></td></tr></table></figure>
+<p>安装到指定目录(D:\tool\scoop)</p>
+<figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line">[environment]::setEnvironmentVariable(<span class="string">'SCOOP'</span>,<span class="string">'D:\tool\scoop'</span>,<span class="string">'User'</span>)</span><br><span class="line"><span class="variable">$env</span><span class="symbol">:SCOOP=<span class="string">'D:\tool\scoop'</span></span></span><br><span class="line">iex (new-object net.webclient).downloadstring(<span class="string">'https://get.scoop.sh'</span>)</span><br></pre></td></tr></table></figure>
+
+<p>指定<code>-g</code>安装目录(<code>D:\tool\scoop_global</code>)</p>
+<figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line">[environment]::setEnvironmentVariable(<span class="string">'SCOOP_GLOBAL'</span>,<span class="string">'D:\tool\scoop_global'</span>,<span class="string">'Machine'</span>)</span><br><span class="line"><span class="variable">$env</span><span class="symbol">:SCOOP_GLOBAL=<span class="string">'D:\tool\scoop_global'</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line"><span class="keyword">scoop </span>help            <span class="comment">#帮助</span></span><br><span class="line"><span class="keyword">scoop </span>list            <span class="comment">#查看当前已安装软件</span></span><br><span class="line"><span class="keyword">scoop </span>info app        <span class="comment">#查看软件信息</span></span><br><span class="line"><span class="keyword">scoop </span><span class="keyword">install </span>app     <span class="comment">#安装软件</span></span><br><span class="line"><span class="keyword">scoop </span>search app      <span class="comment">#搜索软件</span></span><br><span class="line"><span class="keyword">scoop </span>uninstall app   <span class="comment">#卸载软件</span></span><br><span class="line"><span class="keyword">scoop </span>update app      <span class="comment">#更新指定软件</span></span><br><span class="line"><span class="keyword">scoop </span>update *        <span class="comment">#更新安装的软件和scoop</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置代理(http)</span></span><br><span class="line"><span class="keyword">scoop </span><span class="built_in">config</span> proxy <span class="number">127</span>.<span class="number">0</span>.<span class="number">0</span>.<span class="number">1</span>:<span class="number">4412</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="shims-目录"><a href="#shims-目录" class="headerlink" title="shims 目录"></a>shims 目录</h4><p><code>scoop</code>安装程序后会在<code>scoop</code>安装目录下的<code>shims</code>里生成一个对应程序的<code>shim.exe</code>(不知道为啥不用快捷方式).</p>
+<p>安装<code>scoop</code>后 会自动把<code>shims</code>目录加到用户的Path里.</p>
+<h4 id="persist-目录"><a href="#persist-目录" class="headerlink" title="persist 目录"></a>persist 目录</h4><p>这个目录下面放的是已安装软件的配置文件, 后续更新软件的时候这部分内容不会修改.</p>
+<p>scoop 添加 extras 源 (默认的软件有点少)</p>
+<figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line"><span class="keyword">scoop </span><span class="keyword">bucket </span><span class="keyword">add </span><span class="keyword">extras</span></span><br></pre></td></tr></table></figure>
+<p>一个源：</p>
+<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">scoop bucket <span class="built_in">add</span> extras http<span class="variable">s:</span>//github.<span class="keyword">com</span>/lukesampson/scoop-extras.git</span><br></pre></td></tr></table></figure>
+
+<h4 id="scoop-使用问题"><a href="#scoop-使用问题" class="headerlink" title="scoop 使用问题"></a>scoop 使用问题</h4><p>安装某些 <code>gui</code> 程序后, 运行对应的 <code>shim.exe</code> 会出现 <code>cmd</code> 窗口 (<code>nvim-qt</code> <code>cmd</code>窗口一直显示, <code>cmder</code> <code>cmd</code>窗口一闪而过 )</p>
+<p>解决办法: 把<code>Scoop Apps</code>目录加到<code>path</code>里, 目录在<code>C:\Users\fcying\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Scoop Apps</code></p>
+<p>参考：<a href="https://www.jianshu.com/p/bb0ba62b519c" target="_blank" rel="noopener">Windows下的包管理工具scoop</a><br>常用软件git,curl,7zip安装；有些需要管理员权限的软件就需要先安装sudo，就是Linux中的那个sudo；</p>
+<figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line"><span class="keyword">scoop </span><span class="keyword">install </span>sudo</span><br><span class="line"><span class="keyword">scoop </span><span class="keyword">install </span>git curl <span class="number">7</span>zip</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>tools</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+        <tag>tools</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>tools - PicGo+github图床</title>
+    <url>/posts/1a8bafa/</url>
+    <content><![CDATA[<p>Windows环境下配置以<code>github</code>为图床仓库的<code>PicGo</code>图床工具。</p>
+<a id="more"></a>
+
+<p>平时写<code>markdown</code>的时候，一般用<a href="https://chrome.google.com/webstore/detail/%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9A%E5%9B%BE%E5%BA%8A/fdfdnfpdplfbbnemmmoklbfjbhecpnhf" target="_blank" rel="noopener">新浪微博图床</a>,但是怕万一以后图片挂掉用不了了，所以还是打算换个更稳定可靠的方式。<code>github</code>单仓库没有明确限制大小，但是推荐1G内，超过1G时会邮件提醒,参考<a href="https://docs.github.com/cn/github/managing-large-files/what-is-my-disk-quota#file-and-repository-size-limitations" target="_blank" rel="noopener">官方文档说明</a>。<br><img src="https://raw.githubusercontent.com/hxhowl/mdImages/master/img/picgo20200705020729.png" alt="image"></p>
+<h3 id="PicGo安装"><a href="#PicGo安装" class="headerlink" title="PicGo安装"></a>PicGo安装</h3><p><a href="https://github.com/Molunerfinn/PicGo" target="_blank" rel="noopener">PicGo仓库</a>查看安装和使用方法。我这里是选择在Windows上配置的，<br>打开<code>powershell</code>或者别的终端，用<code>scoop</code>安装<code>picGo</code></p>
+<figure class="highlight armasm"><table><tr><td class="code"><pre><span class="line"><span class="symbol">scoop</span> <span class="keyword">bucket </span><span class="keyword">add </span>helbing https://github.com/helbing/scoop-<span class="keyword">bucket</span></span><br><span class="line"><span class="keyword"></span></span><br><span class="line"><span class="keyword">scoop </span>install picgo</span><br></pre></td></tr></table></figure>
+
+<h3 id="github仓库配置"><a href="#github仓库配置" class="headerlink" title="github仓库配置"></a>github仓库配置</h3><p>创建一个public的仓库，然后配置一个<code>token</code>，打开<code>settings</code>，<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200703001157.png" alt="image"><br><code>Personal access tokens</code>下点击<code>Generate new token</code>,<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200703000340.png" alt="image"><br>填<code>note</code>（备注信息），<code>repo</code>打钩。<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200703000437.png" alt="image"><br>点击最底下<code>Generate Token</code>按钮生成一份<code>token</code>，可以看到提示<code>Make sure to copy your new personal access token now. You won’t be able to see it again!</code>，所以复制并保存到起来。</p>
+<h3 id="配置PicGo"><a href="#配置PicGo" class="headerlink" title="配置PicGo"></a>配置PicGo</h3><p><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/PicGo20200703002510.png" alt="image"></p>
+<ul>
+<li><code>设定的仓库名</code>：<code>github用户名/仓库名</code></li>
+<li><code>分支名</code>: 仓库所属分支，仓库默认分支是<code>master</code>，所以这里一般也是填<code>master</code></li>
+<li><code>设定Token</code>: 将前面创建的token复制进来，如果后面忘记了，重新创建再复制进来就可以了。</li>
+<li><code>指定存储路径</code>: 指定图片在仓库的路径。留空就是根目录。为了管理方便，建议按自己喜欢的规则创建文件夹会比较有条理一些。</li>
+<li><code>设定自定义域名</code>：配置自定义域名的图片。<ul>
+<li>不配的话，图片url格式为<code>https://raw.githubusercontent.com/github用户名/仓库名/分支名/指定存储路径/图片名.png)</code>。</li>
+<li>可以使用<a href="https://www.jsdelivr.com/" target="_blank" rel="noopener"><code>https://www.jsdelivr.com/</code></a>提供的免费cdn配置加速。格式为<code>https://cdn.jsdelivr.net/gh/github用户名/仓库名</code>,生成的图片url格式为<code>https://cdn.jsdelivr.net/gh/github用户名/仓库名/指定存储路径/图片名.png</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="其他说明和采坑"><a href="#其他说明和采坑" class="headerlink" title="其他说明和采坑"></a>其他说明和采坑</h3><p>相册是本地的一个上传信息缓存，测试发现，只是提供之前图片上传记录用的，删除不会作用到仓库，只是删除这里的一条记录。<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200703004634.png" alt="image"></p>
+<p>出现<code>上传失败</code>错误时，先确认仓库名等信息是否填写准确，再确定选取的本地图片的路径是否包含空格和<code>+</code>等特殊符号。目前发现路径空格和<code>+</code>时会<code>上传失败</code>。<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200703003749.png" alt="image"></p>
+<p>比如我这里一开始把图片存放在c盘<code>图片</code>下的<code>保存的图片</code>下，<code>保存的图片</code>实际路径信息是<code>Saved Pictures</code>，带了空格，然后就上传失败。<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200703004241.png" alt="image"></p>
+]]></content>
+      <categories>
+        <category>tools</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+        <tag>tools</tag>
+        <tag>图床</tag>
       </tags>
   </entry>
 </search>

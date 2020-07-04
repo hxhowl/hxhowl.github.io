@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="www.hxhowl.com/"/>
-  <updated>2020-06-27T11:36:46.830Z</updated>
+  <updated>2020-07-04T18:10:37.702Z</updated>
   <id>www.hxhowl.com/</id>
   
   <author>
@@ -17,15 +17,86 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>tools - PicGo+github图床</title>
+    <link href="www.hxhowl.com/posts/1a8bafa/"/>
+    <id>www.hxhowl.com/posts/1a8bafa/</id>
+    <published>2020-07-04T17:56:10.588Z</published>
+    <updated>2020-07-04T18:10:37.702Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Windows环境下配置以&lt;code&gt;github&lt;/code&gt;为图床仓库的&lt;code&gt;PicGo&lt;/code&gt;图床工具。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="tools" scheme="www.hxhowl.com/categories/tools/"/>
+    
+    
+      <category term="Windows" scheme="www.hxhowl.com/tags/Windows/"/>
+    
+      <category term="tools" scheme="www.hxhowl.com/tags/tools/"/>
+    
+      <category term="图床" scheme="www.hxhowl.com/tags/%E5%9B%BE%E5%BA%8A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>tools - scoop</title>
+    <link href="www.hxhowl.com/posts/d89cad7e/"/>
+    <id>www.hxhowl.com/posts/d89cad7e/</id>
+    <published>2020-07-04T17:49:10.200Z</published>
+    <updated>2020-07-04T18:10:37.703Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Windows 基础开发环境包管理工具&lt;code&gt;scoop&lt;/code&gt;。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="tools" scheme="www.hxhowl.com/categories/tools/"/>
+    
+    
+      <category term="Windows" scheme="www.hxhowl.com/tags/Windows/"/>
+    
+      <category term="tools" scheme="www.hxhowl.com/tags/tools/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>tools - chocolatey</title>
+    <link href="www.hxhowl.com/posts/af013f3b/"/>
+    <id>www.hxhowl.com/posts/af013f3b/</id>
+    <published>2020-07-04T17:44:39.101Z</published>
+    <updated>2020-07-04T18:10:37.701Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Windows 基础开发环境包管理工具&lt;code&gt;chocolatey&lt;/code&gt;。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="tools" scheme="www.hxhowl.com/categories/tools/"/>
+    
+    
+      <category term="Windows" scheme="www.hxhowl.com/tags/Windows/"/>
+    
+      <category term="tools" scheme="www.hxhowl.com/tags/tools/"/>
+    
+  </entry>
+  
+  <entry>
     <title>blog - hexo NexT主题下配置和美化</title>
     <link href="www.hxhowl.com/posts/e6f9a475/"/>
     <id>www.hxhowl.com/posts/e6f9a475/</id>
     <published>2020-06-27T10:45:05.010Z</published>
-    <updated>2020-06-27T11:36:46.830Z</updated>
+    <updated>2020-07-04T18:12:06.969Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;基于&lt;code&gt;next8.0&lt;/code&gt;的&lt;code&gt;hexo&lt;/code&gt;配置和美化&lt;/p&gt;
+      &lt;p&gt;基于&lt;code&gt;next8.0&lt;/code&gt;的&lt;code&gt;hexo&lt;/code&gt;配置和美化。&lt;/p&gt;
     
     </summary>
     
