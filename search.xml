@@ -203,33 +203,6 @@
       </tags>
   </entry>
   <entry>
-    <title>tools - chocolatey</title>
-    <url>/posts/af013f3b/</url>
-    <content><![CDATA[<p>Windows 基础开发环境包管理工具<code>chocolatey</code>。</p>
-<a id="more"></a>
-
-<h4 id="安装chocolatey"><a href="#安装chocolatey" class="headerlink" title="安装chocolatey"></a>安装chocolatey</h4><p>以管理员权限运行cmd.exe或powershell.exe</p>
-<p>cmd运行：</p>
-<figure class="highlight mel"><table><tr><td class="code"><pre><span class="line">@"%SystemRoot%\System32\WindowsPowerShell\v1<span class="number">.0</span>\powershell.exe<span class="string">" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "</span>iex ((New-Object System.Net.WebClient).DownloadString(<span class="string">'https://chocolatey.org/install.ps1'</span>))<span class="string">" &amp;&amp; SET "</span>PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin<span class="string">"</span></span><br></pre></td></tr></table></figure>
-<p>powershell运行：</p>
-<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).<span class="constructor">DownloadString('<span class="params">https</span>:<span class="operator">/</span><span class="operator">/</span><span class="params">chocolatey</span>.<span class="params">org</span><span class="operator">/</span><span class="params">install</span>.<span class="params">ps1</span>')</span>)</span><br></pre></td></tr></table></figure>
-<p>安装完成，运行choco 或 choco -?检查一下是否安装正确</p>
-<p>chocolatey安装位置：<code>C:\ProgramData\Chocolatey</code>。无法配置包安装位置。<br>参考文章<a href="https://blog.csdn.net/u013205877/article/details/78993311" target="_blank" rel="noopener">Windows 神器 Cmder Scoop Chocolatey Listary Seer</a>，可安装的应用程序默认安装在 <code>C:\Program Files\</code>，实际待考究。</p>
-<h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">search - 搜索包 choco search something</span><br><span class="line">list - 列出包 choco list -lo 或者 choco list --local-only</span><br><span class="line">install - 安装 choco install baretail</span><br><span class="line">pin - 固定包的版本，防止包被升级 choco pin windirstat</span><br><span class="line">upgrade - 安装包的升级 choco<span class="built_in"> upgrade </span>baretail</span><br><span class="line">uninstall - 安装包的卸载 choco uninstall baretail</span><br><span class="line">安装Ruby Gem - choco install compass -source ruby</span><br><span class="line">安装Python Egg - choco install sphynx -source python</span><br><span class="line">安装IIS服务器特性 - choco install IIS -source windowsfeatures</span><br><span class="line">安装Webpi特性 - choco install IIS7.5Express -source webpi</span><br><span class="line"></span><br><span class="line">列出Windows系统已安装的软件 - choco list -li 或者 choco list -lai</span><br><span class="line">升级所有已安装的包 - choco<span class="built_in"> upgrade </span>all -y</span><br></pre></td></tr></table></figure>
-
-<p>window 下开发常用的开发环境应用</p>
-<figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line">choco <span class="keyword">install </span>autohotkey.portable    <span class="comment">#安装 AutoHotkey (Portable)</span></span><br><span class="line">choco <span class="keyword">install </span>nodejs.<span class="keyword">install </span> <span class="comment">#安装 node</span></span><br><span class="line">choco <span class="keyword">install </span>git.<span class="keyword">install </span>    <span class="comment">#安装 git</span></span><br><span class="line">choco <span class="keyword">install </span>ruby            <span class="comment">#安装 ruby</span></span><br><span class="line">choco <span class="keyword">install </span>python          <span class="comment">#安装 python</span></span><br><span class="line">choco <span class="keyword">install </span><span class="keyword">jdk8 </span>           <span class="comment">#安装 JDK8</span></span><br><span class="line">choco <span class="keyword">install </span>googlechrome    <span class="comment">#安装 Chrome</span></span><br><span class="line">choco <span class="keyword">install </span>google-chrome-x64 <span class="comment">#Google Chrome (64-bit only)</span></span><br><span class="line">choco <span class="keyword">install </span>firefox         <span class="comment">#安装 firefox</span></span><br><span class="line">choco <span class="keyword">install </span>notepadplusplus.<span class="keyword">install </span><span class="comment">#安装 notepad++</span></span><br><span class="line">choco <span class="keyword">install </span>Atom                    <span class="comment">#安装 Atom</span></span><br><span class="line">choco <span class="keyword">install </span><span class="keyword">SublimeText3 </span>           <span class="comment">#安装 SublimeText3</span></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>tools</category>
-      </categories>
-      <tags>
-        <tag>Windows</tag>
-        <tag>tools</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>tools - PicGo+github图床</title>
     <url>/posts/1a8bafa/</url>
     <content><![CDATA[<p>Windows环境下配置以<code>github</code>为图床仓库的<code>PicGo</code>图床工具。</p>
@@ -298,6 +271,33 @@
 <p>解决办法: 把<code>Scoop Apps</code>目录加到<code>path</code>里, 目录在<code>C:\Users\fcying\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Scoop Apps</code></p>
 <p>参考：<a href="https://www.jianshu.com/p/bb0ba62b519c" target="_blank" rel="noopener">Windows下的包管理工具scoop</a><br>常用软件git,curl,7zip安装；有些需要管理员权限的软件就需要先安装sudo，就是Linux中的那个sudo；</p>
 <figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line"><span class="keyword">scoop </span><span class="keyword">install </span>sudo</span><br><span class="line"><span class="keyword">scoop </span><span class="keyword">install </span>git curl <span class="number">7</span>zip</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>tools</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+        <tag>tools</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>tools - chocolatey</title>
+    <url>/posts/af013f3b/</url>
+    <content><![CDATA[<p>Windows 基础开发环境包管理工具<code>chocolatey</code>。</p>
+<a id="more"></a>
+
+<h4 id="安装chocolatey"><a href="#安装chocolatey" class="headerlink" title="安装chocolatey"></a>安装chocolatey</h4><p>以管理员权限运行cmd.exe或powershell.exe</p>
+<p>cmd运行：</p>
+<figure class="highlight mel"><table><tr><td class="code"><pre><span class="line">@"%SystemRoot%\System32\WindowsPowerShell\v1<span class="number">.0</span>\powershell.exe<span class="string">" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "</span>iex ((New-Object System.Net.WebClient).DownloadString(<span class="string">'https://chocolatey.org/install.ps1'</span>))<span class="string">" &amp;&amp; SET "</span>PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin<span class="string">"</span></span><br></pre></td></tr></table></figure>
+<p>powershell运行：</p>
+<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).<span class="constructor">DownloadString('<span class="params">https</span>:<span class="operator">/</span><span class="operator">/</span><span class="params">chocolatey</span>.<span class="params">org</span><span class="operator">/</span><span class="params">install</span>.<span class="params">ps1</span>')</span>)</span><br></pre></td></tr></table></figure>
+<p>安装完成，运行choco 或 choco -?检查一下是否安装正确</p>
+<p>chocolatey安装位置：<code>C:\ProgramData\Chocolatey</code>。无法配置包安装位置。<br>参考文章<a href="https://blog.csdn.net/u013205877/article/details/78993311" target="_blank" rel="noopener">Windows 神器 Cmder Scoop Chocolatey Listary Seer</a>，可安装的应用程序默认安装在 <code>C:\Program Files\</code>，实际待考究。</p>
+<h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">search - 搜索包 choco search something</span><br><span class="line">list - 列出包 choco list -lo 或者 choco list --local-only</span><br><span class="line">install - 安装 choco install baretail</span><br><span class="line">pin - 固定包的版本，防止包被升级 choco pin windirstat</span><br><span class="line">upgrade - 安装包的升级 choco<span class="built_in"> upgrade </span>baretail</span><br><span class="line">uninstall - 安装包的卸载 choco uninstall baretail</span><br><span class="line">安装Ruby Gem - choco install compass -source ruby</span><br><span class="line">安装Python Egg - choco install sphynx -source python</span><br><span class="line">安装IIS服务器特性 - choco install IIS -source windowsfeatures</span><br><span class="line">安装Webpi特性 - choco install IIS7.5Express -source webpi</span><br><span class="line"></span><br><span class="line">列出Windows系统已安装的软件 - choco list -li 或者 choco list -lai</span><br><span class="line">升级所有已安装的包 - choco<span class="built_in"> upgrade </span>all -y</span><br></pre></td></tr></table></figure>
+
+<p>window 下开发常用的开发环境应用</p>
+<figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line">choco <span class="keyword">install </span>autohotkey.portable    <span class="comment">#安装 AutoHotkey (Portable)</span></span><br><span class="line">choco <span class="keyword">install </span>nodejs.<span class="keyword">install </span> <span class="comment">#安装 node</span></span><br><span class="line">choco <span class="keyword">install </span>git.<span class="keyword">install </span>    <span class="comment">#安装 git</span></span><br><span class="line">choco <span class="keyword">install </span>ruby            <span class="comment">#安装 ruby</span></span><br><span class="line">choco <span class="keyword">install </span>python          <span class="comment">#安装 python</span></span><br><span class="line">choco <span class="keyword">install </span><span class="keyword">jdk8 </span>           <span class="comment">#安装 JDK8</span></span><br><span class="line">choco <span class="keyword">install </span>googlechrome    <span class="comment">#安装 Chrome</span></span><br><span class="line">choco <span class="keyword">install </span>google-chrome-x64 <span class="comment">#Google Chrome (64-bit only)</span></span><br><span class="line">choco <span class="keyword">install </span>firefox         <span class="comment">#安装 firefox</span></span><br><span class="line">choco <span class="keyword">install </span>notepadplusplus.<span class="keyword">install </span><span class="comment">#安装 notepad++</span></span><br><span class="line">choco <span class="keyword">install </span>Atom                    <span class="comment">#安装 Atom</span></span><br><span class="line">choco <span class="keyword">install </span><span class="keyword">SublimeText3 </span>           <span class="comment">#安装 SublimeText3</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
       <categories>
         <category>tools</category>
       </categories>
