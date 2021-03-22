@@ -76,6 +76,43 @@
       </tags>
   </entry>
   <entry>
+    <title>tools - PicGo+github图床</title>
+    <url>/posts/1a8bafa/</url>
+    <content><![CDATA[<p>Windows环境下配置以<code>github</code>为图床仓库的<code>PicGo</code>图床工具。</p>
+<a id="more"></a>
+
+<p>平时写<code>markdown</code>的时候，一般用<a href="https://chrome.google.com/webstore/detail/%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9A%E5%9B%BE%E5%BA%8A/fdfdnfpdplfbbnemmmoklbfjbhecpnhf" target="_blank" rel="noopener">新浪微博图床</a>,但是怕万一以后图片挂掉用不了了，所以还是打算换个更稳定可靠的方式。<code>github</code>单仓库没有明确限制大小，但是推荐1G内，超过1G时会邮件提醒,参考<a href="https://docs.github.com/cn/github/managing-large-files/what-is-my-disk-quota#file-and-repository-size-limitations" target="_blank" rel="noopener">官方文档说明</a>。<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200705020729-1.png" alt="image"></p>
+<h3 id="PicGo安装"><a href="#PicGo安装" class="headerlink" title="PicGo安装"></a>PicGo安装</h3><p><a href="https://github.com/Molunerfinn/PicGo" target="_blank" rel="noopener">PicGo仓库</a>查看安装和使用方法。我这里是选择在Windows上配置的，<br>打开<code>powershell</code>或者别的终端，用<code>scoop</code>安装<code>picGo</code></p>
+<figure class="highlight armasm"><table><tr><td class="code"><pre><span class="line"><span class="symbol">scoop</span> <span class="keyword">bucket </span><span class="keyword">add </span>helbing https://github.com/helbing/scoop-<span class="keyword">bucket</span></span><br><span class="line"><span class="keyword"></span></span><br><span class="line"><span class="keyword">scoop </span>install picgo</span><br></pre></td></tr></table></figure>
+
+<h3 id="github仓库配置"><a href="#github仓库配置" class="headerlink" title="github仓库配置"></a>github仓库配置</h3><p>创建一个public的仓库，然后配置一个<code>token</code>，打开<code>settings</code>，<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200703001157.png" alt="image"><br><code>Personal access tokens</code>下点击<code>Generate new token</code>,<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200703000340.png" alt="image"><br>填<code>note</code>（备注信息），<code>repo</code>打钩。<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200703000437.png" alt="image"><br>点击最底下<code>Generate Token</code>按钮生成一份<code>token</code>，可以看到提示<code>Make sure to copy your new personal access token now. You won’t be able to see it again!</code>，所以复制并保存到起来。</p>
+<h3 id="配置PicGo"><a href="#配置PicGo" class="headerlink" title="配置PicGo"></a>配置PicGo</h3><p><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/PicGo20200703002510.png" alt="image"></p>
+<ul>
+<li><code>设定的仓库名</code>：<code>github用户名/仓库名</code></li>
+<li><code>分支名</code>: 仓库所属分支，仓库默认分支是<code>master</code>，所以这里一般也是填<code>master</code></li>
+<li><code>设定Token</code>: 将前面创建的token复制进来，如果后面忘记了，重新创建再复制进来就可以了。</li>
+<li><code>指定存储路径</code>: 指定图片在仓库的路径。留空就是根目录。为了管理方便，建议按自己喜欢的规则创建文件夹会比较有条理一些。</li>
+<li><code>设定自定义域名</code>：配置自定义域名的图片。<ul>
+<li>不配的话，图片url格式为<code>https://raw.githubusercontent.com/github用户名/仓库名/分支名/指定存储路径/图片名.png)</code>。</li>
+<li>可以使用<a href="https://www.jsdelivr.com/" target="_blank" rel="noopener"><code>https://www.jsdelivr.com/</code></a>提供的免费cdn配置加速。格式为<code>https://cdn.jsdelivr.net/gh/github用户名/仓库名</code>,生成的图片url格式为<code>https://cdn.jsdelivr.net/gh/github用户名/仓库名/指定存储路径/图片名.png</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="其他说明和采坑"><a href="#其他说明和采坑" class="headerlink" title="其他说明和采坑"></a>其他说明和采坑</h3><p>相册是本地的一个上传信息缓存，测试发现，只是提供之前图片上传记录用的，删除不会作用到仓库，只是删除这里的一条记录。<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200703004634.png" alt="image"></p>
+<p>出现<code>上传失败</code>错误时，先确认仓库名等信息是否填写准确，再确定选取的本地图片的路径是否包含空格和<code>+</code>等特殊符号。目前发现路径空格和<code>+</code>时会<code>上传失败</code>。<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200703003749.png" alt="image"></p>
+<p>比如我这里一开始把图片存放在c盘<code>图片</code>下的<code>保存的图片</code>下，<code>保存的图片</code>实际路径信息是<code>Saved Pictures</code>，带了空格，然后就上传失败。<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200703004241.png" alt="image"></p>
+<p>有时候<code>上传失败</code>是软件出问题了，可能需要<code>PicGo设置</code>-&gt;<code>设置Server</code>界面重新打开Server：点<code>关闭</code>、<code>确定</code>,再点击<code>开启</code>、<code>确定</code>。</p>
+]]></content>
+      <categories>
+        <category>tools</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+        <tag>tools</tag>
+        <tag>图床</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>blog - hexo NexT主题下配置和美化</title>
     <url>/posts/e6f9a475/</url>
     <content><![CDATA[<p>基于<code>next8.0</code>的<code>hexo</code>配置和美化。</p>
@@ -200,43 +237,6 @@
         <tag>Windows</tag>
         <tag>hexo</tag>
         <tag>next</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>tools - PicGo+github图床</title>
-    <url>/posts/1a8bafa/</url>
-    <content><![CDATA[<p>Windows环境下配置以<code>github</code>为图床仓库的<code>PicGo</code>图床工具。</p>
-<a id="more"></a>
-
-<p>平时写<code>markdown</code>的时候，一般用<a href="https://chrome.google.com/webstore/detail/%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9A%E5%9B%BE%E5%BA%8A/fdfdnfpdplfbbnemmmoklbfjbhecpnhf" target="_blank" rel="noopener">新浪微博图床</a>,但是怕万一以后图片挂掉用不了了，所以还是打算换个更稳定可靠的方式。<code>github</code>单仓库没有明确限制大小，但是推荐1G内，超过1G时会邮件提醒,参考<a href="https://docs.github.com/cn/github/managing-large-files/what-is-my-disk-quota#file-and-repository-size-limitations" target="_blank" rel="noopener">官方文档说明</a>。<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200705020729-1.png" alt="image"></p>
-<h3 id="PicGo安装"><a href="#PicGo安装" class="headerlink" title="PicGo安装"></a>PicGo安装</h3><p><a href="https://github.com/Molunerfinn/PicGo" target="_blank" rel="noopener">PicGo仓库</a>查看安装和使用方法。我这里是选择在Windows上配置的，<br>打开<code>powershell</code>或者别的终端，用<code>scoop</code>安装<code>picGo</code></p>
-<figure class="highlight armasm"><table><tr><td class="code"><pre><span class="line"><span class="symbol">scoop</span> <span class="keyword">bucket </span><span class="keyword">add </span>helbing https://github.com/helbing/scoop-<span class="keyword">bucket</span></span><br><span class="line"><span class="keyword"></span></span><br><span class="line"><span class="keyword">scoop </span>install picgo</span><br></pre></td></tr></table></figure>
-
-<h3 id="github仓库配置"><a href="#github仓库配置" class="headerlink" title="github仓库配置"></a>github仓库配置</h3><p>创建一个public的仓库，然后配置一个<code>token</code>，打开<code>settings</code>，<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200703001157.png" alt="image"><br><code>Personal access tokens</code>下点击<code>Generate new token</code>,<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200703000340.png" alt="image"><br>填<code>note</code>（备注信息），<code>repo</code>打钩。<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200703000437.png" alt="image"><br>点击最底下<code>Generate Token</code>按钮生成一份<code>token</code>，可以看到提示<code>Make sure to copy your new personal access token now. You won’t be able to see it again!</code>，所以复制并保存到起来。</p>
-<h3 id="配置PicGo"><a href="#配置PicGo" class="headerlink" title="配置PicGo"></a>配置PicGo</h3><p><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/PicGo20200703002510.png" alt="image"></p>
-<ul>
-<li><code>设定的仓库名</code>：<code>github用户名/仓库名</code></li>
-<li><code>分支名</code>: 仓库所属分支，仓库默认分支是<code>master</code>，所以这里一般也是填<code>master</code></li>
-<li><code>设定Token</code>: 将前面创建的token复制进来，如果后面忘记了，重新创建再复制进来就可以了。</li>
-<li><code>指定存储路径</code>: 指定图片在仓库的路径。留空就是根目录。为了管理方便，建议按自己喜欢的规则创建文件夹会比较有条理一些。</li>
-<li><code>设定自定义域名</code>：配置自定义域名的图片。<ul>
-<li>不配的话，图片url格式为<code>https://raw.githubusercontent.com/github用户名/仓库名/分支名/指定存储路径/图片名.png)</code>。</li>
-<li>可以使用<a href="https://www.jsdelivr.com/" target="_blank" rel="noopener"><code>https://www.jsdelivr.com/</code></a>提供的免费cdn配置加速。格式为<code>https://cdn.jsdelivr.net/gh/github用户名/仓库名</code>,生成的图片url格式为<code>https://cdn.jsdelivr.net/gh/github用户名/仓库名/指定存储路径/图片名.png</code></li>
-</ul>
-</li>
-</ul>
-<h3 id="其他说明和采坑"><a href="#其他说明和采坑" class="headerlink" title="其他说明和采坑"></a>其他说明和采坑</h3><p>相册是本地的一个上传信息缓存，测试发现，只是提供之前图片上传记录用的，删除不会作用到仓库，只是删除这里的一条记录。<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200703004634.png" alt="image"></p>
-<p>出现<code>上传失败</code>错误时，先确认仓库名等信息是否填写准确，再确定选取的本地图片的路径是否包含空格和<code>+</code>等特殊符号。目前发现路径空格和<code>+</code>时会<code>上传失败</code>。<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200703003749.png" alt="image"></p>
-<p>比如我这里一开始把图片存放在c盘<code>图片</code>下的<code>保存的图片</code>下，<code>保存的图片</code>实际路径信息是<code>Saved Pictures</code>，带了空格，然后就上传失败。<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200703004241.png" alt="image"></p>
-<p>有时候<code>上传失败</code>是软件出问题了，可能需要<code>PicGo设置</code>-&gt;<code>设置Server</code>界面重新打开Server：点<code>关闭</code>、<code>确定</code>,再点击<code>开启</code>、<code>确定</code>。</p>
-]]></content>
-      <categories>
-        <category>tools</category>
-      </categories>
-      <tags>
-        <tag>Windows</tag>
-        <tag>tools</tag>
-        <tag>图床</tag>
       </tags>
   </entry>
   <entry>
