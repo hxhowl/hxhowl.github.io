@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>flycat</title>
+  <title>hxhowl blog</title>
   
   <subtitle>Start from 2020</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="www.hxhowl.com/"/>
+  <link href="blog.hxhowl.site/"/>
   <updated>2020-07-04T19:18:52.270Z</updated>
-  <id>www.hxhowl.com/</id>
+  <id>blog.hxhowl.site/</id>
   
   <author>
     <name>hxhowl</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>tools - PicGo+github图床</title>
-    <link href="www.hxhowl.com/posts/1a8bafa/"/>
-    <id>www.hxhowl.com/posts/1a8bafa/</id>
+    <link href="blog.hxhowl.site/posts/1a8bafa/"/>
+    <id>blog.hxhowl.site/posts/1a8bafa/</id>
     <published>2020-07-04T17:56:10.588Z</published>
     <updated>2020-07-04T19:18:52.270Z</updated>
     
@@ -30,21 +30,21 @@
     </summary>
     
     
-      <category term="tools" scheme="www.hxhowl.com/categories/tools/"/>
+      <category term="tools" scheme="blog.hxhowl.site/categories/tools/"/>
     
     
-      <category term="Windows" scheme="www.hxhowl.com/tags/Windows/"/>
+      <category term="Windows" scheme="blog.hxhowl.site/tags/Windows/"/>
     
-      <category term="tools" scheme="www.hxhowl.com/tags/tools/"/>
+      <category term="tools" scheme="blog.hxhowl.site/tags/tools/"/>
     
-      <category term="图床" scheme="www.hxhowl.com/tags/%E5%9B%BE%E5%BA%8A/"/>
+      <category term="图床" scheme="blog.hxhowl.site/tags/%E5%9B%BE%E5%BA%8A/"/>
     
   </entry>
   
   <entry>
     <title>tools - scoop</title>
-    <link href="www.hxhowl.com/posts/d89cad7e/"/>
-    <id>www.hxhowl.com/posts/d89cad7e/</id>
+    <link href="blog.hxhowl.site/posts/d89cad7e/"/>
+    <id>blog.hxhowl.site/posts/d89cad7e/</id>
     <published>2020-07-04T17:49:10.200Z</published>
     <updated>2020-07-04T18:10:37.703Z</updated>
     
@@ -55,19 +55,19 @@
     </summary>
     
     
-      <category term="tools" scheme="www.hxhowl.com/categories/tools/"/>
+      <category term="tools" scheme="blog.hxhowl.site/categories/tools/"/>
     
     
-      <category term="Windows" scheme="www.hxhowl.com/tags/Windows/"/>
+      <category term="Windows" scheme="blog.hxhowl.site/tags/Windows/"/>
     
-      <category term="tools" scheme="www.hxhowl.com/tags/tools/"/>
+      <category term="tools" scheme="blog.hxhowl.site/tags/tools/"/>
     
   </entry>
   
   <entry>
     <title>tools - chocolatey</title>
-    <link href="www.hxhowl.com/posts/af013f3b/"/>
-    <id>www.hxhowl.com/posts/af013f3b/</id>
+    <link href="blog.hxhowl.site/posts/af013f3b/"/>
+    <id>blog.hxhowl.site/posts/af013f3b/</id>
     <published>2020-07-04T17:44:39.101Z</published>
     <updated>2020-07-04T18:10:37.701Z</updated>
     
@@ -78,21 +78,21 @@
     </summary>
     
     
-      <category term="tools" scheme="www.hxhowl.com/categories/tools/"/>
+      <category term="tools" scheme="blog.hxhowl.site/categories/tools/"/>
     
     
-      <category term="Windows" scheme="www.hxhowl.com/tags/Windows/"/>
+      <category term="Windows" scheme="blog.hxhowl.site/tags/Windows/"/>
     
-      <category term="tools" scheme="www.hxhowl.com/tags/tools/"/>
+      <category term="tools" scheme="blog.hxhowl.site/tags/tools/"/>
     
   </entry>
   
   <entry>
     <title>blog - hexo NexT主题下配置和美化</title>
-    <link href="www.hxhowl.com/posts/e6f9a475/"/>
-    <id>www.hxhowl.com/posts/e6f9a475/</id>
+    <link href="blog.hxhowl.site/posts/e6f9a475/"/>
+    <id>blog.hxhowl.site/posts/e6f9a475/</id>
     <published>2020-06-27T10:45:05.010Z</published>
-    <updated>2020-07-04T18:12:06.969Z</updated>
+    <updated>2023-08-19T02:42:37.051Z</updated>
     
     <summary type="html">
     
@@ -101,23 +101,23 @@
     </summary>
     
     
-      <category term="hexo" scheme="www.hxhowl.com/categories/hexo/"/>
+      <category term="hexo" scheme="blog.hxhowl.site/categories/hexo/"/>
     
     
-      <category term="blog" scheme="www.hxhowl.com/tags/blog/"/>
+      <category term="blog" scheme="blog.hxhowl.site/tags/blog/"/>
     
-      <category term="Windows" scheme="www.hxhowl.com/tags/Windows/"/>
+      <category term="Windows" scheme="blog.hxhowl.site/tags/Windows/"/>
     
-      <category term="hexo" scheme="www.hxhowl.com/tags/hexo/"/>
+      <category term="hexo" scheme="blog.hxhowl.site/tags/hexo/"/>
     
-      <category term="next" scheme="www.hxhowl.com/tags/next/"/>
+      <category term="next" scheme="blog.hxhowl.site/tags/next/"/>
     
   </entry>
   
   <entry>
     <title>blog - Windows下hexo+github</title>
-    <link href="www.hxhowl.com/posts/ee60a25f/"/>
-    <id>www.hxhowl.com/posts/ee60a25f/</id>
+    <link href="blog.hxhowl.site/posts/ee60a25f/"/>
+    <id>blog.hxhowl.site/posts/ee60a25f/</id>
     <published>2020-06-27T10:34:22.362Z</published>
     <updated>2020-06-27T10:50:25.270Z</updated>
     
@@ -128,23 +128,23 @@
     </summary>
     
     
-      <category term="hexo" scheme="www.hxhowl.com/categories/hexo/"/>
+      <category term="hexo" scheme="blog.hxhowl.site/categories/hexo/"/>
     
     
-      <category term="blog" scheme="www.hxhowl.com/tags/blog/"/>
+      <category term="blog" scheme="blog.hxhowl.site/tags/blog/"/>
     
-      <category term="Windows" scheme="www.hxhowl.com/tags/Windows/"/>
+      <category term="Windows" scheme="blog.hxhowl.site/tags/Windows/"/>
     
-      <category term="hexo" scheme="www.hxhowl.com/tags/hexo/"/>
+      <category term="hexo" scheme="blog.hxhowl.site/tags/hexo/"/>
     
-      <category term="next" scheme="www.hxhowl.com/tags/next/"/>
+      <category term="next" scheme="blog.hxhowl.site/tags/next/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="www.hxhowl.com/posts/4a17b156/"/>
-    <id>www.hxhowl.com/posts/4a17b156/</id>
+    <link href="blog.hxhowl.site/posts/4a17b156/"/>
+    <id>blog.hxhowl.site/posts/4a17b156/</id>
     <published>2020-06-23T15:48:09.353Z</published>
     <updated>2020-06-27T04:14:25.898Z</updated>
     
