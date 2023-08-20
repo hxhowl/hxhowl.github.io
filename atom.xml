@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>hxhowl blog</title>
   
-  <subtitle>Start from 2020</subtitle>
+  <subtitle>Write Something...</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="blog.hxhowl.site/"/>
@@ -159,11 +159,129 @@
   </entry>
   
   <entry>
+    <title>java基础 - 时间类转换</title>
+    <link href="blog.hxhowl.site/posts/8e91112d/"/>
+    <id>blog.hxhowl.site/posts/8e91112d/</id>
+    <published>2019-05-23T09:04:07.000Z</published>
+    <updated>2023-08-20T09:19:43.939Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ol&gt;
+&lt;li&gt;Timestamp转LocalDateTime（mysql中datetime数据取出时是timestamp类型）&lt;figure class=&quot;highlight reasonml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td
+        
+      
+    
+    </summary>
+    
+    
+      <category term="java" scheme="blog.hxhowl.site/categories/java/"/>
+    
+    
+      <category term="java" scheme="blog.hxhowl.site/tags/java/"/>
+    
+      <category term="笔记" scheme="blog.hxhowl.site/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="java基础" scheme="blog.hxhowl.site/tags/java%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java基础 - java注解</title>
+    <link href="blog.hxhowl.site/posts/5a25ee7e/"/>
+    <id>blog.hxhowl.site/posts/5a25ee7e/</id>
+    <published>2019-05-20T09:03:44.000Z</published>
+    <updated>2023-08-20T09:19:22.361Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;定义：注解（Annotation），也叫元数据。一种代码级别的说明。它是JDK1.5及以后版本引入的一个特性，与类、接口、枚举是在同一个层次。它可以声明在包、类、字段、方法、局部变量、方法参数等的前面，用来对这些元素进行说明，注释。注解通过&lt;code&gt;@interface&lt;/code&gt;关键字进行定义。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="java" scheme="blog.hxhowl.site/categories/java/"/>
+    
+    
+      <category term="java" scheme="blog.hxhowl.site/tags/java/"/>
+    
+      <category term="笔记" scheme="blog.hxhowl.site/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="java基础" scheme="blog.hxhowl.site/tags/java%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java基础 - 匿名内部类</title>
+    <link href="blog.hxhowl.site/posts/9cf3d23d/"/>
+    <id>blog.hxhowl.site/posts/9cf3d23d/</id>
+    <published>2019-04-02T09:03:13.000Z</published>
+    <updated>2023-08-20T09:20:28.787Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;匿名内部类 :是内部类的简化写法。它的本质是一个带具体实现的父类或者父接口的匿名的子类对象。 开发中，最常用到的内部类就是匿名内部类了。以接口举例，当你使用一个接口时，得做如下几步操作：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;定义子类&lt;/li&gt;
+&lt;li&gt;重写接口中的方法&lt;/li&gt;
+&lt;li&gt;创建子类对象&lt;/li&gt;
+&lt;li&gt;调用重写后的方法&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+    
+      <category term="java" scheme="blog.hxhowl.site/categories/java/"/>
+    
+    
+      <category term="java" scheme="blog.hxhowl.site/tags/java/"/>
+    
+      <category term="笔记" scheme="blog.hxhowl.site/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="java基础" scheme="blog.hxhowl.site/tags/java%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java基础 - final关键字</title>
+    <link href="blog.hxhowl.site/posts/f2b5981c/"/>
+    <id>blog.hxhowl.site/posts/f2b5981c/</id>
+    <published>2019-03-20T08:59:57.000Z</published>
+    <updated>2023-08-20T09:19:00.628Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;final: 不可改变。可以用于修饰类、方法和变量。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;类:被修饰的类，不能被继承。 &lt;/li&gt;
+&lt;li&gt;方法:被修饰的方法，不能被重写。 &lt;/li&gt;
+&lt;li&gt;变量:被修饰的变量，不能被重新赋值。&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="java" scheme="blog.hxhowl.site/categories/java/"/>
+    
+    
+      <category term="java" scheme="blog.hxhowl.site/tags/java/"/>
+    
+      <category term="笔记" scheme="blog.hxhowl.site/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="java基础" scheme="blog.hxhowl.site/tags/java%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
     <title>java - 接口</title>
     <link href="blog.hxhowl.site/posts/bff39eb3/"/>
     <id>blog.hxhowl.site/posts/bff39eb3/</id>
-    <published>2019-03-06T07:14:15.000Z</published>
-    <updated>2023-08-19T07:34:44.017Z</updated>
+    <published>2019-03-07T07:14:15.000Z</published>
+    <updated>2023-08-20T09:18:15.402Z</updated>
     
     <summary type="html">
     
@@ -178,6 +296,40 @@
       <category term="java" scheme="blog.hxhowl.site/tags/java/"/>
     
       <category term="笔记" scheme="blog.hxhowl.site/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="java基础" scheme="blog.hxhowl.site/tags/java%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java - String常用方法</title>
+    <link href="blog.hxhowl.site/posts/bbda4b22/"/>
+    <id>blog.hxhowl.site/posts/bbda4b22/</id>
+    <published>2019-03-06T08:28:43.000Z</published>
+    <updated>2023-08-20T09:19:08.158Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;构造方法&quot;&gt;&lt;a href=&quot;#构造方法&quot; class=&quot;headerlink&quot; title=&quot;构造方法&quot;&gt;&lt;/a&gt;构造方法&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;public String()&lt;/code&gt; :初始化新创建的
+        
+      
+    
+    </summary>
+    
+    
+      <category term="java基础" scheme="blog.hxhowl.site/categories/java%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="java" scheme="blog.hxhowl.site/tags/java/"/>
+    
+      <category term="笔记" scheme="blog.hxhowl.site/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="java基础" scheme="blog.hxhowl.site/tags/java%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   

@@ -76,6 +76,79 @@
       </tags>
   </entry>
   <entry>
+    <title>java - String常用方法</title>
+    <url>/posts/bbda4b22/</url>
+    <content><![CDATA[<h3 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h3><ul>
+<li><code>public String()</code> :初始化新创建的 String对象，以使其表示空字符序列。</li>
+<li><code>public String(char[] value)</code> :通过当前参数中的字符数组来构造新的String。</li>
+<li><code>public String(byte[] bytes)</code> :通过使用平台的默认字符集解码当前参数中的字节数组来构造新的String</li>
+</ul>
+<h3 id="判断功能的方法"><a href="#判断功能的方法" class="headerlink" title="判断功能的方法"></a>判断功能的方法</h3><ul>
+<li><code>public boolean equals (Object anObject)</code> :将此字符串与指定对象进行比较。</li>
+<li><code>public boolean equalsIgnoreCase (String anotherString)</code> :将此字符串与指定对象进行比较，忽略大小<br>写。</li>
+</ul>
+<h3 id="获取功能的方法"><a href="#获取功能的方法" class="headerlink" title="获取功能的方法"></a>获取功能的方法</h3><ul>
+<li><code>public int length ()</code> :返回此字符串的长度。</li>
+<li><code>public String concat (String str)</code> :将指定的字符串连接到该字符串的末尾。</li>
+<li><code>public char charAt (int index)</code> :返回指定索引处的 char值。</li>
+<li><code>public int indexOf (String str)</code> :返回指定子字符串第一次出现在该字符串内的索引。</li>
+<li><code>public String substring (int beginIndex)</code> :返回一个子字符串，从beginIndex开始截取字符串到字符<br>串结尾。</li>
+<li><code>public String substring (int beginIndex, int endIndex)</code> :返回一个子字符串，从beginIndex到<br>endIndex截取字符串。含beginIndex，不含endIndex。例如：<code>s.substring(0, s.length())</code></li>
+</ul>
+<h3 id="转换功能的方法"><a href="#转换功能的方法" class="headerlink" title="转换功能的方法"></a>转换功能的方法</h3><ul>
+<li><code>public char[] toCharArray ()</code> :将此字符串转换为新的字符数组。</li>
+<li><code>public byte[] getBytes ()</code> :使用平台的默认字符集将该 String编码转换为新的字节数组。</li>
+<li><code>public String replace (CharSequence target, CharSequence replacement)</code> :将与target匹配的字符串使<br>用replacement字符串替换。</li>
+</ul>
+<h3 id="分割功能的方法"><a href="#分割功能的方法" class="headerlink" title="分割功能的方法"></a>分割功能的方法</h3><ul>
+<li><code>public String[] split(String regex)</code> :将此字符串按照给定的regex(规则)拆分为字符串数组</li>
+</ul>
+]]></content>
+      <categories>
+        <category>java基础</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>笔记</tag>
+        <tag>java基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>java基础 - 匿名内部类</title>
+    <url>/posts/9cf3d23d/</url>
+    <content><![CDATA[<p>匿名内部类 :是内部类的简化写法。它的本质是一个带具体实现的父类或者父接口的匿名的子类对象。 开发中，最常用到的内部类就是匿名内部类了。以接口举例，当你使用一个接口时，得做如下几步操作：</p>
+<ol>
+<li>定义子类</li>
+<li>重写接口中的方法</li>
+<li>创建子类对象</li>
+<li>调用重写后的方法</li>
+</ol>
+<a id="more"></a>
+
+<p>匿名内部类必须继承一个父类或者实现一个父接口。</p>
+<figure class="highlight aspectj"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span> 父类名或者接口名()&#123; </span><br><span class="line">    <span class="comment">// 方法重写</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">method</span><span class="params">()</span> </span>&#123; </span><br><span class="line">    <span class="comment">// 执行语句</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h4><p>定义接口:</p>
+<figure class="highlight cs"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title">FlyAble</span>&#123; </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">fly</span>(<span class="params"></span>)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>创建匿名内部类，并调用:</p>
+<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InnerDemo</span> &#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(<span class="keyword">String</span>[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">/* 1.等号右边:是匿名内部类，定义并创建该接口的子类对象 </span></span><br><span class="line"><span class="comment">        2.等号左边:是多态赋值,接口类型引用指向子类对象</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">        FlyAble f = <span class="keyword">new</span> FlyAble()&#123;</span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> fly() &#123;   </span><br><span class="line">                System.out.<span class="built_in">println</span>(<span class="string">"我飞了~~~"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="comment">//调用 fly方法,执行重写后的方法</span></span><br><span class="line">        f.fly();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>通常在方法的形式参数是接口或者抽象类时，也可以将匿名内部类作为参数传递。</p>
+<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InnerDemo2</span> &#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(<span class="keyword">String</span>[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">         1.等号右边:定义并创建该接口的子类对象 </span></span><br><span class="line"><span class="comment">         2.等号左边:是多态,接口类型引用指向子类对象</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">        FlyAble f = <span class="keyword">new</span> FlyAble()&#123; </span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> fly() &#123;</span><br><span class="line">                System.out.<span class="built_in">println</span>(<span class="string">"我飞了~~~"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="comment">// 将f传递给showFly方法中</span></span><br><span class="line">        showFly(f);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">showFly</span><span class="params">(FlyAble f)</span> </span>&#123; </span><br><span class="line">        f.fly();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以上两步，也可以简化为一步，代码如下:</p>
+<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InnerDemo3</span> &#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(<span class="keyword">String</span>[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        创建匿名内部类,直接传递给showFly(FlyAble f) */</span></span><br><span class="line">        showFly( <span class="keyword">new</span> FlyAble()&#123;</span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> fly() &#123;</span><br><span class="line">                System.out.<span class="built_in">println</span>(<span class="string">"我飞了~~~"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">showFly</span><span class="params">(FlyAble f)</span> </span>&#123; </span><br><span class="line">        f.fly();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>笔记</tag>
+        <tag>java基础</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>blog - hexo NexT主题下配置和美化</title>
     <url>/posts/e6f9a475/</url>
     <content><![CDATA[<p>基于<code>next8.0</code>的<code>hexo</code>配置和美化。</p>
@@ -305,6 +378,212 @@
       <tags>
         <tag>java</tag>
         <tag>笔记</tag>
+        <tag>java基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>java基础 - final关键字</title>
+    <url>/posts/f2b5981c/</url>
+    <content><![CDATA[<p>final: 不可改变。可以用于修饰类、方法和变量。</p>
+<ul>
+<li>类:被修饰的类，不能被继承。 </li>
+<li>方法:被修饰的方法，不能被重写。 </li>
+<li>变量:被修饰的变量，不能被重新赋值。</li>
+</ul>
+<a id="more"></a>
+
+<h4 id="修饰类"><a href="#修饰类" class="headerlink" title="修饰类"></a>修饰类</h4><figure class="highlight actionscript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">final</span> <span class="class"><span class="keyword">class</span> 类名 </span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="修饰方法"><a href="#修饰方法" class="headerlink" title="修饰方法"></a>修饰方法</h4><figure class="highlight actionscript"><table><tr><td class="code"><pre><span class="line">修饰符 <span class="keyword">final</span> 返回值类型 方法名(参数列表)&#123; </span><br><span class="line">    <span class="comment">//方法体</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>重写被 <code>final</code> 修饰的方法，编译时就会报错。</p>
+<h4 id="修饰变量"><a href="#修饰变量" class="headerlink" title="修饰变量"></a>修饰变量</h4><p><strong>1. 局部变量——基本类型</strong></p>
+<p>基本类型的局部变量，被final修饰后，只能赋值一次，不能再更改。</p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="symbol">FinalDemo1</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> static <span class="built_in">void</span> main(String[] args) &#123;</span><br><span class="line">        <span class="comment">// 声明变量，使用final修饰 final int a;</span></span><br><span class="line">        <span class="comment">// 第一次赋值</span></span><br><span class="line">        a = <span class="number">10</span>;</span><br><span class="line">        <span class="comment">// 第二次赋值</span></span><br><span class="line">        a = <span class="number">20</span>; <span class="comment">// 报错,不可重新赋值</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>2. 局部变量——引用类型</strong></p>
+<p>引用类型的局部变量，被final修饰后，只能指向一个对象，地址不能再更改。但是不影响对象内部的成员变量值的<br>修改，代码如下:</p>
+<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FinalDemo2</span> &#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(<span class="keyword">String</span>[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 创建 User 对象</span></span><br><span class="line">        <span class="keyword">final</span> User u = <span class="keyword">new</span> User();</span><br><span class="line">        <span class="comment">// 创建 另一个 User对象</span></span><br><span class="line">        u = <span class="keyword">new</span> User(); <span class="comment">// 报错，指向了新的对象，地址值改变。</span></span><br><span class="line">        <span class="comment">// 调用setName方法</span></span><br><span class="line">        u.setName(<span class="string">"张三"</span>); <span class="comment">// 可以修改</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>3. 成员变量</strong></p>
+<p>成员变量涉及到初始化的问题，初始化方式有两种，只能二选一:</p>
+<ul>
+<li>显示初始化;<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">public class<span class="built_in"> User </span>&#123;</span><br><span class="line">    final String USERNAME = <span class="string">"张三"</span>; </span><br><span class="line">    private int age;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>构造方法初始化。<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> &#123;</span></span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">String</span> USERNAME ;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">User</span><span class="params">(<span class="keyword">String</span> username, <span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.USERNAME = username;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<code>被final修饰的常量名称，一般都有书写规范，所有字母都大写。</code></li>
+</ul>
+]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>笔记</tag>
+        <tag>java基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>java基础 - java注解</title>
+    <url>/posts/5a25ee7e/</url>
+    <content><![CDATA[<p>定义：注解（Annotation），也叫元数据。一种代码级别的说明。它是JDK1.5及以后版本引入的一个特性，与类、接口、枚举是在同一个层次。它可以声明在包、类、字段、方法、局部变量、方法参数等的前面，用来对这些元素进行说明，注释。注解通过<code>@interface</code>关键字进行定义。</p>
+<a id="more"></a>
+
+<h2 id="元注解"><a href="#元注解" class="headerlink" title="元注解"></a>元注解</h2><p>元注解是可以注解到注解上的注解，或者说元注解是一种基本注解，但是它能够应用到其它的注解上面。元注解有 @Retention、@Documented、@Target、@Inherited、@Repeatable 5 种。</p>
+<h4 id="Retention"><a href="#Retention" class="headerlink" title="@Retention"></a>@Retention</h4><p>说明这个注解的的存活时间，它的取值如下：</p>
+<ul>
+<li>RetentionPolicy.SOURCE 注解只在源码阶段保留，在编译器进行编译时它将被丢弃忽视。</li>
+<li>RetentionPolicy.CLASS 注解只被保留到编译进行的时候，它并不会被加载到 JVM 中。</li>
+<li>RetentionPolicy.RUNTIME 注解可以保留到程序运行的时候，它会被加载进入到 JVM 中，所以在程序运行时可以获取到它们。JVM将在运行期间保留注解，因此可以通过反射机制读取注解的信息</li>
+</ul>
+<h4 id="Documented"><a href="#Documented" class="headerlink" title="@Documented"></a>@Documented</h4><p>将注解中的元素包含到 Javadoc 中去。</p>
+<h4 id="Target"><a href="#Target" class="headerlink" title="@Target"></a>@Target</h4><p>表示该注解可以用于什么地方，可能的ElementType参数有：</p>
+<ul>
+<li>ElementType.ANNOTATION_TYPE 可以给一个注解进行注解</li>
+<li>ElementType.CONSTRUCTOR 可以给构造方法进行注解</li>
+<li>ElementType.FIELD 可以给属性进行注解</li>
+<li>ElementType.LOCAL_VARIABLE 可以给局部变量进行注解</li>
+<li>ElementType.METHOD 可以给方法进行注解</li>
+<li>ElementType.PACKAGE 可以给一个包进行注解</li>
+<li>ElementType.PARAMETER 可以给一个方法内的参数进行注解</li>
+<li>ElementType.TYPE 可以给一个类型进行注解，比如类、接口、枚举</li>
+</ul>
+<h4 id="Inherited"><a href="#Inherited" class="headerlink" title="@Inherited"></a>@Inherited</h4><p>它并不是说注解本身可以继承，而是说如果一个超类被 @Inherited 注解过的注解进行注解的话，那么如果它的子类没有被任何注解应用的话，那么这个子类就继承了超类的注解。</p>
+<figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="variable">@Inherited</span></span><br><span class="line"><span class="variable">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="variable">@interface</span> Test &#123;&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="variable">@Test</span></span><br><span class="line">public class A &#123;&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public class B extends A &#123;&#125;</span><br></pre></td></tr></table></figure>
+<p>注解 Test 被 @Inherited 修饰，之后类 A 被 Test 注解，类 B 继承 A,类 B 也拥有 Test 这个注解</p>
+<h4 id="Repeatable"><a href="#Repeatable" class="headerlink" title="@Repeatable"></a>@Repeatable</h4><p>Repeatable 是可重复的意思。@Repeatable 是 Java 1.8 才加进来的，所以算是一个新的特性。</p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="meta">@interface</span> Persons &#123;</span><br><span class="line">	Person[]  value();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@Repeatable(Persons.class)</span></span><br><span class="line"><span class="meta">@interface</span> Person&#123;</span><br><span class="line">	String role <span class="keyword">default</span> <span class="string">""</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@Person(role=<span class="meta-string">"artist"</span>)</span></span><br><span class="line"><span class="meta">@Person(role=<span class="meta-string">"coder"</span>)</span></span><br><span class="line"><span class="meta">@Person(role=<span class="meta-string">"PM"</span>)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SuperMan</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>@Repeatable 注解了 Person。而 @Repeatable 后面括号中的类相当于一个容器注解。</p>
+<p>什么是容器注解呢？就是用来存放其它注解的地方。它本身也是一个注解。</p>
+<h2 id="注解的属性"><a href="#注解的属性" class="headerlink" title="注解的属性"></a>注解的属性</h2><p>注解的属性也叫做成员变量。注解只有成员变量，没有方法。注解的成员变量在注解的定义中以“无形参的方法”形式来声明，其方法名定义了该成员变量的名字，其返回值定义了该成员变量的类型。</p>
+<figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="variable">@Target</span>(ElementType.TYPE)</span><br><span class="line"><span class="variable">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line">public <span class="variable">@interface</span> TestAnnotation &#123;</span><br><span class="line">	</span><br><span class="line">	<span class="selector-tag">int</span> <span class="selector-tag">id</span>();</span><br><span class="line">	</span><br><span class="line">	<span class="selector-tag">String</span> <span class="selector-tag">msg</span>();</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面代码定义了 TestAnnotation 这个注解中拥有 id 和 msg 两个属性。在使用的时候，我们应该给它们进行赋值。</p>
+<p>赋值的方式是在注解的括号内以 value=”” 形式，多个属性之前用 ，隔开。</p>
+<p>在注解中定义属性时它的类型必须是 8 种基本数据类型外加 类、接口、注解及它们的数组。<br>注解中属性可以有默认值，默认值需要用 default 关键值指定。比如：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Target</span>(ElementType.TYPE)</span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> TestAnnotation &#123;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">id</span><span class="params">()</span> <span class="keyword">default</span> -1</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">msg</span><span class="params">()</span> <span class="keyword">default</span> "Hi"</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="Java-预置的注解"><a href="#Java-预置的注解" class="headerlink" title="Java 预置的注解"></a>Java 预置的注解</h2><p>JDK中预定义的一些注解</p>
+<ul>
+<li><p>@Override    ：检测被该注解标注的方法是否是继承自父类(接口)的</p>
+</li>
+<li><p>@Deprecated：该注解标注的内容，表示已过时</p>
+</li>
+<li><p>@SuppressWarnings：压制警告</p>
+<ul>
+<li>一般传递参数all  @SuppressWarnings(“all”)</li>
+</ul>
+</li>
+<li><p>@SafeVarargs:参数安全类型注解。它的目的是提醒开发者不要用参数做一些不安全的操作,它的存在会阻止编译器产生 unchecked 这样的警告。它是在 Java 1.7 的版本中加入的。</p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">@SafeVarargs <span class="comment">// Not actually safe!</span></span><br><span class="line">	static <span class="built_in">void</span> m(List&lt;String&gt;... <span class="built_in">string</span>Lists) &#123;</span><br><span class="line">	Object[] <span class="built_in">array</span> = <span class="built_in">string</span>Lists;</span><br><span class="line">	List&lt;Integer&gt; tmpList = Arrays.asList(<span class="number">42</span>);</span><br><span class="line">	<span class="built_in">array</span>[<span class="number">0</span>] = tmpList; <span class="comment">// Semantically invalid, but compiles without warnings</span></span><br><span class="line">	String s = <span class="built_in">string</span>Lists[<span class="number">0</span>].<span class="keyword">get</span>(<span class="number">0</span>); <span class="comment">// Oh no, ClassCastException at runtime!</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面的代码中，编译阶段不会报错，但是运行时会抛出 ClassCastException 这个异常，所以它虽然告诉开发者要妥善处理，但是开发者自己还是搞砸了。</p>
+</li>
+</ul>
+<p>Java 官方文档说，未来的版本会授权编译器对这种不安全的操作产生错误警告。</p>
+<ul>
+<li>@FunctionalInterface:函数式接口注解，这个是 Java 1.8 版本引入的新特性。函数式编程很火，所以 Java 8 也及时添加了这个特性。函数式接口 (Functional Interface) 就是一个具有一个方法的普通接口。比如<figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="meta">@FunctionalInterface</span></span><br><span class="line">public <span class="class"><span class="keyword">interface</span> <span class="title">Runnable</span> </span>&#123;</span><br><span class="line">    <span class="comment"><span class="markdown">/**</span></span></span><br><span class="line"><span class="comment"><span class="markdown"><span class="bullet">     * </span>When </span>an<span class="markdown"> object implementing interface <span class="xml"><span class="tag">&lt;<span class="name">code</span>&gt;</span></span>Runnable<span class="xml"><span class="tag">&lt;/<span class="name">code</span>&gt;</span></span> is used</span></span></span><br><span class="line"><span class="comment"><span class="markdown"><span class="bullet">     * </span>to create </span>a<span class="markdown"> thread, starting </span>the<span class="markdown"> thread causes </span>the<span class="markdown"> object's</span></span></span><br><span class="line"><span class="comment"><span class="markdown"><span class="bullet">     * </span><span class="xml"><span class="tag">&lt;<span class="name">code</span>&gt;</span></span>run<span class="xml"><span class="tag">&lt;/<span class="name">code</span>&gt;</span></span> method to be called in that separately executing</span></span></span><br><span class="line"><span class="comment"><span class="markdown"><span class="bullet">     * </span>thread.</span></span></span><br><span class="line"><span class="comment"><span class="markdown"><span class="bullet">     * </span><span class="xml"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span></span></span></span><br><span class="line"><span class="comment"><span class="markdown"><span class="bullet">     * </span>The general contract of </span>the<span class="markdown"> method <span class="xml"><span class="tag">&lt;<span class="name">code</span>&gt;</span></span>run<span class="xml"><span class="tag">&lt;/<span class="name">code</span>&gt;</span></span> is that it may</span></span></span><br><span class="line"><span class="comment"><span class="markdown"><span class="bullet">     * </span>take any action whatsoever.</span></span></span><br><span class="line"><span class="comment"><span class="markdown"><span class="code">     *</span></span></span></span><br><span class="line"><span class="comment"><span class="markdown"><span class="bullet">     * </span>@see     java.lang.Thread#run()</span></span></span><br><span class="line"><span class="comment"><span class="markdown"><span class="code">     */</span></span></span></span><br><span class="line">    public <span class="keyword">abstract</span> <span class="keyword">void</span> run();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+函数式接口标记有什么用，这个原因是函数式接口可以很容易转换为 Lambda 表达式。</li>
+</ul>
+<h2 id="注解与反射"><a href="#注解与反射" class="headerlink" title="注解与反射"></a>注解与反射</h2><p>首先可以通过 Class 对象的 isAnnotationPresent() 方法判断它是否应用了某个注解</p>
+<figure class="highlight zephir"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">boolean</span> isAnnotationPresent(<span class="class"><span class="keyword">Class</span>&lt;? <span class="keyword">extends</span> <span class="title">Annotation</span>&gt; <span class="title">annotationClass</span>) </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后通过 getAnnotation() 方法来获取 Annotation 对象。方法返回指定类型的注解。</p>
+<figure class="highlight aspectj"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> &lt;A <span class="keyword">extends</span> Annotation&gt; <span class="function">A <span class="title">getAnnotation</span><span class="params">(Class&lt;A&gt; annotationClass)</span> </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>或者是 getAnnotations() 方法。方法返回注解到这个元素上的所有注解。</p>
+<figure class="highlight cs"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> Annotation[] <span class="title">getAnnotations</span>(<span class="params"></span>)</span> &#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果获取到的 Annotation 如果不为 null，则就可以调用它们的属性方法了。比如</p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="meta">@TestAnnotation()</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">public</span> static void main(String[] args) &#123;</span><br><span class="line">		</span><br><span class="line">		boolean hasAnnotation = Test<span class="class">.<span class="keyword">class</span>.<span class="title">isAnnotationPresent</span></span>(TestAnnotation<span class="class">.<span class="keyword">class</span>);</span></span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span> ( hasAnnotation ) &#123;</span><br><span class="line">			TestAnnotation testAnnotation = Test<span class="class">.<span class="keyword">class</span>.<span class="title">getAnnotation</span></span>(TestAnnotation<span class="class">.<span class="keyword">class</span>);</span></span><br><span class="line">			</span><br><span class="line">			System.<span class="keyword">out</span>.println(<span class="string">"id:"</span>+testAnnotation.id());</span><br><span class="line">			System.<span class="keyword">out</span>.println(<span class="string">"msg:"</span>+testAnnotation.msg());</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="自定义注解"><a href="#自定义注解" class="headerlink" title="自定义注解"></a>自定义注解</h2><p>注解类</p>
+<figure class="highlight crystal"><table><tr><td class="code"><pre><span class="line">package com.java.api;</span><br><span class="line"></span><br><span class="line">import java.lang.<span class="keyword">annotation</span>.<span class="title">ElementType</span>;</span><br><span class="line">import java.lang.<span class="keyword">annotation</span>.<span class="title">Retention</span>;</span><br><span class="line">import java.lang.<span class="keyword">annotation</span>.<span class="title">RetentionPolicy</span>;</span><br><span class="line">import java.lang.<span class="keyword">annotation</span>.<span class="title">Target</span>;</span><br><span class="line"></span><br><span class="line">/**定义注解</span><br><span class="line"> * @Target：</span><br><span class="line"></span><br><span class="line">表示该注解可以用于什么地方，可能的ElementType参数有：</span><br><span class="line">CONSTRUCTOR：构造器的声明</span><br><span class="line">FIELD：域声明（包括<span class="class"><span class="keyword">enum</span>实例）</span></span><br><span class="line">LOCAL_VARIABLE：局部变量声明</span><br><span class="line">METHOD：方法声明</span><br><span class="line">PACKAGE：包声明</span><br><span class="line">PARAMETER：参数声明</span><br><span class="line">TYPE：类、接口（包括注解类型）或<span class="class"><span class="keyword">enum</span>声明</span></span><br><span class="line">@Retention</span><br><span class="line"></span><br><span class="line">表示需要在什么级别保存该注解信息。可选的RetentionPolicy参数包括：</span><br><span class="line">SOURCE：注解将被编译器丢弃</span><br><span class="line">CLASS：注解在<span class="class"><span class="keyword">class</span>文件中可用，但会被<span class="title">VM</span>丢弃</span></span><br><span class="line">RUNTIME：VM将在运行期间保留注解，因此可以通过反射机制读取注解的信息</span><br><span class="line"> * </span><br><span class="line"> * *<span class="regexp">/</span></span><br><span class="line"><span class="regexp">public class UseCase&#123;</span></span><br><span class="line"><span class="regexp">@Target(ElementType.METHOD)</span></span><br><span class="line"><span class="regexp">@Retention(RetentionPolicy.RUNTIME)</span></span><br><span class="line"><span class="regexp">public @interface UseCases&#123;</span></span><br><span class="line"><span class="regexp">    public String id();</span></span><br><span class="line"><span class="regexp">    public String description() default "no description";</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>使用注解</p>
+<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line">package com.java.api;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.java.api.UseCase.UseCases;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 使用注解：</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PasswordUtils</span> &#123;</span></span><br><span class="line">    @UseCases(id=<span class="string">"47"</span>,description=<span class="string">"Passwords must contain at least one numeric"</span>)</span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">validatePassword</span><span class="params">(<span class="keyword">String</span> password)</span> </span>&#123;</span><br><span class="line">         <span class="keyword">return</span> (password.matches(<span class="string">"\\w*\\d\\w*"</span>));</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     @UseCases(id =<span class="string">"48"</span>)</span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">String</span> <span class="title">encryptPassword</span><span class="params">(<span class="keyword">String</span> password)</span> </span>&#123;</span><br><span class="line">         <span class="keyword">return</span> <span class="keyword">new</span> StringBuilder(password).reverse().toString();</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>解析注解</p>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">package com.java.api;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.<span class="keyword">Method</span>;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.Collections;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.java.api.UseCase.UseCases;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> *解析注解：</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * */</span></span><br><span class="line"><span class="built_in">public</span> <span class="keyword">class</span> UserCaseTest &#123;</span><br><span class="line"><span class="built_in">public</span> static <span class="type">void</span> main(String[] args) &#123;</span><br><span class="line">     List&lt;<span class="type">Integer</span>&gt; useCases = <span class="built_in">new</span> ArrayList&lt;<span class="type">Integer</span>&gt;();</span><br><span class="line">     Collections.addAll(useCases, <span class="number">47</span>, <span class="number">48</span>, <span class="number">49</span>, <span class="number">50</span>);</span><br><span class="line">     trackUseCases(useCases, PasswordUtils.<span class="keyword">class</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">public</span> static <span class="type">void</span> trackUseCases(List&lt;<span class="type">Integer</span>&gt; useCases, <span class="keyword">Class</span>&lt;?&gt; cl) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">Method</span> m : cl.getDeclaredMethods()) &#123;</span><br><span class="line">        //获得注解的对象</span><br><span class="line">        UseCases uc = m.getAnnotation(UseCases.<span class="keyword">class</span>);</span><br><span class="line">        <span class="keyword">if</span> (uc != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">System</span>.<span class="keyword">out</span>.println("Found Use Case:" + uc.id() + " "</span><br><span class="line">                        + uc.description());</span><br><span class="line">            useCases.remove(<span class="built_in">new</span> <span class="type">Integer</span>(uc.id()));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i : useCases) &#123;</span><br><span class="line">        <span class="keyword">System</span>.<span class="keyword">out</span>.println("Warning: Missing use case-" + i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>java注解是附加在代码中的一些元信息，用于一些工具在编译、运行时进行解析和使用，起到说明、配置的功能。<br>注解不会也不能影响代码的实际逻辑，仅仅起到辅助性的作用。包含在 java.lang.annotation 包中</p>
+<p>java自定义注解和运行时靠反射获取注解。</p>
+<p>参考：</p>
+<p><a href="https://blog.csdn.net/briblue/article/details/73824058" target="_blank" rel="noopener">秒懂，Java注解</a></p>
+<p><a href="https://www.cnblogs.com/huojg-21442/p/7239846.html" target="_blank" rel="noopener">Java注解的自定义和使用</a></p>
+]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>笔记</tag>
+        <tag>java基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>java基础 - 时间类转换</title>
+    <url>/posts/8e91112d/</url>
+    <content><![CDATA[<ol>
+<li>Timestamp转LocalDateTime（mysql中datetime数据取出时是timestamp类型）<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">LocalDateTime localDateTime = <span class="keyword">new</span> <span class="constructor">Timestamp(System.<span class="params">currentTimeMillis</span>()</span>).<span class="keyword">to</span><span class="constructor">LocalDateTime()</span>; </span><br><span class="line"><span class="comment">//或者 </span></span><br><span class="line">LocalDateTime localDateTime1 = <span class="module-access"><span class="module"><span class="identifier">LocalDateTime</span>.</span></span><span class="keyword">of</span><span class="constructor">Instant(<span class="params">new</span> Timestamp(System.<span class="params">currentTimeMillis</span>()</span>).<span class="keyword">to</span><span class="constructor">Instant()</span>,<span class="module-access"><span class="module"><span class="identifier">ZoneId</span>.</span></span>system<span class="constructor">Default()</span>);</span><br></pre></td></tr></table></figure>
+注意转换之后会有字符T存在<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">String str = localDateTime.format(<span class="module-access"><span class="module"><span class="identifier">DateTimeFormatter</span>.</span></span><span class="keyword">of</span><span class="constructor">Pattern(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>)</span>);<span class="comment">//去掉T和毫秒值</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>2.LocalDateTime转Timestamp</p>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="type">Timestamp</span> <span class="type">timestamp</span> = <span class="type">Timestamp</span>.valueOf(LocalDateTime.now());</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><p>Date转LocalDate</p>
+<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">LocalDate localDate = <span class="module-access"><span class="module"><span class="identifier">LocalDate</span>.</span></span><span class="keyword">of</span><span class="constructor">Instant(<span class="params">new</span> Date()</span>.<span class="keyword">to</span><span class="constructor">Instant()</span>, <span class="module-access"><span class="module"><span class="identifier">ZoneId</span>.</span></span>system<span class="constructor">Default()</span>); </span><br><span class="line"><span class="comment">//或者 </span></span><br><span class="line">LocalDate localDate1 = <span class="keyword">new</span> <span class="constructor">Date()</span>.<span class="keyword">to</span><span class="constructor">Instant()</span>.at<span class="constructor">Zone(ZoneId.<span class="params">systemDefault</span>()</span>).<span class="keyword">to</span><span class="constructor">LocalDate()</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>LocalDate转Date</p>
+<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">Date date = <span class="module-access"><span class="module"><span class="identifier">Date</span>.</span></span>from(<span class="module-access"><span class="module"><span class="identifier">LocalDate</span>.</span></span>now<span class="literal">()</span>.at<span class="constructor">StartOfDay()</span>.at<span class="constructor">Zone(ZoneId.<span class="params">systemDefault</span>()</span>).<span class="keyword">to</span><span class="constructor">Instant()</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Date转LocalDateTime</p>
+<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">LocalDateTime localDateTime = <span class="module-access"><span class="module"><span class="identifier">LocalDateTime</span>.</span></span><span class="keyword">of</span><span class="constructor">Instant(<span class="params">new</span> Date()</span>.<span class="keyword">to</span><span class="constructor">Instant()</span>,<span class="module-access"><span class="module"><span class="identifier">ZoneId</span>.</span></span>system<span class="constructor">Default()</span>);</span><br><span class="line"><span class="comment">//或者</span></span><br><span class="line">LocalDateTime localDateTime1 = <span class="keyword">new</span> <span class="constructor">Date()</span>.<span class="keyword">to</span><span class="constructor">Instant()</span>.at<span class="constructor">Zone(ZoneId.<span class="params">systemDefault</span>()</span>).<span class="keyword">to</span><span class="constructor">LocalDateTime()</span>;</span><br></pre></td></tr></table></figure></li>
+<li><p>LocalDateTime转LocalDate</p>
+<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">LocalDate localDate = <span class="module-access"><span class="module"><span class="identifier">LocalDateTime</span>.</span></span>now<span class="literal">()</span>.<span class="keyword">to</span><span class="constructor">LocalDate()</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>LocalDate转LocalDateTime</p>
+<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">LocalDateTime localDateTime = <span class="module-access"><span class="module"><span class="identifier">LocalDate</span>.</span></span>now<span class="literal">()</span>.at<span class="constructor">StartOfDay()</span>.at<span class="constructor">Zone(ZoneId.<span class="params">systemDefault</span>()</span>).<span class="keyword">to</span><span class="constructor">LocalDateTime()</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>LocalDateTime转Date</p>
+<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">Date date = <span class="module-access"><span class="module"><span class="identifier">Date</span>.</span></span>from(<span class="module-access"><span class="module"><span class="identifier">LocalDateTime</span>.</span></span>now<span class="literal">()</span>.at<span class="constructor">Zone(ZoneId.<span class="params">systemDefault</span>()</span>).<span class="keyword">to</span><span class="constructor">Instant()</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>String转LocalDate</p>
+<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">LocalDate localDate = <span class="module-access"><span class="module"><span class="identifier">LocalDate</span>.</span></span>parse(<span class="string">"2018-09-15"</span>, <span class="module-access"><span class="module"><span class="identifier">DateTimeFormatter</span>.</span></span><span class="keyword">of</span><span class="constructor">Pattern(<span class="string">"yyyy-MM-dd"</span>)</span>);</span><br></pre></td></tr></table></figure>
+<p>注意String中是‘-’连接则解析方法也必须是‘-’连接，否则解析不了</p>
+</li>
+<li><p>String转LocalDateTime</p>
+<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">LocalDateTime localDateTime1 = <span class="module-access"><span class="module"><span class="identifier">LocalDateTime</span>.</span></span>parse(<span class="string">"2019-05-20 15:33:24"</span>,<span class="module-access"><span class="module"><span class="identifier">DateTimeFormatter</span>.</span></span><span class="keyword">of</span><span class="constructor">Pattern(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>)</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>String转Date</p>
+<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">String  dateStr = <span class="keyword">new</span> <span class="constructor">SimpleDateFormat(<span class="string">"yyyy-MM-dd"</span>)</span>.format(<span class="module-access"><span class="module"><span class="identifier">Date</span>.</span></span>from(<span class="module-access"><span class="module"><span class="identifier">LocalDate</span>.</span></span>now<span class="literal">()</span>.at<span class="constructor">StartOfDay()</span>.at<span class="constructor">Zone(ZoneId.<span class="params">systemDefault</span>()</span>).<span class="keyword">to</span><span class="constructor">Instant()</span>))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>String转Timestamp</p>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="type">Timestamp</span> <span class="type">timestamp</span> = <span class="type">Timestamp</span>.valueOf("2019-5-23 13:24:45");</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Date转String</p>
+<figure class="highlight lasso"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Date</span> <span class="built_in">date</span> = <span class="literal">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd"</span>).parse(<span class="string">"2018-12-12"</span>)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>14.LocalDateTime转String</p>
+<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">String timeStr = <span class="module-access"><span class="module"><span class="identifier">DateTimeFormatter</span>.</span></span><span class="keyword">of</span><span class="constructor">Pattern(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>)</span>.format(<span class="module-access"><span class="module"><span class="identifier">LocalDateTime</span>.</span></span>now<span class="literal">()</span>)</span><br></pre></td></tr></table></figure>
+
+<ol start="15">
+<li><p>Timestamp转String</p>
+<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">String timeStr1 = <span class="keyword">new</span> <span class="constructor">SimpleDateFormat(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>)</span>.format(<span class="keyword">new</span> <span class="constructor">Timestamp(System.<span class="params">currentTimeMillis</span>()</span>));  </span><br><span class="line">String timeStr2 = <span class="keyword">new</span> <span class="constructor">Timestamp(System.<span class="params">currentTimeMillis</span>()</span>).<span class="keyword">to</span><span class="constructor">String()</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>取Timestamp Value</p>
+<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">long timestampValue0 = <span class="module-access"><span class="module"><span class="identifier">System</span>.</span></span>current<span class="constructor">TimeMillis()</span>;</span><br><span class="line"></span><br><span class="line">long timestampValue1 = <span class="keyword">new</span> <span class="constructor">Timestamp(System.<span class="params">currentTimeMillis</span>()</span>).get<span class="constructor">Time()</span>;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>参考：<br><a href="https://my.oschina.net/u/4134962/blog/3051916" target="_blank" rel="noopener">Timestamp、LocalDateTime、DateTime、String、LocalDate、Date转换</a></p>
+]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>笔记</tag>
+        <tag>java基础</tag>
       </tags>
   </entry>
   <entry>
@@ -345,33 +624,6 @@
       </tags>
   </entry>
   <entry>
-    <title>tools - chocolatey</title>
-    <url>/posts/af013f3b/</url>
-    <content><![CDATA[<p>Windows 基础开发环境包管理工具<code>chocolatey</code>。</p>
-<a id="more"></a>
-
-<h4 id="安装chocolatey"><a href="#安装chocolatey" class="headerlink" title="安装chocolatey"></a>安装chocolatey</h4><p>以管理员权限运行cmd.exe或powershell.exe</p>
-<p>cmd运行：</p>
-<figure class="highlight mel"><table><tr><td class="code"><pre><span class="line">@"%SystemRoot%\System32\WindowsPowerShell\v1<span class="number">.0</span>\powershell.exe<span class="string">" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "</span>iex ((New-Object System.Net.WebClient).DownloadString(<span class="string">'https://chocolatey.org/install.ps1'</span>))<span class="string">" &amp;&amp; SET "</span>PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin<span class="string">"</span></span><br></pre></td></tr></table></figure>
-<p>powershell运行：</p>
-<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).<span class="constructor">DownloadString('<span class="params">https</span>:<span class="operator">/</span><span class="operator">/</span><span class="params">chocolatey</span>.<span class="params">org</span><span class="operator">/</span><span class="params">install</span>.<span class="params">ps1</span>')</span>)</span><br></pre></td></tr></table></figure>
-<p>安装完成，运行choco 或 choco -?检查一下是否安装正确</p>
-<p>chocolatey安装位置：<code>C:\ProgramData\Chocolatey</code>。无法配置包安装位置。<br>参考文章<a href="https://blog.csdn.net/u013205877/article/details/78993311" target="_blank" rel="noopener">Windows 神器 Cmder Scoop Chocolatey Listary Seer</a>，可安装的应用程序默认安装在 <code>C:\Program Files\</code>，实际待考究。</p>
-<h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">search - 搜索包 choco search something</span><br><span class="line">list - 列出包 choco list -lo 或者 choco list --local-only</span><br><span class="line">install - 安装 choco install baretail</span><br><span class="line">pin - 固定包的版本，防止包被升级 choco pin windirstat</span><br><span class="line">upgrade - 安装包的升级 choco<span class="built_in"> upgrade </span>baretail</span><br><span class="line">uninstall - 安装包的卸载 choco uninstall baretail</span><br><span class="line">安装Ruby Gem - choco install compass -source ruby</span><br><span class="line">安装Python Egg - choco install sphynx -source python</span><br><span class="line">安装IIS服务器特性 - choco install IIS -source windowsfeatures</span><br><span class="line">安装Webpi特性 - choco install IIS7.5Express -source webpi</span><br><span class="line"></span><br><span class="line">列出Windows系统已安装的软件 - choco list -li 或者 choco list -lai</span><br><span class="line">升级所有已安装的包 - choco<span class="built_in"> upgrade </span>all -y</span><br></pre></td></tr></table></figure>
-
-<p>window 下开发常用的开发环境应用</p>
-<figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line">choco <span class="keyword">install </span>autohotkey.portable    <span class="comment">#安装 AutoHotkey (Portable)</span></span><br><span class="line">choco <span class="keyword">install </span>nodejs.<span class="keyword">install </span> <span class="comment">#安装 node</span></span><br><span class="line">choco <span class="keyword">install </span>git.<span class="keyword">install </span>    <span class="comment">#安装 git</span></span><br><span class="line">choco <span class="keyword">install </span>ruby            <span class="comment">#安装 ruby</span></span><br><span class="line">choco <span class="keyword">install </span>python          <span class="comment">#安装 python</span></span><br><span class="line">choco <span class="keyword">install </span><span class="keyword">jdk8 </span>           <span class="comment">#安装 JDK8</span></span><br><span class="line">choco <span class="keyword">install </span>googlechrome    <span class="comment">#安装 Chrome</span></span><br><span class="line">choco <span class="keyword">install </span>google-chrome-x64 <span class="comment">#Google Chrome (64-bit only)</span></span><br><span class="line">choco <span class="keyword">install </span>firefox         <span class="comment">#安装 firefox</span></span><br><span class="line">choco <span class="keyword">install </span>notepadplusplus.<span class="keyword">install </span><span class="comment">#安装 notepad++</span></span><br><span class="line">choco <span class="keyword">install </span>Atom                    <span class="comment">#安装 Atom</span></span><br><span class="line">choco <span class="keyword">install </span><span class="keyword">SublimeText3 </span>           <span class="comment">#安装 SublimeText3</span></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>tools</category>
-      </categories>
-      <tags>
-        <tag>Windows</tag>
-        <tag>tools</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>tools - scoop</title>
     <url>/posts/d89cad7e/</url>
     <content><![CDATA[<p>Windows 基础开发环境包管理工具<code>scoop</code>。</p>
@@ -403,6 +655,33 @@
 <p>解决办法: 把<code>Scoop Apps</code>目录加到<code>path</code>里, 目录在<code>C:\Users\fcying\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Scoop Apps</code></p>
 <p>参考：<a href="https://www.jianshu.com/p/bb0ba62b519c" target="_blank" rel="noopener">Windows下的包管理工具scoop</a><br>常用软件git,curl,7zip安装；有些需要管理员权限的软件就需要先安装sudo，就是Linux中的那个sudo；</p>
 <figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line"><span class="keyword">scoop </span><span class="keyword">install </span>sudo</span><br><span class="line"><span class="keyword">scoop </span><span class="keyword">install </span>git curl <span class="number">7</span>zip</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>tools</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+        <tag>tools</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>tools - chocolatey</title>
+    <url>/posts/af013f3b/</url>
+    <content><![CDATA[<p>Windows 基础开发环境包管理工具<code>chocolatey</code>。</p>
+<a id="more"></a>
+
+<h4 id="安装chocolatey"><a href="#安装chocolatey" class="headerlink" title="安装chocolatey"></a>安装chocolatey</h4><p>以管理员权限运行cmd.exe或powershell.exe</p>
+<p>cmd运行：</p>
+<figure class="highlight mel"><table><tr><td class="code"><pre><span class="line">@"%SystemRoot%\System32\WindowsPowerShell\v1<span class="number">.0</span>\powershell.exe<span class="string">" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "</span>iex ((New-Object System.Net.WebClient).DownloadString(<span class="string">'https://chocolatey.org/install.ps1'</span>))<span class="string">" &amp;&amp; SET "</span>PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin<span class="string">"</span></span><br></pre></td></tr></table></figure>
+<p>powershell运行：</p>
+<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).<span class="constructor">DownloadString('<span class="params">https</span>:<span class="operator">/</span><span class="operator">/</span><span class="params">chocolatey</span>.<span class="params">org</span><span class="operator">/</span><span class="params">install</span>.<span class="params">ps1</span>')</span>)</span><br></pre></td></tr></table></figure>
+<p>安装完成，运行choco 或 choco -?检查一下是否安装正确</p>
+<p>chocolatey安装位置：<code>C:\ProgramData\Chocolatey</code>。无法配置包安装位置。<br>参考文章<a href="https://blog.csdn.net/u013205877/article/details/78993311" target="_blank" rel="noopener">Windows 神器 Cmder Scoop Chocolatey Listary Seer</a>，可安装的应用程序默认安装在 <code>C:\Program Files\</code>，实际待考究。</p>
+<h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">search - 搜索包 choco search something</span><br><span class="line">list - 列出包 choco list -lo 或者 choco list --local-only</span><br><span class="line">install - 安装 choco install baretail</span><br><span class="line">pin - 固定包的版本，防止包被升级 choco pin windirstat</span><br><span class="line">upgrade - 安装包的升级 choco<span class="built_in"> upgrade </span>baretail</span><br><span class="line">uninstall - 安装包的卸载 choco uninstall baretail</span><br><span class="line">安装Ruby Gem - choco install compass -source ruby</span><br><span class="line">安装Python Egg - choco install sphynx -source python</span><br><span class="line">安装IIS服务器特性 - choco install IIS -source windowsfeatures</span><br><span class="line">安装Webpi特性 - choco install IIS7.5Express -source webpi</span><br><span class="line"></span><br><span class="line">列出Windows系统已安装的软件 - choco list -li 或者 choco list -lai</span><br><span class="line">升级所有已安装的包 - choco<span class="built_in"> upgrade </span>all -y</span><br></pre></td></tr></table></figure>
+
+<p>window 下开发常用的开发环境应用</p>
+<figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line">choco <span class="keyword">install </span>autohotkey.portable    <span class="comment">#安装 AutoHotkey (Portable)</span></span><br><span class="line">choco <span class="keyword">install </span>nodejs.<span class="keyword">install </span> <span class="comment">#安装 node</span></span><br><span class="line">choco <span class="keyword">install </span>git.<span class="keyword">install </span>    <span class="comment">#安装 git</span></span><br><span class="line">choco <span class="keyword">install </span>ruby            <span class="comment">#安装 ruby</span></span><br><span class="line">choco <span class="keyword">install </span>python          <span class="comment">#安装 python</span></span><br><span class="line">choco <span class="keyword">install </span><span class="keyword">jdk8 </span>           <span class="comment">#安装 JDK8</span></span><br><span class="line">choco <span class="keyword">install </span>googlechrome    <span class="comment">#安装 Chrome</span></span><br><span class="line">choco <span class="keyword">install </span>google-chrome-x64 <span class="comment">#Google Chrome (64-bit only)</span></span><br><span class="line">choco <span class="keyword">install </span>firefox         <span class="comment">#安装 firefox</span></span><br><span class="line">choco <span class="keyword">install </span>notepadplusplus.<span class="keyword">install </span><span class="comment">#安装 notepad++</span></span><br><span class="line">choco <span class="keyword">install </span>Atom                    <span class="comment">#安装 Atom</span></span><br><span class="line">choco <span class="keyword">install </span><span class="keyword">SublimeText3 </span>           <span class="comment">#安装 SublimeText3</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
       <categories>
         <category>tools</category>
       </categories>
