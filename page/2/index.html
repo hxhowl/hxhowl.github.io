@@ -19,7 +19,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"blog.hxhowl.site","root":"/","scheme":"Gemini","version":"8.0.0-rc.3","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"blog.hxhowl.site","root":"/","scheme":"Gemini","version":"8.0.0-rc.3","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="A personal blog about coding and life,keep blogging">
@@ -423,7 +423,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-08-20 17:34:51" itemprop="dateModified" datetime="2023-08-20T17:34:51+08:00">2023-08-20</time>
+                <time title="修改时间：2024-01-20 14:32:32" itemprop="dateModified" datetime="2024-01-20T14:32:32+08:00">2024-01-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -482,31 +482,19 @@
 
       
           <h3 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h3><ul>
-<li><code>public String()</code> :初始化新创建的 String对象，以使其表示空字符序列。</li>
-<li><code>public String(char[] value)</code> :通过当前参数中的字符数组来构造新的String。</li>
-<li><code>public String(byte[] bytes)</code> :通过使用平台的默认字符集解码当前参数中的字节数组来构造新的String</li>
-</ul>
-<h3 id="判断功能的方法"><a href="#判断功能的方法" class="headerlink" title="判断功能的方法"></a>判断功能的方法</h3><ul>
-<li><code>public boolean equals (Object anObject)</code> :将此字符串与指定对象进行比较。</li>
-<li><code>public boolean equalsIgnoreCase (String anotherString)</code> :将此字符串与指定对象进行比较，忽略大小<br>写。</li>
-</ul>
-<h3 id="获取功能的方法"><a href="#获取功能的方法" class="headerlink" title="获取功能的方法"></a>获取功能的方法</h3><ul>
-<li><code>public int length ()</code> :返回此字符串的长度。</li>
-<li><code>public String concat (String str)</code> :将指定的字符串连接到该字符串的末尾。</li>
-<li><code>public char charAt (int index)</code> :返回指定索引处的 char值。</li>
-<li><code>public int indexOf (String str)</code> :返回指定子字符串第一次出现在该字符串内的索引。</li>
-<li><code>public String substring (int beginIndex)</code> :返回一个子字符串，从beginIndex开始截取字符串到字符<br>串结尾。</li>
-<li><code>public String substring (int beginIndex, int endIndex)</code> :返回一个子字符串，从beginIndex到<br>endIndex截取字符串。含beginIndex，不含endIndex。例如：<code>s.substring(0, s.length())</code></li>
-</ul>
-<h3 id="转换功能的方法"><a href="#转换功能的方法" class="headerlink" title="转换功能的方法"></a>转换功能的方法</h3><ul>
-<li><code>public char[] toCharArray ()</code> :将此字符串转换为新的字符数组。</li>
-<li><code>public byte[] getBytes ()</code> :使用平台的默认字符集将该 String编码转换为新的字节数组。</li>
-<li><code>public String replace (CharSequence target, CharSequence replacement)</code> :将与target匹配的字符串使<br>用replacement字符串替换。</li>
-</ul>
-<h3 id="分割功能的方法"><a href="#分割功能的方法" class="headerlink" title="分割功能的方法"></a>分割功能的方法</h3><ul>
-<li><code>public String[] split(String regex)</code> :将此字符串按照给定的regex(规则)拆分为字符串数组</li>
-</ul>
-
+<li><p><code>public String()</code> :初始化新创建的 String对象，以使其表示空字符序列。</p>
+</li>
+<li><p><code>public String(char[] value)</code> :通过当前参数中的字符数组来构造新的String。</p>
+</li>
+<li><p><code>public String(byte[] bytes)</code> :通过使用平台的默认字符集解码当前参数中的字节数组来构造新的String</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/bbda4b22/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -566,7 +554,7 @@
 <div class="copyright">
   
   &copy; 2020 – 
-  <span itemprop="copyrightYear">2023</span>
+  <span itemprop="copyrightYear">2024</span>
   <span class="with-love">
     <i class="fa fa-sun"></i>
   </span>
@@ -647,7 +635,7 @@
         });
     }
 
-    let { app_id, app_key, server_url } = {"enable":true,"app_id":"G2TFniscd3cKjE9bPrz0G1kb-gzGzoHsz","app_key":"Va71aPBSDKQB3BHNo5f5AAwL","server_url":null,"security":false};
+    let { app_id, app_key, server_url } = {"enable":true,"app_id":"G2TFniscd3cKjE9bPrz0G1kb-gzGzoHsz","app_key":"Va71aPBSDKQB3BHNo5f5AAwL","server_url":"https://blog.hxhowl.site","security":false};
     function fetchData(api_server) {
       var Counter = (method, url, data) => {
         return fetch(`${api_server}/1.1${url}`, {
@@ -731,11 +719,12 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
     new Valine(Object.assign({
       el  : '#valine-comments',
       path: location.pathname,
-    }, {"enable":true,"appId":"G2TFniscd3cKjE9bPrz0G1kb-gzGzoHsz","appKey":"Va71aPBSDKQB3BHNo5f5AAwL","placeholder":"Just go go","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"language":"zh-cn","visitor":false,"comment_count":true,"recordIP":false,"serverURLs":null}
+    }, {"enable":true,"appId":"G2TFniscd3cKjE9bPrz0G1kb-gzGzoHsz","appKey":"Va71aPBSDKQB3BHNo5f5AAwL","placeholder":"Just go go","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"language":"zh-cn","visitor":false,"comment_count":true,"recordIP":false,"serverURLs":"https://blog.hxhowl.site"}
     ));
   }, window.Valine);
 });
 </script>
+
 
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
 </html>

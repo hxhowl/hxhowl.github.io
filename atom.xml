@@ -163,18 +163,12 @@
     <link href="blog.hxhowl.site/posts/8e91112d/"/>
     <id>blog.hxhowl.site/posts/8e91112d/</id>
     <published>2019-05-23T09:04:07.000Z</published>
-    <updated>2023-08-20T09:33:50.019Z</updated>
+    <updated>2024-01-20T08:24:56.578Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;ol&gt;
-&lt;li&gt;Timestamp转LocalDateTime（mysql中datetime数据取出时是timestamp类型）&lt;figure class=&quot;highlight reasonml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td
-        
-      
+      &lt;ol&gt;
+&lt;li&gt;Timestamp转LocalDateTime（mysql中datetime数据取出时是timestamp类型）&lt;figure class=&quot;highlight reasonml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;LocalDateTime localDateTime = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;constructor&quot;&gt;Timestamp(System.&lt;span class=&quot;params&quot;&gt;currentTimeMillis&lt;/span&gt;()&lt;/span&gt;).&lt;span class=&quot;keyword&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;constructor&quot;&gt;LocalDateTime()&lt;/span&gt;; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//或者 &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;LocalDateTime localDateTime1 = &lt;span class=&quot;module-access&quot;&gt;&lt;span class=&quot;module&quot;&gt;&lt;span class=&quot;identifier&quot;&gt;LocalDateTime&lt;/span&gt;.&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;of&lt;/span&gt;&lt;span class=&quot;constructor&quot;&gt;Instant(&lt;span class=&quot;params&quot;&gt;new&lt;/span&gt; Timestamp(System.&lt;span class=&quot;params&quot;&gt;currentTimeMillis&lt;/span&gt;()&lt;/span&gt;).&lt;span class=&quot;keyword&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;constructor&quot;&gt;Instant()&lt;/span&gt;,&lt;span class=&quot;module-access&quot;&gt;&lt;span class=&quot;module&quot;&gt;&lt;span class=&quot;identifier&quot;&gt;ZoneId&lt;/span&gt;.&lt;/span&gt;&lt;/span&gt;system&lt;span class=&quot;constructor&quot;&gt;Default()&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
@@ -306,18 +300,16 @@
     <link href="blog.hxhowl.site/posts/bbda4b22/"/>
     <id>blog.hxhowl.site/posts/bbda4b22/</id>
     <published>2019-03-06T08:28:43.000Z</published>
-    <updated>2023-08-20T09:34:51.404Z</updated>
+    <updated>2024-01-20T06:32:32.138Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h3 id=&quot;构造方法&quot;&gt;&lt;a href=&quot;#构造方法&quot; class=&quot;headerlink&quot; title=&quot;构造方法&quot;&gt;&lt;/a&gt;构造方法&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;public String()&lt;/code&gt; :初始化新创建的
-        
-      
+      &lt;h3 id=&quot;构造方法&quot;&gt;&lt;a href=&quot;#构造方法&quot; class=&quot;headerlink&quot; title=&quot;构造方法&quot;&gt;&lt;/a&gt;构造方法&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;public String()&lt;/code&gt; :初始化新创建的 String对象，以使其表示空字符序列。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;public String(char[] value)&lt;/code&gt; :通过当前参数中的字符数组来构造新的String。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;public String(byte[] bytes)&lt;/code&gt; :通过使用平台的默认字符集解码当前参数中的字节数组来构造新的String&lt;/p&gt;
     
     </summary>
     
