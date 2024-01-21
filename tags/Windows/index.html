@@ -19,7 +19,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"blog.hxhowl.site","root":"/","scheme":"Gemini","version":"8.0.0-rc.3","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"blog.hxhowl.site","root":"/","scheme":"Gemini","version":"8.0.0-rc.3","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="A personal blog about coding and life,keep blogging">
@@ -517,7 +517,7 @@
         });
     }
 
-    let { app_id, app_key, server_url } = {"enable":true,"app_id":"G2TFniscd3cKjE9bPrz0G1kb-gzGzoHsz","app_key":"Va71aPBSDKQB3BHNo5f5AAwL","server_url":"https://blog.hxhowl.site","security":false};
+    let { app_id, app_key, server_url } = {"enable":true,"app_id":"54BeqijO3W4t2Ub51Zyz32xg-MdYXbMMI","app_key":"BhzALDwfxypNydDEWwpdMmKW","server_url":"https://blog.hxhowl.site","security":false};
     function fetchData(api_server) {
       var Counter = (method, url, data) => {
         return fetch(`${api_server}/1.1${url}`, {
@@ -601,12 +601,11 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
     new Valine(Object.assign({
       el  : '#valine-comments',
       path: location.pathname,
-    }, {"enable":true,"appId":"G2TFniscd3cKjE9bPrz0G1kb-gzGzoHsz","appKey":"Va71aPBSDKQB3BHNo5f5AAwL","placeholder":"Just go go","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"language":"zh-cn","visitor":false,"comment_count":true,"recordIP":false,"serverURLs":"https://blog.hxhowl.site"}
+    }, {"enable":true,"appId":"54BeqijO3W4t2Ub51Zyz32xg-MdYXbMMI","appKey":"BhzALDwfxypNydDEWwpdMmKW","placeholder":"Just go go","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"language":"zh-cn","visitor":false,"comment_count":true,"recordIP":false,"serverURLs":"https://blog.hxhowl.site"}
     ));
   }, window.Valine);
 });
 </script>
-
 
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
 </html>
