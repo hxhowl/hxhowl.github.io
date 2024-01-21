@@ -21,6 +21,61 @@
 ]]></content>
   </entry>
   <entry>
+    <title>blog - Windows下hexo+github</title>
+    <url>/posts/ee60a25f/</url>
+    <content><![CDATA[<p>Windows环境下配置<code>hexo</code>，并发布到<code>github.io</code>。</p>
+<a id="more"></a>
+
+<h3 id="Hexo安装"><a href="#Hexo安装" class="headerlink" title="Hexo安装"></a>Hexo安装</h3><p>参考<a href="https://hexo.io/docs/" target="_blank" rel="noopener">hexo官方文档</a>,Windows下配置<code>hexo</code>，我这边命令行工具用的是自带的<code>PowerShell</code>。</p>
+<ol>
+<li>安装先下载安装<a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a>和<a href="https://git-scm.com/" target="_blank" rel="noopener">git</a>。在安装<code>node.js</code>时，记得勾选<code>Add to PATH</code>，否则要手动配置环境变量。安装完分别在<code>PowerShell</code>查看版本，查看是否安装成功：<figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">git <span class="keyword">version</span></span><br><span class="line"><span class="keyword">node</span> <span class="title">-v</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>npm全局安装hexo命令，如果安装失败出现权限问题，试试前面加上<code>sudo</code>（命令需要先安装），或者以管理员身份打开<code>PowerShell</code>，然后执行命令。<figure class="highlight avrasm"><table><tr><td class="code"><pre><span class="line">$ npm install -g hexo-<span class="keyword">cli</span></span><br></pre></td></tr></table></figure></li>
+<li>创建一个文件夹，用于存放hexo文件,这里以<code>D:\blog\hexo</code>为例。</li>
+<li><code>hexo -v</code>检查版本，确认hexo命令是否安装成功，执行记录如下<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">PS</span> <span class="string">D:\blog\hexo&gt;</span> <span class="string">hexo</span> <span class="string">-v</span></span><br><span class="line"><span class="attr">hexo-cli:</span> <span class="number">3.1</span><span class="number">.0</span></span><br><span class="line"><span class="attr">os:</span> <span class="string">Windows_NT</span> <span class="number">10.0</span><span class="number">.18363</span> <span class="string">win32</span> <span class="string">x64</span></span><br><span class="line"><span class="attr">node:</span> <span class="number">14.2</span><span class="number">.0</span></span><br><span class="line"><span class="attr">v8:</span> <span class="number">8.1</span><span class="number">.307</span><span class="number">.31</span><span class="string">-node.33</span></span><br><span class="line"><span class="attr">uv:</span> <span class="number">1.37</span><span class="number">.0</span></span><br><span class="line"><span class="attr">zlib:</span> <span class="number">1.2</span><span class="number">.11</span></span><br><span class="line"><span class="attr">brotli:</span> <span class="number">1.0</span><span class="number">.7</span></span><br><span class="line"><span class="attr">ares:</span> <span class="number">1.16</span><span class="number">.0</span></span><br><span class="line"><span class="attr">modules:</span> <span class="number">83</span></span><br><span class="line"><span class="attr">nghttp2:</span> <span class="number">1.40</span><span class="number">.0</span></span><br><span class="line"><span class="attr">napi:</span> <span class="number">6</span></span><br><span class="line"><span class="attr">llhttp:</span> <span class="number">2.0</span><span class="number">.4</span></span><br><span class="line"><span class="attr">openssl:</span> <span class="number">1.1</span><span class="string">.1g</span></span><br><span class="line"><span class="attr">cldr:</span> <span class="number">36.1</span></span><br><span class="line"><span class="attr">icu:</span> <span class="number">66.1</span></span><br><span class="line"><span class="attr">tz:</span> <span class="string">2019c</span></span><br><span class="line"><span class="attr">unicode:</span> <span class="number">13.0</span></span><br></pre></td></tr></table></figure></li>
+<li>在前面创建好的文件夹下执行<code>hexo init</code></li>
+<li>测试配置是否成功，依次执行<code>hexo clean</code>,<code>hexo generate</code>,<code>hexo server</code>。然后在浏览器打开<code>http://localhost:4000</code>，成功显示网页说明配置成功。如果有遇到下面警告，参考<a href="https://zhuanlan.zhihu.com/p/136552969" target="_blank" rel="noopener">部署Hexo踩过的坑—node14.0配置hexo</a> ，应该是nodejs版本过高导致的，不过感觉不影响使用。<figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">(<span class="keyword">node</span><span class="title">:9968</span>) Warning: Accessing non-existent <span class="keyword">property</span><span class="title"> </span>'lineno' of module exports inside circular dependency</span><br><span class="line">(<span class="keyword">node</span><span class="title">:9968</span>) Warning: Accessing non-existent <span class="keyword">property</span><span class="title"> </span>'column' of module exports inside circular dependency</span><br><span class="line">(<span class="keyword">node</span><span class="title">:9968</span>) Warning: Accessing non-existent <span class="keyword">property</span><span class="title"> </span>'filename' of module exports inside circular dependency</span><br><span class="line">(<span class="keyword">node</span><span class="title">:9968</span>) Warning: Accessing non-existent <span class="keyword">property</span><span class="title"> </span>'lineno' of module exports inside circular dependency</span><br><span class="line">(<span class="keyword">node</span><span class="title">:9968</span>) Warning: Accessing non-existent <span class="keyword">property</span><span class="title"> </span>'column' of module exports inside circular dependency</span><br><span class="line">(<span class="keyword">node</span><span class="title">:9968</span>) Warning: Accessing non-existent <span class="keyword">property</span><span class="title"> </span>'filename' of module exports inside circular dependency</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+</li>
+</ol>
+<ol start="7">
+<li>换主题以<code>next</code>主题为例,在<code>D:\blog\hexo</code>下载主题，操作记录如下：<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">PS D:\blog\hexo&gt; git clone http<span class="variable">s:</span>//github.<span class="keyword">com</span>/<span class="keyword">next</span>-theme/hexo-theme-<span class="keyword">next</span> themes/<span class="keyword">next</span></span><br></pre></td></tr></table></figure>
+然后在<code>D:\blog\hexo</code>下<code>_config.yml</code>文件内找到<code>theme: landscape</code>,修改为<code>theme: next</code>,将默认主题改为next。</li>
+</ol>
+<h3 id="github配置"><a href="#github配置" class="headerlink" title="github配置"></a>github配置</h3><ol>
+<li><p>创建一个repo，名称为<code>yourname.github.io</code>, 其中<code>yourname</code>是你的github名称,不可以为其他名称。项目为公开项目，否则后面发布后会404。</p>
+</li>
+<li><p>在<code>powershell</code>下配置git用户名和邮箱，可以和github一致。</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">git<span class="built_in"> config </span>--global user.name <span class="string">"yourname"</span></span><br><span class="line">git<span class="built_in"> config </span>--global user.email <span class="string">"yourmail"</span></span><br></pre></td></tr></table></figure></li>
+<li><p>指定邮箱生成ssh秘钥，秘钥默认存放在<code>C:\Users\huangchp\.ssh</code>。</p>
+<figure class="highlight 1c"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"youremail@example.com</span></span><br></pre></td></tr></table></figure></li>
+<li><p>将上面获取的ssh放到github中，操作如下：右上角头像右键-&gt;<code>Settings</code>-&gt;<code>SSH and GPG keys</code> -&gt; <code>New SSH key</code>,把刚刚ssh用的邮箱填入<code>Title</code>框内，ssh生成的<code>id_rsa.pub</code>内容填入<code>Key</code>框内，点击<code>Add ssh key</code>保存。</p>
+</li>
+<li><p><code>PowerShell</code>执行<code>ssh -T git@github.com</code>验证ssh配置</p>
+</li>
+<li><p><code>hexo</code>目录下<code>_config.yml</code>添加发布配置</p>
+<figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line">  <span class="attribute">type</span>: git</span><br><span class="line">  <span class="attribute">repo</span>: <span class="attribute">https</span>:<span class="comment">//github.com/YourgithubName/YourgithubName.github.io.git</span></span><br><span class="line">  <span class="attribute">branch</span>: master</span><br></pre></td></tr></table></figure></li>
+<li><p><code>hexo</code>目录下，安装发布插件<code>npm install hexo-deployer-git --save</code>，然后执行发布</p>
+<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="attr">hexo</span> <span class="string">clean</span></span><br><span class="line"><span class="attr">hexo</span> <span class="string">g</span></span><br><span class="line"><span class="attr">hexo</span> <span class="string">d</span></span><br></pre></td></tr></table></figure>
+<p>打开<code>YourgithubName.github.io.git</code>你的地址验证如果和本地一样打开，就成了，如果404，确定<code>_config.yml</code>有没有写错。</p>
+</li>
+</ol>
+<p>另外我还遇到过一个地方不配置也出现了404：github项目仓库打开，标题下面一排菜单中最右边<code>Setting</code>-&gt;左边<code>Manage access</code>-&gt;<code>Who has access</code>下点击<code>manage</code>,<code>GitHub Pages</code>下<code>Theme Chooser</code>，然后选择一个主题，之前不选主题出现了404。</p>
+<p>在<code>Theme Chooser</code>下方<code>Custom domain</code>可以填写自己单独的域名，如果有独立域名的话。</p>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+        <tag>Windows</tag>
+        <tag>hexo</tag>
+        <tag>next</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>java基础 - 01.String常用方法</title>
     <url>/posts/bbda4b22/</url>
     <content><![CDATA[<h3 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h3><ul>
@@ -54,112 +109,6 @@
 <li><code>public String[] split(String regex)</code> :将此字符串按照给定的regex(规则)拆分为字符串数组</li>
 </ul>
 ]]></content>
-      <categories>
-        <category>java基础</category>
-      </categories>
-      <tags>
-        <tag>java</tag>
-        <tag>笔记</tag>
-        <tag>java基础</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>java - 02.接口</title>
-    <url>/posts/bff39eb3/</url>
-    <content><![CDATA[<p>接口，是Java语言中一种引用类型，是方法的集合，如果说类的内部封装了成员变量、构造方法和成员方法，那么 接口的内部主要就是封装了方法，包含抽象方法(JDK 7及以前)，默认方法和静态方法(JDK 8)，私有方法 (JDK 9)。</p>
-<a id="more"></a>
-
-<p>接口的定义，它与定义类方式相似，但是使用 interface 关键字。它也会被编译成.class文件，但一定要明确它并 不是类，而是另外一种引用数据类型。</p>
-<ul>
-<li>接口中，无法定义成员变量，但是可以定义常量，其值不可以改变，默认使用public static final修饰。 </li>
-<li>接口中，没有构造方法，不能创建对象。</li>
-<li>接口中，没有静态代码块。<figure class="highlight makefile"><table><tr><td class="code"><pre><span class="line"><span class="section">引用数据类型:数组，类，接口。</span></span><br></pre></td></tr></table></figure>
-接口的使用，它不能创建对象，但是可以被实现( implements ，类似于被继承)。一个实现接口的类(可以看做 是接口的子类)，需要实现接口中所有的抽象方法，创建该类对象，就可以调用方法了，否则它必须是一个抽象 类。</li>
-</ul>
-<h3 id="定义格式"><a href="#定义格式" class="headerlink" title="定义格式"></a>定义格式</h3><figure class="highlight actionscript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> 接口名称 </span>&#123; </span><br><span class="line">  <span class="comment">// 抽象方法</span></span><br><span class="line">  <span class="comment">// 默认方法</span></span><br><span class="line">  <span class="comment">// 静态方法</span></span><br><span class="line">  <span class="comment">// 私有方法</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="含有抽象方法"><a href="#含有抽象方法" class="headerlink" title="含有抽象方法"></a>含有抽象方法</h3><p>抽象方法:使用 abstract 关键字修饰，可以省略，没有方法体。该方法供子类实现使用。 代码如下</p>
-<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line"> public<span class="built_in"> interface </span>InterFaceName &#123; </span><br><span class="line">     public abstract void method();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="含有默认方法和静态方法"><a href="#含有默认方法和静态方法" class="headerlink" title="含有默认方法和静态方法"></a>含有默认方法和静态方法</h3><p>默认方法:使用 <code>default</code> 修饰，不可省略，供子类调用或者子类重写。<br>静态方法:使用 <code>static</code> 修饰，供接口直接调用。</p>
-<figure class="highlight cs"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title">InterFaceName</span> &#123; </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">default</span> <span class="keyword">void</span> <span class="title">method</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="comment">// 执行语句 </span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">method2</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="comment">// 执行语句</span></span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="含有私有方法和私有静态方法"><a href="#含有私有方法和私有静态方法" class="headerlink" title="含有私有方法和私有静态方法"></a>含有私有方法和私有静态方法</h3><p>私有方法:使用 private 修饰，供接口中的默认方法或者静态方法调用</p>
-<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line"> <span class="keyword">public</span> <span class="keyword">interface</span> <span class="symbol">InterFaceName</span> &#123; </span><br><span class="line">     <span class="keyword">private</span> <span class="built_in">void</span> method() &#123;</span><br><span class="line">     <span class="comment">// 执行语句</span></span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="接口实现"><a href="#接口实现" class="headerlink" title="接口实现"></a>接口实现</h3><p>类与接口的关系为实现关系，即<code>类实现接口</code>，该类可以称为接口的实现类，也可以称为接口的子类。实现的动作类 似继承，格式相仿，只是关键字不同，实现使用 <code>implements</code> 关键字。</p>
-<p>非抽象子类实现接口:</p>
-<ol>
-<li>必须重写接口中所有抽象方法。</li>
-<li>继承了接口的默认方法，即可以直接调用，也可以重写。</li>
-</ol>
-<p>实现格式:</p>
-<figure class="highlight actionscript"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> 类名 <span class="keyword">implements</span> 接口名 </span>&#123; </span><br><span class="line">    <span class="comment">// 重写接口中抽象方法【必须】</span></span><br><span class="line">    <span class="comment">// 重写接口中默认方法【可选】</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="抽象方法的使用"><a href="#抽象方法的使用" class="headerlink" title="抽象方法的使用"></a>抽象方法的使用</h3><p>必须全部实现<br>定义接口:</p>
-<figure class="highlight cs"><table><tr><td class="code"><pre><span class="line"> <span class="keyword">public</span> <span class="keyword">interface</span> <span class="title">LiveAble</span> &#123; </span><br><span class="line">     <span class="comment">// 定义抽象方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">eat</span>(<span class="params"></span>)</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">sleep</span>(<span class="params"></span>)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>定义实现类:</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Animal</span> <span class="keyword">implements</span> <span class="title">LiveAble</span> </span>&#123; </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span> </span>&#123; </span><br><span class="line">        System.out.println(<span class="string">"吃东西"</span>);</span><br><span class="line">&#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sleep</span><span class="params">()</span> </span>&#123;             </span><br><span class="line">        System.out.println(<span class="string">"晚上睡"</span>);</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>定义测试类:</p>
-<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InterfaceDemo</span> &#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(<span class="keyword">String</span>[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 创建子类对象</span></span><br><span class="line">        Animal a = <span class="keyword">new</span> Animal(); </span><br><span class="line">        <span class="comment">// 调用实现后的方法 a.eat();</span></span><br><span class="line">        a.sleep();</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br><span class="line">输出结果:</span><br><span class="line">吃东西</span><br><span class="line">晚上睡</span><br></pre></td></tr></table></figure>
-<h3 id="默认方法的使用"><a href="#默认方法的使用" class="headerlink" title="默认方法的使用"></a>默认方法的使用</h3><p>可以继承，可以重写，二选一，但是只能通过实现类的对象来调用。</p>
-<h4 id="1-继承默认方法，代码如下"><a href="#1-继承默认方法，代码如下" class="headerlink" title="1. 继承默认方法，代码如下:"></a>1. 继承默认方法，代码如下:</h4><p>定义接口:</p>
-<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">public<span class="built_in"> interface </span>LiveAble &#123; </span><br><span class="line">    public<span class="built_in"> default </span>void fly()&#123;</span><br><span class="line">        System.out.println(<span class="string">"天上飞"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>定义实现类:</p>
-<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="symbol">Animal</span> <span class="symbol">implements</span> <span class="symbol">LiveAble</span> &#123; </span><br><span class="line">    <span class="comment">// 继承，什么都不用写，直接调用</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>定义测试类:</p>
-<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InterfaceDemo</span> &#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(<span class="keyword">String</span>[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 创建子类对象</span></span><br><span class="line">        Animal a = <span class="keyword">new</span> Animal(); </span><br><span class="line">        <span class="comment">// 调用默认方法</span></span><br><span class="line">        a.fly();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">输出结果: </span><br><span class="line">天上飞</span><br></pre></td></tr></table></figure>
-<h4 id="2-重写默认方法，代码如下"><a href="#2-重写默认方法，代码如下" class="headerlink" title="2. 重写默认方法，代码如下:"></a>2. 重写默认方法，代码如下:</h4><p>定义接口:</p>
-<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">public<span class="built_in"> interface </span>LiveAble &#123;</span><br><span class="line">    public<span class="built_in"> default </span>void fly()</span><br><span class="line">        System.out.println(<span class="string">"天上飞"</span>); </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>定义实现类:</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Animal</span> <span class="keyword">implements</span> <span class="title">LiveAble</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fly</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"自由自在的飞"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>定义测试类:</p>
-<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InterfaceDemo</span> &#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(<span class="keyword">String</span>[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 创建子类对象</span></span><br><span class="line">        Animal a = <span class="keyword">new</span> Animal(); </span><br><span class="line">        <span class="comment">// 调用重写方法</span></span><br><span class="line">        a.fly();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">输出结果:</span><br><span class="line">自由自在的飞</span><br></pre></td></tr></table></figure>
-
-<h3 id="静态方法的使用"><a href="#静态方法的使用" class="headerlink" title="静态方法的使用"></a>静态方法的使用</h3><p>静态与.class 文件相关，只能使用接口名调用，不可以通过实现类的类名或者实现类的对象调用，代码如下: </p>
-<p>定义接口:</p>
-<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">public<span class="built_in"> interface </span>LiveAble &#123;</span><br><span class="line">    public static void <span class="builtin-name">run</span>()&#123;</span><br><span class="line">        System.out.println(<span class="string">"跑起来~~~"</span>); </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>定义实现类:</p>
-<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="symbol">Animal</span> <span class="symbol">implements</span> <span class="symbol">LiveAble</span> &#123; </span><br><span class="line">    <span class="comment">// 无法重写静态方法</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>定义测试类:</p>
-<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InterfaceDemo</span> &#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(<span class="keyword">String</span>[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// Animal.run(); </span></span><br><span class="line">        <span class="comment">// 【错误】无法继承方法,也无法调用</span></span><br><span class="line">        LiveAble.<span class="built_in">run</span>(); <span class="comment">//</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">输出结果: </span><br><span class="line">跑起来~~~</span><br></pre></td></tr></table></figure>
-<h4 id="私有方法的使用"><a href="#私有方法的使用" class="headerlink" title="私有方法的使用"></a>私有方法的使用</h4><ul>
-<li>私有方法:只有默认方法可以调用。 </li>
-<li>私有静态方法:默认方法和静态方法可以调用。</li>
-</ul>
-<p>如果一个接口中有多个默认方法，并且方法中有重复的内容，那么可以抽取出来，封装到私有方法中，供默认方法<br>去调用。从设计的角度讲，私有的方法是对默认方法和静态方法的辅助。</p>
-<p>定义接口:</p>
-<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">public<span class="built_in"> interface </span>LiveAble &#123; </span><br><span class="line">   <span class="built_in"> default </span>void func()&#123;</span><br><span class="line">        func1();</span><br><span class="line">        func2();</span><br><span class="line">    &#125;</span><br><span class="line">    private void func1()&#123;    </span><br><span class="line">        System.out.println(<span class="string">"跑起来~~~"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    private void func2()&#123;  </span><br><span class="line">        System.out.println(<span class="string">"跑起来~~~"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="接口的多实现"><a href="#接口的多实现" class="headerlink" title="接口的多实现"></a>接口的多实现</h3><p>在继承体系中，一个类只能继承一个父类。而对于接口而言，一个类是可以实现多个接口的，这叫做接<br>口的多实现。并且，一个类能继承一个父类，同时实现多个接口。</p>
-<figure class="highlight actionscript"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> 类名 [<span class="keyword">extends</span> 父类名] <span class="keyword">implements</span> 接口名1,接口名2,接口名3... </span>&#123; </span><br><span class="line">    <span class="comment">// 重写接口中抽象方法【必须】</span></span><br><span class="line">    <span class="comment">// 重写接口中默认方法【不重名时可选】</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><code>[ ]: 表示可选操作。</code></p>
-<h4 id="抽象方法"><a href="#抽象方法" class="headerlink" title="抽象方法"></a>抽象方法</h4><p>接口中，有多个抽象方法时，实现类必须重写所有抽象方法。如果抽象方法有重名的，只需要重写一次。代码如<br>下:</p>
-<p>定义多个接口:</p>
-<figure class="highlight cs"><table><tr><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title">A</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">showA</span>(<span class="params"></span>)</span>; </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">show</span>(<span class="params"></span>)</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">interface</span> <span class="title">B</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">showB</span>(<span class="params"></span>)</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">show</span>(<span class="params"></span>)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>定义实现类:</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">C</span> <span class="keyword">implements</span> <span class="title">A</span>,<span class="title">B</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">showA</span><span class="params">()</span> </span>&#123;     </span><br><span class="line">        System.out.println(<span class="string">"showA"</span>);</span><br><span class="line">&#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">showB</span><span class="params">()</span> </span>&#123;  </span><br><span class="line">        System.out.println(<span class="string">"showB"</span>);</span><br><span class="line">&#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span> </span>&#123; </span><br><span class="line">        System.out.println(<span class="string">"show"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="默认方法"><a href="#默认方法" class="headerlink" title="默认方法"></a>默认方法</h4><p>接口中，有多个默认方法时，实现类都可继承使用。如果默认方法有重名的，必须重写一次。代码如下:</p>
-<p>定义多个接口：</p>
-<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">interface A &#123;</span><br><span class="line">    public<span class="built_in"> default </span>void methodA()&#123;&#125;</span><br><span class="line">    public<span class="built_in"> default </span>void method()&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line">interface B &#123;</span><br><span class="line">    public<span class="built_in"> default </span>void methodB()&#123;&#125; </span><br><span class="line">    public<span class="built_in"> default </span>void method()&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>定义实现类:</p>
-<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="symbol">C</span> <span class="symbol">implements</span> <span class="symbol">A,<span class="symbol">B</span></span>&#123; </span><br><span class="line">    @Override</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">void</span> method() &#123;    </span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">"method"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="静态方法"><a href="#静态方法" class="headerlink" title="静态方法"></a>静态方法</h4><p>接口中，存在同名的静态方法并不会冲突，原因是只能通过各自接口名访问静态方法。</p>
-<h4 id="优先级的问题"><a href="#优先级的问题" class="headerlink" title="优先级的问题"></a>优先级的问题</h4><p>当一个类，既继承一个父类，又实现若干个接口时，父类中的成员方法与接口中的默认方法重名，子类就近选择执<br>行父类的成员方法。代码如下:<br>定义接口:</p>
-<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">interface A &#123;</span><br><span class="line">    public<span class="built_in"> default </span>void methodA()&#123;</span><br><span class="line">        System.out.println(<span class="string">"AAAAAAAAAAAA"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>定义父类:</p>
-<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">D</span> &#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">methodA</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.<span class="built_in">println</span>(<span class="string">"DDDDDDDDDDDD"</span>); </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>定义子类:</p>
-<figure class="highlight scala"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span> <span class="keyword">extends</span> <span class="title">D</span> <span class="title">implements</span> <span class="title">A</span> </span>&#123; </span><br><span class="line">    <span class="comment">// 未重写methodA方法</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>定义测试类:</p>
-<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> &#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(<span class="keyword">String</span>[] args)</span> </span>&#123;</span><br><span class="line">        C c = <span class="keyword">new</span> C();</span><br><span class="line">        c.methodA();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">输出结果:</span><br><span class="line">DDDDDDDDDDDD</span><br></pre></td></tr></table></figure>
-
-<h3 id="接口的多继承"><a href="#接口的多继承" class="headerlink" title="接口的多继承"></a>接口的多继承</h3><p>一个接口能继承另一个或者多个接口，这和类之间的继承比较相似。接口的继承使用 extends 关键字，子接口继<br>承父接口的方法。<strong>如果父接口中的默认方法有重名的，那么子接口需要重写一次</strong>。代码如下:</p>
-<p>定义父接口:</p>
-<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">interface A &#123;</span><br><span class="line">    public<span class="built_in"> default </span>void method()&#123;</span><br><span class="line">        System.out.println(<span class="string">"AAAAAAAAAAAAAAAAAAA"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">interface B &#123;</span><br><span class="line">    public<span class="built_in"> default </span>void method()&#123;</span><br><span class="line">        System.out.println(<span class="string">"BBBBBBBBBBBBBBBBBBB"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>定义子接口:</p>
-<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">interface D extends A,B&#123; </span><br><span class="line">    @Override</span><br><span class="line">    public<span class="built_in"> default </span>void method() &#123;   </span><br><span class="line">        System.out.println(<span class="string">"DDDDDDDDDDDDDD"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight haskell"><table><tr><td class="code"><pre><span class="line">子接口重写默认方法时，<span class="keyword">default</span>关键字可以保留。 </span><br><span class="line">子类重写默认方法时，<span class="keyword">default</span>关键字不可以保留。</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>java基础</category>
       </categories>
@@ -297,135 +246,6 @@
       </tags>
   </entry>
   <entry>
-    <title>blog - Windows下hexo+github</title>
-    <url>/posts/ee60a25f/</url>
-    <content><![CDATA[<p>Windows环境下配置<code>hexo</code>，并发布到<code>github.io</code>。</p>
-<a id="more"></a>
-
-<h3 id="Hexo安装"><a href="#Hexo安装" class="headerlink" title="Hexo安装"></a>Hexo安装</h3><p>参考<a href="https://hexo.io/docs/" target="_blank" rel="noopener">hexo官方文档</a>,Windows下配置<code>hexo</code>，我这边命令行工具用的是自带的<code>PowerShell</code>。</p>
-<ol>
-<li>安装先下载安装<a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a>和<a href="https://git-scm.com/" target="_blank" rel="noopener">git</a>。在安装<code>node.js</code>时，记得勾选<code>Add to PATH</code>，否则要手动配置环境变量。安装完分别在<code>PowerShell</code>查看版本，查看是否安装成功：<figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">git <span class="keyword">version</span></span><br><span class="line"><span class="keyword">node</span> <span class="title">-v</span></span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>npm全局安装hexo命令，如果安装失败出现权限问题，试试前面加上<code>sudo</code>（命令需要先安装），或者以管理员身份打开<code>PowerShell</code>，然后执行命令。<figure class="highlight avrasm"><table><tr><td class="code"><pre><span class="line">$ npm install -g hexo-<span class="keyword">cli</span></span><br></pre></td></tr></table></figure></li>
-<li>创建一个文件夹，用于存放hexo文件,这里以<code>D:\blog\hexo</code>为例。</li>
-<li><code>hexo -v</code>检查版本，确认hexo命令是否安装成功，执行记录如下<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">PS</span> <span class="string">D:\blog\hexo&gt;</span> <span class="string">hexo</span> <span class="string">-v</span></span><br><span class="line"><span class="attr">hexo-cli:</span> <span class="number">3.1</span><span class="number">.0</span></span><br><span class="line"><span class="attr">os:</span> <span class="string">Windows_NT</span> <span class="number">10.0</span><span class="number">.18363</span> <span class="string">win32</span> <span class="string">x64</span></span><br><span class="line"><span class="attr">node:</span> <span class="number">14.2</span><span class="number">.0</span></span><br><span class="line"><span class="attr">v8:</span> <span class="number">8.1</span><span class="number">.307</span><span class="number">.31</span><span class="string">-node.33</span></span><br><span class="line"><span class="attr">uv:</span> <span class="number">1.37</span><span class="number">.0</span></span><br><span class="line"><span class="attr">zlib:</span> <span class="number">1.2</span><span class="number">.11</span></span><br><span class="line"><span class="attr">brotli:</span> <span class="number">1.0</span><span class="number">.7</span></span><br><span class="line"><span class="attr">ares:</span> <span class="number">1.16</span><span class="number">.0</span></span><br><span class="line"><span class="attr">modules:</span> <span class="number">83</span></span><br><span class="line"><span class="attr">nghttp2:</span> <span class="number">1.40</span><span class="number">.0</span></span><br><span class="line"><span class="attr">napi:</span> <span class="number">6</span></span><br><span class="line"><span class="attr">llhttp:</span> <span class="number">2.0</span><span class="number">.4</span></span><br><span class="line"><span class="attr">openssl:</span> <span class="number">1.1</span><span class="string">.1g</span></span><br><span class="line"><span class="attr">cldr:</span> <span class="number">36.1</span></span><br><span class="line"><span class="attr">icu:</span> <span class="number">66.1</span></span><br><span class="line"><span class="attr">tz:</span> <span class="string">2019c</span></span><br><span class="line"><span class="attr">unicode:</span> <span class="number">13.0</span></span><br></pre></td></tr></table></figure></li>
-<li>在前面创建好的文件夹下执行<code>hexo init</code></li>
-<li>测试配置是否成功，依次执行<code>hexo clean</code>,<code>hexo generate</code>,<code>hexo server</code>。然后在浏览器打开<code>http://localhost:4000</code>，成功显示网页说明配置成功。如果有遇到下面警告，参考<a href="https://zhuanlan.zhihu.com/p/136552969" target="_blank" rel="noopener">部署Hexo踩过的坑—node14.0配置hexo</a> ，应该是nodejs版本过高导致的，不过感觉不影响使用。<figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">(<span class="keyword">node</span><span class="title">:9968</span>) Warning: Accessing non-existent <span class="keyword">property</span><span class="title"> </span>'lineno' of module exports inside circular dependency</span><br><span class="line">(<span class="keyword">node</span><span class="title">:9968</span>) Warning: Accessing non-existent <span class="keyword">property</span><span class="title"> </span>'column' of module exports inside circular dependency</span><br><span class="line">(<span class="keyword">node</span><span class="title">:9968</span>) Warning: Accessing non-existent <span class="keyword">property</span><span class="title"> </span>'filename' of module exports inside circular dependency</span><br><span class="line">(<span class="keyword">node</span><span class="title">:9968</span>) Warning: Accessing non-existent <span class="keyword">property</span><span class="title"> </span>'lineno' of module exports inside circular dependency</span><br><span class="line">(<span class="keyword">node</span><span class="title">:9968</span>) Warning: Accessing non-existent <span class="keyword">property</span><span class="title"> </span>'column' of module exports inside circular dependency</span><br><span class="line">(<span class="keyword">node</span><span class="title">:9968</span>) Warning: Accessing non-existent <span class="keyword">property</span><span class="title"> </span>'filename' of module exports inside circular dependency</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-</li>
-</ol>
-<ol start="7">
-<li>换主题以<code>next</code>主题为例,在<code>D:\blog\hexo</code>下载主题，操作记录如下：<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">PS D:\blog\hexo&gt; git clone http<span class="variable">s:</span>//github.<span class="keyword">com</span>/<span class="keyword">next</span>-theme/hexo-theme-<span class="keyword">next</span> themes/<span class="keyword">next</span></span><br></pre></td></tr></table></figure>
-然后在<code>D:\blog\hexo</code>下<code>_config.yml</code>文件内找到<code>theme: landscape</code>,修改为<code>theme: next</code>,将默认主题改为next。</li>
-</ol>
-<h3 id="github配置"><a href="#github配置" class="headerlink" title="github配置"></a>github配置</h3><ol>
-<li><p>创建一个repo，名称为<code>yourname.github.io</code>, 其中<code>yourname</code>是你的github名称,不可以为其他名称。项目为公开项目，否则后面发布后会404。</p>
-</li>
-<li><p>在<code>powershell</code>下配置git用户名和邮箱，可以和github一致。</p>
-<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">git<span class="built_in"> config </span>--global user.name <span class="string">"yourname"</span></span><br><span class="line">git<span class="built_in"> config </span>--global user.email <span class="string">"yourmail"</span></span><br></pre></td></tr></table></figure></li>
-<li><p>指定邮箱生成ssh秘钥，秘钥默认存放在<code>C:\Users\huangchp\.ssh</code>。</p>
-<figure class="highlight 1c"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"youremail@example.com</span></span><br></pre></td></tr></table></figure></li>
-<li><p>将上面获取的ssh放到github中，操作如下：右上角头像右键-&gt;<code>Settings</code>-&gt;<code>SSH and GPG keys</code> -&gt; <code>New SSH key</code>,把刚刚ssh用的邮箱填入<code>Title</code>框内，ssh生成的<code>id_rsa.pub</code>内容填入<code>Key</code>框内，点击<code>Add ssh key</code>保存。</p>
-</li>
-<li><p><code>PowerShell</code>执行<code>ssh -T git@github.com</code>验证ssh配置</p>
-</li>
-<li><p><code>hexo</code>目录下<code>_config.yml</code>添加发布配置</p>
-<figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line">  <span class="attribute">type</span>: git</span><br><span class="line">  <span class="attribute">repo</span>: <span class="attribute">https</span>:<span class="comment">//github.com/YourgithubName/YourgithubName.github.io.git</span></span><br><span class="line">  <span class="attribute">branch</span>: master</span><br></pre></td></tr></table></figure></li>
-<li><p><code>hexo</code>目录下，安装发布插件<code>npm install hexo-deployer-git --save</code>，然后执行发布</p>
-<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="attr">hexo</span> <span class="string">clean</span></span><br><span class="line"><span class="attr">hexo</span> <span class="string">g</span></span><br><span class="line"><span class="attr">hexo</span> <span class="string">d</span></span><br></pre></td></tr></table></figure>
-<p>打开<code>YourgithubName.github.io.git</code>你的地址验证如果和本地一样打开，就成了，如果404，确定<code>_config.yml</code>有没有写错。</p>
-</li>
-</ol>
-<p>另外我还遇到过一个地方不配置也出现了404：github项目仓库打开，标题下面一排菜单中最右边<code>Setting</code>-&gt;左边<code>Manage access</code>-&gt;<code>Who has access</code>下点击<code>manage</code>,<code>GitHub Pages</code>下<code>Theme Chooser</code>，然后选择一个主题，之前不选主题出现了404。</p>
-<p>在<code>Theme Chooser</code>下方<code>Custom domain</code>可以填写自己单独的域名，如果有独立域名的话。</p>
-]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>blog</tag>
-        <tag>Windows</tag>
-        <tag>hexo</tag>
-        <tag>next</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>java基础 - 06.时间类转换</title>
-    <url>/posts/8e91112d/</url>
-    <content><![CDATA[<ol>
-<li>Timestamp转LocalDateTime（mysql中datetime数据取出时是timestamp类型）<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">LocalDateTime localDateTime = <span class="keyword">new</span> <span class="constructor">Timestamp(System.<span class="params">currentTimeMillis</span>()</span>).<span class="keyword">to</span><span class="constructor">LocalDateTime()</span>; </span><br><span class="line"><span class="comment">//或者 </span></span><br><span class="line">LocalDateTime localDateTime1 = <span class="module-access"><span class="module"><span class="identifier">LocalDateTime</span>.</span></span><span class="keyword">of</span><span class="constructor">Instant(<span class="params">new</span> Timestamp(System.<span class="params">currentTimeMillis</span>()</span>).<span class="keyword">to</span><span class="constructor">Instant()</span>,<span class="module-access"><span class="module"><span class="identifier">ZoneId</span>.</span></span>system<span class="constructor">Default()</span>);</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-
-</li>
-</ol>
-<p>注意转换之后会有字符T存在</p>
-<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">String str = localDateTime.format(<span class="module-access"><span class="module"><span class="identifier">DateTimeFormatter</span>.</span></span><span class="keyword">of</span><span class="constructor">Pattern(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>)</span>);<span class="comment">//去掉T和毫秒值</span></span><br></pre></td></tr></table></figure>
-
-<p>2.LocalDateTime转Timestamp</p>
-<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="type">Timestamp</span> <span class="type">timestamp</span> = <span class="type">Timestamp</span>.valueOf(LocalDateTime.now());</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li><p>Date转LocalDate</p>
-<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">LocalDate localDate = <span class="module-access"><span class="module"><span class="identifier">LocalDate</span>.</span></span><span class="keyword">of</span><span class="constructor">Instant(<span class="params">new</span> Date()</span>.<span class="keyword">to</span><span class="constructor">Instant()</span>, <span class="module-access"><span class="module"><span class="identifier">ZoneId</span>.</span></span>system<span class="constructor">Default()</span>); </span><br><span class="line"><span class="comment">//或者 </span></span><br><span class="line">LocalDate localDate1 = <span class="keyword">new</span> <span class="constructor">Date()</span>.<span class="keyword">to</span><span class="constructor">Instant()</span>.at<span class="constructor">Zone(ZoneId.<span class="params">systemDefault</span>()</span>).<span class="keyword">to</span><span class="constructor">LocalDate()</span>;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>LocalDate转Date</p>
-<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">Date date = <span class="module-access"><span class="module"><span class="identifier">Date</span>.</span></span>from(<span class="module-access"><span class="module"><span class="identifier">LocalDate</span>.</span></span>now<span class="literal">()</span>.at<span class="constructor">StartOfDay()</span>.at<span class="constructor">Zone(ZoneId.<span class="params">systemDefault</span>()</span>).<span class="keyword">to</span><span class="constructor">Instant()</span>);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Date转LocalDateTime</p>
-<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">LocalDateTime localDateTime = <span class="module-access"><span class="module"><span class="identifier">LocalDateTime</span>.</span></span><span class="keyword">of</span><span class="constructor">Instant(<span class="params">new</span> Date()</span>.<span class="keyword">to</span><span class="constructor">Instant()</span>,<span class="module-access"><span class="module"><span class="identifier">ZoneId</span>.</span></span>system<span class="constructor">Default()</span>);</span><br><span class="line"><span class="comment">//或者</span></span><br><span class="line">LocalDateTime localDateTime1 = <span class="keyword">new</span> <span class="constructor">Date()</span>.<span class="keyword">to</span><span class="constructor">Instant()</span>.at<span class="constructor">Zone(ZoneId.<span class="params">systemDefault</span>()</span>).<span class="keyword">to</span><span class="constructor">LocalDateTime()</span>;</span><br></pre></td></tr></table></figure></li>
-<li><p>LocalDateTime转LocalDate</p>
-<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">LocalDate localDate = <span class="module-access"><span class="module"><span class="identifier">LocalDateTime</span>.</span></span>now<span class="literal">()</span>.<span class="keyword">to</span><span class="constructor">LocalDate()</span>;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>LocalDate转LocalDateTime</p>
-<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">LocalDateTime localDateTime = <span class="module-access"><span class="module"><span class="identifier">LocalDate</span>.</span></span>now<span class="literal">()</span>.at<span class="constructor">StartOfDay()</span>.at<span class="constructor">Zone(ZoneId.<span class="params">systemDefault</span>()</span>).<span class="keyword">to</span><span class="constructor">LocalDateTime()</span>;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>LocalDateTime转Date</p>
-<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">Date date = <span class="module-access"><span class="module"><span class="identifier">Date</span>.</span></span>from(<span class="module-access"><span class="module"><span class="identifier">LocalDateTime</span>.</span></span>now<span class="literal">()</span>.at<span class="constructor">Zone(ZoneId.<span class="params">systemDefault</span>()</span>).<span class="keyword">to</span><span class="constructor">Instant()</span>);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>String转LocalDate</p>
-<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">LocalDate localDate = <span class="module-access"><span class="module"><span class="identifier">LocalDate</span>.</span></span>parse(<span class="string">"2018-09-15"</span>, <span class="module-access"><span class="module"><span class="identifier">DateTimeFormatter</span>.</span></span><span class="keyword">of</span><span class="constructor">Pattern(<span class="string">"yyyy-MM-dd"</span>)</span>);</span><br></pre></td></tr></table></figure>
-<p>注意String中是‘-’连接则解析方法也必须是‘-’连接，否则解析不了</p>
-</li>
-<li><p>String转LocalDateTime</p>
-<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">LocalDateTime localDateTime1 = <span class="module-access"><span class="module"><span class="identifier">LocalDateTime</span>.</span></span>parse(<span class="string">"2019-05-20 15:33:24"</span>,<span class="module-access"><span class="module"><span class="identifier">DateTimeFormatter</span>.</span></span><span class="keyword">of</span><span class="constructor">Pattern(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>)</span>);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>String转Date</p>
-<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">String  dateStr = <span class="keyword">new</span> <span class="constructor">SimpleDateFormat(<span class="string">"yyyy-MM-dd"</span>)</span>.format(<span class="module-access"><span class="module"><span class="identifier">Date</span>.</span></span>from(<span class="module-access"><span class="module"><span class="identifier">LocalDate</span>.</span></span>now<span class="literal">()</span>.at<span class="constructor">StartOfDay()</span>.at<span class="constructor">Zone(ZoneId.<span class="params">systemDefault</span>()</span>).<span class="keyword">to</span><span class="constructor">Instant()</span>))</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>String转Timestamp</p>
-<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="type">Timestamp</span> <span class="type">timestamp</span> = <span class="type">Timestamp</span>.valueOf("2019-5-23 13:24:45");</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Date转String</p>
-<figure class="highlight lasso"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Date</span> <span class="built_in">date</span> = <span class="literal">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd"</span>).parse(<span class="string">"2018-12-12"</span>)</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<p>14.LocalDateTime转String</p>
-<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">String timeStr = <span class="module-access"><span class="module"><span class="identifier">DateTimeFormatter</span>.</span></span><span class="keyword">of</span><span class="constructor">Pattern(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>)</span>.format(<span class="module-access"><span class="module"><span class="identifier">LocalDateTime</span>.</span></span>now<span class="literal">()</span>)</span><br></pre></td></tr></table></figure>
-
-<ol start="15">
-<li><p>Timestamp转String</p>
-<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">String timeStr1 = <span class="keyword">new</span> <span class="constructor">SimpleDateFormat(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>)</span>.format(<span class="keyword">new</span> <span class="constructor">Timestamp(System.<span class="params">currentTimeMillis</span>()</span>));  </span><br><span class="line">String timeStr2 = <span class="keyword">new</span> <span class="constructor">Timestamp(System.<span class="params">currentTimeMillis</span>()</span>).<span class="keyword">to</span><span class="constructor">String()</span>;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>取Timestamp Value</p>
-<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">long timestampValue0 = <span class="module-access"><span class="module"><span class="identifier">System</span>.</span></span>current<span class="constructor">TimeMillis()</span>;</span><br><span class="line"></span><br><span class="line">long timestampValue1 = <span class="keyword">new</span> <span class="constructor">Timestamp(System.<span class="params">currentTimeMillis</span>()</span>).get<span class="constructor">Time()</span>;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<p>参考：<br><a href="https://my.oschina.net/u/4134962/blog/3051916" target="_blank" rel="noopener">Timestamp、LocalDateTime、DateTime、String、LocalDate、Date转换</a></p>
-]]></content>
-      <categories>
-        <category>java基础</category>
-      </categories>
-      <tags>
-        <tag>java</tag>
-        <tag>笔记</tag>
-        <tag>java基础</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>java基础 - 03.final关键字</title>
     <url>/posts/f2b5981c/</url>
     <content><![CDATA[<p>final: 不可改变。可以用于修饰类、方法和变量。</p>
@@ -495,70 +315,6 @@
         <tag>java</tag>
         <tag>笔记</tag>
         <tag>java基础</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>tools - PicGo+github图床</title>
-    <url>/posts/1a8bafa/</url>
-    <content><![CDATA[<p>Windows环境下配置以<code>github</code>为图床仓库的<code>PicGo</code>图床工具。</p>
-<a id="more"></a>
-
-<p>平时写<code>markdown</code>的时候，一般用<a href="https://chrome.google.com/webstore/detail/%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9A%E5%9B%BE%E5%BA%8A/fdfdnfpdplfbbnemmmoklbfjbhecpnhf" target="_blank" rel="noopener">新浪微博图床</a>,但是怕万一以后图片挂掉用不了了，所以还是打算换个更稳定可靠的方式。<code>github</code>单仓库没有明确限制大小，但是推荐1G内，超过1G时会邮件提醒,参考<a href="https://docs.github.com/cn/github/managing-large-files/what-is-my-disk-quota#file-and-repository-size-limitations" target="_blank" rel="noopener">官方文档说明</a>。<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200705020729-1.png" alt="image"></p>
-<h3 id="PicGo安装"><a href="#PicGo安装" class="headerlink" title="PicGo安装"></a>PicGo安装</h3><p><a href="https://github.com/Molunerfinn/PicGo" target="_blank" rel="noopener">PicGo仓库</a>查看安装和使用方法。我这里是选择在Windows上配置的，<br>打开<code>powershell</code>或者别的终端，用<code>scoop</code>安装<code>picGo</code></p>
-<figure class="highlight armasm"><table><tr><td class="code"><pre><span class="line"><span class="symbol">scoop</span> <span class="keyword">bucket </span><span class="keyword">add </span>helbing https://github.com/helbing/scoop-<span class="keyword">bucket</span></span><br><span class="line"><span class="keyword"></span></span><br><span class="line"><span class="keyword">scoop </span>install picgo</span><br></pre></td></tr></table></figure>
-
-<h3 id="github仓库配置"><a href="#github仓库配置" class="headerlink" title="github仓库配置"></a>github仓库配置</h3><p>创建一个public的仓库，然后配置一个<code>token</code>，打开<code>settings</code>，<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200703001157.png" alt="image"><br><code>Personal access tokens</code>下点击<code>Generate new token</code>,<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200703000340.png" alt="image"><br>填<code>note</code>（备注信息），<code>repo</code>打钩。<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200703000437.png" alt="image"><br>点击最底下<code>Generate Token</code>按钮生成一份<code>token</code>，可以看到提示<code>Make sure to copy your new personal access token now. You won’t be able to see it again!</code>，所以复制并保存到起来。</p>
-<h3 id="配置PicGo"><a href="#配置PicGo" class="headerlink" title="配置PicGo"></a>配置PicGo</h3><p><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/PicGo20200703002510.png" alt="image"></p>
-<ul>
-<li><code>设定的仓库名</code>：<code>github用户名/仓库名</code></li>
-<li><code>分支名</code>: 仓库所属分支，仓库默认分支是<code>master</code>，所以这里一般也是填<code>master</code></li>
-<li><code>设定Token</code>: 将前面创建的token复制进来，如果后面忘记了，重新创建再复制进来就可以了。</li>
-<li><code>指定存储路径</code>: 指定图片在仓库的路径。留空就是根目录。为了管理方便，建议按自己喜欢的规则创建文件夹会比较有条理一些。</li>
-<li><code>设定自定义域名</code>：配置自定义域名的图片。<ul>
-<li>不配的话，图片url格式为<code>https://raw.githubusercontent.com/github用户名/仓库名/分支名/指定存储路径/图片名.png)</code>。</li>
-<li>可以使用<a href="https://www.jsdelivr.com/" target="_blank" rel="noopener"><code>https://www.jsdelivr.com/</code></a>提供的免费cdn配置加速。格式为<code>https://cdn.jsdelivr.net/gh/github用户名/仓库名</code>,生成的图片url格式为<code>https://cdn.jsdelivr.net/gh/github用户名/仓库名/指定存储路径/图片名.png</code></li>
-</ul>
-</li>
-</ul>
-<h3 id="其他说明和采坑"><a href="#其他说明和采坑" class="headerlink" title="其他说明和采坑"></a>其他说明和采坑</h3><p>相册是本地的一个上传信息缓存，测试发现，只是提供之前图片上传记录用的，删除不会作用到仓库，只是删除这里的一条记录。<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200703004634.png" alt="image"></p>
-<p>出现<code>上传失败</code>错误时，先确认仓库名等信息是否填写准确，再确定选取的本地图片的路径是否包含空格和<code>+</code>等特殊符号。目前发现路径空格和<code>+</code>时会<code>上传失败</code>。<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200703003749.png" alt="image"></p>
-<p>比如我这里一开始把图片存放在c盘<code>图片</code>下的<code>保存的图片</code>下，<code>保存的图片</code>实际路径信息是<code>Saved Pictures</code>，带了空格，然后就上传失败。<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200703004241.png" alt="image"></p>
-<p>有时候<code>上传失败</code>是软件出问题了，可能需要<code>PicGo设置</code>-&gt;<code>设置Server</code>界面重新打开Server：点<code>关闭</code>、<code>确定</code>,再点击<code>开启</code>、<code>确定</code>。</p>
-]]></content>
-      <categories>
-        <category>tools</category>
-      </categories>
-      <tags>
-        <tag>Windows</tag>
-        <tag>tools</tag>
-        <tag>图床</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>tools - chocolatey</title>
-    <url>/posts/af013f3b/</url>
-    <content><![CDATA[<p>Windows 基础开发环境包管理工具<code>chocolatey</code>。</p>
-<a id="more"></a>
-
-<h4 id="安装chocolatey"><a href="#安装chocolatey" class="headerlink" title="安装chocolatey"></a>安装chocolatey</h4><p>以管理员权限运行cmd.exe或powershell.exe</p>
-<p>cmd运行：</p>
-<figure class="highlight mel"><table><tr><td class="code"><pre><span class="line">@"%SystemRoot%\System32\WindowsPowerShell\v1<span class="number">.0</span>\powershell.exe<span class="string">" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "</span>iex ((New-Object System.Net.WebClient).DownloadString(<span class="string">'https://chocolatey.org/install.ps1'</span>))<span class="string">" &amp;&amp; SET "</span>PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin<span class="string">"</span></span><br></pre></td></tr></table></figure>
-<p>powershell运行：</p>
-<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).<span class="constructor">DownloadString('<span class="params">https</span>:<span class="operator">/</span><span class="operator">/</span><span class="params">chocolatey</span>.<span class="params">org</span><span class="operator">/</span><span class="params">install</span>.<span class="params">ps1</span>')</span>)</span><br></pre></td></tr></table></figure>
-<p>安装完成，运行choco 或 choco -?检查一下是否安装正确</p>
-<p>chocolatey安装位置：<code>C:\ProgramData\Chocolatey</code>。无法配置包安装位置。<br>参考文章<a href="https://blog.csdn.net/u013205877/article/details/78993311" target="_blank" rel="noopener">Windows 神器 Cmder Scoop Chocolatey Listary Seer</a>，可安装的应用程序默认安装在 <code>C:\Program Files\</code>，实际待考究。</p>
-<h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">search - 搜索包 choco search something</span><br><span class="line">list - 列出包 choco list -lo 或者 choco list --local-only</span><br><span class="line">install - 安装 choco install baretail</span><br><span class="line">pin - 固定包的版本，防止包被升级 choco pin windirstat</span><br><span class="line">upgrade - 安装包的升级 choco<span class="built_in"> upgrade </span>baretail</span><br><span class="line">uninstall - 安装包的卸载 choco uninstall baretail</span><br><span class="line">安装Ruby Gem - choco install compass -source ruby</span><br><span class="line">安装Python Egg - choco install sphynx -source python</span><br><span class="line">安装IIS服务器特性 - choco install IIS -source windowsfeatures</span><br><span class="line">安装Webpi特性 - choco install IIS7.5Express -source webpi</span><br><span class="line"></span><br><span class="line">列出Windows系统已安装的软件 - choco list -li 或者 choco list -lai</span><br><span class="line">升级所有已安装的包 - choco<span class="built_in"> upgrade </span>all -y</span><br></pre></td></tr></table></figure>
-
-<p>window 下开发常用的开发环境应用</p>
-<figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line">choco <span class="keyword">install </span>autohotkey.portable    <span class="comment">#安装 AutoHotkey (Portable)</span></span><br><span class="line">choco <span class="keyword">install </span>nodejs.<span class="keyword">install </span> <span class="comment">#安装 node</span></span><br><span class="line">choco <span class="keyword">install </span>git.<span class="keyword">install </span>    <span class="comment">#安装 git</span></span><br><span class="line">choco <span class="keyword">install </span>ruby            <span class="comment">#安装 ruby</span></span><br><span class="line">choco <span class="keyword">install </span>python          <span class="comment">#安装 python</span></span><br><span class="line">choco <span class="keyword">install </span><span class="keyword">jdk8 </span>           <span class="comment">#安装 JDK8</span></span><br><span class="line">choco <span class="keyword">install </span>googlechrome    <span class="comment">#安装 Chrome</span></span><br><span class="line">choco <span class="keyword">install </span>google-chrome-x64 <span class="comment">#Google Chrome (64-bit only)</span></span><br><span class="line">choco <span class="keyword">install </span>firefox         <span class="comment">#安装 firefox</span></span><br><span class="line">choco <span class="keyword">install </span>notepadplusplus.<span class="keyword">install </span><span class="comment">#安装 notepad++</span></span><br><span class="line">choco <span class="keyword">install </span>Atom                    <span class="comment">#安装 Atom</span></span><br><span class="line">choco <span class="keyword">install </span><span class="keyword">SublimeText3 </span>           <span class="comment">#安装 SublimeText3</span></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>tools</category>
-      </categories>
-      <tags>
-        <tag>Windows</tag>
-        <tag>tools</tag>
       </tags>
   </entry>
   <entry>
@@ -648,6 +404,250 @@
 <p>参考：</p>
 <p><a href="https://blog.csdn.net/briblue/article/details/73824058" target="_blank" rel="noopener">秒懂，Java注解</a></p>
 <p><a href="https://www.cnblogs.com/huojg-21442/p/7239846.html" target="_blank" rel="noopener">Java注解的自定义和使用</a></p>
+]]></content>
+      <categories>
+        <category>java基础</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>笔记</tag>
+        <tag>java基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>tools - PicGo+github图床</title>
+    <url>/posts/1a8bafa/</url>
+    <content><![CDATA[<p>Windows环境下配置以<code>github</code>为图床仓库的<code>PicGo</code>图床工具。</p>
+<a id="more"></a>
+
+<p>平时写<code>markdown</code>的时候，一般用<a href="https://chrome.google.com/webstore/detail/%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9A%E5%9B%BE%E5%BA%8A/fdfdnfpdplfbbnemmmoklbfjbhecpnhf" target="_blank" rel="noopener">新浪微博图床</a>,但是怕万一以后图片挂掉用不了了，所以还是打算换个更稳定可靠的方式。<code>github</code>单仓库没有明确限制大小，但是推荐1G内，超过1G时会邮件提醒,参考<a href="https://docs.github.com/cn/github/managing-large-files/what-is-my-disk-quota#file-and-repository-size-limitations" target="_blank" rel="noopener">官方文档说明</a>。<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200705020729-1.png" alt="image"></p>
+<h3 id="PicGo安装"><a href="#PicGo安装" class="headerlink" title="PicGo安装"></a>PicGo安装</h3><p><a href="https://github.com/Molunerfinn/PicGo" target="_blank" rel="noopener">PicGo仓库</a>查看安装和使用方法。我这里是选择在Windows上配置的，<br>打开<code>powershell</code>或者别的终端，用<code>scoop</code>安装<code>picGo</code></p>
+<figure class="highlight armasm"><table><tr><td class="code"><pre><span class="line"><span class="symbol">scoop</span> <span class="keyword">bucket </span><span class="keyword">add </span>helbing https://github.com/helbing/scoop-<span class="keyword">bucket</span></span><br><span class="line"><span class="keyword"></span></span><br><span class="line"><span class="keyword">scoop </span>install picgo</span><br></pre></td></tr></table></figure>
+
+<h3 id="github仓库配置"><a href="#github仓库配置" class="headerlink" title="github仓库配置"></a>github仓库配置</h3><p>创建一个public的仓库，然后配置一个<code>token</code>，打开<code>settings</code>，<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200703001157.png" alt="image"><br><code>Personal access tokens</code>下点击<code>Generate new token</code>,<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200703000340.png" alt="image"><br>填<code>note</code>（备注信息），<code>repo</code>打钩。<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200703000437.png" alt="image"><br>点击最底下<code>Generate Token</code>按钮生成一份<code>token</code>，可以看到提示<code>Make sure to copy your new personal access token now. You won’t be able to see it again!</code>，所以复制并保存到起来。</p>
+<h3 id="配置PicGo"><a href="#配置PicGo" class="headerlink" title="配置PicGo"></a>配置PicGo</h3><p><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/PicGo20200703002510.png" alt="image"></p>
+<ul>
+<li><code>设定的仓库名</code>：<code>github用户名/仓库名</code></li>
+<li><code>分支名</code>: 仓库所属分支，仓库默认分支是<code>master</code>，所以这里一般也是填<code>master</code></li>
+<li><code>设定Token</code>: 将前面创建的token复制进来，如果后面忘记了，重新创建再复制进来就可以了。</li>
+<li><code>指定存储路径</code>: 指定图片在仓库的路径。留空就是根目录。为了管理方便，建议按自己喜欢的规则创建文件夹会比较有条理一些。</li>
+<li><code>设定自定义域名</code>：配置自定义域名的图片。<ul>
+<li>不配的话，图片url格式为<code>https://raw.githubusercontent.com/github用户名/仓库名/分支名/指定存储路径/图片名.png)</code>。</li>
+<li>可以使用<a href="https://www.jsdelivr.com/" target="_blank" rel="noopener"><code>https://www.jsdelivr.com/</code></a>提供的免费cdn配置加速。格式为<code>https://cdn.jsdelivr.net/gh/github用户名/仓库名</code>,生成的图片url格式为<code>https://cdn.jsdelivr.net/gh/github用户名/仓库名/指定存储路径/图片名.png</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="其他说明和采坑"><a href="#其他说明和采坑" class="headerlink" title="其他说明和采坑"></a>其他说明和采坑</h3><p>相册是本地的一个上传信息缓存，测试发现，只是提供之前图片上传记录用的，删除不会作用到仓库，只是删除这里的一条记录。<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200703004634.png" alt="image"></p>
+<p>出现<code>上传失败</code>错误时，先确认仓库名等信息是否填写准确，再确定选取的本地图片的路径是否包含空格和<code>+</code>等特殊符号。目前发现路径空格和<code>+</code>时会<code>上传失败</code>。<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200703003749.png" alt="image"></p>
+<p>比如我这里一开始把图片存放在c盘<code>图片</code>下的<code>保存的图片</code>下，<code>保存的图片</code>实际路径信息是<code>Saved Pictures</code>，带了空格，然后就上传失败。<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200703004241.png" alt="image"></p>
+<p>有时候<code>上传失败</code>是软件出问题了，可能需要<code>PicGo设置</code>-&gt;<code>设置Server</code>界面重新打开Server：点<code>关闭</code>、<code>确定</code>,再点击<code>开启</code>、<code>确定</code>。</p>
+]]></content>
+      <categories>
+        <category>tools</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+        <tag>tools</tag>
+        <tag>图床</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>java - 02.接口</title>
+    <url>/posts/bff39eb3/</url>
+    <content><![CDATA[<p>接口，是Java语言中一种引用类型，是方法的集合，如果说类的内部封装了成员变量、构造方法和成员方法，那么 接口的内部主要就是封装了方法，包含抽象方法(JDK 7及以前)，默认方法和静态方法(JDK 8)，私有方法 (JDK 9)。</p>
+<a id="more"></a>
+
+<p>接口的定义，它与定义类方式相似，但是使用 interface 关键字。它也会被编译成.class文件，但一定要明确它并 不是类，而是另外一种引用数据类型。</p>
+<ul>
+<li>接口中，无法定义成员变量，但是可以定义常量，其值不可以改变，默认使用public static final修饰。 </li>
+<li>接口中，没有构造方法，不能创建对象。</li>
+<li>接口中，没有静态代码块。<figure class="highlight makefile"><table><tr><td class="code"><pre><span class="line"><span class="section">引用数据类型:数组，类，接口。</span></span><br></pre></td></tr></table></figure>
+接口的使用，它不能创建对象，但是可以被实现( implements ，类似于被继承)。一个实现接口的类(可以看做 是接口的子类)，需要实现接口中所有的抽象方法，创建该类对象，就可以调用方法了，否则它必须是一个抽象 类。</li>
+</ul>
+<h3 id="定义格式"><a href="#定义格式" class="headerlink" title="定义格式"></a>定义格式</h3><figure class="highlight actionscript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> 接口名称 </span>&#123; </span><br><span class="line">  <span class="comment">// 抽象方法</span></span><br><span class="line">  <span class="comment">// 默认方法</span></span><br><span class="line">  <span class="comment">// 静态方法</span></span><br><span class="line">  <span class="comment">// 私有方法</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="含有抽象方法"><a href="#含有抽象方法" class="headerlink" title="含有抽象方法"></a>含有抽象方法</h3><p>抽象方法:使用 abstract 关键字修饰，可以省略，没有方法体。该方法供子类实现使用。 代码如下</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line"> public<span class="built_in"> interface </span>InterFaceName &#123; </span><br><span class="line">     public abstract void method();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="含有默认方法和静态方法"><a href="#含有默认方法和静态方法" class="headerlink" title="含有默认方法和静态方法"></a>含有默认方法和静态方法</h3><p>默认方法:使用 <code>default</code> 修饰，不可省略，供子类调用或者子类重写。<br>静态方法:使用 <code>static</code> 修饰，供接口直接调用。</p>
+<figure class="highlight cs"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title">InterFaceName</span> &#123; </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">default</span> <span class="keyword">void</span> <span class="title">method</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="comment">// 执行语句 </span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">method2</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="comment">// 执行语句</span></span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="含有私有方法和私有静态方法"><a href="#含有私有方法和私有静态方法" class="headerlink" title="含有私有方法和私有静态方法"></a>含有私有方法和私有静态方法</h3><p>私有方法:使用 private 修饰，供接口中的默认方法或者静态方法调用</p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line"> <span class="keyword">public</span> <span class="keyword">interface</span> <span class="symbol">InterFaceName</span> &#123; </span><br><span class="line">     <span class="keyword">private</span> <span class="built_in">void</span> method() &#123;</span><br><span class="line">     <span class="comment">// 执行语句</span></span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="接口实现"><a href="#接口实现" class="headerlink" title="接口实现"></a>接口实现</h3><p>类与接口的关系为实现关系，即<code>类实现接口</code>，该类可以称为接口的实现类，也可以称为接口的子类。实现的动作类 似继承，格式相仿，只是关键字不同，实现使用 <code>implements</code> 关键字。</p>
+<p>非抽象子类实现接口:</p>
+<ol>
+<li>必须重写接口中所有抽象方法。</li>
+<li>继承了接口的默认方法，即可以直接调用，也可以重写。</li>
+</ol>
+<p>实现格式:</p>
+<figure class="highlight actionscript"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> 类名 <span class="keyword">implements</span> 接口名 </span>&#123; </span><br><span class="line">    <span class="comment">// 重写接口中抽象方法【必须】</span></span><br><span class="line">    <span class="comment">// 重写接口中默认方法【可选】</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="抽象方法的使用"><a href="#抽象方法的使用" class="headerlink" title="抽象方法的使用"></a>抽象方法的使用</h3><p>必须全部实现<br>定义接口:</p>
+<figure class="highlight cs"><table><tr><td class="code"><pre><span class="line"> <span class="keyword">public</span> <span class="keyword">interface</span> <span class="title">LiveAble</span> &#123; </span><br><span class="line">     <span class="comment">// 定义抽象方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">eat</span>(<span class="params"></span>)</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">sleep</span>(<span class="params"></span>)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>定义实现类:</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Animal</span> <span class="keyword">implements</span> <span class="title">LiveAble</span> </span>&#123; </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span> </span>&#123; </span><br><span class="line">        System.out.println(<span class="string">"吃东西"</span>);</span><br><span class="line">&#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sleep</span><span class="params">()</span> </span>&#123;             </span><br><span class="line">        System.out.println(<span class="string">"晚上睡"</span>);</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>定义测试类:</p>
+<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InterfaceDemo</span> &#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(<span class="keyword">String</span>[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 创建子类对象</span></span><br><span class="line">        Animal a = <span class="keyword">new</span> Animal(); </span><br><span class="line">        <span class="comment">// 调用实现后的方法 a.eat();</span></span><br><span class="line">        a.sleep();</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br><span class="line">输出结果:</span><br><span class="line">吃东西</span><br><span class="line">晚上睡</span><br></pre></td></tr></table></figure>
+<h3 id="默认方法的使用"><a href="#默认方法的使用" class="headerlink" title="默认方法的使用"></a>默认方法的使用</h3><p>可以继承，可以重写，二选一，但是只能通过实现类的对象来调用。</p>
+<h4 id="1-继承默认方法，代码如下"><a href="#1-继承默认方法，代码如下" class="headerlink" title="1. 继承默认方法，代码如下:"></a>1. 继承默认方法，代码如下:</h4><p>定义接口:</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">public<span class="built_in"> interface </span>LiveAble &#123; </span><br><span class="line">    public<span class="built_in"> default </span>void fly()&#123;</span><br><span class="line">        System.out.println(<span class="string">"天上飞"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>定义实现类:</p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="symbol">Animal</span> <span class="symbol">implements</span> <span class="symbol">LiveAble</span> &#123; </span><br><span class="line">    <span class="comment">// 继承，什么都不用写，直接调用</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>定义测试类:</p>
+<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InterfaceDemo</span> &#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(<span class="keyword">String</span>[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 创建子类对象</span></span><br><span class="line">        Animal a = <span class="keyword">new</span> Animal(); </span><br><span class="line">        <span class="comment">// 调用默认方法</span></span><br><span class="line">        a.fly();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">输出结果: </span><br><span class="line">天上飞</span><br></pre></td></tr></table></figure>
+<h4 id="2-重写默认方法，代码如下"><a href="#2-重写默认方法，代码如下" class="headerlink" title="2. 重写默认方法，代码如下:"></a>2. 重写默认方法，代码如下:</h4><p>定义接口:</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">public<span class="built_in"> interface </span>LiveAble &#123;</span><br><span class="line">    public<span class="built_in"> default </span>void fly()</span><br><span class="line">        System.out.println(<span class="string">"天上飞"</span>); </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>定义实现类:</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Animal</span> <span class="keyword">implements</span> <span class="title">LiveAble</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fly</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"自由自在的飞"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>定义测试类:</p>
+<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InterfaceDemo</span> &#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(<span class="keyword">String</span>[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 创建子类对象</span></span><br><span class="line">        Animal a = <span class="keyword">new</span> Animal(); </span><br><span class="line">        <span class="comment">// 调用重写方法</span></span><br><span class="line">        a.fly();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">输出结果:</span><br><span class="line">自由自在的飞</span><br></pre></td></tr></table></figure>
+
+<h3 id="静态方法的使用"><a href="#静态方法的使用" class="headerlink" title="静态方法的使用"></a>静态方法的使用</h3><p>静态与.class 文件相关，只能使用接口名调用，不可以通过实现类的类名或者实现类的对象调用，代码如下: </p>
+<p>定义接口:</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">public<span class="built_in"> interface </span>LiveAble &#123;</span><br><span class="line">    public static void <span class="builtin-name">run</span>()&#123;</span><br><span class="line">        System.out.println(<span class="string">"跑起来~~~"</span>); </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>定义实现类:</p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="symbol">Animal</span> <span class="symbol">implements</span> <span class="symbol">LiveAble</span> &#123; </span><br><span class="line">    <span class="comment">// 无法重写静态方法</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>定义测试类:</p>
+<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InterfaceDemo</span> &#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(<span class="keyword">String</span>[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// Animal.run(); </span></span><br><span class="line">        <span class="comment">// 【错误】无法继承方法,也无法调用</span></span><br><span class="line">        LiveAble.<span class="built_in">run</span>(); <span class="comment">//</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">输出结果: </span><br><span class="line">跑起来~~~</span><br></pre></td></tr></table></figure>
+<h4 id="私有方法的使用"><a href="#私有方法的使用" class="headerlink" title="私有方法的使用"></a>私有方法的使用</h4><ul>
+<li>私有方法:只有默认方法可以调用。 </li>
+<li>私有静态方法:默认方法和静态方法可以调用。</li>
+</ul>
+<p>如果一个接口中有多个默认方法，并且方法中有重复的内容，那么可以抽取出来，封装到私有方法中，供默认方法<br>去调用。从设计的角度讲，私有的方法是对默认方法和静态方法的辅助。</p>
+<p>定义接口:</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">public<span class="built_in"> interface </span>LiveAble &#123; </span><br><span class="line">   <span class="built_in"> default </span>void func()&#123;</span><br><span class="line">        func1();</span><br><span class="line">        func2();</span><br><span class="line">    &#125;</span><br><span class="line">    private void func1()&#123;    </span><br><span class="line">        System.out.println(<span class="string">"跑起来~~~"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    private void func2()&#123;  </span><br><span class="line">        System.out.println(<span class="string">"跑起来~~~"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="接口的多实现"><a href="#接口的多实现" class="headerlink" title="接口的多实现"></a>接口的多实现</h3><p>在继承体系中，一个类只能继承一个父类。而对于接口而言，一个类是可以实现多个接口的，这叫做接<br>口的多实现。并且，一个类能继承一个父类，同时实现多个接口。</p>
+<figure class="highlight actionscript"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> 类名 [<span class="keyword">extends</span> 父类名] <span class="keyword">implements</span> 接口名1,接口名2,接口名3... </span>&#123; </span><br><span class="line">    <span class="comment">// 重写接口中抽象方法【必须】</span></span><br><span class="line">    <span class="comment">// 重写接口中默认方法【不重名时可选】</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>[ ]: 表示可选操作。</code></p>
+<h4 id="抽象方法"><a href="#抽象方法" class="headerlink" title="抽象方法"></a>抽象方法</h4><p>接口中，有多个抽象方法时，实现类必须重写所有抽象方法。如果抽象方法有重名的，只需要重写一次。代码如<br>下:</p>
+<p>定义多个接口:</p>
+<figure class="highlight cs"><table><tr><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title">A</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">showA</span>(<span class="params"></span>)</span>; </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">show</span>(<span class="params"></span>)</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">interface</span> <span class="title">B</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">showB</span>(<span class="params"></span>)</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">show</span>(<span class="params"></span>)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>定义实现类:</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">C</span> <span class="keyword">implements</span> <span class="title">A</span>,<span class="title">B</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">showA</span><span class="params">()</span> </span>&#123;     </span><br><span class="line">        System.out.println(<span class="string">"showA"</span>);</span><br><span class="line">&#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">showB</span><span class="params">()</span> </span>&#123;  </span><br><span class="line">        System.out.println(<span class="string">"showB"</span>);</span><br><span class="line">&#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span> </span>&#123; </span><br><span class="line">        System.out.println(<span class="string">"show"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="默认方法"><a href="#默认方法" class="headerlink" title="默认方法"></a>默认方法</h4><p>接口中，有多个默认方法时，实现类都可继承使用。如果默认方法有重名的，必须重写一次。代码如下:</p>
+<p>定义多个接口：</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">interface A &#123;</span><br><span class="line">    public<span class="built_in"> default </span>void methodA()&#123;&#125;</span><br><span class="line">    public<span class="built_in"> default </span>void method()&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line">interface B &#123;</span><br><span class="line">    public<span class="built_in"> default </span>void methodB()&#123;&#125; </span><br><span class="line">    public<span class="built_in"> default </span>void method()&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>定义实现类:</p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="symbol">C</span> <span class="symbol">implements</span> <span class="symbol">A,<span class="symbol">B</span></span>&#123; </span><br><span class="line">    @Override</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">void</span> method() &#123;    </span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">"method"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="静态方法"><a href="#静态方法" class="headerlink" title="静态方法"></a>静态方法</h4><p>接口中，存在同名的静态方法并不会冲突，原因是只能通过各自接口名访问静态方法。</p>
+<h4 id="优先级的问题"><a href="#优先级的问题" class="headerlink" title="优先级的问题"></a>优先级的问题</h4><p>当一个类，既继承一个父类，又实现若干个接口时，父类中的成员方法与接口中的默认方法重名，子类就近选择执<br>行父类的成员方法。代码如下:<br>定义接口:</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">interface A &#123;</span><br><span class="line">    public<span class="built_in"> default </span>void methodA()&#123;</span><br><span class="line">        System.out.println(<span class="string">"AAAAAAAAAAAA"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>定义父类:</p>
+<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">D</span> &#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">methodA</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.<span class="built_in">println</span>(<span class="string">"DDDDDDDDDDDD"</span>); </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>定义子类:</p>
+<figure class="highlight scala"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span> <span class="keyword">extends</span> <span class="title">D</span> <span class="title">implements</span> <span class="title">A</span> </span>&#123; </span><br><span class="line">    <span class="comment">// 未重写methodA方法</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>定义测试类:</p>
+<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> &#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(<span class="keyword">String</span>[] args)</span> </span>&#123;</span><br><span class="line">        C c = <span class="keyword">new</span> C();</span><br><span class="line">        c.methodA();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">输出结果:</span><br><span class="line">DDDDDDDDDDDD</span><br></pre></td></tr></table></figure>
+
+<h3 id="接口的多继承"><a href="#接口的多继承" class="headerlink" title="接口的多继承"></a>接口的多继承</h3><p>一个接口能继承另一个或者多个接口，这和类之间的继承比较相似。接口的继承使用 extends 关键字，子接口继<br>承父接口的方法。<strong>如果父接口中的默认方法有重名的，那么子接口需要重写一次</strong>。代码如下:</p>
+<p>定义父接口:</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">interface A &#123;</span><br><span class="line">    public<span class="built_in"> default </span>void method()&#123;</span><br><span class="line">        System.out.println(<span class="string">"AAAAAAAAAAAAAAAAAAA"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">interface B &#123;</span><br><span class="line">    public<span class="built_in"> default </span>void method()&#123;</span><br><span class="line">        System.out.println(<span class="string">"BBBBBBBBBBBBBBBBBBB"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>定义子接口:</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">interface D extends A,B&#123; </span><br><span class="line">    @Override</span><br><span class="line">    public<span class="built_in"> default </span>void method() &#123;   </span><br><span class="line">        System.out.println(<span class="string">"DDDDDDDDDDDDDD"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight haskell"><table><tr><td class="code"><pre><span class="line">子接口重写默认方法时，<span class="keyword">default</span>关键字可以保留。 </span><br><span class="line">子类重写默认方法时，<span class="keyword">default</span>关键字不可以保留。</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>java基础</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>笔记</tag>
+        <tag>java基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>tools - chocolatey</title>
+    <url>/posts/af013f3b/</url>
+    <content><![CDATA[<p>Windows 基础开发环境包管理工具<code>chocolatey</code>。</p>
+<a id="more"></a>
+
+<h4 id="安装chocolatey"><a href="#安装chocolatey" class="headerlink" title="安装chocolatey"></a>安装chocolatey</h4><p>以管理员权限运行cmd.exe或powershell.exe</p>
+<p>cmd运行：</p>
+<figure class="highlight mel"><table><tr><td class="code"><pre><span class="line">@"%SystemRoot%\System32\WindowsPowerShell\v1<span class="number">.0</span>\powershell.exe<span class="string">" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "</span>iex ((New-Object System.Net.WebClient).DownloadString(<span class="string">'https://chocolatey.org/install.ps1'</span>))<span class="string">" &amp;&amp; SET "</span>PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin<span class="string">"</span></span><br></pre></td></tr></table></figure>
+<p>powershell运行：</p>
+<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).<span class="constructor">DownloadString('<span class="params">https</span>:<span class="operator">/</span><span class="operator">/</span><span class="params">chocolatey</span>.<span class="params">org</span><span class="operator">/</span><span class="params">install</span>.<span class="params">ps1</span>')</span>)</span><br></pre></td></tr></table></figure>
+<p>安装完成，运行choco 或 choco -?检查一下是否安装正确</p>
+<p>chocolatey安装位置：<code>C:\ProgramData\Chocolatey</code>。无法配置包安装位置。<br>参考文章<a href="https://blog.csdn.net/u013205877/article/details/78993311" target="_blank" rel="noopener">Windows 神器 Cmder Scoop Chocolatey Listary Seer</a>，可安装的应用程序默认安装在 <code>C:\Program Files\</code>，实际待考究。</p>
+<h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">search - 搜索包 choco search something</span><br><span class="line">list - 列出包 choco list -lo 或者 choco list --local-only</span><br><span class="line">install - 安装 choco install baretail</span><br><span class="line">pin - 固定包的版本，防止包被升级 choco pin windirstat</span><br><span class="line">upgrade - 安装包的升级 choco<span class="built_in"> upgrade </span>baretail</span><br><span class="line">uninstall - 安装包的卸载 choco uninstall baretail</span><br><span class="line">安装Ruby Gem - choco install compass -source ruby</span><br><span class="line">安装Python Egg - choco install sphynx -source python</span><br><span class="line">安装IIS服务器特性 - choco install IIS -source windowsfeatures</span><br><span class="line">安装Webpi特性 - choco install IIS7.5Express -source webpi</span><br><span class="line"></span><br><span class="line">列出Windows系统已安装的软件 - choco list -li 或者 choco list -lai</span><br><span class="line">升级所有已安装的包 - choco<span class="built_in"> upgrade </span>all -y</span><br></pre></td></tr></table></figure>
+
+<p>window 下开发常用的开发环境应用</p>
+<figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line">choco <span class="keyword">install </span>autohotkey.portable    <span class="comment">#安装 AutoHotkey (Portable)</span></span><br><span class="line">choco <span class="keyword">install </span>nodejs.<span class="keyword">install </span> <span class="comment">#安装 node</span></span><br><span class="line">choco <span class="keyword">install </span>git.<span class="keyword">install </span>    <span class="comment">#安装 git</span></span><br><span class="line">choco <span class="keyword">install </span>ruby            <span class="comment">#安装 ruby</span></span><br><span class="line">choco <span class="keyword">install </span>python          <span class="comment">#安装 python</span></span><br><span class="line">choco <span class="keyword">install </span><span class="keyword">jdk8 </span>           <span class="comment">#安装 JDK8</span></span><br><span class="line">choco <span class="keyword">install </span>googlechrome    <span class="comment">#安装 Chrome</span></span><br><span class="line">choco <span class="keyword">install </span>google-chrome-x64 <span class="comment">#Google Chrome (64-bit only)</span></span><br><span class="line">choco <span class="keyword">install </span>firefox         <span class="comment">#安装 firefox</span></span><br><span class="line">choco <span class="keyword">install </span>notepadplusplus.<span class="keyword">install </span><span class="comment">#安装 notepad++</span></span><br><span class="line">choco <span class="keyword">install </span>Atom                    <span class="comment">#安装 Atom</span></span><br><span class="line">choco <span class="keyword">install </span><span class="keyword">SublimeText3 </span>           <span class="comment">#安装 SublimeText3</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>tools</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+        <tag>tools</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>java基础 - 06.时间类转换</title>
+    <url>/posts/8e91112d/</url>
+    <content><![CDATA[<ol>
+<li>Timestamp转LocalDateTime（mysql中datetime数据取出时是timestamp类型）<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">LocalDateTime localDateTime = <span class="keyword">new</span> <span class="constructor">Timestamp(System.<span class="params">currentTimeMillis</span>()</span>).<span class="keyword">to</span><span class="constructor">LocalDateTime()</span>; </span><br><span class="line"><span class="comment">//或者 </span></span><br><span class="line">LocalDateTime localDateTime1 = <span class="module-access"><span class="module"><span class="identifier">LocalDateTime</span>.</span></span><span class="keyword">of</span><span class="constructor">Instant(<span class="params">new</span> Timestamp(System.<span class="params">currentTimeMillis</span>()</span>).<span class="keyword">to</span><span class="constructor">Instant()</span>,<span class="module-access"><span class="module"><span class="identifier">ZoneId</span>.</span></span>system<span class="constructor">Default()</span>);</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+
+</li>
+</ol>
+<p>注意转换之后会有字符T存在</p>
+<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">String str = localDateTime.format(<span class="module-access"><span class="module"><span class="identifier">DateTimeFormatter</span>.</span></span><span class="keyword">of</span><span class="constructor">Pattern(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>)</span>);<span class="comment">//去掉T和毫秒值</span></span><br></pre></td></tr></table></figure>
+
+<p>2.LocalDateTime转Timestamp</p>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="type">Timestamp</span> <span class="type">timestamp</span> = <span class="type">Timestamp</span>.valueOf(LocalDateTime.now());</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><p>Date转LocalDate</p>
+<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">LocalDate localDate = <span class="module-access"><span class="module"><span class="identifier">LocalDate</span>.</span></span><span class="keyword">of</span><span class="constructor">Instant(<span class="params">new</span> Date()</span>.<span class="keyword">to</span><span class="constructor">Instant()</span>, <span class="module-access"><span class="module"><span class="identifier">ZoneId</span>.</span></span>system<span class="constructor">Default()</span>); </span><br><span class="line"><span class="comment">//或者 </span></span><br><span class="line">LocalDate localDate1 = <span class="keyword">new</span> <span class="constructor">Date()</span>.<span class="keyword">to</span><span class="constructor">Instant()</span>.at<span class="constructor">Zone(ZoneId.<span class="params">systemDefault</span>()</span>).<span class="keyword">to</span><span class="constructor">LocalDate()</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>LocalDate转Date</p>
+<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">Date date = <span class="module-access"><span class="module"><span class="identifier">Date</span>.</span></span>from(<span class="module-access"><span class="module"><span class="identifier">LocalDate</span>.</span></span>now<span class="literal">()</span>.at<span class="constructor">StartOfDay()</span>.at<span class="constructor">Zone(ZoneId.<span class="params">systemDefault</span>()</span>).<span class="keyword">to</span><span class="constructor">Instant()</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Date转LocalDateTime</p>
+<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">LocalDateTime localDateTime = <span class="module-access"><span class="module"><span class="identifier">LocalDateTime</span>.</span></span><span class="keyword">of</span><span class="constructor">Instant(<span class="params">new</span> Date()</span>.<span class="keyword">to</span><span class="constructor">Instant()</span>,<span class="module-access"><span class="module"><span class="identifier">ZoneId</span>.</span></span>system<span class="constructor">Default()</span>);</span><br><span class="line"><span class="comment">//或者</span></span><br><span class="line">LocalDateTime localDateTime1 = <span class="keyword">new</span> <span class="constructor">Date()</span>.<span class="keyword">to</span><span class="constructor">Instant()</span>.at<span class="constructor">Zone(ZoneId.<span class="params">systemDefault</span>()</span>).<span class="keyword">to</span><span class="constructor">LocalDateTime()</span>;</span><br></pre></td></tr></table></figure></li>
+<li><p>LocalDateTime转LocalDate</p>
+<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">LocalDate localDate = <span class="module-access"><span class="module"><span class="identifier">LocalDateTime</span>.</span></span>now<span class="literal">()</span>.<span class="keyword">to</span><span class="constructor">LocalDate()</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>LocalDate转LocalDateTime</p>
+<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">LocalDateTime localDateTime = <span class="module-access"><span class="module"><span class="identifier">LocalDate</span>.</span></span>now<span class="literal">()</span>.at<span class="constructor">StartOfDay()</span>.at<span class="constructor">Zone(ZoneId.<span class="params">systemDefault</span>()</span>).<span class="keyword">to</span><span class="constructor">LocalDateTime()</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>LocalDateTime转Date</p>
+<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">Date date = <span class="module-access"><span class="module"><span class="identifier">Date</span>.</span></span>from(<span class="module-access"><span class="module"><span class="identifier">LocalDateTime</span>.</span></span>now<span class="literal">()</span>.at<span class="constructor">Zone(ZoneId.<span class="params">systemDefault</span>()</span>).<span class="keyword">to</span><span class="constructor">Instant()</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>String转LocalDate</p>
+<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">LocalDate localDate = <span class="module-access"><span class="module"><span class="identifier">LocalDate</span>.</span></span>parse(<span class="string">"2018-09-15"</span>, <span class="module-access"><span class="module"><span class="identifier">DateTimeFormatter</span>.</span></span><span class="keyword">of</span><span class="constructor">Pattern(<span class="string">"yyyy-MM-dd"</span>)</span>);</span><br></pre></td></tr></table></figure>
+<p>注意String中是‘-’连接则解析方法也必须是‘-’连接，否则解析不了</p>
+</li>
+<li><p>String转LocalDateTime</p>
+<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">LocalDateTime localDateTime1 = <span class="module-access"><span class="module"><span class="identifier">LocalDateTime</span>.</span></span>parse(<span class="string">"2019-05-20 15:33:24"</span>,<span class="module-access"><span class="module"><span class="identifier">DateTimeFormatter</span>.</span></span><span class="keyword">of</span><span class="constructor">Pattern(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>)</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>String转Date</p>
+<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">String  dateStr = <span class="keyword">new</span> <span class="constructor">SimpleDateFormat(<span class="string">"yyyy-MM-dd"</span>)</span>.format(<span class="module-access"><span class="module"><span class="identifier">Date</span>.</span></span>from(<span class="module-access"><span class="module"><span class="identifier">LocalDate</span>.</span></span>now<span class="literal">()</span>.at<span class="constructor">StartOfDay()</span>.at<span class="constructor">Zone(ZoneId.<span class="params">systemDefault</span>()</span>).<span class="keyword">to</span><span class="constructor">Instant()</span>))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>String转Timestamp</p>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="type">Timestamp</span> <span class="type">timestamp</span> = <span class="type">Timestamp</span>.valueOf("2019-5-23 13:24:45");</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Date转String</p>
+<figure class="highlight lasso"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Date</span> <span class="built_in">date</span> = <span class="literal">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd"</span>).parse(<span class="string">"2018-12-12"</span>)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>14.LocalDateTime转String</p>
+<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">String timeStr = <span class="module-access"><span class="module"><span class="identifier">DateTimeFormatter</span>.</span></span><span class="keyword">of</span><span class="constructor">Pattern(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>)</span>.format(<span class="module-access"><span class="module"><span class="identifier">LocalDateTime</span>.</span></span>now<span class="literal">()</span>)</span><br></pre></td></tr></table></figure>
+
+<ol start="15">
+<li><p>Timestamp转String</p>
+<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">String timeStr1 = <span class="keyword">new</span> <span class="constructor">SimpleDateFormat(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>)</span>.format(<span class="keyword">new</span> <span class="constructor">Timestamp(System.<span class="params">currentTimeMillis</span>()</span>));  </span><br><span class="line">String timeStr2 = <span class="keyword">new</span> <span class="constructor">Timestamp(System.<span class="params">currentTimeMillis</span>()</span>).<span class="keyword">to</span><span class="constructor">String()</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>取Timestamp Value</p>
+<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">long timestampValue0 = <span class="module-access"><span class="module"><span class="identifier">System</span>.</span></span>current<span class="constructor">TimeMillis()</span>;</span><br><span class="line"></span><br><span class="line">long timestampValue1 = <span class="keyword">new</span> <span class="constructor">Timestamp(System.<span class="params">currentTimeMillis</span>()</span>).get<span class="constructor">Time()</span>;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>参考：<br><a href="https://my.oschina.net/u/4134962/blog/3051916" target="_blank" rel="noopener">Timestamp、LocalDateTime、DateTime、String、LocalDate、Date转换</a></p>
 ]]></content>
       <categories>
         <category>java基础</category>
