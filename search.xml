@@ -214,17 +214,17 @@
 <span id="more"></span>
 
 <h3 id="更新node-js"><a href="#更新node-js" class="headerlink" title="更新node.js"></a>更新node.js</h3><p>因为hexo我是维护在Windows环境下。所以这次安装了<a href="https://github.com/coreybutler/nvm-windows">nvm-windows</a>用于管理<code>ndoe.js</code>版本。安装完成<code>nvm-windows</code>后，更新<code>node.js</code>：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># 查看可用的nodejs</span></span><br><span class="line"><span class="quote">&gt; nvm list available </span></span><br><span class="line"></span><br><span class="line"><span class="section"># 安装指定版本的nodejs</span></span><br><span class="line"><span class="quote">&gt; nvm install 21.6.0</span></span><br><span class="line"></span><br><span class="line"><span class="section"># 启用新安装的nodejs</span></span><br><span class="line"><span class="quote">&gt; nvm use 21.6.0</span></span><br><span class="line"></span><br><span class="line"><span class="section"># 查看现有的nodejs</span></span><br><span class="line"><span class="quote">&gt; nvm current</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看可用的nodejs</span></span><br><span class="line"> <span class="attribute">nvm</span> list available </span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装指定版本的nodejs</span></span><br><span class="line"> <span class="attribute">nvm</span> install <span class="number">21</span>.<span class="number">6</span>.<span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 启用新安装的nodejs</span></span><br><span class="line"> <span class="attribute">nvm</span> use <span class="number">21</span>.<span class="number">6</span>.<span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看现有的nodejs</span></span><br><span class="line"> <span class="attribute">nvm</span> current</span><br></pre></td></tr></table></figure>
 
 <h3 id="更新hexo"><a href="#更新hexo" class="headerlink" title="更新hexo"></a>更新<code>hexo</code></h3><p><code>cmd</code>到<code>hexo</code>目录下，依次执行：</p>
-<figure class="highlight coffeescript"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 全局升级hexo-cli</span></span><br><span class="line">&gt; <span class="built_in">npm</span> i hexo-cli -g</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装npm-check，若已安装可以跳过</span></span><br><span class="line">&gt; <span class="built_in">npm</span> install -g <span class="built_in">npm</span>-check</span><br><span class="line"></span><br><span class="line"><span class="comment"># 检查系统插件是否需要升级</span></span><br><span class="line">&gt; <span class="built_in">npm</span>-check</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装npm-upgrade，若已安装可以跳过</span></span><br><span class="line">&gt; <span class="built_in">npm</span> install -g <span class="built_in">npm</span>-upgrade</span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新package.json</span></span><br><span class="line">&gt; <span class="built_in">npm</span>-upgrade</span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新全局插件</span></span><br><span class="line">&gt; <span class="built_in">npm</span> update -g</span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新系统插件</span></span><br><span class="line">&gt; <span class="built_in">npm</span> update --save</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight coffeescript"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 全局升级hexo-cli</span></span><br><span class="line"> <span class="built_in">npm</span> i hexo-cli -g</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装npm-check，若已安装可以跳过</span></span><br><span class="line"> <span class="built_in">npm</span> install -g <span class="built_in">npm</span>-check</span><br><span class="line"></span><br><span class="line"><span class="comment"># 检查系统插件是否需要升级</span></span><br><span class="line"> <span class="built_in">npm</span>-check</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装npm-upgrade，若已安装可以跳过</span></span><br><span class="line"> <span class="built_in">npm</span> install -g <span class="built_in">npm</span>-upgrade</span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新package.json</span></span><br><span class="line"> <span class="built_in">npm</span>-upgrade</span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新全局插件</span></span><br><span class="line"> <span class="built_in">npm</span> update -g</span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新系统插件</span></span><br><span class="line"> <span class="built_in">npm</span> update --save</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>或者手动删除<code>hexo</code>下的<code>node_modules</code>文件夹，然后执行<code>npm install --save</code>重新下载依赖包。</p>
 <p>执行<code>hexo version</code>查看<code>hexo</code>是否可用。我执行完后，打印信息如下：</p>
 <figure class="highlight moonscript"><table><tr><td class="code"><pre><span class="line">INFO  Validating config</span><br><span class="line">FATAL</span><br><span class="line"><span class="name">TypeError</span>: Invalid config <span class="name">detected</span>: <span class="string">&quot;url&quot;</span> should be a valid URL!</span><br><span class="line">    at <span class="built_in">module</span>.exports (<span class="name">D</span>:\blog\hexo\node_modules\hexo\dist\hexo\validate_config.<span class="name">js</span>:<span class="number">14</span>:<span class="number">15</span>)</span><br><span class="line">    at <span class="name">D</span>:\blog\hexo\node_modules\hexo\dist\hexo\load_config.<span class="name">js</span>:<span class="number">53</span>:<span class="number">35</span></span><br><span class="line">    at Generator.<span class="built_in">next</span> (&lt;anonymous&gt;)</span><br><span class="line">    at fulfilled (<span class="name">D</span>:\blog\hexo\node_modules\hexo\dist\hexo\load_config.<span class="name">js</span>:<span class="number">5</span>:<span class="number">58</span>)</span><br></pre></td></tr></table></figure>
 <p>报这个错误的原因是<code>hexo\_config.yml</code>里面<code>url</code>节点的url没有加上<code>https:\\</code>,然后认为<code>url</code>结构有问题。</p>
 <h3 id="更新next主题"><a href="#更新next主题" class="headerlink" title="更新next主题"></a>更新next主题</h3><p>在<code>hexo</code>目录下，执行 <code>npm install hexo-theme-next@8.19.0</code>。<br>更新主题后，查看<code>hexo</code>升级是否成功，依次执行：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># 清空构建数据</span></span><br><span class="line"><span class="quote">&gt; hexo clean</span></span><br><span class="line"></span><br><span class="line"><span class="section"># 构建blog页面</span></span><br><span class="line"><span class="quote">&gt; hexo g</span></span><br><span class="line"></span><br><span class="line"><span class="section">#本地执行服务</span></span><br><span class="line"><span class="quote">&gt; hexo s</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 清空构建数据</span></span><br><span class="line"> <span class="attribute">hexo</span> clean</span><br><span class="line"></span><br><span class="line"><span class="comment"># 构建blog页面</span></span><br><span class="line"> hexo g</span><br><span class="line"></span><br><span class="line"><span class="comment">#本地执行服务</span></span><br><span class="line"> hexo s</span><br></pre></td></tr></table></figure>
 
 <h3 id="添加git管理"><a href="#添加git管理" class="headerlink" title="添加git管理"></a>添加git管理</h3><p>将<code>hexo</code>目录添加为git项目管理，这样每次配置修改，文章发布就有了版本记录。</p>
 <ol>
@@ -303,7 +303,7 @@
 <tr>
 <td>SMTP_USER</td>
 <td>[必填] SMTP 用户名</td>
-<td><a href="mailto:&#120;&#x78;&#120;&#64;&#49;&#54;&#51;&#46;&#99;&#111;&#x6d;">&#120;&#x78;&#120;&#64;&#49;&#54;&#51;&#46;&#99;&#111;&#x6d;</a></td>
+<td><a href="mailto:&#x78;&#120;&#120;&#64;&#49;&#x36;&#x33;&#46;&#x63;&#x6f;&#109;">&#x78;&#120;&#120;&#64;&#49;&#x36;&#x33;&#46;&#x63;&#x6f;&#109;</a></td>
 </tr>
 <tr>
 <td>SMTP_PASS</td>
@@ -318,7 +318,7 @@
 <tr>
 <td>SENDER_EMAIL</td>
 <td>[必填] 发件邮箱</td>
-<td><a href="mailto:&#x78;&#120;&#x78;&#64;&#49;&#54;&#x33;&#46;&#x63;&#111;&#x6d;">&#x78;&#120;&#x78;&#64;&#49;&#54;&#x33;&#46;&#x63;&#111;&#x6d;</a></td>
+<td><a href="mailto:&#x78;&#x78;&#120;&#x40;&#x31;&#54;&#x33;&#46;&#99;&#111;&#x6d;">&#x78;&#x78;&#120;&#x40;&#x31;&#54;&#x33;&#46;&#99;&#111;&#x6d;</a></td>
 </tr>
 <tr>
 <td>MAIL_SUBJECT</td>
@@ -358,7 +358,7 @@
 <tr>
 <td>BLOGGER_EMAIL</td>
 <td>[选填] 博主通知收件地址，默认使用 SENDER_EMAIL</td>
-<td><a href="mailto:&#x78;&#120;&#120;&#x40;&#x31;&#x36;&#51;&#x2e;&#x63;&#111;&#x6d;">&#x78;&#120;&#120;&#x40;&#x31;&#x36;&#51;&#x2e;&#x63;&#111;&#x6d;</a></td>
+<td><a href="mailto:&#120;&#120;&#x78;&#64;&#49;&#x36;&#51;&#46;&#99;&#x6f;&#109;">&#120;&#120;&#x78;&#64;&#49;&#x36;&#51;&#46;&#99;&#x6f;&#109;</a></td>
 </tr>
 <tr>
 <td>ADMIN_URL</td>
@@ -652,6 +652,43 @@
       </tags>
   </entry>
   <entry>
+    <title>tools - PicGo+github图床</title>
+    <url>/posts/1a8bafa/</url>
+    <content><![CDATA[<p>Windows环境下配置以<code>github</code>为图床仓库的<code>PicGo</code>图床工具。</p>
+<span id="more"></span>
+
+<p>平时写<code>markdown</code>的时候，一般用<a href="https://chrome.google.com/webstore/detail/%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9A%E5%9B%BE%E5%BA%8A/fdfdnfpdplfbbnemmmoklbfjbhecpnhf">新浪微博图床</a>,但是怕万一以后图片挂掉用不了了，所以还是打算换个更稳定可靠的方式。<code>github</code>单仓库没有明确限制大小，但是推荐1G内，超过1G时会邮件提醒,参考<a href="https://docs.github.com/cn/github/managing-large-files/what-is-my-disk-quota#file-and-repository-size-limitations">官方文档说明</a>。<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200705020729-1.png" alt="image"></p>
+<h3 id="PicGo安装"><a href="#PicGo安装" class="headerlink" title="PicGo安装"></a>PicGo安装</h3><p><a href="https://github.com/Molunerfinn/PicGo">PicGo仓库</a>查看安装和使用方法。我这里是选择在Windows上配置的，<br>打开<code>powershell</code>或者别的终端，用<code>scoop</code>安装<code>picGo</code></p>
+<figure class="highlight armasm"><table><tr><td class="code"><pre><span class="line"><span class="symbol">scoop</span> bucket <span class="keyword">add</span> helbing https:<span class="comment">//github.com/helbing/scoop-bucket</span></span><br><span class="line"></span><br><span class="line"><span class="symbol">scoop</span> install picgo</span><br></pre></td></tr></table></figure>
+
+<h3 id="github仓库配置"><a href="#github仓库配置" class="headerlink" title="github仓库配置"></a>github仓库配置</h3><p>创建一个public的仓库，然后配置一个<code>token</code>，打开<code>settings</code>，<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200703001157.png" alt="image"><br><code>Personal access tokens</code>下点击<code>Generate new token</code>,<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200703000340.png" alt="image"><br>填<code>note</code>（备注信息），<code>repo</code>打钩。<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200703000437.png" alt="image"><br>点击最底下<code>Generate Token</code>按钮生成一份<code>token</code>，可以看到提示<code>Make sure to copy your new personal access token now. You won’t be able to see it again!</code>，所以复制并保存到起来。</p>
+<h3 id="配置PicGo"><a href="#配置PicGo" class="headerlink" title="配置PicGo"></a>配置PicGo</h3><p><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/PicGo20200703002510.png" alt="image"></p>
+<ul>
+<li><code>设定的仓库名</code>：<code>github用户名/仓库名</code></li>
+<li><code>分支名</code>: 仓库所属分支，仓库默认分支是<code>master</code>，所以这里一般也是填<code>master</code></li>
+<li><code>设定Token</code>: 将前面创建的token复制进来，如果后面忘记了，重新创建再复制进来就可以了。</li>
+<li><code>指定存储路径</code>: 指定图片在仓库的路径。留空就是根目录。为了管理方便，建议按自己喜欢的规则创建文件夹会比较有条理一些。</li>
+<li><code>设定自定义域名</code>：配置自定义域名的图片。<ul>
+<li>不配的话，图片url格式为<code>https://raw.githubusercontent.com/github用户名/仓库名/分支名/指定存储路径/图片名.png)</code>。</li>
+<li>可以使用<a href="https://www.jsdelivr.com/"><code>https://www.jsdelivr.com/</code></a>提供的免费cdn配置加速。格式为<code>https://cdn.jsdelivr.net/gh/github用户名/仓库名</code>,生成的图片url格式为<code>https://cdn.jsdelivr.net/gh/github用户名/仓库名/指定存储路径/图片名.png</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="其他说明和采坑"><a href="#其他说明和采坑" class="headerlink" title="其他说明和采坑"></a>其他说明和采坑</h3><p>相册是本地的一个上传信息缓存，测试发现，只是提供之前图片上传记录用的，删除不会作用到仓库，只是删除这里的一条记录。<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200703004634.png" alt="image"></p>
+<p>出现<code>上传失败</code>错误时，先确认仓库名等信息是否填写准确，再确定选取的本地图片的路径是否包含空格和<code>+</code>等特殊符号。目前发现路径空格和<code>+</code>时会<code>上传失败</code>。<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200703003749.png" alt="image"></p>
+<p>比如我这里一开始把图片存放在c盘<code>图片</code>下的<code>保存的图片</code>下，<code>保存的图片</code>实际路径信息是<code>Saved Pictures</code>，带了空格，然后就上传失败。<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200703004241.png" alt="image"></p>
+<p>有时候<code>上传失败</code>是软件出问题了，可能需要<code>PicGo设置</code>-&gt;<code>设置Server</code>界面重新打开Server：点<code>关闭</code>、<code>确定</code>,再点击<code>开启</code>、<code>确定</code>。</p>
+]]></content>
+      <categories>
+        <category>tools</category>
+      </categories>
+      <tags>
+        <tag>tools</tag>
+        <tag>Windows</tag>
+        <tag>图床</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>java基础 - 05.java注解</title>
     <url>/posts/5a25ee7e/</url>
     <content><![CDATA[<p>定义：注解（Annotation），也叫元数据。一种代码级别的说明。它是JDK1.5及以后版本引入的一个特性，与类、接口、枚举是在同一个层次。它可以声明在包、类、字段、方法、局部变量、方法参数等的前面，用来对这些元素进行说明，注释。注解通过<code>@interface</code>关键字进行定义。</p>
@@ -814,43 +851,6 @@
         <tag>java</tag>
         <tag>笔记</tag>
         <tag>java基础</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>tools - PicGo+github图床</title>
-    <url>/posts/1a8bafa/</url>
-    <content><![CDATA[<p>Windows环境下配置以<code>github</code>为图床仓库的<code>PicGo</code>图床工具。</p>
-<span id="more"></span>
-
-<p>平时写<code>markdown</code>的时候，一般用<a href="https://chrome.google.com/webstore/detail/%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9A%E5%9B%BE%E5%BA%8A/fdfdnfpdplfbbnemmmoklbfjbhecpnhf">新浪微博图床</a>,但是怕万一以后图片挂掉用不了了，所以还是打算换个更稳定可靠的方式。<code>github</code>单仓库没有明确限制大小，但是推荐1G内，超过1G时会邮件提醒,参考<a href="https://docs.github.com/cn/github/managing-large-files/what-is-my-disk-quota#file-and-repository-size-limitations">官方文档说明</a>。<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200705020729-1.png" alt="image"></p>
-<h3 id="PicGo安装"><a href="#PicGo安装" class="headerlink" title="PicGo安装"></a>PicGo安装</h3><p><a href="https://github.com/Molunerfinn/PicGo">PicGo仓库</a>查看安装和使用方法。我这里是选择在Windows上配置的，<br>打开<code>powershell</code>或者别的终端，用<code>scoop</code>安装<code>picGo</code></p>
-<figure class="highlight armasm"><table><tr><td class="code"><pre><span class="line"><span class="symbol">scoop</span> bucket <span class="keyword">add</span> helbing https:<span class="comment">//github.com/helbing/scoop-bucket</span></span><br><span class="line"></span><br><span class="line"><span class="symbol">scoop</span> install picgo</span><br></pre></td></tr></table></figure>
-
-<h3 id="github仓库配置"><a href="#github仓库配置" class="headerlink" title="github仓库配置"></a>github仓库配置</h3><p>创建一个public的仓库，然后配置一个<code>token</code>，打开<code>settings</code>，<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200703001157.png" alt="image"><br><code>Personal access tokens</code>下点击<code>Generate new token</code>,<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200703000340.png" alt="image"><br>填<code>note</code>（备注信息），<code>repo</code>打钩。<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200703000437.png" alt="image"><br>点击最底下<code>Generate Token</code>按钮生成一份<code>token</code>，可以看到提示<code>Make sure to copy your new personal access token now. You won’t be able to see it again!</code>，所以复制并保存到起来。</p>
-<h3 id="配置PicGo"><a href="#配置PicGo" class="headerlink" title="配置PicGo"></a>配置PicGo</h3><p><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/PicGo20200703002510.png" alt="image"></p>
-<ul>
-<li><code>设定的仓库名</code>：<code>github用户名/仓库名</code></li>
-<li><code>分支名</code>: 仓库所属分支，仓库默认分支是<code>master</code>，所以这里一般也是填<code>master</code></li>
-<li><code>设定Token</code>: 将前面创建的token复制进来，如果后面忘记了，重新创建再复制进来就可以了。</li>
-<li><code>指定存储路径</code>: 指定图片在仓库的路径。留空就是根目录。为了管理方便，建议按自己喜欢的规则创建文件夹会比较有条理一些。</li>
-<li><code>设定自定义域名</code>：配置自定义域名的图片。<ul>
-<li>不配的话，图片url格式为<code>https://raw.githubusercontent.com/github用户名/仓库名/分支名/指定存储路径/图片名.png)</code>。</li>
-<li>可以使用<a href="https://www.jsdelivr.com/"><code>https://www.jsdelivr.com/</code></a>提供的免费cdn配置加速。格式为<code>https://cdn.jsdelivr.net/gh/github用户名/仓库名</code>,生成的图片url格式为<code>https://cdn.jsdelivr.net/gh/github用户名/仓库名/指定存储路径/图片名.png</code></li>
-</ul>
-</li>
-</ul>
-<h3 id="其他说明和采坑"><a href="#其他说明和采坑" class="headerlink" title="其他说明和采坑"></a>其他说明和采坑</h3><p>相册是本地的一个上传信息缓存，测试发现，只是提供之前图片上传记录用的，删除不会作用到仓库，只是删除这里的一条记录。<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200703004634.png" alt="image"></p>
-<p>出现<code>上传失败</code>错误时，先确认仓库名等信息是否填写准确，再确定选取的本地图片的路径是否包含空格和<code>+</code>等特殊符号。目前发现路径空格和<code>+</code>时会<code>上传失败</code>。<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200703003749.png" alt="image"></p>
-<p>比如我这里一开始把图片存放在c盘<code>图片</code>下的<code>保存的图片</code>下，<code>保存的图片</code>实际路径信息是<code>Saved Pictures</code>，带了空格，然后就上传失败。<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200703004241.png" alt="image"></p>
-<p>有时候<code>上传失败</code>是软件出问题了，可能需要<code>PicGo设置</code>-&gt;<code>设置Server</code>界面重新打开Server：点<code>关闭</code>、<code>确定</code>,再点击<code>开启</code>、<code>确定</code>。</p>
-]]></content>
-      <categories>
-        <category>tools</category>
-      </categories>
-      <tags>
-        <tag>tools</tag>
-        <tag>Windows</tag>
-        <tag>图床</tag>
       </tags>
   </entry>
   <entry>
