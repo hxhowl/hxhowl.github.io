@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 7.1.1">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/owl_128x128.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/owl_32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/owl_16x16.png">
@@ -14,18 +14,19 @@
 
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="//unpkg.com/@fortawesome/fontawesome-free@5/css/all.min.css">
+  <link rel="stylesheet" href="//unpkg.com/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.min.css">
   <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"blog.hxhowl.site","root":"/","scheme":"Gemini","version":"8.0.0-rc.3","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"blog.hxhowl.site","root":"/","scheme":"Gemini","version":"8.0.0-rc.3","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":true,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="Windows 基础开发环境包管理工具chocolatey。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="tools - chocolatey">
-<meta property="og:url" content="blog.hxhowl.site/posts/af013f3b/index.html">
+<meta property="og:url" content="https://blog.hxhowl.site/posts/af013f3b/index.html">
 <meta property="og:site_name" content="hxhowl blog">
 <meta property="og:description" content="Windows 基础开发环境包管理工具chocolatey。">
 <meta property="og:locale" content="zh_CN">
@@ -36,7 +37,7 @@
 <meta property="article:tag" content="tools">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="blog.hxhowl.site/posts/af013f3b/">
+<link rel="canonical" href="https://blog.hxhowl.site/posts/af013f3b/">
 
 
 <script id="page-configurations">
@@ -212,7 +213,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装chocolatey"><span class="nav-number">1.</span> <span class="nav-text">安装chocolatey</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用法"><span class="nav-number"></span> <span class="nav-text">用法</span></a></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85chocolatey"><span class="nav-number">1.</span> <span class="nav-text">安装chocolatey</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8%E6%B3%95"><span class="nav-number"></span> <span class="nav-text">用法</span></a></div>
       </div>
       <!--/noindex-->
 
@@ -282,7 +283,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="blog.hxhowl.site/posts/af013f3b/">
+    <link itemprop="mainEntityOfPage" href="https://blog.hxhowl.site/posts/af013f3b/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/owl_533x533.png">
@@ -365,16 +366,16 @@
 
       
         <p>Windows 基础开发环境包管理工具<code>chocolatey</code>。</p>
-<a id="more"></a>
+<span id="more"></span>
 
 <h4 id="安装chocolatey"><a href="#安装chocolatey" class="headerlink" title="安装chocolatey"></a>安装chocolatey</h4><p>以管理员权限运行cmd.exe或powershell.exe</p>
 <p>cmd运行：</p>
-<figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@"%SystemRoot%\System32\WindowsPowerShell\v1<span class="number">.0</span>\powershell.exe<span class="string">" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "</span>iex ((New-Object System.Net.WebClient).DownloadString(<span class="string">'https://chocolatey.org/install.ps1'</span>))<span class="string">" &amp;&amp; SET "</span>PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin<span class="string">"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@&quot;%SystemRoot%\System32\WindowsPowerShell\v1<span class="number">.0</span>\powershell.exe<span class="string">&quot; -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command &quot;</span>iex ((New-Object System.Net.WebClient).DownloadString(<span class="string">&#x27;https://chocolatey.org/install.ps1&#x27;</span>))<span class="string">&quot; &amp;&amp; SET &quot;</span>PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin<span class="string">&quot;</span></span><br></pre></td></tr></table></figure>
 <p>powershell运行：</p>
-<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).<span class="constructor">DownloadString('<span class="params">https</span>:<span class="operator">/</span><span class="operator">/</span><span class="params">chocolatey</span>.<span class="params">org</span><span class="operator">/</span><span class="params">install</span>.<span class="params">ps1</span>')</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Set</span>-ExecutionPolicy Bypass -Scope Process -Force; iex ((<span class="built_in">New</span>-<span class="keyword">Object</span> <span class="keyword">System</span>.Net.WebClient).DownloadString(<span class="string">&#x27;https://chocolatey.org/install.ps1&#x27;</span>))</span><br></pre></td></tr></table></figure>
 <p>安装完成，运行choco 或 choco -?检查一下是否安装正确</p>
-<p>chocolatey安装位置：<code>C:\ProgramData\Chocolatey</code>。无法配置包安装位置。<br>参考文章<a href="https://blog.csdn.net/u013205877/article/details/78993311" target="_blank" rel="noopener">Windows 神器 Cmder Scoop Chocolatey Listary Seer</a>，可安装的应用程序默认安装在 <code>C:\Program Files\</code>，实际待考究。</p>
-<h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">search - 搜索包 choco search something</span><br><span class="line">list - 列出包 choco list -lo 或者 choco list --local-only</span><br><span class="line">install - 安装 choco install baretail</span><br><span class="line">pin - 固定包的版本，防止包被升级 choco pin windirstat</span><br><span class="line">upgrade - 安装包的升级 choco<span class="built_in"> upgrade </span>baretail</span><br><span class="line">uninstall - 安装包的卸载 choco uninstall baretail</span><br><span class="line">安装Ruby Gem - choco install compass -source ruby</span><br><span class="line">安装Python Egg - choco install sphynx -source python</span><br><span class="line">安装IIS服务器特性 - choco install IIS -source windowsfeatures</span><br><span class="line">安装Webpi特性 - choco install IIS7.5Express -source webpi</span><br><span class="line"></span><br><span class="line">列出Windows系统已安装的软件 - choco list -li 或者 choco list -lai</span><br><span class="line">升级所有已安装的包 - choco<span class="built_in"> upgrade </span>all -y</span><br></pre></td></tr></table></figure>
+<p>chocolatey安装位置：<code>C:\ProgramData\Chocolatey</code>。无法配置包安装位置。<br>参考文章<a target="_blank" rel="noopener" href="https://blog.csdn.net/u013205877/article/details/78993311">Windows 神器 Cmder Scoop Chocolatey Listary Seer</a>，可安装的应用程序默认安装在 <code>C:\Program Files\</code>，实际待考究。</p>
+<h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">search</span> - 搜索包 choco <span class="built_in">search</span> something</span><br><span class="line"><span class="keyword">list</span> - 列出包 choco <span class="keyword">list</span> -<span class="keyword">lo</span> 或者 choco <span class="keyword">list</span> --local-<span class="keyword">only</span></span><br><span class="line">install - 安装 choco install baretail</span><br><span class="line">pin - 固定包的版本，防止包被升级 choco pin windirstat</span><br><span class="line">upgrade - 安装包的升级 choco upgrade baretail</span><br><span class="line">uninstall - 安装包的卸载 choco uninstall baretail</span><br><span class="line">安装Ruby Gem - choco install compass -<span class="keyword">source</span> <span class="keyword">ruby</span></span><br><span class="line">安装Python Egg - choco install sphynx -<span class="keyword">source</span> <span class="keyword">python</span></span><br><span class="line">安装IIS服务器特性 - choco install IIS -<span class="keyword">source</span> windowsfeatures</span><br><span class="line">安装Webpi特性 - choco install IIS7.<span class="number">5</span>Express -<span class="keyword">source</span> webpi</span><br><span class="line"></span><br><span class="line">列出Windows系统已安装的软件 - choco <span class="keyword">list</span> -li 或者 choco <span class="keyword">list</span> -lai</span><br><span class="line">升级所有已安装的包 - choco upgrade <span class="keyword">all</span> -<span class="keyword">y</span></span><br></pre></td></tr></table></figure>
 
 <p>window 下开发常用的开发环境应用</p>
 <figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">choco <span class="keyword">install </span>autohotkey.portable    <span class="comment">#安装 AutoHotkey (Portable)</span></span><br><span class="line">choco <span class="keyword">install </span>nodejs.<span class="keyword">install </span> <span class="comment">#安装 node</span></span><br><span class="line">choco <span class="keyword">install </span>git.<span class="keyword">install </span>    <span class="comment">#安装 git</span></span><br><span class="line">choco <span class="keyword">install </span>ruby            <span class="comment">#安装 ruby</span></span><br><span class="line">choco <span class="keyword">install </span>python          <span class="comment">#安装 python</span></span><br><span class="line">choco <span class="keyword">install </span><span class="keyword">jdk8 </span>           <span class="comment">#安装 JDK8</span></span><br><span class="line">choco <span class="keyword">install </span>googlechrome    <span class="comment">#安装 Chrome</span></span><br><span class="line">choco <span class="keyword">install </span>google-chrome-x64 <span class="comment">#Google Chrome (64-bit only)</span></span><br><span class="line">choco <span class="keyword">install </span>firefox         <span class="comment">#安装 firefox</span></span><br><span class="line">choco <span class="keyword">install </span>notepadplusplus.<span class="keyword">install </span><span class="comment">#安装 notepad++</span></span><br><span class="line">choco <span class="keyword">install </span>Atom                    <span class="comment">#安装 Atom</span></span><br><span class="line">choco <span class="keyword">install </span><span class="keyword">SublimeText3 </span>           <span class="comment">#安装 SublimeText3</span></span><br></pre></td></tr></table></figure>
@@ -394,7 +395,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="/blog.hxhowl.site/posts/af013f3b/" title="tools - chocolatey">blog.hxhowl.site/posts/af013f3b/</a>
+    <a href="https://blog.hxhowl.site/posts/af013f3b/" title="tools - chocolatey">https://blog.hxhowl.site/posts/af013f3b/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -479,12 +480,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">33k</span>
+    <span title="站点总字数">34k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">30 分钟</span>
+    <span title="站点阅读时长">31 分钟</span>
 </div><script color="0,0,255" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
 
         
@@ -593,6 +594,8 @@
 
   
   <script src="//unpkg.com/animejs@3.1.0/lib/anime.min.js"></script>
+  <script src="//unpkg.com/jquery@3/dist/jquery.min.js"></script>
+  <script src="//unpkg.com/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
   <script src="//unpkg.com/velocity-animate@1/velocity.min.js"></script>
   <script src="//unpkg.com/velocity-animate@1/velocity.ui.min.js"></script>
 

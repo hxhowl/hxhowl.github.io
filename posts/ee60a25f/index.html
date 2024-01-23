@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 7.1.1">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/owl_128x128.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/owl_32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/owl_16x16.png">
@@ -14,18 +14,19 @@
 
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="//unpkg.com/@fortawesome/fontawesome-free@5/css/all.min.css">
+  <link rel="stylesheet" href="//unpkg.com/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.min.css">
   <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"blog.hxhowl.site","root":"/","scheme":"Gemini","version":"8.0.0-rc.3","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"blog.hxhowl.site","root":"/","scheme":"Gemini","version":"8.0.0-rc.3","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":true,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="Windows环境下配置hexo，并发布到github.io。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="blog - Windows下hexo+github">
-<meta property="og:url" content="blog.hxhowl.site/posts/ee60a25f/index.html">
+<meta property="og:url" content="https://blog.hxhowl.site/posts/ee60a25f/index.html">
 <meta property="og:site_name" content="hxhowl blog">
 <meta property="og:description" content="Windows环境下配置hexo，并发布到github.io。">
 <meta property="og:locale" content="zh_CN">
@@ -38,7 +39,7 @@
 <meta property="article:tag" content="next">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="blog.hxhowl.site/posts/ee60a25f/">
+<link rel="canonical" href="https://blog.hxhowl.site/posts/ee60a25f/">
 
 
 <script id="page-configurations">
@@ -214,7 +215,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo安装"><span class="nav-number">1.</span> <span class="nav-text">Hexo安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#github配置"><span class="nav-number">2.</span> <span class="nav-text">github配置</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo%E5%AE%89%E8%A3%85"><span class="nav-number">1.</span> <span class="nav-text">Hexo安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#github%E9%85%8D%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">github配置</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -284,7 +285,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="blog.hxhowl.site/posts/ee60a25f/">
+    <link itemprop="mainEntityOfPage" href="https://blog.hxhowl.site/posts/ee60a25f/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/owl_533x533.png">
@@ -347,7 +348,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.5k</span>
+              <span>2.6k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -367,41 +368,43 @@
 
       
         <p>Windows环境下配置<code>hexo</code>，并发布到<code>github.io</code>。</p>
-<a id="more"></a>
+<span id="more"></span>
 
-<h3 id="Hexo安装"><a href="#Hexo安装" class="headerlink" title="Hexo安装"></a>Hexo安装</h3><p>参考<a href="https://hexo.io/docs/" target="_blank" rel="noopener">hexo官方文档</a>,Windows下配置<code>hexo</code>，我这边命令行工具用的是自带的<code>PowerShell</code>。</p>
+<h3 id="Hexo安装"><a href="#Hexo安装" class="headerlink" title="Hexo安装"></a>Hexo安装</h3><p>参考<a target="_blank" rel="noopener" href="https://hexo.io/docs/">hexo官方文档</a>,Windows下配置<code>hexo</code>，我这边命令行工具用的是自带的<code>PowerShell</code>。</p>
 <ol>
-<li>安装先下载安装<a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a>和<a href="https://git-scm.com/" target="_blank" rel="noopener">git</a>。在安装<code>node.js</code>时，记得勾选<code>Add to PATH</code>，否则要手动配置环境变量。安装完分别在<code>PowerShell</code>查看版本，查看是否安装成功：<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">version</span></span><br><span class="line"><span class="keyword">node</span> <span class="title">-v</span></span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>npm全局安装hexo命令，如果安装失败出现权限问题，试试前面加上<code>sudo</code>（命令需要先安装），或者以管理员身份打开<code>PowerShell</code>，然后执行命令。<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-<span class="keyword">cli</span></span><br></pre></td></tr></table></figure></li>
-<li>创建一个文件夹，用于存放hexo文件,这里以<code>D:\blog\hexo</code>为例。</li>
-<li><code>hexo -v</code>检查版本，确认hexo命令是否安装成功，执行记录如下<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">PS</span> <span class="string">D:\blog\hexo&gt;</span> <span class="string">hexo</span> <span class="string">-v</span></span><br><span class="line"><span class="attr">hexo-cli:</span> <span class="number">3.1</span><span class="number">.0</span></span><br><span class="line"><span class="attr">os:</span> <span class="string">Windows_NT</span> <span class="number">10.0</span><span class="number">.18363</span> <span class="string">win32</span> <span class="string">x64</span></span><br><span class="line"><span class="attr">node:</span> <span class="number">14.2</span><span class="number">.0</span></span><br><span class="line"><span class="attr">v8:</span> <span class="number">8.1</span><span class="number">.307</span><span class="number">.31</span><span class="string">-node.33</span></span><br><span class="line"><span class="attr">uv:</span> <span class="number">1.37</span><span class="number">.0</span></span><br><span class="line"><span class="attr">zlib:</span> <span class="number">1.2</span><span class="number">.11</span></span><br><span class="line"><span class="attr">brotli:</span> <span class="number">1.0</span><span class="number">.7</span></span><br><span class="line"><span class="attr">ares:</span> <span class="number">1.16</span><span class="number">.0</span></span><br><span class="line"><span class="attr">modules:</span> <span class="number">83</span></span><br><span class="line"><span class="attr">nghttp2:</span> <span class="number">1.40</span><span class="number">.0</span></span><br><span class="line"><span class="attr">napi:</span> <span class="number">6</span></span><br><span class="line"><span class="attr">llhttp:</span> <span class="number">2.0</span><span class="number">.4</span></span><br><span class="line"><span class="attr">openssl:</span> <span class="number">1.1</span><span class="string">.1g</span></span><br><span class="line"><span class="attr">cldr:</span> <span class="number">36.1</span></span><br><span class="line"><span class="attr">icu:</span> <span class="number">66.1</span></span><br><span class="line"><span class="attr">tz:</span> <span class="string">2019c</span></span><br><span class="line"><span class="attr">unicode:</span> <span class="number">13.0</span></span><br></pre></td></tr></table></figure></li>
-<li>在前面创建好的文件夹下执行<code>hexo init</code></li>
-<li>测试配置是否成功，依次执行<code>hexo clean</code>,<code>hexo generate</code>,<code>hexo server</code>。然后在浏览器打开<code>http://localhost:4000</code>，成功显示网页说明配置成功。如果有遇到下面警告，参考<a href="https://zhuanlan.zhihu.com/p/136552969" target="_blank" rel="noopener">部署Hexo踩过的坑—node14.0配置hexo</a> ，应该是nodejs版本过高导致的，不过感觉不影响使用。<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">node</span><span class="title">:9968</span>) Warning: Accessing non-existent <span class="keyword">property</span><span class="title"> </span>'lineno' of module exports inside circular dependency</span><br><span class="line">(<span class="keyword">node</span><span class="title">:9968</span>) Warning: Accessing non-existent <span class="keyword">property</span><span class="title"> </span>'column' of module exports inside circular dependency</span><br><span class="line">(<span class="keyword">node</span><span class="title">:9968</span>) Warning: Accessing non-existent <span class="keyword">property</span><span class="title"> </span>'filename' of module exports inside circular dependency</span><br><span class="line">(<span class="keyword">node</span><span class="title">:9968</span>) Warning: Accessing non-existent <span class="keyword">property</span><span class="title"> </span>'lineno' of module exports inside circular dependency</span><br><span class="line">(<span class="keyword">node</span><span class="title">:9968</span>) Warning: Accessing non-existent <span class="keyword">property</span><span class="title"> </span>'column' of module exports inside circular dependency</span><br><span class="line">(<span class="keyword">node</span><span class="title">:9968</span>) Warning: Accessing non-existent <span class="keyword">property</span><span class="title"> </span>'filename' of module exports inside circular dependency</span><br></pre></td></tr></table></figure>
-
+<li><p>安装先下载安装<a target="_blank" rel="noopener" href="https://nodejs.org/en/">Node.js</a>和<a target="_blank" rel="noopener" href="https://git-scm.com/">git</a>。在安装<code>node.js</code>时，记得勾选<code>Add to PATH</code>，否则要手动配置环境变量。安装完分别在<code>PowerShell</code>查看版本，查看是否安装成功：</p>
+ <figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">version</span></span><br><span class="line"><span class="keyword">node</span> <span class="title">-v</span></span><br></pre></td></tr></table></figure></li>
+<li><p>npm全局安装hexo命令，如果安装失败出现权限问题，试试前面加上<code>sudo</code>（命令需要先安装），或者以管理员身份打开<code>PowerShell</code>，然后执行命令。</p>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-<span class="keyword">cli</span></span><br></pre></td></tr></table></figure></li>
+<li><p>创建一个文件夹，用于存放hexo文件,这里以<code>D:\blog\hexo</code>为例。</p>
 </li>
-</ol>
+<li><p><code>hexo -v</code>检查版本，确认hexo命令是否安装成功，执行记录如下</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">PS</span> D:\blog\hexo&gt; hexo -v</span><br><span class="line"><span class="attribute">hexo</span>-cli: <span class="number">3</span>.<span class="number">1</span>.<span class="number">0</span></span><br><span class="line"><span class="attribute">os</span>: Windows_NT <span class="number">10</span>.<span class="number">0</span>.<span class="number">18363</span> win32 x64</span><br><span class="line"><span class="attribute">node</span>: <span class="number">14</span>.<span class="number">2</span>.<span class="number">0</span></span><br><span class="line"><span class="attribute">v8</span>: <span class="number">8.1.307.31</span>-node.<span class="number">33</span></span><br><span class="line"><span class="attribute">uv</span>: <span class="number">1</span>.<span class="number">37</span>.<span class="number">0</span></span><br><span class="line"><span class="attribute">zlib</span>: <span class="number">1</span>.<span class="number">2</span>.<span class="number">11</span></span><br><span class="line"><span class="attribute">brotli</span>: <span class="number">1</span>.<span class="number">0</span>.<span class="number">7</span></span><br><span class="line"><span class="attribute">ares</span>: <span class="number">1</span>.<span class="number">16</span>.<span class="number">0</span></span><br><span class="line"><span class="attribute">modules</span>: <span class="number">83</span></span><br><span class="line"><span class="attribute">nghttp2</span>: <span class="number">1</span>.<span class="number">40</span>.<span class="number">0</span></span><br><span class="line"><span class="attribute">napi</span>: <span class="number">6</span></span><br><span class="line"><span class="attribute">llhttp</span>: <span class="number">2</span>.<span class="number">0</span>.<span class="number">4</span></span><br><span class="line"><span class="attribute">openssl</span>: <span class="number">1</span>.<span class="number">1</span>.<span class="number">1</span>g</span><br><span class="line"><span class="attribute">cldr</span>: <span class="number">36</span>.<span class="number">1</span></span><br><span class="line"><span class="attribute">icu</span>: <span class="number">66</span>.<span class="number">1</span></span><br><span class="line"><span class="attribute">tz</span>: <span class="number">2019</span>c</span><br><span class="line"><span class="attribute">unicode</span>: <span class="number">13</span>.<span class="number">0</span></span><br></pre></td></tr></table></figure></li>
+<li><p>在前面创建好的文件夹下执行<code>hexo init</code></p>
 </li>
-</ol>
-<ol start="7">
-<li>换主题以<code>next</code>主题为例,在<code>D:\blog\hexo</code>下载主题，操作记录如下：<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PS D:\blog\hexo&gt; git clone http<span class="variable">s:</span>//github.<span class="keyword">com</span>/<span class="keyword">next</span>-theme/hexo-theme-<span class="keyword">next</span> themes/<span class="keyword">next</span></span><br></pre></td></tr></table></figure>
-然后在<code>D:\blog\hexo</code>下<code>_config.yml</code>文件内找到<code>theme: landscape</code>,修改为<code>theme: next</code>,将默认主题改为next。</li>
+<li><p>测试配置是否成功，依次执行<code>hexo clean</code>,<code>hexo generate</code>,<code>hexo server</code>。然后在浏览器打开<code>http://localhost:4000</code>，成功显示网页说明配置成功。如果有遇到下面警告，参考<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/136552969">部署Hexo踩过的坑—node14.0配置hexo</a> ，应该是nodejs版本过高导致的，不过感觉不影响使用。</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">node</span><span class="title">:9968</span>) Warning: Accessing non-existent <span class="keyword">property</span><span class="title"> </span>&#x27;lineno&#x27; of module exports inside circular dependency</span><br><span class="line">(<span class="keyword">node</span><span class="title">:9968</span>) Warning: Accessing non-existent <span class="keyword">property</span><span class="title"> </span>&#x27;column&#x27; of module exports inside circular dependency</span><br><span class="line">(<span class="keyword">node</span><span class="title">:9968</span>) Warning: Accessing non-existent <span class="keyword">property</span><span class="title"> </span>&#x27;filename&#x27; of module exports inside circular dependency</span><br><span class="line">(<span class="keyword">node</span><span class="title">:9968</span>) Warning: Accessing non-existent <span class="keyword">property</span><span class="title"> </span>&#x27;lineno&#x27; of module exports inside circular dependency</span><br><span class="line">(<span class="keyword">node</span><span class="title">:9968</span>) Warning: Accessing non-existent <span class="keyword">property</span><span class="title"> </span>&#x27;column&#x27; of module exports inside circular dependency</span><br><span class="line">(<span class="keyword">node</span><span class="title">:9968</span>) Warning: Accessing non-existent <span class="keyword">property</span><span class="title"> </span>&#x27;filename&#x27; of module exports inside circular dependency</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>换主题以<code>next</code>主题为例,在<code>D:\blog\hexo</code>下载主题，操作记录如下：</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PS D:\blog\hexo&gt; git clone https:<span class="regexp">//gi</span>thub.com<span class="regexp">/next-theme/</span>hexo-theme-<span class="keyword">next</span> themes/<span class="keyword">next</span></span><br></pre></td></tr></table></figure>
+<p>然后在<code>D:\blog\hexo</code>下<code>_config.yml</code>文件内找到<code>theme: landscape</code>,修改为<code>theme: next</code>,将默认主题改为next。</p>
+</li>
 </ol>
 <h3 id="github配置"><a href="#github配置" class="headerlink" title="github配置"></a>github配置</h3><ol>
 <li><p>创建一个repo，名称为<code>yourname.github.io</code>, 其中<code>yourname</code>是你的github名称,不可以为其他名称。项目为公开项目，否则后面发布后会404。</p>
 </li>
 <li><p>在<code>powershell</code>下配置git用户名和邮箱，可以和github一致。</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git<span class="built_in"> config </span>--global user.name <span class="string">"yourname"</span></span><br><span class="line">git<span class="built_in"> config </span>--global user.email <span class="string">"yourmail"</span></span><br></pre></td></tr></table></figure></li>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config <span class="attr">--global</span> user<span class="selector-class">.name</span> <span class="string">&quot;yourname&quot;</span></span><br><span class="line">git config <span class="attr">--global</span> user<span class="selector-class">.email</span> <span class="string">&quot;yourmail&quot;</span></span><br></pre></td></tr></table></figure></li>
 <li><p>指定邮箱生成ssh秘钥，秘钥默认存放在<code>C:\Users\huangchp\.ssh</code>。</p>
-<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"youremail@example.com</span></span><br></pre></td></tr></table></figure></li>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;youremail@example.com</span></span><br></pre></td></tr></table></figure></li>
 <li><p>将上面获取的ssh放到github中，操作如下：右上角头像右键-&gt;<code>Settings</code>-&gt;<code>SSH and GPG keys</code> -&gt; <code>New SSH key</code>,把刚刚ssh用的邮箱填入<code>Title</code>框内，ssh生成的<code>id_rsa.pub</code>内容填入<code>Key</code>框内，点击<code>Add ssh key</code>保存。</p>
 </li>
 <li><p><code>PowerShell</code>执行<code>ssh -T git@github.com</code>验证ssh配置</p>
 </li>
 <li><p><code>hexo</code>目录下<code>_config.yml</code>添加发布配置</p>
-<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line">  <span class="attribute">type</span>: git</span><br><span class="line">  <span class="attribute">repo</span>: <span class="attribute">https</span>:<span class="comment">//github.com/YourgithubName/YourgithubName.github.io.git</span></span><br><span class="line">  <span class="attribute">branch</span>: master</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">deploy:</span></span><br><span class="line"><span class="symbol">  type:</span> git</span><br><span class="line"><span class="symbol">  repo:</span> https:<span class="comment">//github.com/YourgithubName/YourgithubName.github.io.git</span></span><br><span class="line"><span class="symbol">  branch:</span> master</span><br></pre></td></tr></table></figure></li>
 <li><p><code>hexo</code>目录下，安装发布插件<code>npm install hexo-deployer-git --save</code>，然后执行发布</p>
-<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">hexo</span> <span class="string">clean</span></span><br><span class="line"><span class="attr">hexo</span> <span class="string">g</span></span><br><span class="line"><span class="attr">hexo</span> <span class="string">d</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">hexo clean</span></span><br><span class="line"><span class="attribute">hexo g</span></span><br><span class="line"><span class="attribute">hexo d</span></span><br></pre></td></tr></table></figure>
 <p>打开<code>YourgithubName.github.io.git</code>你的地址验证如果和本地一样打开，就成了，如果404，确定<code>_config.yml</code>有没有写错。</p>
 </li>
 </ol>
@@ -422,7 +425,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="/blog.hxhowl.site/posts/ee60a25f/" title="blog - Windows下hexo+github">blog.hxhowl.site/posts/ee60a25f/</a>
+    <a href="https://blog.hxhowl.site/posts/ee60a25f/" title="blog - Windows下hexo+github">https://blog.hxhowl.site/posts/ee60a25f/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -509,12 +512,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">33k</span>
+    <span title="站点总字数">34k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">30 分钟</span>
+    <span title="站点阅读时长">31 分钟</span>
 </div><script color="0,0,255" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
 
         
@@ -623,6 +626,8 @@
 
   
   <script src="//unpkg.com/animejs@3.1.0/lib/anime.min.js"></script>
+  <script src="//unpkg.com/jquery@3/dist/jquery.min.js"></script>
+  <script src="//unpkg.com/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
   <script src="//unpkg.com/velocity-animate@1/velocity.min.js"></script>
   <script src="//unpkg.com/velocity-animate@1/velocity.ui.min.js"></script>
 

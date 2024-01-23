@@ -3,11 +3,11 @@
   <title>hxhowl blog</title>
   
   <subtitle>Write Something...</subtitle>
-  <link href="/atom.xml" rel="self"/>
+  <link href="https://blog.hxhowl.site/atom.xml" rel="self"/>
   
-  <link href="blog.hxhowl.site/"/>
+  <link href="https://blog.hxhowl.site/"/>
   <updated>2020-07-04T19:18:52.270Z</updated>
-  <id>blog.hxhowl.site/</id>
+  <id>https://blog.hxhowl.site/</id>
   
   <author>
     <name>hxhowl</name>
@@ -18,141 +18,129 @@
   
   <entry>
     <title>tools - PicGo+github图床</title>
-    <link href="blog.hxhowl.site/posts/1a8bafa/"/>
-    <id>blog.hxhowl.site/posts/1a8bafa/</id>
+    <link href="https://blog.hxhowl.site/posts/1a8bafa/"/>
+    <id>https://blog.hxhowl.site/posts/1a8bafa/</id>
     <published>2020-07-04T17:56:10.588Z</published>
     <updated>2020-07-04T19:18:52.270Z</updated>
     
-    <summary type="html">
     
-      &lt;p&gt;Windows环境下配置以&lt;code&gt;github&lt;/code&gt;为图床仓库的&lt;code&gt;PicGo&lt;/code&gt;图床工具。&lt;/p&gt;
-    
-    </summary>
+    <summary type="html">&lt;p&gt;Windows环境下配置以&lt;code&gt;github&lt;/code&gt;为图床仓库的&lt;code&gt;PicGo&lt;/code&gt;图床工具。&lt;/p&gt;</summary>
     
     
-      <category term="tools" scheme="blog.hxhowl.site/categories/tools/"/>
+    
+    <category term="tools" scheme="https://blog.hxhowl.site/categories/tools/"/>
     
     
-      <category term="Windows" scheme="blog.hxhowl.site/tags/Windows/"/>
+    <category term="Windows" scheme="https://blog.hxhowl.site/tags/Windows/"/>
     
-      <category term="tools" scheme="blog.hxhowl.site/tags/tools/"/>
+    <category term="tools" scheme="https://blog.hxhowl.site/tags/tools/"/>
     
-      <category term="图床" scheme="blog.hxhowl.site/tags/%E5%9B%BE%E5%BA%8A/"/>
+    <category term="图床" scheme="https://blog.hxhowl.site/tags/%E5%9B%BE%E5%BA%8A/"/>
     
   </entry>
   
   <entry>
     <title>tools - scoop</title>
-    <link href="blog.hxhowl.site/posts/d89cad7e/"/>
-    <id>blog.hxhowl.site/posts/d89cad7e/</id>
+    <link href="https://blog.hxhowl.site/posts/d89cad7e/"/>
+    <id>https://blog.hxhowl.site/posts/d89cad7e/</id>
     <published>2020-07-04T17:49:10.200Z</published>
     <updated>2020-07-04T18:10:37.703Z</updated>
     
-    <summary type="html">
     
-      &lt;p&gt;Windows 基础开发环境包管理工具&lt;code&gt;scoop&lt;/code&gt;。&lt;/p&gt;
-    
-    </summary>
+    <summary type="html">&lt;p&gt;Windows 基础开发环境包管理工具&lt;code&gt;scoop&lt;/code&gt;。&lt;/p&gt;</summary>
     
     
-      <category term="tools" scheme="blog.hxhowl.site/categories/tools/"/>
+    
+    <category term="tools" scheme="https://blog.hxhowl.site/categories/tools/"/>
     
     
-      <category term="Windows" scheme="blog.hxhowl.site/tags/Windows/"/>
+    <category term="Windows" scheme="https://blog.hxhowl.site/tags/Windows/"/>
     
-      <category term="tools" scheme="blog.hxhowl.site/tags/tools/"/>
+    <category term="tools" scheme="https://blog.hxhowl.site/tags/tools/"/>
     
   </entry>
   
   <entry>
     <title>tools - chocolatey</title>
-    <link href="blog.hxhowl.site/posts/af013f3b/"/>
-    <id>blog.hxhowl.site/posts/af013f3b/</id>
+    <link href="https://blog.hxhowl.site/posts/af013f3b/"/>
+    <id>https://blog.hxhowl.site/posts/af013f3b/</id>
     <published>2020-07-04T17:44:39.101Z</published>
     <updated>2020-07-04T18:10:37.701Z</updated>
     
-    <summary type="html">
     
-      &lt;p&gt;Windows 基础开发环境包管理工具&lt;code&gt;chocolatey&lt;/code&gt;。&lt;/p&gt;
-    
-    </summary>
+    <summary type="html">&lt;p&gt;Windows 基础开发环境包管理工具&lt;code&gt;chocolatey&lt;/code&gt;。&lt;/p&gt;</summary>
     
     
-      <category term="tools" scheme="blog.hxhowl.site/categories/tools/"/>
+    
+    <category term="tools" scheme="https://blog.hxhowl.site/categories/tools/"/>
     
     
-      <category term="Windows" scheme="blog.hxhowl.site/tags/Windows/"/>
+    <category term="Windows" scheme="https://blog.hxhowl.site/tags/Windows/"/>
     
-      <category term="tools" scheme="blog.hxhowl.site/tags/tools/"/>
+    <category term="tools" scheme="https://blog.hxhowl.site/tags/tools/"/>
     
   </entry>
   
   <entry>
     <title>blog - hexo NexT主题下配置和美化</title>
-    <link href="blog.hxhowl.site/posts/e6f9a475/"/>
-    <id>blog.hxhowl.site/posts/e6f9a475/</id>
+    <link href="https://blog.hxhowl.site/posts/e6f9a475/"/>
+    <id>https://blog.hxhowl.site/posts/e6f9a475/</id>
     <published>2020-06-27T10:45:05.010Z</published>
     <updated>2023-08-19T02:42:37.051Z</updated>
     
-    <summary type="html">
     
-      &lt;p&gt;基于&lt;code&gt;next8.0&lt;/code&gt;的&lt;code&gt;hexo&lt;/code&gt;配置和美化。&lt;/p&gt;
-    
-    </summary>
+    <summary type="html">&lt;p&gt;基于&lt;code&gt;next8.0&lt;/code&gt;的&lt;code&gt;hexo&lt;/code&gt;配置和美化。&lt;/p&gt;</summary>
     
     
-      <category term="hexo" scheme="blog.hxhowl.site/categories/hexo/"/>
+    
+    <category term="hexo" scheme="https://blog.hxhowl.site/categories/hexo/"/>
     
     
-      <category term="blog" scheme="blog.hxhowl.site/tags/blog/"/>
+    <category term="blog" scheme="https://blog.hxhowl.site/tags/blog/"/>
     
-      <category term="Windows" scheme="blog.hxhowl.site/tags/Windows/"/>
+    <category term="Windows" scheme="https://blog.hxhowl.site/tags/Windows/"/>
     
-      <category term="hexo" scheme="blog.hxhowl.site/tags/hexo/"/>
+    <category term="hexo" scheme="https://blog.hxhowl.site/tags/hexo/"/>
     
-      <category term="next" scheme="blog.hxhowl.site/tags/next/"/>
+    <category term="next" scheme="https://blog.hxhowl.site/tags/next/"/>
     
   </entry>
   
   <entry>
     <title>blog - Windows下hexo+github</title>
-    <link href="blog.hxhowl.site/posts/ee60a25f/"/>
-    <id>blog.hxhowl.site/posts/ee60a25f/</id>
+    <link href="https://blog.hxhowl.site/posts/ee60a25f/"/>
+    <id>https://blog.hxhowl.site/posts/ee60a25f/</id>
     <published>2020-06-27T10:34:22.362Z</published>
     <updated>2020-06-27T10:50:25.270Z</updated>
     
-    <summary type="html">
     
-      &lt;p&gt;Windows环境下配置&lt;code&gt;hexo&lt;/code&gt;，并发布到&lt;code&gt;github.io&lt;/code&gt;。&lt;/p&gt;
-    
-    </summary>
+    <summary type="html">&lt;p&gt;Windows环境下配置&lt;code&gt;hexo&lt;/code&gt;，并发布到&lt;code&gt;github.io&lt;/code&gt;。&lt;/p&gt;</summary>
     
     
-      <category term="hexo" scheme="blog.hxhowl.site/categories/hexo/"/>
+    
+    <category term="hexo" scheme="https://blog.hxhowl.site/categories/hexo/"/>
     
     
-      <category term="blog" scheme="blog.hxhowl.site/tags/blog/"/>
+    <category term="blog" scheme="https://blog.hxhowl.site/tags/blog/"/>
     
-      <category term="Windows" scheme="blog.hxhowl.site/tags/Windows/"/>
+    <category term="Windows" scheme="https://blog.hxhowl.site/tags/Windows/"/>
     
-      <category term="hexo" scheme="blog.hxhowl.site/tags/hexo/"/>
+    <category term="hexo" scheme="https://blog.hxhowl.site/tags/hexo/"/>
     
-      <category term="next" scheme="blog.hxhowl.site/tags/next/"/>
+    <category term="next" scheme="https://blog.hxhowl.site/tags/next/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="blog.hxhowl.site/posts/4a17b156/"/>
-    <id>blog.hxhowl.site/posts/4a17b156/</id>
+    <link href="https://blog.hxhowl.site/posts/4a17b156/"/>
+    <id>https://blog.hxhowl.site/posts/4a17b156/</id>
     <published>2020-06-23T15:48:09.353Z</published>
     <updated>2020-06-27T04:14:25.898Z</updated>
     
-    <summary type="html">
     
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;</summary>
     
-    </summary>
     
     
     
@@ -160,168 +148,156 @@
   
   <entry>
     <title>java基础 - 06.时间类转换</title>
-    <link href="blog.hxhowl.site/posts/8e91112d/"/>
-    <id>blog.hxhowl.site/posts/8e91112d/</id>
+    <link href="https://blog.hxhowl.site/posts/8e91112d/"/>
+    <id>https://blog.hxhowl.site/posts/8e91112d/</id>
     <published>2019-05-23T09:04:07.000Z</published>
-    <updated>2024-01-20T08:24:56.578Z</updated>
-    
-    <summary type="html">
-    
-      &lt;ol&gt;
-&lt;li&gt;Timestamp转LocalDateTime（mysql中datetime数据取出时是timestamp类型）&lt;figure class=&quot;highlight reasonml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;LocalDateTime localDateTime = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;constructor&quot;&gt;Timestamp(System.&lt;span class=&quot;params&quot;&gt;currentTimeMillis&lt;/span&gt;()&lt;/span&gt;).&lt;span class=&quot;keyword&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;constructor&quot;&gt;LocalDateTime()&lt;/span&gt;; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//或者 &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;LocalDateTime localDateTime1 = &lt;span class=&quot;module-access&quot;&gt;&lt;span class=&quot;module&quot;&gt;&lt;span class=&quot;identifier&quot;&gt;LocalDateTime&lt;/span&gt;.&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;of&lt;/span&gt;&lt;span class=&quot;constructor&quot;&gt;Instant(&lt;span class=&quot;params&quot;&gt;new&lt;/span&gt; Timestamp(System.&lt;span class=&quot;params&quot;&gt;currentTimeMillis&lt;/span&gt;()&lt;/span&gt;).&lt;span class=&quot;keyword&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;constructor&quot;&gt;Instant()&lt;/span&gt;,&lt;span class=&quot;module-access&quot;&gt;&lt;span class=&quot;module&quot;&gt;&lt;span class=&quot;identifier&quot;&gt;ZoneId&lt;/span&gt;.&lt;/span&gt;&lt;/span&gt;system&lt;span class=&quot;constructor&quot;&gt;Default()&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
+    <updated>2024-01-22T10:44:44.410Z</updated>
     
     
-      <category term="java基础" scheme="blog.hxhowl.site/categories/java%E5%9F%BA%E7%A1%80/"/>
+    <summary type="html">&lt;ol&gt;
+&lt;li&gt;Timestamp转LocalDateTime（mysql中datetime数据取出时是timestamp类型）&lt;figure class=&quot;highlight pgsql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;LocalDateTime localDateTime = &lt;span class=&quot;built_in&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;type&quot;&gt;Timestamp&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;System&lt;/span&gt;.currentTimeMillis()).toLocalDateTime(); &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//或者 &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;LocalDateTime localDateTime1 = LocalDateTime.ofInstant(&lt;span class=&quot;built_in&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;type&quot;&gt;Timestamp&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;System&lt;/span&gt;.currentTimeMillis()).toInstant(),ZoneId.systemDefault());&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
     
     
-      <category term="java" scheme="blog.hxhowl.site/tags/java/"/>
     
-      <category term="笔记" scheme="blog.hxhowl.site/tags/%E7%AC%94%E8%AE%B0/"/>
+    <category term="java基础" scheme="https://blog.hxhowl.site/categories/java%E5%9F%BA%E7%A1%80/"/>
     
-      <category term="java基础" scheme="blog.hxhowl.site/tags/java%E5%9F%BA%E7%A1%80/"/>
+    
+    <category term="java" scheme="https://blog.hxhowl.site/tags/java/"/>
+    
+    <category term="java基础" scheme="https://blog.hxhowl.site/tags/java%E5%9F%BA%E7%A1%80/"/>
+    
+    <category term="笔记" scheme="https://blog.hxhowl.site/tags/%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
     <title>java基础 - 05.java注解</title>
-    <link href="blog.hxhowl.site/posts/5a25ee7e/"/>
-    <id>blog.hxhowl.site/posts/5a25ee7e/</id>
+    <link href="https://blog.hxhowl.site/posts/5a25ee7e/"/>
+    <id>https://blog.hxhowl.site/posts/5a25ee7e/</id>
     <published>2019-05-20T09:03:44.000Z</published>
     <updated>2023-08-20T09:34:02.595Z</updated>
     
-    <summary type="html">
     
-      &lt;p&gt;定义：注解（Annotation），也叫元数据。一种代码级别的说明。它是JDK1.5及以后版本引入的一个特性，与类、接口、枚举是在同一个层次。它可以声明在包、类、字段、方法、局部变量、方法参数等的前面，用来对这些元素进行说明，注释。注解通过&lt;code&gt;@interface&lt;/code&gt;关键字进行定义。&lt;/p&gt;
-    
-    </summary>
+    <summary type="html">&lt;p&gt;定义：注解（Annotation），也叫元数据。一种代码级别的说明。它是JDK1.5及以后版本引入的一个特性，与类、接口、枚举是在同一个层次。它可以声明在包、类、字段、方法、局部变量、方法参数等的前面，用来对这些元素进行说明，注释。注解通过&lt;code&gt;@interface&lt;/code&gt;关键字进行定义。&lt;/p&gt;</summary>
     
     
-      <category term="java基础" scheme="blog.hxhowl.site/categories/java%E5%9F%BA%E7%A1%80/"/>
+    
+    <category term="java基础" scheme="https://blog.hxhowl.site/categories/java%E5%9F%BA%E7%A1%80/"/>
     
     
-      <category term="java" scheme="blog.hxhowl.site/tags/java/"/>
+    <category term="java" scheme="https://blog.hxhowl.site/tags/java/"/>
     
-      <category term="笔记" scheme="blog.hxhowl.site/tags/%E7%AC%94%E8%AE%B0/"/>
+    <category term="java基础" scheme="https://blog.hxhowl.site/tags/java%E5%9F%BA%E7%A1%80/"/>
     
-      <category term="java基础" scheme="blog.hxhowl.site/tags/java%E5%9F%BA%E7%A1%80/"/>
+    <category term="笔记" scheme="https://blog.hxhowl.site/tags/%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
     <title>java基础 - 04.匿名内部类</title>
-    <link href="blog.hxhowl.site/posts/9cf3d23d/"/>
-    <id>blog.hxhowl.site/posts/9cf3d23d/</id>
+    <link href="https://blog.hxhowl.site/posts/9cf3d23d/"/>
+    <id>https://blog.hxhowl.site/posts/9cf3d23d/</id>
     <published>2019-04-02T09:03:13.000Z</published>
     <updated>2023-08-20T09:34:09.724Z</updated>
     
-    <summary type="html">
     
-      &lt;p&gt;匿名内部类 :是内部类的简化写法。它的本质是一个带具体实现的父类或者父接口的匿名的子类对象。 开发中，最常用到的内部类就是匿名内部类了。以接口举例，当你使用一个接口时，得做如下几步操作：&lt;/p&gt;
+    <summary type="html">&lt;p&gt;匿名内部类 :是内部类的简化写法。它的本质是一个带具体实现的父类或者父接口的匿名的子类对象。 开发中，最常用到的内部类就是匿名内部类了。以接口举例，当你使用一个接口时，得做如下几步操作：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;定义子类&lt;/li&gt;
 &lt;li&gt;重写接口中的方法&lt;/li&gt;
 &lt;li&gt;创建子类对象&lt;/li&gt;
 &lt;li&gt;调用重写后的方法&lt;/li&gt;
-&lt;/ol&gt;
-    
-    </summary>
+&lt;/ol&gt;</summary>
     
     
-      <category term="java基础" scheme="blog.hxhowl.site/categories/java%E5%9F%BA%E7%A1%80/"/>
+    
+    <category term="java基础" scheme="https://blog.hxhowl.site/categories/java%E5%9F%BA%E7%A1%80/"/>
     
     
-      <category term="java" scheme="blog.hxhowl.site/tags/java/"/>
+    <category term="java" scheme="https://blog.hxhowl.site/tags/java/"/>
     
-      <category term="笔记" scheme="blog.hxhowl.site/tags/%E7%AC%94%E8%AE%B0/"/>
+    <category term="java基础" scheme="https://blog.hxhowl.site/tags/java%E5%9F%BA%E7%A1%80/"/>
     
-      <category term="java基础" scheme="blog.hxhowl.site/tags/java%E5%9F%BA%E7%A1%80/"/>
+    <category term="笔记" scheme="https://blog.hxhowl.site/tags/%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
     <title>java基础 - 03.final关键字</title>
-    <link href="blog.hxhowl.site/posts/f2b5981c/"/>
-    <id>blog.hxhowl.site/posts/f2b5981c/</id>
+    <link href="https://blog.hxhowl.site/posts/f2b5981c/"/>
+    <id>https://blog.hxhowl.site/posts/f2b5981c/</id>
     <published>2019-03-20T08:59:57.000Z</published>
     <updated>2023-08-20T09:34:22.517Z</updated>
     
-    <summary type="html">
     
-      &lt;p&gt;final: 不可改变。可以用于修饰类、方法和变量。&lt;/p&gt;
+    <summary type="html">&lt;p&gt;final: 不可改变。可以用于修饰类、方法和变量。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;类:被修饰的类，不能被继承。 &lt;/li&gt;
 &lt;li&gt;方法:被修饰的方法，不能被重写。 &lt;/li&gt;
 &lt;li&gt;变量:被修饰的变量，不能被重新赋值。&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
+&lt;/ul&gt;</summary>
     
     
-      <category term="java基础" scheme="blog.hxhowl.site/categories/java%E5%9F%BA%E7%A1%80/"/>
+    
+    <category term="java基础" scheme="https://blog.hxhowl.site/categories/java%E5%9F%BA%E7%A1%80/"/>
     
     
-      <category term="java" scheme="blog.hxhowl.site/tags/java/"/>
+    <category term="java" scheme="https://blog.hxhowl.site/tags/java/"/>
     
-      <category term="笔记" scheme="blog.hxhowl.site/tags/%E7%AC%94%E8%AE%B0/"/>
+    <category term="java基础" scheme="https://blog.hxhowl.site/tags/java%E5%9F%BA%E7%A1%80/"/>
     
-      <category term="java基础" scheme="blog.hxhowl.site/tags/java%E5%9F%BA%E7%A1%80/"/>
+    <category term="笔记" scheme="https://blog.hxhowl.site/tags/%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
     <title>java - 02.接口</title>
-    <link href="blog.hxhowl.site/posts/bff39eb3/"/>
-    <id>blog.hxhowl.site/posts/bff39eb3/</id>
+    <link href="https://blog.hxhowl.site/posts/bff39eb3/"/>
+    <id>https://blog.hxhowl.site/posts/bff39eb3/</id>
     <published>2019-03-07T07:14:15.000Z</published>
     <updated>2023-08-20T09:34:34.711Z</updated>
     
-    <summary type="html">
     
-      &lt;p&gt;接口，是Java语言中一种引用类型，是方法的集合，如果说类的内部封装了成员变量、构造方法和成员方法，那么 接口的内部主要就是封装了方法，包含抽象方法(JDK 7及以前)，默认方法和静态方法(JDK 8)，私有方法 (JDK 9)。&lt;/p&gt;
-    
-    </summary>
+    <summary type="html">&lt;p&gt;接口，是Java语言中一种引用类型，是方法的集合，如果说类的内部封装了成员变量、构造方法和成员方法，那么 接口的内部主要就是封装了方法，包含抽象方法(JDK 7及以前)，默认方法和静态方法(JDK 8)，私有方法 (JDK 9)。&lt;/p&gt;</summary>
     
     
-      <category term="java基础" scheme="blog.hxhowl.site/categories/java%E5%9F%BA%E7%A1%80/"/>
+    
+    <category term="java基础" scheme="https://blog.hxhowl.site/categories/java%E5%9F%BA%E7%A1%80/"/>
     
     
-      <category term="java" scheme="blog.hxhowl.site/tags/java/"/>
+    <category term="java" scheme="https://blog.hxhowl.site/tags/java/"/>
     
-      <category term="笔记" scheme="blog.hxhowl.site/tags/%E7%AC%94%E8%AE%B0/"/>
+    <category term="java基础" scheme="https://blog.hxhowl.site/tags/java%E5%9F%BA%E7%A1%80/"/>
     
-      <category term="java基础" scheme="blog.hxhowl.site/tags/java%E5%9F%BA%E7%A1%80/"/>
+    <category term="笔记" scheme="https://blog.hxhowl.site/tags/%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
     <title>java基础 - 01.String常用方法</title>
-    <link href="blog.hxhowl.site/posts/bbda4b22/"/>
-    <id>blog.hxhowl.site/posts/bbda4b22/</id>
+    <link href="https://blog.hxhowl.site/posts/bbda4b22/"/>
+    <id>https://blog.hxhowl.site/posts/bbda4b22/</id>
     <published>2019-03-06T08:28:43.000Z</published>
     <updated>2024-01-20T06:32:32.138Z</updated>
     
-    <summary type="html">
     
-      &lt;h3 id=&quot;构造方法&quot;&gt;&lt;a href=&quot;#构造方法&quot; class=&quot;headerlink&quot; title=&quot;构造方法&quot;&gt;&lt;/a&gt;构造方法&lt;/h3&gt;&lt;ul&gt;
+    <summary type="html">&lt;h3 id=&quot;构造方法&quot;&gt;&lt;a href=&quot;#构造方法&quot; class=&quot;headerlink&quot; title=&quot;构造方法&quot;&gt;&lt;/a&gt;构造方法&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;&lt;p&gt;&lt;code&gt;public String()&lt;/code&gt; :初始化新创建的 String对象，以使其表示空字符序列。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;code&gt;public String(char[] value)&lt;/code&gt; :通过当前参数中的字符数组来构造新的String。&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;public String(byte[] bytes)&lt;/code&gt; :通过使用平台的默认字符集解码当前参数中的字节数组来构造新的String&lt;/p&gt;
-    
-    </summary>
+&lt;li&gt;&lt;p&gt;&lt;code&gt;public String(byte[] bytes)&lt;/code&gt; :通过使用平台的默认字符集解码当前参数中的字节数组来构造新的String&lt;/p&gt;</summary>
     
     
-      <category term="java基础" scheme="blog.hxhowl.site/categories/java%E5%9F%BA%E7%A1%80/"/>
+    
+    <category term="java基础" scheme="https://blog.hxhowl.site/categories/java%E5%9F%BA%E7%A1%80/"/>
     
     
-      <category term="java" scheme="blog.hxhowl.site/tags/java/"/>
+    <category term="java" scheme="https://blog.hxhowl.site/tags/java/"/>
     
-      <category term="笔记" scheme="blog.hxhowl.site/tags/%E7%AC%94%E8%AE%B0/"/>
+    <category term="java基础" scheme="https://blog.hxhowl.site/tags/java%E5%9F%BA%E7%A1%80/"/>
     
-      <category term="java基础" scheme="blog.hxhowl.site/tags/java%E5%9F%BA%E7%A1%80/"/>
+    <category term="笔记" scheme="https://blog.hxhowl.site/tags/%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   

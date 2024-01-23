@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 7.1.1">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/owl_128x128.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/owl_32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/owl_16x16.png">
@@ -14,18 +14,19 @@
 
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="//unpkg.com/@fortawesome/fontawesome-free@5/css/all.min.css">
+  <link rel="stylesheet" href="//unpkg.com/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.min.css">
   <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"blog.hxhowl.site","root":"/","scheme":"Gemini","version":"8.0.0-rc.3","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"blog.hxhowl.site","root":"/","scheme":"Gemini","version":"8.0.0-rc.3","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":true,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="匿名内部类 :是内部类的简化写法。它的本质是一个带具体实现的父类或者父接口的匿名的子类对象。 开发中，最常用到的内部类就是匿名内部类了。以接口举例，当你使用一个接口时，得做如下几步操作：  定义子类 重写接口中的方法 创建子类对象 调用重写后的方法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java基础 - 04.匿名内部类">
-<meta property="og:url" content="blog.hxhowl.site/posts/9cf3d23d/index.html">
+<meta property="og:url" content="https://blog.hxhowl.site/posts/9cf3d23d/index.html">
 <meta property="og:site_name" content="hxhowl blog">
 <meta property="og:description" content="匿名内部类 :是内部类的简化写法。它的本质是一个带具体实现的父类或者父接口的匿名的子类对象。 开发中，最常用到的内部类就是匿名内部类了。以接口举例，当你使用一个接口时，得做如下几步操作：  定义子类 重写接口中的方法 创建子类对象 调用重写后的方法">
 <meta property="og:locale" content="zh_CN">
@@ -33,11 +34,11 @@
 <meta property="article:modified_time" content="2023-08-20T09:34:09.724Z">
 <meta property="article:author" content="hxhowl">
 <meta property="article:tag" content="java">
-<meta property="article:tag" content="笔记">
 <meta property="article:tag" content="java基础">
+<meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="blog.hxhowl.site/posts/9cf3d23d/">
+<link rel="canonical" href="https://blog.hxhowl.site/posts/9cf3d23d/">
 
 
 <script id="page-configurations">
@@ -213,7 +214,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用方式"><span class="nav-number">1.</span> <span class="nav-text">使用方式</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">使用方式</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -283,7 +284,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="blog.hxhowl.site/posts/9cf3d23d/">
+    <link itemprop="mainEntityOfPage" href="https://blog.hxhowl.site/posts/9cf3d23d/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/owl_533x533.png">
@@ -352,7 +353,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.2k</span>
+              <span>1.3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -378,19 +379,19 @@
 <li>创建子类对象</li>
 <li>调用重写后的方法</li>
 </ol>
-<a id="more"></a>
+<span id="more"></span>
 
 <p>匿名内部类必须继承一个父类或者实现一个父接口。</p>
-<figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> 父类名或者接口名()&#123; </span><br><span class="line">    <span class="comment">// 方法重写</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">method</span><span class="params">()</span> </span>&#123; </span><br><span class="line">    <span class="comment">// 执行语句</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> 父类名或者接口名()&#123; </span><br><span class="line">    <span class="comment">// 方法重写</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">void</span> <span class="title function_">method</span>(<span class="params"></span>) &#123; </span><br><span class="line">    <span class="comment">// 执行语句</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <h4 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h4><p>定义接口:</p>
-<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title">FlyAble</span>&#123; </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">fly</span>(<span class="params"></span>)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title">FlyAble</span>&#123; </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">fly</span>()</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>创建匿名内部类，并调用:</p>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InnerDemo</span> &#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(<span class="keyword">String</span>[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">/* 1.等号右边:是匿名内部类，定义并创建该接口的子类对象 </span></span><br><span class="line"><span class="comment">        2.等号左边:是多态赋值,接口类型引用指向子类对象</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">        FlyAble f = <span class="keyword">new</span> FlyAble()&#123;</span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> fly() &#123;   </span><br><span class="line">                System.out.<span class="built_in">println</span>(<span class="string">"我飞了~~~"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="comment">//调用 fly方法,执行重写后的方法</span></span><br><span class="line">        f.fly();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">InnerDemo</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">void</span> <span class="title function_">main</span>(<span class="params"><span class="built_in">String</span>[] args</span>) &#123;</span><br><span class="line">        <span class="comment">/* 1.等号右边:是匿名内部类，定义并创建该接口的子类对象 </span></span><br><span class="line"><span class="comment">        2.等号左边:是多态赋值,接口类型引用指向子类对象</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">        <span class="title class_">FlyAble</span> f = <span class="keyword">new</span> <span class="title class_">FlyAble</span>()&#123;</span><br><span class="line">            <span class="keyword">public</span> <span class="built_in">void</span> <span class="title function_">fly</span>(<span class="params"></span>) &#123;   </span><br><span class="line">                <span class="title class_">System</span>.<span class="property">out</span>.<span class="title function_">println</span>(<span class="string">&quot;我飞了~~~&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="comment">//调用 fly方法,执行重写后的方法</span></span><br><span class="line">        f.<span class="title function_">fly</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>通常在方法的形式参数是接口或者抽象类时，也可以将匿名内部类作为参数传递。</p>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InnerDemo2</span> &#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(<span class="keyword">String</span>[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">         1.等号右边:定义并创建该接口的子类对象 </span></span><br><span class="line"><span class="comment">         2.等号左边:是多态,接口类型引用指向子类对象</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">        FlyAble f = <span class="keyword">new</span> FlyAble()&#123; </span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> fly() &#123;</span><br><span class="line">                System.out.<span class="built_in">println</span>(<span class="string">"我飞了~~~"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="comment">// 将f传递给showFly方法中</span></span><br><span class="line">        showFly(f);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">showFly</span><span class="params">(FlyAble f)</span> </span>&#123; </span><br><span class="line">        f.fly();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">InnerDemo2</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">void</span> <span class="title function_">main</span>(<span class="params"><span class="built_in">String</span>[] args</span>) &#123;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">         1.等号右边:定义并创建该接口的子类对象 </span></span><br><span class="line"><span class="comment">         2.等号左边:是多态,接口类型引用指向子类对象</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">        <span class="title class_">FlyAble</span> f = <span class="keyword">new</span> <span class="title class_">FlyAble</span>()&#123; </span><br><span class="line">            <span class="keyword">public</span> <span class="built_in">void</span> <span class="title function_">fly</span>(<span class="params"></span>) &#123;</span><br><span class="line">                <span class="title class_">System</span>.<span class="property">out</span>.<span class="title function_">println</span>(<span class="string">&quot;我飞了~~~&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="comment">// 将f传递给showFly方法中</span></span><br><span class="line">        <span class="title function_">showFly</span>(f);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">void</span> <span class="title function_">showFly</span>(<span class="params">FlyAble f</span>) &#123; </span><br><span class="line">        f.<span class="title function_">fly</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>以上两步，也可以简化为一步，代码如下:</p>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InnerDemo3</span> &#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(<span class="keyword">String</span>[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        创建匿名内部类,直接传递给showFly(FlyAble f) */</span></span><br><span class="line">        showFly( <span class="keyword">new</span> FlyAble()&#123;</span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> fly() &#123;</span><br><span class="line">                System.out.<span class="built_in">println</span>(<span class="string">"我飞了~~~"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">showFly</span><span class="params">(FlyAble f)</span> </span>&#123; </span><br><span class="line">        f.fly();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">InnerDemo3</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">void</span> <span class="title function_">main</span>(<span class="params"><span class="built_in">String</span>[] args</span>) &#123;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        创建匿名内部类,直接传递给showFly(FlyAble f) */</span></span><br><span class="line">        <span class="title function_">showFly</span>( <span class="keyword">new</span> <span class="title class_">FlyAble</span>()&#123;</span><br><span class="line">            <span class="keyword">public</span> <span class="built_in">void</span> <span class="title function_">fly</span>(<span class="params"></span>) &#123;</span><br><span class="line">                <span class="title class_">System</span>.<span class="property">out</span>.<span class="title function_">println</span>(<span class="string">&quot;我飞了~~~&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">void</span> <span class="title function_">showFly</span>(<span class="params">FlyAble f</span>) &#123; </span><br><span class="line">        f.<span class="title function_">fly</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -408,7 +409,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="/blog.hxhowl.site/posts/9cf3d23d/" title="java基础 - 04.匿名内部类">blog.hxhowl.site/posts/9cf3d23d/</a>
+    <a href="https://blog.hxhowl.site/posts/9cf3d23d/" title="java基础 - 04.匿名内部类">https://blog.hxhowl.site/posts/9cf3d23d/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -420,8 +421,8 @@
       <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/java/" rel="tag"># java</a>
-              <a href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag"># 笔记</a>
               <a href="/tags/java%E5%9F%BA%E7%A1%80/" rel="tag"># java基础</a>
+              <a href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag"># 笔记</a>
           </div>
 
         
@@ -494,12 +495,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">33k</span>
+    <span title="站点总字数">34k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">30 分钟</span>
+    <span title="站点阅读时长">31 分钟</span>
 </div><script color="0,0,255" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
 
         
@@ -608,6 +609,8 @@
 
   
   <script src="//unpkg.com/animejs@3.1.0/lib/anime.min.js"></script>
+  <script src="//unpkg.com/jquery@3/dist/jquery.min.js"></script>
+  <script src="//unpkg.com/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
   <script src="//unpkg.com/velocity-animate@1/velocity.min.js"></script>
   <script src="//unpkg.com/velocity-animate@1/velocity.ui.min.js"></script>
 
