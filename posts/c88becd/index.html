@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.1.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/owl_128x128.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/owl_32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/owl_16x16.png">
+  <link rel="mask-icon" href="/images/owl_logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="//unpkg.com/@fortawesome/fontawesome-free@5/css/all.min.css">
+  <link rel="stylesheet" href="//unpkg.com/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.min.css">
+  <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"blog.hxhowl.site","root":"/","scheme":"Gemini","version":"8.0.0-rc.3","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":true,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="lean cloud配置注册一个国际版lean cloud账号创建一个应用,我这里命名为blog。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="blog - hexo博客在NexT主题下使用valine评论">
+<meta property="og:url" content="https://blog.hxhowl.site/posts/c88becd/index.html">
+<meta property="og:site_name" content="hxhowl blog">
+<meta property="og:description" content="lean cloud配置注册一个国际版lean cloud账号创建一个应用,我这里命名为blog。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-01-23T11:15:00.000Z">
+<meta property="article:modified_time" content="2024-01-23T11:24:22.049Z">
+<meta property="article:author" content="hxhowl">
+<meta property="article:tag" content="blog">
+<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="next">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://blog.hxhowl.site/posts/c88becd/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>blog - hexo博客在NexT主题下使用valine评论 | hxhowl blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before, .use-motion .logo-line-after {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="hxhowl blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line toggle-line-first"></span>
+        <span class="toggle-line toggle-line-middle"></span>
+        <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line-before"></i>
+      <h1 class="site-title">hxhowl blog</h1>
+      <i class="logo-line-after"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Write Something...</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">9</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">3</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">14</span></a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#lean-cloud%E9%85%8D%E7%BD%AE"><span class="nav-number">1.</span> <span class="nav-text">lean cloud配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E8%AE%BE%E7%BD%AE"><span class="nav-number">1.1.</span> <span class="nav-text">基础设置</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2%E8%AE%BE%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">部署设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo-next%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE"><span class="nav-number">3.</span> <span class="nav-text">hexo next主题配置</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="hxhowl"
+      src="/images/owl_533x533.png">
+  <p class="site-author-name" itemprop="name">hxhowl</p>
+  <div class="site-description" itemprop="description">A personal blog about coding and life,keep blogging</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/hxhowl" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;hxhowl" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </header>
+
+      
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+      <div class="main-inner">
+        
+
+        <div class="content post posts-expand">
+          
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://blog.hxhowl.site/posts/c88becd/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/owl_533x533.png">
+      <meta itemprop="name" content="hxhowl">
+      <meta itemprop="description" content="A personal blog about coding and life,keep blogging">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="hxhowl blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          blog - hexo博客在NexT主题下使用valine评论
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-01-23 19:15:00 / 修改时间：19:24:22" itemprop="dateCreated datePublished" datetime="2024-01-23T19:15:00+08:00">2024-01-23</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/hexo/" itemprop="url" rel="index"><span itemprop="name">hexo</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/posts/c88becd/" class="post-meta-item leancloud_visitors" data-flag-title="blog - hexo博客在NexT主题下使用valine评论" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/posts/c88becd/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/posts/c88becd/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>7.9k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>7 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="lean-cloud配置"><a href="#lean-cloud配置" class="headerlink" title="lean cloud配置"></a><code>lean cloud</code>配置</h3><p>注册一个国际版<code>lean cloud</code>账号<br>创建一个应用,我这里命名为<code>blog</code>。</p>
+<span id="more"></span>
+
+<h4 id="基础设置"><a href="#基础设置" class="headerlink" title="基础设置"></a>基础设置</h4><ol>
+<li><code>数据存储-&gt;结构化数据</code>中，创建两个class: <code>Commnent</code>和<code>Counter</code>，然后按需添加列字段。</li>
+</ol>
+<ul>
+<li><code>Commnent</code>类中添加列<code>QQAvatar</code>、<code>comment</code>、<code>link</code>、<code>ip</code>、<code>mail</code>、<code>link</code>、<code>url</code>、<code>ua</code>、<code>nick</code>。</li>
+<li><code>Counter</code>类中添加列<code>time</code>、<code>title</code>、<code>url</code>、<code>xid</code>。</li>
+</ul>
+<ol start="2">
+<li><p><code>设置-&gt;安全中心-&gt;服务开关</code>只保留<code>数据存储</code>一项打勾。</p>
+</li>
+<li><p><code>设置-&gt;安全中心-&gt;web安全域名</code>配置博客地址，例如<code>https://xxx.github.io</code>。</p>
+</li>
+</ol>
+<h3 id="部署设置"><a href="#部署设置" class="headerlink" title="部署设置"></a>部署设置</h3><ol>
+<li><p><code>云引擎-&gt;管理部署-&gt;创建分组</code>创建一个分组，我这里也命名为<code>blog</code>。</p>
+</li>
+<li><p><code>blog</code>分组内，选择<code>设置</code>，找到<code>访问域名</code>，配置管理后台访问域名。目前不可以使用<code>共享域名</code>，只能在<code>自定义域名</code>中绑定自己单独的域名地址。等都配置完成后，可以使用<code>自定义域名/sign-up</code>去初始化管理后台信息，要初始化填写用户名和密码。也可以在<code>设置-&gt;域名绑定-&gt;云引擎、ClientEngine 域名</code>中配置域名。</p>
+</li>
+<li><p>同理需要在<code>设置-&gt;域名绑定-&gt;API 访问域名</code>中配置自定义api域名。这样所有请求都走域名再到leancloud。以解决国内访问国际版api地址403的问题。</p>
+</li>
+<li><p><code>blog</code>分组内，选择<code>设置-&gt;自定义环境变量</code> 添加如下的环境变量。</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>变量</th>
+<th>说明</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SITE_NAME</td>
+<td>[必填] 博客名称</td>
+<td>hxhowl blog</td>
+</tr>
+<tr>
+<td>SITE_URL</td>
+<td>[必填] 首页地址</td>
+<td><a href="https://blog.hxhowl.site/">https://blog.hxhowl.site</a></td>
+</tr>
+<tr>
+<td>SMTP_SERVICE</td>
+<td>邮件服务提供商</td>
+<td></td>
+</tr>
+<tr>
+<td>SMTP_USER</td>
+<td>[必填] SMTP 用户名</td>
+<td><a href="mailto:&#120;&#x78;&#120;&#64;&#49;&#54;&#51;&#46;&#99;&#111;&#x6d;">&#120;&#x78;&#120;&#64;&#49;&#54;&#51;&#46;&#99;&#111;&#x6d;</a></td>
+</tr>
+<tr>
+<td>SMTP_PASS</td>
+<td>[必填]  SMTP 授权码</td>
+<td>xxxxx</td>
+</tr>
+<tr>
+<td>SENDER_NAME</td>
+<td>[必填] 发件人</td>
+<td>hxhowl</td>
+</tr>
+<tr>
+<td>SENDER_EMAIL</td>
+<td>[必填] 发件邮箱</td>
+<td><a href="mailto:&#x78;&#120;&#x78;&#64;&#49;&#54;&#x33;&#46;&#x63;&#111;&#x6d;">&#x78;&#120;&#x78;&#64;&#49;&#54;&#x33;&#46;&#x63;&#111;&#x6d;</a></td>
+</tr>
+<tr>
+<td>MAIL_SUBJECT</td>
+<td>[必填]@通知邮件主题（标题）模板</td>
+<td>${PARENT_NICK}，您在${SITE_NAME}上的评论收到了回复</td>
+</tr>
+<tr>
+<td>MAIL_TEMPLATE</td>
+<td>[必填]@通知邮件内容模板</td>
+<td>填下文MAIL_TEMPLATE代码块</td>
+</tr>
+<tr>
+<td>MAIL_SUBJECT_ADMIN</td>
+<td>[必填] 博主邮件通知主题模板</td>
+<td>${SITE_NAME}上有新评论了</td>
+</tr>
+<tr>
+<td>MAIL_TEMPLATE_ADMIN</td>
+<td>[必填] 博主邮件通知内容模板</td>
+<td>填下文MAIL_TEMPLATE_ADMIN代码块</td>
+</tr>
+<tr>
+<td>SMTP_HOST</td>
+<td>SMTP_SERVICE 留空时，自定义 SMTP 服务器地址</td>
+<td>smtp.163.com</td>
+</tr>
+<tr>
+<td>SMTP_PORT</td>
+<td>SMTP_SERVICE 留空时，自定义 SMTP 端口</td>
+<td>465</td>
+</tr>
+<tr>
+<td>SMTP_SECURE SMTP_SERVICE 留空时填写</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>BLOGGER_EMAIL</td>
+<td>[选填] 博主通知收件地址，默认使用 SENDER_EMAIL</td>
+<td><a href="mailto:&#x78;&#120;&#120;&#x40;&#x31;&#x36;&#51;&#x2e;&#x63;&#111;&#x6d;">&#x78;&#120;&#120;&#x40;&#x31;&#x36;&#51;&#x2e;&#x63;&#111;&#x6d;</a></td>
+</tr>
+<tr>
+<td>ADMIN_URL</td>
+<td>评论管理后台地址</td>
+<td></td>
+</tr>
+<tr>
+<td>COMMENT</td>
+<td>新评论内容</td>
+<td></td>
+</tr>
+<tr>
+<td>NICK</td>
+<td>新评论者昵称</td>
+<td></td>
+</tr>
+<tr>
+<td>PARENT_COMMENT</td>
+<td>父级评论内容</td>
+<td></td>
+</tr>
+<tr>
+<td>PARENT_NICK</td>
+<td>收件人昵称（被@者，父级评论人）</td>
+<td></td>
+</tr>
+<tr>
+<td>POST_URL</td>
+<td>评论文章地址（完整路径）</td>
+<td></td>
+</tr>
+</tbody></table>
+<p><code>MAIL_TEMPLATE</code>代码块</p>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">head</span>&gt;</span><span class="tag">&lt;/<span class="name">head</span>&gt;</span> </span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">body</span>&gt;</span> </span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;border-radius: 10px 10px 10px 10px;font-size:13px; color: #555555;width: 666px;font-family:&#x27;Century Gothic&#x27;,&#x27;Trebuchet MS&#x27;,&#x27;Hiragino Sans GB&#x27;,微软雅黑,&#x27;Microsoft Yahei&#x27;,Tahoma,Helvetica,Arial,&#x27;SimSun&#x27;,sans-serif;margin:50px auto;border:1px solid #eee;max-width:100%;background: #ffffff repeating-linear-gradient(-45deg,#fff,#fff 1.125rem,transparent 1.125rem,transparent 2.25rem);box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);&quot;</span>&gt;</span> </span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;width:100%;background:#49BDAD;color:#ffffff;border-radius: 10px 10px 0 0;background-image: -moz-linear-gradient(0deg, rgb(67, 198, 184), rgb(255, 209, 244));background-image: -webkit-linear-gradient(0deg, rgb(67, 198, 184), rgb(255, 209, 244));height: 66px;&quot;</span>&gt;</span> </span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-size:15px;word-break:break-all;padding: 23px 32px;margin:0;background-color: hsla(0,0%,100%,.4);border-radius: 10px 10px 0 0;color:#257db9&quot;</span>&gt;</span>您在<span class="tag">&lt;<span class="name">a</span> <span class="attr">style</span>=<span class="string">&quot;text-decoration:none;color:#257db9&quot;</span> <span class="attr">href</span>=<span class="string">&quot;$</span></span></span><span class="template-variable">&#123;SITE_URL&#125;</span><span class="language-xml"><span class="tag"><span class="string">&quot;</span>&gt;</span>「Kingpo&#x27;s Note」<span class="tag">&lt;/<span class="name">a</span>&gt;</span>上的留言有新回复啦！<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;margin:40px auto;width:90%&quot;</span>&gt;</span> </span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>亲爱的 <span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;color:#7777ff&quot;</span>&gt;</span>$</span><span class="template-variable">&#123;PARENT_NICK&#125;</span><span class="language-xml"><span class="tag">&lt;/<span class="name">span</span>&gt;</span> 同学，您曾在该页面/文章：<span class="tag">&lt;/<span class="name">p</span>&gt;</span> </span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;background: #fafafa repeating-linear-gradient(-45deg,#fff,#fff 1.125rem,transparent 1.125rem,transparent 2.25rem);box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);margin:20px 0px;padding:15px;border-radius:5px;font-size:14px;color:#555555;&quot;</span>&gt;</span> </span></span><br><span class="line"><span class="language-xml">    $</span><span class="template-variable">&#123;POST_URL&#125;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>发布了以下评论：<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;background: #fafafa repeating-linear-gradient(-45deg,#fff,#fff 1.125rem,transparent 1.125rem,transparent 2.25rem);box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);margin:20px 0px;padding:15px;border-radius:5px;font-size:14px;color:#555555;&quot;</span>&gt;</span> </span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">b</span>&gt;</span>$</span><span class="template-variable">&#123;PARENT_COMMENT&#125;</span><span class="language-xml"> <span class="tag">&lt;/<span class="name">b</span>&gt;</span> </span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>刚刚，用户 <span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;color:#7777ff&quot;</span>&gt;</span>$</span><span class="template-variable">&#123;NICK&#125;</span><span class="language-xml"><span class="tag">&lt;/<span class="name">span</span>&gt;</span> 给您的回复如下：<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;background: #fafafa repeating-linear-gradient(-45deg,#fff,#fff 1.125rem,transparent 1.125rem,transparent 2.25rem);box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);margin:20px 0px;padding:15px;border-radius:5px;font-size:14px;color:#555555;&quot;</span>&gt;</span> </span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">b</span>&gt;</span>$</span><span class="template-variable">&#123;COMMENT&#125;</span><span class="language-xml"><span class="tag">&lt;/<span class="name">b</span>&gt;</span> </span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>您可以点击 <span class="tag">&lt;<span class="name">a</span> <span class="attr">style</span>=<span class="string">&quot;text-decoration:none; color:#12addb&quot;</span> <span class="attr">href</span>=<span class="string">&quot;$</span></span></span><span class="template-variable">&#123;POST_URL&#125;</span><span class="language-xml"><span class="tag"><span class="string">#comments&quot;</span>&gt;</span>查看回复的完整內容<span class="tag">&lt;/<span class="name">a</span>&gt;</span>，欢迎再次光临<span class="tag">&lt;<span class="name">a</span> <span class="attr">style</span>=<span class="string">&quot;text-decoration:none; color:#9fefaf&quot;</span> <span class="attr">href</span>=<span class="string">&quot;$</span></span></span><span class="template-variable">&#123;SITE_URL&#125;</span><span class="language-xml"><span class="tag"><span class="string">&quot;</span>&gt;</span> $</span><span class="template-variable">&#123;SITE_NAME&#125;</span><span class="language-xml"><span class="tag">&lt;/<span class="name">a</span>&gt;</span>。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span><span class="language-css"><span class="selector-tag">a</span><span class="selector-pseudo">:link</span></span></span><span class="template-variable">&#123;text-decoration:none&#125;</span><span class="language-xml"><span class="language-css"><span class="selector-tag">a</span><span class="selector-pseudo">:visited</span></span></span><span class="template-variable">&#123;text-decoration:none&#125;</span><span class="language-xml"><span class="language-css"><span class="selector-tag">a</span><span class="selector-pseudo">:hover</span></span></span><span class="template-variable">&#123;text-decoration:none&#125;</span><span class="language-xml"><span class="language-css"><span class="selector-tag">a</span><span class="selector-pseudo">:active</span></span></span><span class="template-variable">&#123;text-decoration:none&#125;</span><span class="language-xml"><span class="tag">&lt;/<span class="name">style</span>&gt;</span> </span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">center</span>&gt;</span> </span></span><br><span class="line"><span class="language-xml">  Powered by LeanCloud</span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">br</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  Copyright <span class="symbol">&amp;copy;</span> 2024 <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;$</span></span></span><span class="template-variable">&#123;SITE_URL&#125;</span><span class="language-xml"><span class="tag"><span class="string">&quot;</span> <span class="attr">style</span>=<span class="string">&quot;color:auto;&quot;</span>&gt;</span>hxhowl blog<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">br</span> /&gt;</span> </span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;$</span></span></span><span class="template-variable">&#123;SITE_URL&#125;</span><span class="language-xml"><span class="tag"><span class="string">&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">style</span>=<span class="string">&quot;height:70px !important;&quot;</span> <span class="attr">src</span>=<span class="string">&quot;$</span></span></span><span class="template-variable">&#123;SITE_URL&#125;</span><span class="language-xml"><span class="tag"><span class="string">/images/avatar.png&quot;</span> /&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span> </span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">center</span>&gt;</span> </span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">br</span> /&gt;</span> </span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">br</span> /&gt;</span>  </span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p><code>MAIL_TEMPLATE_ADMIN</code>代码块</p>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">head</span>&gt;</span><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;border-top:2px solid #12ADDB;box-shadow:0 1px 3px #AAAAAA;line-height:180%;padding:0 15px 12px;margin:50px auto;font-size:12px;&quot;</span>&gt;</span> </span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">h2</span> <span class="attr">style</span>=<span class="string">&quot;border-bottom:1px solid #DDD;font-size:14px;font-weight:normal;padding:13px 0 10px 0px;&quot;</span>&gt;</span>您在<span class="tag">&lt;<span class="name">a</span> <span class="attr">style</span>=<span class="string">&quot;text-decoration:none;color: #12ADDB;&quot;</span> <span class="attr">href</span>=<span class="string">&quot;$</span></span></span><span class="template-variable">&#123;SITE_URL&#125;</span><span class="language-xml"><span class="tag"><span class="string">&quot;</span> <span class="attr">target</span>=<span class="string">&quot;_blank&quot;</span>&gt;</span>$</span><span class="template-variable">&#123;SITE_NAME&#125;</span><span class="language-xml"><span class="tag">&lt;/<span class="name">a</span>&gt;</span>上的文章有了新的评论<span class="tag">&lt;/<span class="name">h2</span>&gt;</span> </span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">strong</span>&gt;</span>$</span><span class="template-variable">&#123;NICK&#125;</span><span class="language-xml"><span class="tag">&lt;/<span class="name">strong</span>&gt;</span>回复说：<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;background-color: #f5f5f5;padding: 10px 15px;margin:18px 0;word-wrap:break-word;&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    $</span><span class="template-variable">&#123;COMMENT&#125;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">p</span>&gt;</span> 您可以点击<span class="tag">&lt;<span class="name">a</span> <span class="attr">style</span>=<span class="string">&quot;text-decoration:none; color:#12addb&quot;</span> <span class="attr">href</span>=<span class="string">&quot;$</span></span></span><span class="template-variable">&#123;POST_URL&#125;</span><span class="language-xml"><span class="tag"><span class="string">&quot;</span> <span class="attr">target</span>=<span class="string">&quot;_blank&quot;</span>&gt;</span>查看回复的完整內容<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span> </span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">strong</span>&gt;</span>评论页面为<span class="tag">&lt;/<span class="name">strong</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">strong</span>&gt;</span>$</span><span class="template-variable">&#123;POST_URL&#125;</span><span class="language-xml"><span class="tag">&lt;/<span class="name">strong</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">br</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+
+<ol start="5">
+<li><p><code>blog</code>分组内，选择<code>部署-&gt;git部署</code>部署<code>https://github.com/DesertsP/Valine-Admin</code>。</p>
+</li>
+<li><p><code>valine-admin</code>部署完成后，会出现两个函数<code>self_wake</code>，<code>resend_mails</code>。分别配置定时任务：</p>
+</li>
+</ol>
+<ul>
+<li>24小时自动唤醒： <code>创建定时任务</code>-&gt; <code>名称</code>自定-&gt;<code>运行目标</code>选择<code>云函数</code>-&gt;函数选择 <code>self_wake</code>-&gt;<code>运行周期</code>选择<code>Cron表达式</code>-&gt;框里的内容填<code>0 */30 0-23 * * ?</code>。</li>
+<li>每天0点补发邮件： <code>创建定时任务</code>-&gt; <code>名称</code>自定-&gt;<code>运行目标</code>选择<code>云函数</code>-&gt;函数选择 <code>resend_mails</code>-&gt;<code>运行周期</code>选择<code>Cron表达式</code>-&gt;框里的内容填<code>0 0 0 * * ?</code>。</li>
+</ul>
+<h3 id="hexo-next主题配置"><a href="#hexo-next主题配置" class="headerlink" title="hexo next主题配置"></a>hexo next主题配置</h3><ol>
+<li><p><code>themes\next\_config.yml</code>中，找到<code>valine</code>根节点修改如下：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">valine:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">appId:</span> <span class="string">lean</span> <span class="string">cloud</span> <span class="string">-&gt;blog应用-&gt;设置-&gt;应用凭证-&gt;Credentials-&gt;AppID</span></span><br><span class="line">  <span class="attr">appKey:</span> <span class="string">lean</span> <span class="string">cloud</span> <span class="string">-&gt;blog应用-&gt;设置-&gt;应用凭证-&gt;Credentials-&gt;AppKey</span></span><br><span class="line">  <span class="attr">placeholder:</span> <span class="string">Just</span> <span class="string">go</span> <span class="string">go</span> <span class="comment"># Comment box placeholder</span></span><br><span class="line">  <span class="attr">avatar:</span> <span class="string">mm</span> <span class="comment"># Gravatar style</span></span><br><span class="line">  <span class="attr">meta:</span> [<span class="string">nick</span>, <span class="string">mail</span>, <span class="string">link</span>] <span class="comment"># Custom comment header</span></span><br><span class="line">  <span class="attr">pageSize:</span> <span class="number">10</span> <span class="comment"># Pagination size</span></span><br><span class="line">  <span class="attr">language:</span> <span class="string">zh-cn</span> <span class="comment"># Language, available values: en, zh-cn</span></span><br><span class="line">  <span class="attr">visitor:</span> <span class="literal">true</span> <span class="comment"># Article reading statistic</span></span><br><span class="line">  <span class="attr">comment_count:</span> <span class="literal">true</span> <span class="comment"># If false, comment count will only be displayed in post page, not in home page</span></span><br><span class="line">  <span class="attr">recordIP:</span> <span class="literal">true</span> <span class="comment"># Whether to record the commenter IP</span></span><br><span class="line">  <span class="attr">serverURLs:</span> <span class="comment"># lean cloud -&gt;blog应用-&gt;设置-&gt;应用凭证-&gt;服务器地址-&gt;REST API 服务器地址</span></span><br></pre></td></tr></table></figure>
+<p>注意: <code>serverURLs</code>字段配置成 <code>lean cloud -&gt;blog应用-&gt;设置-&gt;应用凭证-&gt;服务器地址-&gt;REST API 服务器地址</code>,这里配的api服务器地址一定要用自定义域名的地址，否则会出现国内无法使用国际版api，导致评论功能不可用。</p>
+</li>
+<li><p><code>themes\next\_config.yml</code>中，找到<code>leancloud_visitors</code>根节点修改如下：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">leancloud_visitors:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">app_id:</span> <span class="string">54BeqijO3W4t2Ub51Zyz32xg-MdYXbMMI</span> <span class="comment"># &lt;your app id&gt;</span></span><br><span class="line">  <span class="attr">app_key:</span> <span class="string">BhzALDwfxypNydDEWwpdMmKW</span> <span class="comment"># &lt;your app key&gt;</span></span><br><span class="line">  <span class="comment"># Required for apps from CN region</span></span><br><span class="line">  <span class="attr">server_url:</span> <span class="comment"># lean cloud -&gt;blog应用-&gt;设置-&gt;应用凭证-&gt;服务器地址-&gt;REST API 服务器地址</span></span><br><span class="line">  <span class="comment"># Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security</span></span><br><span class="line">  <span class="comment"># If you don&#x27;t care about security in leancloud counter and just want to use it directly</span></span><br><span class="line">  <span class="comment"># (without hexo-leancloud-counter-security plugin), set `security` to `false`.</span></span><br><span class="line">  <span class="attr">security:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<p>注意: <code>server_url</code>字段配置成 <code>lean cloud -&gt;blog应用-&gt;设置-&gt;应用凭证-&gt;服务器地址-&gt;REST API 服务器地址</code>,这里配的api服务器地址一定要用自定义域名的地址，否则会出现国内无法使用国际版api，导致阅读次数功能不可用。</p>
+</li>
+<li><p>因为要使用自定义的域名，所以要调整一下代码配置，否则会获取默认的api访问地址。文件 <code>themes\next\layout\_third-party\statistics\lean-analytics.njk</code>找到下面代码，</p>
+<figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let api_server = app_id.<span class="built_in">slice</span>(<span class="number">-9</span>) !== <span class="string">&#x27;-MdYXbMMI&#x27;</span> ? server_url : <span class="string">`https://<span class="subst">$&#123;app_id.<span class="built_in">slice</span>(<span class="number">0</span>, <span class="number">8</span>).toLowerCase()&#125;</span>.api.lncldglobal.com`</span>;</span><br></pre></td></tr></table></figure>
+<p>修改为<code>let api_server = server_url;</code></p>
+</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>hxhowl
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://blog.hxhowl.site/posts/c88becd/" title="blog - hexo博客在NexT主题下使用valine评论">https://blog.hxhowl.site/posts/c88becd/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/blog/" rel="tag"># blog</a>
+              <a href="/tags/hexo/" rel="tag"># hexo</a>
+              <a href="/tags/next/" rel="tag"># next</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/93417e49/" rel="prev" title="blog - next博客升级">
+      <i class="fa fa-chevron-left"></i> blog - next博客升级
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+        </div>
+        
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2020 – 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-sun"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">hxhowl</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">44k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">40 分钟</span>
+</div><script color="0,0,255" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
+
+        
+
+
+
+
+
+
+<script>
+  (function() {
+    function leancloudSelector(url) {
+      url = encodeURI(url);
+      return document.getElementById(url).querySelector('.leancloud-visitors-count');
+    }
+
+    function addCount(Counter) {
+      var visitors = document.querySelector('.leancloud_visitors');
+      var url = decodeURI(visitors.id);
+      var title = visitors.dataset.flagTitle;
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            var counter = results[0];
+            leancloudSelector(url).innerText = counter.time + 1;
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .catch(error => {
+                console.error('Failed to save visitor count', error);
+              });
+          } else {
+              Counter('post', '/classes/Counter', { title, url, time: 1 })
+                .then(response => response.json())
+                .then(() => {
+                  leancloudSelector(url).innerText = 1;
+                })
+                .catch(error => {
+                  console.error('Failed to create', error);
+                });
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    function showTime(Counter) {
+      var visitors = document.querySelectorAll('.leancloud_visitors');
+      var entries = [...visitors].map(element => {
+        return decodeURI(element.id);
+      });
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url: { '$in': entries } })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          for (let url of entries) {
+            let target = results.find(item => item.url === url);
+            leancloudSelector(url).innerText = target ? target.time : 0;
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    let { app_id, app_key, server_url } = {"enable":true,"app_id":"54BeqijO3W4t2Ub51Zyz32xg-MdYXbMMI","app_key":"BhzALDwfxypNydDEWwpdMmKW","server_url":"https://leanapi.hxhowl.site","security":false};
+    function fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${api_server}/1.1${url}`, {
+          method,
+          headers: {
+            'X-LC-Id'     : app_id,
+            'X-LC-Key'    : app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        if (CONFIG.hostname !== location.hostname) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
+    }
+
+    let api_server = server_url;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(response => response.json())
+        .then(({ api_server }) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();
+</script>
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="//unpkg.com/animejs@3.1.0/lib/anime.min.js"></script>
+  <script src="//unpkg.com/jquery@3/dist/jquery.min.js"></script>
+  <script src="//unpkg.com/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//unpkg.com/velocity-animate@1/velocity.min.js"></script>
+  <script src="//unpkg.com/velocity-animate@1/velocity.ui.min.js"></script>
+
+<script src="//unpkg.com/hexo-theme-next@8.0.0-rc.3/source/js/utils.js"></script>
+
+<script src="//unpkg.com/hexo-theme-next@8.0.0-rc.3/source/js/motion.js"></script>
+
+
+<script src="//unpkg.com/hexo-theme-next@8.0.0-rc.3/source/js/next-boot.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="//unpkg.com/hexo-theme-next@8.0.0-rc.3/source/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine@1/dist/Valine.min.js', () => {
+    new Valine(Object.assign({
+      el  : '#valine-comments',
+      path: location.pathname,
+    }, {"enable":true,"appId":"54BeqijO3W4t2Ub51Zyz32xg-MdYXbMMI","appKey":"BhzALDwfxypNydDEWwpdMmKW","placeholder":"Just go go","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"language":"zh-cn","visitor":false,"comment_count":true,"recordIP":true,"serverURLs":"https://leanapi.hxhowl.site"}
+    ));
+  }, window.Valine);
+});
+</script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
+</html>

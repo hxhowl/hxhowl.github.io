@@ -6,7 +6,7 @@
   <link href="https://blog.hxhowl.site/atom.xml" rel="self"/>
   
   <link href="https://blog.hxhowl.site/"/>
-  <updated>2020-07-04T19:18:52.270Z</updated>
+  <updated>2024-01-23T11:24:22.049Z</updated>
   <id>https://blog.hxhowl.site/</id>
   
   <author>
@@ -15,6 +15,52 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>blog - hexo博客在NexT主题下使用valine评论</title>
+    <link href="https://blog.hxhowl.site/posts/c88becd/"/>
+    <id>https://blog.hxhowl.site/posts/c88becd/</id>
+    <published>2024-01-23T11:15:00.000Z</published>
+    <updated>2024-01-23T11:24:22.049Z</updated>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;lean-cloud配置&quot;&gt;&lt;a href=&quot;#lean-cloud配置&quot; class=&quot;headerlink&quot; title=&quot;lean cloud配置&quot;&gt;&lt;/a&gt;&lt;code&gt;lean cloud&lt;/code&gt;配置&lt;/h3&gt;&lt;p&gt;注册一个国际版&lt;code&gt;lean cloud&lt;/code&gt;账号&lt;br&gt;创建一个应用,我这里命名为&lt;code&gt;blog&lt;/code&gt;。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="hexo" scheme="https://blog.hxhowl.site/categories/hexo/"/>
+    
+    
+    <category term="blog" scheme="https://blog.hxhowl.site/tags/blog/"/>
+    
+    <category term="hexo" scheme="https://blog.hxhowl.site/tags/hexo/"/>
+    
+    <category term="next" scheme="https://blog.hxhowl.site/tags/next/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>blog - next博客升级</title>
+    <link href="https://blog.hxhowl.site/posts/93417e49/"/>
+    <id>https://blog.hxhowl.site/posts/93417e49/</id>
+    <published>2024-01-22T11:15:04.000Z</published>
+    <updated>2024-01-23T11:22:11.385Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;因为博客闲置时间过长，所以这次准备修缮一下。修缮之前先备份一下&lt;code&gt;hexo&lt;/code&gt;目录。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="hexo" scheme="https://blog.hxhowl.site/categories/hexo/"/>
+    
+    
+    <category term="blog" scheme="https://blog.hxhowl.site/tags/blog/"/>
+    
+    <category term="hexo" scheme="https://blog.hxhowl.site/tags/hexo/"/>
+    
+    <category term="next" scheme="https://blog.hxhowl.site/tags/next/"/>
+    
+  </entry>
   
   <entry>
     <title>tools - PicGo+github图床</title>
@@ -31,9 +77,9 @@
     <category term="tools" scheme="https://blog.hxhowl.site/categories/tools/"/>
     
     
-    <category term="Windows" scheme="https://blog.hxhowl.site/tags/Windows/"/>
-    
     <category term="tools" scheme="https://blog.hxhowl.site/tags/tools/"/>
+    
+    <category term="Windows" scheme="https://blog.hxhowl.site/tags/Windows/"/>
     
     <category term="图床" scheme="https://blog.hxhowl.site/tags/%E5%9B%BE%E5%BA%8A/"/>
     
@@ -54,9 +100,9 @@
     <category term="tools" scheme="https://blog.hxhowl.site/categories/tools/"/>
     
     
-    <category term="Windows" scheme="https://blog.hxhowl.site/tags/Windows/"/>
-    
     <category term="tools" scheme="https://blog.hxhowl.site/tags/tools/"/>
+    
+    <category term="Windows" scheme="https://blog.hxhowl.site/tags/Windows/"/>
     
   </entry>
   
@@ -75,9 +121,9 @@
     <category term="tools" scheme="https://blog.hxhowl.site/categories/tools/"/>
     
     
-    <category term="Windows" scheme="https://blog.hxhowl.site/tags/Windows/"/>
-    
     <category term="tools" scheme="https://blog.hxhowl.site/tags/tools/"/>
+    
+    <category term="Windows" scheme="https://blog.hxhowl.site/tags/Windows/"/>
     
   </entry>
   
@@ -86,7 +132,7 @@
     <link href="https://blog.hxhowl.site/posts/e6f9a475/"/>
     <id>https://blog.hxhowl.site/posts/e6f9a475/</id>
     <published>2020-06-27T10:45:05.010Z</published>
-    <updated>2023-08-19T02:42:37.051Z</updated>
+    <updated>2024-01-23T11:19:40.320Z</updated>
     
     
     <summary type="html">&lt;p&gt;基于&lt;code&gt;next8.0&lt;/code&gt;的&lt;code&gt;hexo&lt;/code&gt;配置和美化。&lt;/p&gt;</summary>
@@ -97,8 +143,6 @@
     
     
     <category term="blog" scheme="https://blog.hxhowl.site/tags/blog/"/>
-    
-    <category term="Windows" scheme="https://blog.hxhowl.site/tags/Windows/"/>
     
     <category term="hexo" scheme="https://blog.hxhowl.site/tags/hexo/"/>
     
@@ -111,7 +155,7 @@
     <link href="https://blog.hxhowl.site/posts/ee60a25f/"/>
     <id>https://blog.hxhowl.site/posts/ee60a25f/</id>
     <published>2020-06-27T10:34:22.362Z</published>
-    <updated>2020-06-27T10:50:25.270Z</updated>
+    <updated>2024-01-23T11:19:40.331Z</updated>
     
     
     <summary type="html">&lt;p&gt;Windows环境下配置&lt;code&gt;hexo&lt;/code&gt;，并发布到&lt;code&gt;github.io&lt;/code&gt;。&lt;/p&gt;</summary>
@@ -122,8 +166,6 @@
     
     
     <category term="blog" scheme="https://blog.hxhowl.site/tags/blog/"/>
-    
-    <category term="Windows" scheme="https://blog.hxhowl.site/tags/Windows/"/>
     
     <category term="hexo" scheme="https://blog.hxhowl.site/tags/hexo/"/>
     
@@ -164,9 +206,9 @@
     
     <category term="java" scheme="https://blog.hxhowl.site/tags/java/"/>
     
-    <category term="java基础" scheme="https://blog.hxhowl.site/tags/java%E5%9F%BA%E7%A1%80/"/>
-    
     <category term="笔记" scheme="https://blog.hxhowl.site/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="java基础" scheme="https://blog.hxhowl.site/tags/java%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
@@ -187,9 +229,9 @@
     
     <category term="java" scheme="https://blog.hxhowl.site/tags/java/"/>
     
-    <category term="java基础" scheme="https://blog.hxhowl.site/tags/java%E5%9F%BA%E7%A1%80/"/>
-    
     <category term="笔记" scheme="https://blog.hxhowl.site/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="java基础" scheme="https://blog.hxhowl.site/tags/java%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
@@ -216,9 +258,9 @@
     
     <category term="java" scheme="https://blog.hxhowl.site/tags/java/"/>
     
-    <category term="java基础" scheme="https://blog.hxhowl.site/tags/java%E5%9F%BA%E7%A1%80/"/>
-    
     <category term="笔记" scheme="https://blog.hxhowl.site/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="java基础" scheme="https://blog.hxhowl.site/tags/java%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
@@ -244,9 +286,9 @@
     
     <category term="java" scheme="https://blog.hxhowl.site/tags/java/"/>
     
-    <category term="java基础" scheme="https://blog.hxhowl.site/tags/java%E5%9F%BA%E7%A1%80/"/>
-    
     <category term="笔记" scheme="https://blog.hxhowl.site/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="java基础" scheme="https://blog.hxhowl.site/tags/java%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
@@ -267,9 +309,9 @@
     
     <category term="java" scheme="https://blog.hxhowl.site/tags/java/"/>
     
-    <category term="java基础" scheme="https://blog.hxhowl.site/tags/java%E5%9F%BA%E7%A1%80/"/>
-    
     <category term="笔记" scheme="https://blog.hxhowl.site/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="java基础" scheme="https://blog.hxhowl.site/tags/java%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
@@ -295,9 +337,9 @@
     
     <category term="java" scheme="https://blog.hxhowl.site/tags/java/"/>
     
-    <category term="java基础" scheme="https://blog.hxhowl.site/tags/java%E5%9F%BA%E7%A1%80/"/>
-    
     <category term="笔记" scheme="https://blog.hxhowl.site/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="java基础" scheme="https://blog.hxhowl.site/tags/java%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   

@@ -31,10 +31,9 @@
 <meta property="og:description" content="Windows环境下配置hexo，并发布到github.io。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-06-27T10:34:22.362Z">
-<meta property="article:modified_time" content="2020-06-27T10:50:25.270Z">
+<meta property="article:modified_time" content="2024-01-23T11:19:40.331Z">
 <meta property="article:author" content="hxhowl">
 <meta property="article:tag" content="blog">
-<meta property="article:tag" content="Windows">
 <meta property="article:tag" content="hexo">
 <meta property="article:tag" content="next">
 <meta name="twitter:card" content="summary">
@@ -151,7 +150,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">12</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">14</span></a>
 
   </li>
         <li class="menu-item menu-item-schedule">
@@ -215,7 +214,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo%E5%AE%89%E8%A3%85"><span class="nav-number">1.</span> <span class="nav-text">Hexo安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#github%E9%85%8D%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">github配置</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo%E5%AE%89%E8%A3%85"><span class="nav-number">1.</span> <span class="nav-text">Hexo安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-number">2.</span> <span class="nav-text">hexo常用命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%99%E4%BD%9C"><span class="nav-number">3.</span> <span class="nav-text">写作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#github%E9%85%8D%E7%BD%AE"><span class="nav-number">4.</span> <span class="nav-text">github配置</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -231,7 +230,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -307,10 +306,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-06-27 18:34:22 / 修改时间：18:50:25" itemprop="dateCreated datePublished" datetime="2020-06-27T18:34:22+08:00">2020-06-27</time>
+              <time title="创建时间：2020-06-27 18:34:22" itemprop="dateCreated datePublished" datetime="2020-06-27T18:34:22+08:00">2020-06-27</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-01-23 19:19:40" itemprop="dateModified" datetime="2024-01-23T19:19:40+08:00">2024-01-23</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -348,14 +353,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.6k</span>
+              <span>3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
+              <span>3 分钟</span>
             </span>
 
         </div>
@@ -390,6 +395,14 @@
 <p>然后在<code>D:\blog\hexo</code>下<code>_config.yml</code>文件内找到<code>theme: landscape</code>,修改为<code>theme: next</code>,将默认主题改为next。</p>
 </li>
 </ol>
+<h3 id="hexo常用命令"><a href="#hexo常用命令" class="headerlink" title="hexo常用命令"></a>hexo常用命令</h3><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># 清空构建数据</span></span><br><span class="line"> <span class="attribute">hexo</span> clean</span><br><span class="line"></span><br><span class="line"><span class="comment"># 构建blog页面</span></span><br><span class="line"> hexo g</span><br><span class="line"></span><br><span class="line"><span class="comment"># 本地执行服务</span></span><br><span class="line"> hexo s</span><br><span class="line"> </span><br><span class="line"> <span class="comment"># 发布</span></span><br><span class="line"> hexo d</span><br><span class="line"> </span><br></pre></td></tr></table></figure>
+
+<h3 id="写作"><a href="#写作" class="headerlink" title="写作"></a>写作</h3><figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">new</span> [layout] &lt;<span class="built_in">title</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>可以在命令中指定文章的布局（<code>layout</code>），默认为 <code>post</code>，可以通过修改 <code>_config.yml</code> 中的 <code>default_layout </code>参数来指定默认布局。</p>
+<p>Hexo 有三种默认布局：<code>post</code>、<code>page</code> 和 <code>draft</code>。在创建这三种不同类型的文件时，它们将会被保存到不同的路径；而您自定义的其他布局和 <code>post</code> 相同，都将储存到 <code>source/_posts</code> 文件夹。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">布局	路径</span><br><span class="line">post	<span class="built_in">source</span>/_posts</span><br><span class="line">page	<span class="built_in">source</span></span><br><span class="line">draft	<span class="built_in">source</span>/_drafts</span><br></pre></td></tr></table></figure>
+<p>如果你不希望一篇文章（<code>post</code>&#x2F;<code>page</code>）使用主题处理，请在它的 <code>front-matter</code> 中设置 <code>layout: false</code>。</p>
+<p>其他写作功能参见<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/writing">官方指南</a>。</p>
 <h3 id="github配置"><a href="#github配置" class="headerlink" title="github配置"></a>github配置</h3><ol>
 <li><p>创建一个repo，名称为<code>yourname.github.io</code>, 其中<code>yourname</code>是你的github名称,不可以为其他名称。项目为公开项目，否则后面发布后会404。</p>
 </li>
@@ -437,7 +450,6 @@
       <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/blog/" rel="tag"># blog</a>
-              <a href="/tags/Windows/" rel="tag"># Windows</a>
               <a href="/tags/hexo/" rel="tag"># hexo</a>
               <a href="/tags/next/" rel="tag"># next</a>
           </div>
@@ -512,12 +524,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">34k</span>
+    <span title="站点总字数">44k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">31 分钟</span>
+    <span title="站点阅读时长">40 分钟</span>
 </div><script color="0,0,255" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
 
         

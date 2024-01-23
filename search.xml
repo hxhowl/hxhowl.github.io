@@ -21,112 +21,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>java - 02.接口</title>
-    <url>/posts/bff39eb3/</url>
-    <content><![CDATA[<p>接口，是Java语言中一种引用类型，是方法的集合，如果说类的内部封装了成员变量、构造方法和成员方法，那么 接口的内部主要就是封装了方法，包含抽象方法(JDK 7及以前)，默认方法和静态方法(JDK 8)，私有方法 (JDK 9)。</p>
-<span id="more"></span>
-
-<p>接口的定义，它与定义类方式相似，但是使用 interface 关键字。它也会被编译成.class文件，但一定要明确它并 不是类，而是另外一种引用数据类型。</p>
-<ul>
-<li>接口中，无法定义成员变量，但是可以定义常量，其值不可以改变，默认使用public static final修饰。 </li>
-<li>接口中，没有构造方法，不能创建对象。</li>
-<li>接口中，没有静态代码块。<figure class="highlight makefile"><table><tr><td class="code"><pre><span class="line"><span class="section">引用数据类型:数组，类，接口。</span></span><br></pre></td></tr></table></figure>
-接口的使用，它不能创建对象，但是可以被实现( implements ，类似于被继承)。一个实现接口的类(可以看做 是接口的子类)，需要实现接口中所有的抽象方法，创建该类对象，就可以调用方法了，否则它必须是一个抽象 类。</li>
-</ul>
-<h3 id="定义格式"><a href="#定义格式" class="headerlink" title="定义格式"></a>定义格式</h3><figure class="highlight haxe"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="title class_"><span class="keyword">interface</span> 接口名称 </span>&#123; </span><br><span class="line">  <span class="comment">// 抽象方法</span></span><br><span class="line">  <span class="comment">// 默认方法</span></span><br><span class="line">  <span class="comment">// 静态方法</span></span><br><span class="line">  <span class="comment">// 私有方法</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="含有抽象方法"><a href="#含有抽象方法" class="headerlink" title="含有抽象方法"></a>含有抽象方法</h3><p>抽象方法:使用 abstract 关键字修饰，可以省略，没有方法体。该方法供子类实现使用。 代码如下</p>
-<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"> <span class="keyword">public</span> <span class="keyword">interface</span> <span class="title">InterFaceName</span> &#123; </span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">method</span>()</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="含有默认方法和静态方法"><a href="#含有默认方法和静态方法" class="headerlink" title="含有默认方法和静态方法"></a>含有默认方法和静态方法</h3><p>默认方法:使用 <code>default</code> 修饰，不可省略，供子类调用或者子类重写。<br>静态方法:使用 <code>static</code> 修饰，供接口直接调用。</p>
-<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title">InterFaceName</span> &#123; </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="literal">default</span> <span class="keyword">void</span> <span class="title">method</span>()</span> &#123;</span><br><span class="line">    <span class="comment">// 执行语句 </span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">method2</span>()</span> &#123;</span><br><span class="line">    <span class="comment">// 执行语句</span></span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="含有私有方法和私有静态方法"><a href="#含有私有方法和私有静态方法" class="headerlink" title="含有私有方法和私有静态方法"></a>含有私有方法和私有静态方法</h3><p>私有方法:使用 private 修饰，供接口中的默认方法或者静态方法调用</p>
-<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"> <span class="keyword">public</span> <span class="keyword">interface</span> <span class="title">InterFaceName</span> &#123; </span><br><span class="line">     <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">method</span>()</span> &#123;</span><br><span class="line">     <span class="comment">// 执行语句</span></span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="接口实现"><a href="#接口实现" class="headerlink" title="接口实现"></a>接口实现</h3><p>类与接口的关系为实现关系，即<code>类实现接口</code>，该类可以称为接口的实现类，也可以称为接口的子类。实现的动作类 似继承，格式相仿，只是关键字不同，实现使用 <code>implements</code> 关键字。</p>
-<p>非抽象子类实现接口:</p>
-<ol>
-<li>必须重写接口中所有抽象方法。</li>
-<li>继承了接口的默认方法，即可以直接调用，也可以重写。</li>
-</ol>
-<p>实现格式:</p>
-<figure class="highlight haxe"><table><tr><td class="code"><pre><span class="line"><span class="title class_"><span class="keyword">class</span> 类名 <span class="keyword"><span class="keyword">implements</span> </span>接口名 </span>&#123; </span><br><span class="line">    <span class="comment">// 重写接口中抽象方法【必须】</span></span><br><span class="line">    <span class="comment">// 重写接口中默认方法【可选】</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="抽象方法的使用"><a href="#抽象方法的使用" class="headerlink" title="抽象方法的使用"></a>抽象方法的使用</h3><p>必须全部实现<br>定义接口:</p>
-<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"> <span class="keyword">public</span> <span class="keyword">interface</span> <span class="title">LiveAble</span> &#123; </span><br><span class="line">     <span class="comment">// 定义抽象方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">eat</span>()</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">sleep</span>()</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>定义实现类:</p>
-<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Animal</span> <span class="keyword">implements</span> <span class="title class_">LiveAble</span> &#123; </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">void</span> <span class="title function_">eat</span>(<span class="params"></span>) &#123; </span><br><span class="line">        <span class="title class_">System</span>.<span class="property">out</span>.<span class="title function_">println</span>(<span class="string">&quot;吃东西&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">void</span> <span class="title function_">sleep</span>(<span class="params"></span>) &#123;             </span><br><span class="line">        <span class="title class_">System</span>.<span class="property">out</span>.<span class="title function_">println</span>(<span class="string">&quot;晚上睡&quot;</span>);</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>定义测试类:</p>
-<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">InterfaceDemo</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">void</span> <span class="title function_">main</span>(<span class="params"><span class="built_in">String</span>[] args</span>) &#123;</span><br><span class="line">        <span class="comment">// 创建子类对象</span></span><br><span class="line">        <span class="title class_">Animal</span> a = <span class="keyword">new</span> <span class="title class_">Animal</span>(); </span><br><span class="line">        <span class="comment">// 调用实现后的方法 a.eat();</span></span><br><span class="line">        a.<span class="title function_">sleep</span>();</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br><span class="line">输出结果:</span><br><span class="line">吃东西</span><br><span class="line">晚上睡</span><br></pre></td></tr></table></figure>
-<h3 id="默认方法的使用"><a href="#默认方法的使用" class="headerlink" title="默认方法的使用"></a>默认方法的使用</h3><p>可以继承，可以重写，二选一，但是只能通过实现类的对象来调用。</p>
-<h4 id="1-继承默认方法，代码如下"><a href="#1-继承默认方法，代码如下" class="headerlink" title="1. 继承默认方法，代码如下:"></a>1. 继承默认方法，代码如下:</h4><p>定义接口:</p>
-<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title">LiveAble</span> &#123; </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="literal">default</span> <span class="keyword">void</span> <span class="title">fly</span>()</span>&#123;</span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">&quot;天上飞&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>定义实现类:</p>
-<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="symbol">Animal</span> <span class="symbol">implements</span> <span class="symbol">LiveAble</span> &#123; </span><br><span class="line">    <span class="comment">// 继承，什么都不用写，直接调用</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>定义测试类:</p>
-<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">InterfaceDemo</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">void</span> <span class="title function_">main</span>(<span class="params"><span class="built_in">String</span>[] args</span>) &#123;</span><br><span class="line">        <span class="comment">// 创建子类对象</span></span><br><span class="line">        <span class="title class_">Animal</span> a = <span class="keyword">new</span> <span class="title class_">Animal</span>(); </span><br><span class="line">        <span class="comment">// 调用默认方法</span></span><br><span class="line">        a.<span class="title function_">fly</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">输出结果: </span><br><span class="line">天上飞</span><br></pre></td></tr></table></figure>
-<h4 id="2-重写默认方法，代码如下"><a href="#2-重写默认方法，代码如下" class="headerlink" title="2. 重写默认方法，代码如下:"></a>2. 重写默认方法，代码如下:</h4><p>定义接口:</p>
-<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title">LiveAble</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="literal">default</span> <span class="keyword">void</span> <span class="title">fly</span>()</span></span><br><span class="line"><span class="function">        System.<span class="keyword">out</span>.<span class="title">println</span>(<span class="params"><span class="string">&quot;天上飞&quot;</span></span>)</span>; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>定义实现类:</p>
-<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Animal</span> <span class="keyword">implements</span> <span class="title class_">LiveAble</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">void</span> <span class="title function_">fly</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="title class_">System</span>.<span class="property">out</span>.<span class="title function_">println</span>(<span class="string">&quot;自由自在的飞&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>定义测试类:</p>
-<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">InterfaceDemo</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">void</span> <span class="title function_">main</span>(<span class="params"><span class="built_in">String</span>[] args</span>) &#123;</span><br><span class="line">        <span class="comment">// 创建子类对象</span></span><br><span class="line">        <span class="title class_">Animal</span> a = <span class="keyword">new</span> <span class="title class_">Animal</span>(); </span><br><span class="line">        <span class="comment">// 调用重写方法</span></span><br><span class="line">        a.<span class="title function_">fly</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">输出结果:</span><br><span class="line">自由自在的飞</span><br></pre></td></tr></table></figure>
-
-<h3 id="静态方法的使用"><a href="#静态方法的使用" class="headerlink" title="静态方法的使用"></a>静态方法的使用</h3><p>静态与.class 文件相关，只能使用接口名调用，不可以通过实现类的类名或者实现类的对象调用，代码如下: </p>
-<p>定义接口:</p>
-<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title">LiveAble</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">run</span>()</span>&#123;</span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">&quot;跑起来~~~&quot;</span>); </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>定义实现类:</p>
-<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="symbol">Animal</span> <span class="symbol">implements</span> <span class="symbol">LiveAble</span> &#123; </span><br><span class="line">    <span class="comment">// 无法重写静态方法</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>定义测试类:</p>
-<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">InterfaceDemo</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">void</span> <span class="title function_">main</span>(<span class="params"><span class="built_in">String</span>[] args</span>) &#123;</span><br><span class="line">        <span class="comment">// Animal.run(); </span></span><br><span class="line">        <span class="comment">// 【错误】无法继承方法,也无法调用</span></span><br><span class="line">        <span class="title class_">LiveAble</span>.<span class="title function_">run</span>(); <span class="comment">//</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">输出结果: </span><br><span class="line">跑起来~~~</span><br></pre></td></tr></table></figure>
-<h4 id="私有方法的使用"><a href="#私有方法的使用" class="headerlink" title="私有方法的使用"></a>私有方法的使用</h4><ul>
-<li>私有方法:只有默认方法可以调用。 </li>
-<li>私有静态方法:默认方法和静态方法可以调用。</li>
-</ul>
-<p>如果一个接口中有多个默认方法，并且方法中有重复的内容，那么可以抽取出来，封装到私有方法中，供默认方法<br>去调用。从设计的角度讲，私有的方法是对默认方法和静态方法的辅助。</p>
-<p>定义接口:</p>
-<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title">LiveAble</span> &#123; </span><br><span class="line">    <span class="function"><span class="literal">default</span> <span class="keyword">void</span> <span class="title">func</span>()</span>&#123;</span><br><span class="line">        func1();</span><br><span class="line">        func2();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">func1</span>()</span>&#123;    </span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">&quot;跑起来~~~&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">func2</span>()</span>&#123;  </span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">&quot;跑起来~~~&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="接口的多实现"><a href="#接口的多实现" class="headerlink" title="接口的多实现"></a>接口的多实现</h3><p>在继承体系中，一个类只能继承一个父类。而对于接口而言，一个类是可以实现多个接口的，这叫做接<br>口的多实现。并且，一个类能继承一个父类，同时实现多个接口。</p>
-<figure class="highlight haxe"><table><tr><td class="code"><pre><span class="line"><span class="title class_"><span class="keyword">class</span> 类名 [<span class="keyword"><span class="keyword">extends</span> </span>父类名] <span class="keyword"><span class="keyword">implements</span> </span>接口名1,接口名2,接口名3... </span>&#123; </span><br><span class="line">    <span class="comment">// 重写接口中抽象方法【必须】</span></span><br><span class="line">    <span class="comment">// 重写接口中默认方法【不重名时可选】</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><code>[ ]: 表示可选操作。</code></p>
-<h4 id="抽象方法"><a href="#抽象方法" class="headerlink" title="抽象方法"></a>抽象方法</h4><p>接口中，有多个抽象方法时，实现类必须重写所有抽象方法。如果抽象方法有重名的，只需要重写一次。代码如<br>下:</p>
-<p>定义多个接口:</p>
-<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title">A</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">showA</span>()</span>; </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">show</span>()</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">interface</span> <span class="title">B</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">showB</span>()</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">show</span>()</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>定义实现类:</p>
-<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">C</span> <span class="keyword">implements</span> A,B&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">void</span> <span class="title function_">showA</span>(<span class="params"></span>) &#123;     </span><br><span class="line">        <span class="title class_">System</span>.<span class="property">out</span>.<span class="title function_">println</span>(<span class="string">&quot;showA&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">void</span> <span class="title function_">showB</span>(<span class="params"></span>) &#123;  </span><br><span class="line">        <span class="title class_">System</span>.<span class="property">out</span>.<span class="title function_">println</span>(<span class="string">&quot;showB&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">void</span> <span class="title function_">show</span>(<span class="params"></span>) &#123; </span><br><span class="line">        <span class="title class_">System</span>.<span class="property">out</span>.<span class="title function_">println</span>(<span class="string">&quot;show&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="默认方法"><a href="#默认方法" class="headerlink" title="默认方法"></a>默认方法</h4><p>接口中，有多个默认方法时，实现类都可继承使用。如果默认方法有重名的，必须重写一次。代码如下:</p>
-<p>定义多个接口：</p>
-<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title">A</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="literal">default</span> <span class="keyword">void</span> <span class="title">methodA</span>()</span>&#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="literal">default</span> <span class="keyword">void</span> <span class="title">method</span>()</span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">interface</span> <span class="title">B</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="literal">default</span> <span class="keyword">void</span> <span class="title">methodB</span>()</span>&#123;&#125; </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="literal">default</span> <span class="keyword">void</span> <span class="title">method</span>()</span>&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>定义实现类:</p>
-<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="symbol">C</span> <span class="symbol">implements</span> <span class="symbol">A,<span class="symbol">B</span></span>&#123; </span><br><span class="line">    @Override</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">void</span> method() &#123;    </span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">&quot;method&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="静态方法"><a href="#静态方法" class="headerlink" title="静态方法"></a>静态方法</h4><p>接口中，存在同名的静态方法并不会冲突，原因是只能通过各自接口名访问静态方法。</p>
-<h4 id="优先级的问题"><a href="#优先级的问题" class="headerlink" title="优先级的问题"></a>优先级的问题</h4><p>当一个类，既继承一个父类，又实现若干个接口时，父类中的成员方法与接口中的默认方法重名，子类就近选择执<br>行父类的成员方法。代码如下:<br>定义接口:</p>
-<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title">A</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="literal">default</span> <span class="keyword">void</span> <span class="title">methodA</span>()</span>&#123;</span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">&quot;AAAAAAAAAAAA&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>定义父类:</p>
-<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">D</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">methodA</span>()</span>&#123;</span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">&quot;DDDDDDDDDDDD&quot;</span>); </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>定义子类:</p>
-<figure class="highlight scala"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span> <span class="keyword">extends</span> <span class="title">D</span> <span class="title">implements</span> <span class="title">A</span> </span>&#123; </span><br><span class="line">    <span class="comment">// 未重写methodA方法</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>定义测试类:</p>
-<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">void</span> <span class="title function_">main</span>(<span class="params"><span class="built_in">String</span>[] args</span>) &#123;</span><br><span class="line">        C c = <span class="keyword">new</span> <span class="title function_">C</span>();</span><br><span class="line">        c.<span class="title function_">methodA</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">输出结果:</span><br><span class="line"><span class="variable constant_">DDDDDDDDDDDD</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="接口的多继承"><a href="#接口的多继承" class="headerlink" title="接口的多继承"></a>接口的多继承</h3><p>一个接口能继承另一个或者多个接口，这和类之间的继承比较相似。接口的继承使用 extends 关键字，子接口继<br>承父接口的方法。<strong>如果父接口中的默认方法有重名的，那么子接口需要重写一次</strong>。代码如下:</p>
-<p>定义父接口:</p>
-<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title">A</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="literal">default</span> <span class="keyword">void</span> <span class="title">method</span>()</span>&#123;</span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">&quot;AAAAAAAAAAAAAAAAAAA&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">interface</span> <span class="title">B</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="literal">default</span> <span class="keyword">void</span> <span class="title">method</span>()</span>&#123;</span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">&quot;BBBBBBBBBBBBBBBBBBB&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>定义子接口:</p>
-<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">interface</span> D <span class="keyword">extends</span> A,B&#123; </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">default</span> <span class="built_in">void</span> <span class="title function_">method</span>(<span class="params"></span>) &#123;   </span><br><span class="line">        <span class="title class_">System</span>.<span class="property">out</span>.<span class="title function_">println</span>(<span class="string">&quot;DDDDDDDDDDDDDD&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight actionscript"><table><tr><td class="code"><pre><span class="line">子接口重写默认方法时，<span class="keyword">default</span>关键字可以保留。 </span><br><span class="line">子类重写默认方法时，<span class="keyword">default</span>关键字不可以保留。</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>java基础</category>
-      </categories>
-      <tags>
-        <tag>java</tag>
-        <tag>java基础</tag>
-        <tag>笔记</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>blog - Windows下hexo+github</title>
     <url>/posts/ee60a25f/</url>
     <content><![CDATA[<p>Windows环境下配置<code>hexo</code>，并发布到<code>github.io</code>。</p>
@@ -152,6 +46,14 @@
 <p>然后在<code>D:\blog\hexo</code>下<code>_config.yml</code>文件内找到<code>theme: landscape</code>,修改为<code>theme: next</code>,将默认主题改为next。</p>
 </li>
 </ol>
+<h3 id="hexo常用命令"><a href="#hexo常用命令" class="headerlink" title="hexo常用命令"></a>hexo常用命令</h3><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># 清空构建数据</span></span><br><span class="line"> <span class="attribute">hexo</span> clean</span><br><span class="line"></span><br><span class="line"><span class="comment"># 构建blog页面</span></span><br><span class="line"> hexo g</span><br><span class="line"></span><br><span class="line"><span class="comment"># 本地执行服务</span></span><br><span class="line"> hexo s</span><br><span class="line"> </span><br><span class="line"> <span class="comment"># 发布</span></span><br><span class="line"> hexo d</span><br><span class="line"> </span><br></pre></td></tr></table></figure>
+
+<h3 id="写作"><a href="#写作" class="headerlink" title="写作"></a>写作</h3><figure class="highlight gauss"><table><tr><td class="code"><pre><span class="line">hexo <span class="keyword">new</span> [layout] &lt;<span class="built_in">title</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>可以在命令中指定文章的布局（<code>layout</code>），默认为 <code>post</code>，可以通过修改 <code>_config.yml</code> 中的 <code>default_layout </code>参数来指定默认布局。</p>
+<p>Hexo 有三种默认布局：<code>post</code>、<code>page</code> 和 <code>draft</code>。在创建这三种不同类型的文件时，它们将会被保存到不同的路径；而您自定义的其他布局和 <code>post</code> 相同，都将储存到 <code>source/_posts</code> 文件夹。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">布局	路径</span><br><span class="line">post	<span class="built_in">source</span>/_posts</span><br><span class="line">page	<span class="built_in">source</span></span><br><span class="line">draft	<span class="built_in">source</span>/_drafts</span><br></pre></td></tr></table></figure>
+<p>如果你不希望一篇文章（<code>post</code>&#x2F;<code>page</code>）使用主题处理，请在它的 <code>front-matter</code> 中设置 <code>layout: false</code>。</p>
+<p>其他写作功能参见<a href="https://hexo.io/zh-cn/docs/writing">官方指南</a>。</p>
 <h3 id="github配置"><a href="#github配置" class="headerlink" title="github配置"></a>github配置</h3><ol>
 <li><p>创建一个repo，名称为<code>yourname.github.io</code>, 其中<code>yourname</code>是你的github名称,不可以为其他名称。项目为公开项目，否则后面发布后会404。</p>
 </li>
@@ -178,122 +80,8 @@
       </categories>
       <tags>
         <tag>blog</tag>
-        <tag>Windows</tag>
         <tag>hexo</tag>
         <tag>next</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>java基础 - 01.String常用方法</title>
-    <url>/posts/bbda4b22/</url>
-    <content><![CDATA[<h3 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h3><ul>
-<li><p><code>public String()</code> :初始化新创建的 String对象，以使其表示空字符序列。</p>
-</li>
-<li><p><code>public String(char[] value)</code> :通过当前参数中的字符数组来构造新的String。</p>
-</li>
-<li><p><code>public String(byte[] bytes)</code> :通过使用平台的默认字符集解码当前参数中的字节数组来构造新的String</p>
-<span id="more"></span></li>
-</ul>
-<h3 id="判断功能的方法"><a href="#判断功能的方法" class="headerlink" title="判断功能的方法"></a>判断功能的方法</h3><ul>
-<li><code>public boolean equals (Object anObject)</code> :将此字符串与指定对象进行比较。</li>
-<li><code>public boolean equalsIgnoreCase (String anotherString)</code> :将此字符串与指定对象进行比较，忽略大小<br>写。</li>
-</ul>
-<h3 id="获取功能的方法"><a href="#获取功能的方法" class="headerlink" title="获取功能的方法"></a>获取功能的方法</h3><ul>
-<li><code>public int length ()</code> :返回此字符串的长度。</li>
-<li><code>public String concat (String str)</code> :将指定的字符串连接到该字符串的末尾。</li>
-<li><code>public char charAt (int index)</code> :返回指定索引处的 char值。</li>
-<li><code>public int indexOf (String str)</code> :返回指定子字符串第一次出现在该字符串内的索引。</li>
-<li><code>public String substring (int beginIndex)</code> :返回一个子字符串，从beginIndex开始截取字符串到字符<br>串结尾。</li>
-<li><code>public String substring (int beginIndex, int endIndex)</code> :返回一个子字符串，从beginIndex到<br>endIndex截取字符串。含beginIndex，不含endIndex。例如：<code>s.substring(0, s.length())</code></li>
-</ul>
-<h3 id="转换功能的方法"><a href="#转换功能的方法" class="headerlink" title="转换功能的方法"></a>转换功能的方法</h3><ul>
-<li><code>public char[] toCharArray ()</code> :将此字符串转换为新的字符数组。</li>
-<li><code>public byte[] getBytes ()</code> :使用平台的默认字符集将该 String编码转换为新的字节数组。</li>
-<li><code>public String replace (CharSequence target, CharSequence replacement)</code> :将与target匹配的字符串使<br>用replacement字符串替换。</li>
-</ul>
-<h3 id="分割功能的方法"><a href="#分割功能的方法" class="headerlink" title="分割功能的方法"></a>分割功能的方法</h3><ul>
-<li><code>public String[] split(String regex)</code> :将此字符串按照给定的regex(规则)拆分为字符串数组</li>
-</ul>
-]]></content>
-      <categories>
-        <category>java基础</category>
-      </categories>
-      <tags>
-        <tag>java</tag>
-        <tag>java基础</tag>
-        <tag>笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>java基础 - 03.final关键字</title>
-    <url>/posts/f2b5981c/</url>
-    <content><![CDATA[<p>final: 不可改变。可以用于修饰类、方法和变量。</p>
-<ul>
-<li>类:被修饰的类，不能被继承。 </li>
-<li>方法:被修饰的方法，不能被重写。 </li>
-<li>变量:被修饰的变量，不能被重新赋值。</li>
-</ul>
-<span id="more"></span>
-
-<h4 id="修饰类"><a href="#修饰类" class="headerlink" title="修饰类"></a>修饰类</h4><figure class="highlight haxe"><table><tr><td class="code"><pre><span class="line"><span class="keyword">final</span> <span class="title class_"><span class="keyword">class</span> 类名 </span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="修饰方法"><a href="#修饰方法" class="headerlink" title="修饰方法"></a>修饰方法</h4><figure class="highlight actionscript"><table><tr><td class="code"><pre><span class="line">修饰符 <span class="keyword">final</span> 返回值类型 方法名(参数列表)&#123; </span><br><span class="line">    <span class="comment">//方法体</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>重写被 <code>final</code> 修饰的方法，编译时就会报错。</p>
-<h4 id="修饰变量"><a href="#修饰变量" class="headerlink" title="修饰变量"></a>修饰变量</h4><p><strong>1. 局部变量——基本类型</strong></p>
-<p>基本类型的局部变量，被final修饰后，只能赋值一次，不能再更改。</p>
-<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">FinalDemo1</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">void</span> <span class="title function_">main</span>(<span class="params"><span class="built_in">String</span>[] args</span>) &#123;</span><br><span class="line">        <span class="comment">// 声明变量，使用final修饰 final int a;</span></span><br><span class="line">        <span class="comment">// 第一次赋值</span></span><br><span class="line">        a = <span class="number">10</span>;</span><br><span class="line">        <span class="comment">// 第二次赋值</span></span><br><span class="line">        a = <span class="number">20</span>; <span class="comment">// 报错,不可重新赋值</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>2. 局部变量——引用类型</strong></p>
-<p>引用类型的局部变量，被final修饰后，只能指向一个对象，地址不能再更改。但是不影响对象内部的成员变量值的<br>修改，代码如下:</p>
-<figure class="highlight haxe"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="title class_"><span class="keyword">class</span> <span class="title">FinalDemo2</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> void main(<span class="keyword">String</span>[] args) &#123;</span><br><span class="line">        <span class="comment">// 创建 User 对象</span></span><br><span class="line">        <span class="keyword">final</span> User u = <span class="keyword">new</span> <span class="type">User</span>();</span><br><span class="line">        <span class="comment">// 创建 另一个 User对象</span></span><br><span class="line">        u = <span class="keyword">new</span> <span class="type">User</span>(); <span class="comment">// 报错，指向了新的对象，地址值改变。</span></span><br><span class="line">        <span class="comment">// 调用setName方法</span></span><br><span class="line">        u.setName(<span class="string">&quot;张三&quot;</span>); <span class="comment">// 可以修改</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>3. 成员变量</strong></p>
-<p>成员变量涉及到初始化的问题，初始化方式有两种，只能二选一:</p>
-<ul>
-<li>显示初始化;<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">User</span> &#123;</span><br><span class="line">    <span class="keyword">final</span> <span class="type">String</span> USERNAME = <span class="string">&quot;张三&quot;</span>; </span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> age;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>构造方法初始化。<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">User</span> &#123;</span><br><span class="line">    <span class="keyword">final</span> <span class="type">String</span> USERNAME ;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> age;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">User</span><span class="params">(<span class="type">String</span> username, <span class="type">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.USERNAME = username;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<code>被final修饰的常量名称，一般都有书写规范，所有字母都大写。</code></li>
-</ul>
-]]></content>
-      <categories>
-        <category>java基础</category>
-      </categories>
-      <tags>
-        <tag>java</tag>
-        <tag>java基础</tag>
-        <tag>笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>java基础 - 04.匿名内部类</title>
-    <url>/posts/9cf3d23d/</url>
-    <content><![CDATA[<p>匿名内部类 :是内部类的简化写法。它的本质是一个带具体实现的父类或者父接口的匿名的子类对象。 开发中，最常用到的内部类就是匿名内部类了。以接口举例，当你使用一个接口时，得做如下几步操作：</p>
-<ol>
-<li>定义子类</li>
-<li>重写接口中的方法</li>
-<li>创建子类对象</li>
-<li>调用重写后的方法</li>
-</ol>
-<span id="more"></span>
-
-<p>匿名内部类必须继承一个父类或者实现一个父接口。</p>
-<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span> 父类名或者接口名()&#123; </span><br><span class="line">    <span class="comment">// 方法重写</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">void</span> <span class="title function_">method</span>(<span class="params"></span>) &#123; </span><br><span class="line">    <span class="comment">// 执行语句</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h4 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h4><p>定义接口:</p>
-<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title">FlyAble</span>&#123; </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">fly</span>()</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>创建匿名内部类，并调用:</p>
-<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">InnerDemo</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">void</span> <span class="title function_">main</span>(<span class="params"><span class="built_in">String</span>[] args</span>) &#123;</span><br><span class="line">        <span class="comment">/* 1.等号右边:是匿名内部类，定义并创建该接口的子类对象 </span></span><br><span class="line"><span class="comment">        2.等号左边:是多态赋值,接口类型引用指向子类对象</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">        <span class="title class_">FlyAble</span> f = <span class="keyword">new</span> <span class="title class_">FlyAble</span>()&#123;</span><br><span class="line">            <span class="keyword">public</span> <span class="built_in">void</span> <span class="title function_">fly</span>(<span class="params"></span>) &#123;   </span><br><span class="line">                <span class="title class_">System</span>.<span class="property">out</span>.<span class="title function_">println</span>(<span class="string">&quot;我飞了~~~&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="comment">//调用 fly方法,执行重写后的方法</span></span><br><span class="line">        f.<span class="title function_">fly</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>通常在方法的形式参数是接口或者抽象类时，也可以将匿名内部类作为参数传递。</p>
-<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">InnerDemo2</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">void</span> <span class="title function_">main</span>(<span class="params"><span class="built_in">String</span>[] args</span>) &#123;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">         1.等号右边:定义并创建该接口的子类对象 </span></span><br><span class="line"><span class="comment">         2.等号左边:是多态,接口类型引用指向子类对象</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">        <span class="title class_">FlyAble</span> f = <span class="keyword">new</span> <span class="title class_">FlyAble</span>()&#123; </span><br><span class="line">            <span class="keyword">public</span> <span class="built_in">void</span> <span class="title function_">fly</span>(<span class="params"></span>) &#123;</span><br><span class="line">                <span class="title class_">System</span>.<span class="property">out</span>.<span class="title function_">println</span>(<span class="string">&quot;我飞了~~~&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="comment">// 将f传递给showFly方法中</span></span><br><span class="line">        <span class="title function_">showFly</span>(f);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">void</span> <span class="title function_">showFly</span>(<span class="params">FlyAble f</span>) &#123; </span><br><span class="line">        f.<span class="title function_">fly</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>以上两步，也可以简化为一步，代码如下:</p>
-<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">InnerDemo3</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">void</span> <span class="title function_">main</span>(<span class="params"><span class="built_in">String</span>[] args</span>) &#123;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        创建匿名内部类,直接传递给showFly(FlyAble f) */</span></span><br><span class="line">        <span class="title function_">showFly</span>( <span class="keyword">new</span> <span class="title class_">FlyAble</span>()&#123;</span><br><span class="line">            <span class="keyword">public</span> <span class="built_in">void</span> <span class="title function_">fly</span>(<span class="params"></span>) &#123;</span><br><span class="line">                <span class="title class_">System</span>.<span class="property">out</span>.<span class="title function_">println</span>(<span class="string">&quot;我飞了~~~&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">void</span> <span class="title function_">showFly</span>(<span class="params">FlyAble f</span>) &#123; </span><br><span class="line">        f.<span class="title function_">fly</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-]]></content>
-      <categories>
-        <category>java基础</category>
-      </categories>
-      <tags>
-        <tag>java</tag>
-        <tag>java基础</tag>
-        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -408,17 +196,459 @@
 <figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="meta"># Extensions</span></span><br><span class="line"><span class="meta">## Plugins: https:<span class="comment">//hexo.io/plugins/</span></span></span><br><span class="line"><span class="meta"># abbrlink插件配置 生成固定的文章id</span></span><br><span class="line"><span class="meta"># npm install hexo-abbrlink --save</span></span><br><span class="line"><span class="symbol">abbrlink:</span></span><br><span class="line"><span class="symbol">  alg:</span> crc32  <span class="meta">#support crc16(default) and crc32</span></span><br><span class="line"><span class="symbol">  rep:</span> hex    <span class="meta">#support dec(default) and hex</span></span><br></pre></td></tr></table></figure>
 <p><code>hexo</code>的<code>_config.yml</code>内找到<code>permalink</code>节点，修改文章链接序列生成方式。</p>
 <figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="comment"># permalink: :year/:month/:day/:title/</span></span><br><span class="line"><span class="comment"># abbrlink插件 配置文章id，默认的是按时间标题配置的</span></span><br><span class="line"><span class="symbol">permalink:</span> posts/<span class="symbol">:abbrlink/</span></span><br></pre></td></tr></table></figure>
-
-
+<p><strong>注意：</strong> 文章中的<code>abbrlink</code>在<code>hexo g</code>构建后才会在文章中生成。</p>
 ]]></content>
       <categories>
         <category>hexo</category>
       </categories>
       <tags>
         <tag>blog</tag>
-        <tag>Windows</tag>
         <tag>hexo</tag>
         <tag>next</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>blog - next博客升级</title>
+    <url>/posts/93417e49/</url>
+    <content><![CDATA[<p>因为博客闲置时间过长，所以这次准备修缮一下。修缮之前先备份一下<code>hexo</code>目录。</p>
+<span id="more"></span>
+
+<h3 id="更新node-js"><a href="#更新node-js" class="headerlink" title="更新node.js"></a>更新node.js</h3><p>因为hexo我是维护在Windows环境下。所以这次安装了<a href="https://github.com/coreybutler/nvm-windows">nvm-windows</a>用于管理<code>ndoe.js</code>版本。安装完成<code>nvm-windows</code>后，更新<code>node.js</code>：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># 查看可用的nodejs</span></span><br><span class="line"><span class="quote">&gt; nvm list available </span></span><br><span class="line"></span><br><span class="line"><span class="section"># 安装指定版本的nodejs</span></span><br><span class="line"><span class="quote">&gt; nvm install 21.6.0</span></span><br><span class="line"></span><br><span class="line"><span class="section"># 启用新安装的nodejs</span></span><br><span class="line"><span class="quote">&gt; nvm use 21.6.0</span></span><br><span class="line"></span><br><span class="line"><span class="section"># 查看现有的nodejs</span></span><br><span class="line"><span class="quote">&gt; nvm current</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="更新hexo"><a href="#更新hexo" class="headerlink" title="更新hexo"></a>更新<code>hexo</code></h3><p><code>cmd</code>到<code>hexo</code>目录下，依次执行：</p>
+<figure class="highlight coffeescript"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 全局升级hexo-cli</span></span><br><span class="line">&gt; <span class="built_in">npm</span> i hexo-cli -g</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装npm-check，若已安装可以跳过</span></span><br><span class="line">&gt; <span class="built_in">npm</span> install -g <span class="built_in">npm</span>-check</span><br><span class="line"></span><br><span class="line"><span class="comment"># 检查系统插件是否需要升级</span></span><br><span class="line">&gt; <span class="built_in">npm</span>-check</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装npm-upgrade，若已安装可以跳过</span></span><br><span class="line">&gt; <span class="built_in">npm</span> install -g <span class="built_in">npm</span>-upgrade</span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新package.json</span></span><br><span class="line">&gt; <span class="built_in">npm</span>-upgrade</span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新全局插件</span></span><br><span class="line">&gt; <span class="built_in">npm</span> update -g</span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新系统插件</span></span><br><span class="line">&gt; <span class="built_in">npm</span> update --save</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>或者手动删除<code>hexo</code>下的<code>node_modules</code>文件夹，然后执行<code>npm install --save</code>重新下载依赖包。</p>
+<p>执行<code>hexo version</code>查看<code>hexo</code>是否可用。我执行完后，打印信息如下：</p>
+<figure class="highlight moonscript"><table><tr><td class="code"><pre><span class="line">INFO  Validating config</span><br><span class="line">FATAL</span><br><span class="line"><span class="name">TypeError</span>: Invalid config <span class="name">detected</span>: <span class="string">&quot;url&quot;</span> should be a valid URL!</span><br><span class="line">    at <span class="built_in">module</span>.exports (<span class="name">D</span>:\blog\hexo\node_modules\hexo\dist\hexo\validate_config.<span class="name">js</span>:<span class="number">14</span>:<span class="number">15</span>)</span><br><span class="line">    at <span class="name">D</span>:\blog\hexo\node_modules\hexo\dist\hexo\load_config.<span class="name">js</span>:<span class="number">53</span>:<span class="number">35</span></span><br><span class="line">    at Generator.<span class="built_in">next</span> (&lt;anonymous&gt;)</span><br><span class="line">    at fulfilled (<span class="name">D</span>:\blog\hexo\node_modules\hexo\dist\hexo\load_config.<span class="name">js</span>:<span class="number">5</span>:<span class="number">58</span>)</span><br></pre></td></tr></table></figure>
+<p>报这个错误的原因是<code>hexo\_config.yml</code>里面<code>url</code>节点的url没有加上<code>https:\\</code>,然后认为<code>url</code>结构有问题。</p>
+<h3 id="更新next主题"><a href="#更新next主题" class="headerlink" title="更新next主题"></a>更新next主题</h3><p>在<code>hexo</code>目录下，执行 <code>npm install hexo-theme-next@8.19.0</code>。<br>更新主题后，查看<code>hexo</code>升级是否成功，依次执行：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># 清空构建数据</span></span><br><span class="line"><span class="quote">&gt; hexo clean</span></span><br><span class="line"></span><br><span class="line"><span class="section"># 构建blog页面</span></span><br><span class="line"><span class="quote">&gt; hexo g</span></span><br><span class="line"></span><br><span class="line"><span class="section">#本地执行服务</span></span><br><span class="line"><span class="quote">&gt; hexo s</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="添加git管理"><a href="#添加git管理" class="headerlink" title="添加git管理"></a>添加git管理</h3><p>将<code>hexo</code>目录添加为git项目管理，这样每次配置修改，文章发布就有了版本记录。</p>
+<ol>
+<li><p><code>hexo</code>所在目录下，执行<code>git init</code>,然后在<code>.gitignore</code>文件中添加不做版本版本控制的文件和文件夹，如下:</p>
+<figure class="highlight x86asm"><table><tr><td class="code"><pre><span class="line"><span class="meta">.DS_Store</span></span><br><span class="line">Thumbs<span class="number">.</span><span class="built_in">db</span></span><br><span class="line"><span class="built_in">db</span><span class="number">.</span>json</span><br><span class="line">*.log</span><br><span class="line">node_modules/</span><br><span class="line"><span class="meta">public</span>/</span><br><span class="line"><span class="meta">.deploy</span>*/</span><br></pre></td></tr></table></figure></li>
+<li><p>将想做版本管理的文件和目录，<code>git add</code>和<code>git commit</code>。<br>我做版本管理的根目录文件和文件夹根目录如下：</p>
+<figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line"><span class="keyword">scaffolds</span></span><br><span class="line"><span class="keyword"></span>source</span><br><span class="line">themes</span><br><span class="line">.gitignore</span><br><span class="line">_<span class="built_in">config</span>.yml</span><br><span class="line">pacakge-lock.<span class="keyword">json</span></span><br><span class="line"><span class="keyword"></span>package.<span class="keyword">json</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在github上建一个仓库，使用命令<code>git remote add origin &lt;GitHub仓库地址&gt;</code>将本地仓库与指定的GitHub仓库关联起来。</p>
+</li>
+<li><p>使用命令<code>git push -u origin master</code>将本地仓库的所有变更推送到关联的远程仓库的<code>master</code>分支，并且设置当前分支为<code>master</code>作为默认分支。</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+        <tag>hexo</tag>
+        <tag>next</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>blog - hexo博客在NexT主题下使用valine评论</title>
+    <url>/posts/c88becd/</url>
+    <content><![CDATA[<h3 id="lean-cloud配置"><a href="#lean-cloud配置" class="headerlink" title="lean cloud配置"></a><code>lean cloud</code>配置</h3><p>注册一个国际版<code>lean cloud</code>账号<br>创建一个应用,我这里命名为<code>blog</code>。</p>
+<span id="more"></span>
+
+<h4 id="基础设置"><a href="#基础设置" class="headerlink" title="基础设置"></a>基础设置</h4><ol>
+<li><code>数据存储-&gt;结构化数据</code>中，创建两个class: <code>Commnent</code>和<code>Counter</code>，然后按需添加列字段。</li>
+</ol>
+<ul>
+<li><code>Commnent</code>类中添加列<code>QQAvatar</code>、<code>comment</code>、<code>link</code>、<code>ip</code>、<code>mail</code>、<code>link</code>、<code>url</code>、<code>ua</code>、<code>nick</code>。</li>
+<li><code>Counter</code>类中添加列<code>time</code>、<code>title</code>、<code>url</code>、<code>xid</code>。</li>
+</ul>
+<ol start="2">
+<li><p><code>设置-&gt;安全中心-&gt;服务开关</code>只保留<code>数据存储</code>一项打勾。</p>
+</li>
+<li><p><code>设置-&gt;安全中心-&gt;web安全域名</code>配置博客地址，例如<code>https://xxx.github.io</code>。</p>
+</li>
+</ol>
+<h3 id="部署设置"><a href="#部署设置" class="headerlink" title="部署设置"></a>部署设置</h3><ol>
+<li><p><code>云引擎-&gt;管理部署-&gt;创建分组</code>创建一个分组，我这里也命名为<code>blog</code>。</p>
+</li>
+<li><p><code>blog</code>分组内，选择<code>设置</code>，找到<code>访问域名</code>，配置管理后台访问域名。目前不可以使用<code>共享域名</code>，只能在<code>自定义域名</code>中绑定自己单独的域名地址。等都配置完成后，可以使用<code>自定义域名/sign-up</code>去初始化管理后台信息，要初始化填写用户名和密码。也可以在<code>设置-&gt;域名绑定-&gt;云引擎、ClientEngine 域名</code>中配置域名。</p>
+</li>
+<li><p>同理需要在<code>设置-&gt;域名绑定-&gt;API 访问域名</code>中配置自定义api域名。这样所有请求都走域名再到leancloud。以解决国内访问国际版api地址403的问题。</p>
+</li>
+<li><p><code>blog</code>分组内，选择<code>设置-&gt;自定义环境变量</code> 添加如下的环境变量。</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>变量</th>
+<th>说明</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SITE_NAME</td>
+<td>[必填] 博客名称</td>
+<td>hxhowl blog</td>
+</tr>
+<tr>
+<td>SITE_URL</td>
+<td>[必填] 首页地址</td>
+<td><a href="https://blog.hxhowl.site/">https://blog.hxhowl.site</a></td>
+</tr>
+<tr>
+<td>SMTP_SERVICE</td>
+<td>邮件服务提供商</td>
+<td></td>
+</tr>
+<tr>
+<td>SMTP_USER</td>
+<td>[必填] SMTP 用户名</td>
+<td><a href="mailto:&#120;&#x78;&#120;&#64;&#49;&#54;&#51;&#46;&#99;&#111;&#x6d;">&#120;&#x78;&#120;&#64;&#49;&#54;&#51;&#46;&#99;&#111;&#x6d;</a></td>
+</tr>
+<tr>
+<td>SMTP_PASS</td>
+<td>[必填]  SMTP 授权码</td>
+<td>xxxxx</td>
+</tr>
+<tr>
+<td>SENDER_NAME</td>
+<td>[必填] 发件人</td>
+<td>hxhowl</td>
+</tr>
+<tr>
+<td>SENDER_EMAIL</td>
+<td>[必填] 发件邮箱</td>
+<td><a href="mailto:&#x78;&#120;&#x78;&#64;&#49;&#54;&#x33;&#46;&#x63;&#111;&#x6d;">&#x78;&#120;&#x78;&#64;&#49;&#54;&#x33;&#46;&#x63;&#111;&#x6d;</a></td>
+</tr>
+<tr>
+<td>MAIL_SUBJECT</td>
+<td>[必填]@通知邮件主题（标题）模板</td>
+<td>${PARENT_NICK}，您在${SITE_NAME}上的评论收到了回复</td>
+</tr>
+<tr>
+<td>MAIL_TEMPLATE</td>
+<td>[必填]@通知邮件内容模板</td>
+<td>填下文MAIL_TEMPLATE代码块</td>
+</tr>
+<tr>
+<td>MAIL_SUBJECT_ADMIN</td>
+<td>[必填] 博主邮件通知主题模板</td>
+<td>${SITE_NAME}上有新评论了</td>
+</tr>
+<tr>
+<td>MAIL_TEMPLATE_ADMIN</td>
+<td>[必填] 博主邮件通知内容模板</td>
+<td>填下文MAIL_TEMPLATE_ADMIN代码块</td>
+</tr>
+<tr>
+<td>SMTP_HOST</td>
+<td>SMTP_SERVICE 留空时，自定义 SMTP 服务器地址</td>
+<td>smtp.163.com</td>
+</tr>
+<tr>
+<td>SMTP_PORT</td>
+<td>SMTP_SERVICE 留空时，自定义 SMTP 端口</td>
+<td>465</td>
+</tr>
+<tr>
+<td>SMTP_SECURE SMTP_SERVICE 留空时填写</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>BLOGGER_EMAIL</td>
+<td>[选填] 博主通知收件地址，默认使用 SENDER_EMAIL</td>
+<td><a href="mailto:&#x78;&#120;&#120;&#x40;&#x31;&#x36;&#51;&#x2e;&#x63;&#111;&#x6d;">&#x78;&#120;&#120;&#x40;&#x31;&#x36;&#51;&#x2e;&#x63;&#111;&#x6d;</a></td>
+</tr>
+<tr>
+<td>ADMIN_URL</td>
+<td>评论管理后台地址</td>
+<td></td>
+</tr>
+<tr>
+<td>COMMENT</td>
+<td>新评论内容</td>
+<td></td>
+</tr>
+<tr>
+<td>NICK</td>
+<td>新评论者昵称</td>
+<td></td>
+</tr>
+<tr>
+<td>PARENT_COMMENT</td>
+<td>父级评论内容</td>
+<td></td>
+</tr>
+<tr>
+<td>PARENT_NICK</td>
+<td>收件人昵称（被@者，父级评论人）</td>
+<td></td>
+</tr>
+<tr>
+<td>POST_URL</td>
+<td>评论文章地址（完整路径）</td>
+<td></td>
+</tr>
+</tbody></table>
+<p><code>MAIL_TEMPLATE</code>代码块</p>
+<figure class="highlight dust"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">head</span>&gt;</span><span class="tag">&lt;/<span class="name">head</span>&gt;</span> </span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">body</span>&gt;</span> </span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;border-radius: 10px 10px 10px 10px;font-size:13px; color: #555555;width: 666px;font-family:&#x27;Century Gothic&#x27;,&#x27;Trebuchet MS&#x27;,&#x27;Hiragino Sans GB&#x27;,微软雅黑,&#x27;Microsoft Yahei&#x27;,Tahoma,Helvetica,Arial,&#x27;SimSun&#x27;,sans-serif;margin:50px auto;border:1px solid #eee;max-width:100%;background: #ffffff repeating-linear-gradient(-45deg,#fff,#fff 1.125rem,transparent 1.125rem,transparent 2.25rem);box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);&quot;</span>&gt;</span> </span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;width:100%;background:#49BDAD;color:#ffffff;border-radius: 10px 10px 0 0;background-image: -moz-linear-gradient(0deg, rgb(67, 198, 184), rgb(255, 209, 244));background-image: -webkit-linear-gradient(0deg, rgb(67, 198, 184), rgb(255, 209, 244));height: 66px;&quot;</span>&gt;</span> </span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-size:15px;word-break:break-all;padding: 23px 32px;margin:0;background-color: hsla(0,0%,100%,.4);border-radius: 10px 10px 0 0;color:#257db9&quot;</span>&gt;</span>您在<span class="tag">&lt;<span class="name">a</span> <span class="attr">style</span>=<span class="string">&quot;text-decoration:none;color:#257db9&quot;</span> <span class="attr">href</span>=<span class="string">&quot;$</span></span></span><span class="template-variable">&#123;SITE_URL&#125;</span><span class="language-xml"><span class="tag"><span class="string">&quot;</span>&gt;</span>「Kingpo&#x27;s Note」<span class="tag">&lt;/<span class="name">a</span>&gt;</span>上的留言有新回复啦！<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;margin:40px auto;width:90%&quot;</span>&gt;</span> </span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>亲爱的 <span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;color:#7777ff&quot;</span>&gt;</span>$</span><span class="template-variable">&#123;PARENT_NICK&#125;</span><span class="language-xml"><span class="tag">&lt;/<span class="name">span</span>&gt;</span> 同学，您曾在该页面/文章：<span class="tag">&lt;/<span class="name">p</span>&gt;</span> </span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;background: #fafafa repeating-linear-gradient(-45deg,#fff,#fff 1.125rem,transparent 1.125rem,transparent 2.25rem);box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);margin:20px 0px;padding:15px;border-radius:5px;font-size:14px;color:#555555;&quot;</span>&gt;</span> </span></span><br><span class="line"><span class="language-xml">    $</span><span class="template-variable">&#123;POST_URL&#125;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>发布了以下评论：<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;background: #fafafa repeating-linear-gradient(-45deg,#fff,#fff 1.125rem,transparent 1.125rem,transparent 2.25rem);box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);margin:20px 0px;padding:15px;border-radius:5px;font-size:14px;color:#555555;&quot;</span>&gt;</span> </span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">b</span>&gt;</span>$</span><span class="template-variable">&#123;PARENT_COMMENT&#125;</span><span class="language-xml"> <span class="tag">&lt;/<span class="name">b</span>&gt;</span> </span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>刚刚，用户 <span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;color:#7777ff&quot;</span>&gt;</span>$</span><span class="template-variable">&#123;NICK&#125;</span><span class="language-xml"><span class="tag">&lt;/<span class="name">span</span>&gt;</span> 给您的回复如下：<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;background: #fafafa repeating-linear-gradient(-45deg,#fff,#fff 1.125rem,transparent 1.125rem,transparent 2.25rem);box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);margin:20px 0px;padding:15px;border-radius:5px;font-size:14px;color:#555555;&quot;</span>&gt;</span> </span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">b</span>&gt;</span>$</span><span class="template-variable">&#123;COMMENT&#125;</span><span class="language-xml"><span class="tag">&lt;/<span class="name">b</span>&gt;</span> </span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>您可以点击 <span class="tag">&lt;<span class="name">a</span> <span class="attr">style</span>=<span class="string">&quot;text-decoration:none; color:#12addb&quot;</span> <span class="attr">href</span>=<span class="string">&quot;$</span></span></span><span class="template-variable">&#123;POST_URL&#125;</span><span class="language-xml"><span class="tag"><span class="string">#comments&quot;</span>&gt;</span>查看回复的完整內容<span class="tag">&lt;/<span class="name">a</span>&gt;</span>，欢迎再次光临<span class="tag">&lt;<span class="name">a</span> <span class="attr">style</span>=<span class="string">&quot;text-decoration:none; color:#9fefaf&quot;</span> <span class="attr">href</span>=<span class="string">&quot;$</span></span></span><span class="template-variable">&#123;SITE_URL&#125;</span><span class="language-xml"><span class="tag"><span class="string">&quot;</span>&gt;</span> $</span><span class="template-variable">&#123;SITE_NAME&#125;</span><span class="language-xml"><span class="tag">&lt;/<span class="name">a</span>&gt;</span>。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span><span class="language-css"><span class="selector-tag">a</span><span class="selector-pseudo">:link</span></span></span><span class="template-variable">&#123;text-decoration:none&#125;</span><span class="language-xml"><span class="language-css"><span class="selector-tag">a</span><span class="selector-pseudo">:visited</span></span></span><span class="template-variable">&#123;text-decoration:none&#125;</span><span class="language-xml"><span class="language-css"><span class="selector-tag">a</span><span class="selector-pseudo">:hover</span></span></span><span class="template-variable">&#123;text-decoration:none&#125;</span><span class="language-xml"><span class="language-css"><span class="selector-tag">a</span><span class="selector-pseudo">:active</span></span></span><span class="template-variable">&#123;text-decoration:none&#125;</span><span class="language-xml"><span class="tag">&lt;/<span class="name">style</span>&gt;</span> </span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">center</span>&gt;</span> </span></span><br><span class="line"><span class="language-xml">  Powered by LeanCloud</span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">br</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  Copyright <span class="symbol">&amp;copy;</span> 2024 <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;$</span></span></span><span class="template-variable">&#123;SITE_URL&#125;</span><span class="language-xml"><span class="tag"><span class="string">&quot;</span> <span class="attr">style</span>=<span class="string">&quot;color:auto;&quot;</span>&gt;</span>hxhowl blog<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">br</span> /&gt;</span> </span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;$</span></span></span><span class="template-variable">&#123;SITE_URL&#125;</span><span class="language-xml"><span class="tag"><span class="string">&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">style</span>=<span class="string">&quot;height:70px !important;&quot;</span> <span class="attr">src</span>=<span class="string">&quot;$</span></span></span><span class="template-variable">&#123;SITE_URL&#125;</span><span class="language-xml"><span class="tag"><span class="string">/images/avatar.png&quot;</span> /&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span> </span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">center</span>&gt;</span> </span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">br</span> /&gt;</span> </span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">br</span> /&gt;</span>  </span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p><code>MAIL_TEMPLATE_ADMIN</code>代码块</p>
+<figure class="highlight dust"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">head</span>&gt;</span><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;border-top:2px solid #12ADDB;box-shadow:0 1px 3px #AAAAAA;line-height:180%;padding:0 15px 12px;margin:50px auto;font-size:12px;&quot;</span>&gt;</span> </span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">h2</span> <span class="attr">style</span>=<span class="string">&quot;border-bottom:1px solid #DDD;font-size:14px;font-weight:normal;padding:13px 0 10px 0px;&quot;</span>&gt;</span>您在<span class="tag">&lt;<span class="name">a</span> <span class="attr">style</span>=<span class="string">&quot;text-decoration:none;color: #12ADDB;&quot;</span> <span class="attr">href</span>=<span class="string">&quot;$</span></span></span><span class="template-variable">&#123;SITE_URL&#125;</span><span class="language-xml"><span class="tag"><span class="string">&quot;</span> <span class="attr">target</span>=<span class="string">&quot;_blank&quot;</span>&gt;</span>$</span><span class="template-variable">&#123;SITE_NAME&#125;</span><span class="language-xml"><span class="tag">&lt;/<span class="name">a</span>&gt;</span>上的文章有了新的评论<span class="tag">&lt;/<span class="name">h2</span>&gt;</span> </span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">strong</span>&gt;</span>$</span><span class="template-variable">&#123;NICK&#125;</span><span class="language-xml"><span class="tag">&lt;/<span class="name">strong</span>&gt;</span>回复说：<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;background-color: #f5f5f5;padding: 10px 15px;margin:18px 0;word-wrap:break-word;&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    $</span><span class="template-variable">&#123;COMMENT&#125;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">p</span>&gt;</span> 您可以点击<span class="tag">&lt;<span class="name">a</span> <span class="attr">style</span>=<span class="string">&quot;text-decoration:none; color:#12addb&quot;</span> <span class="attr">href</span>=<span class="string">&quot;$</span></span></span><span class="template-variable">&#123;POST_URL&#125;</span><span class="language-xml"><span class="tag"><span class="string">&quot;</span> <span class="attr">target</span>=<span class="string">&quot;_blank&quot;</span>&gt;</span>查看回复的完整內容<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span> </span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">strong</span>&gt;</span>评论页面为<span class="tag">&lt;/<span class="name">strong</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">strong</span>&gt;</span>$</span><span class="template-variable">&#123;POST_URL&#125;</span><span class="language-xml"><span class="tag">&lt;/<span class="name">strong</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">br</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+
+<ol start="5">
+<li><p><code>blog</code>分组内，选择<code>部署-&gt;git部署</code>部署<code>https://github.com/DesertsP/Valine-Admin</code>。</p>
+</li>
+<li><p><code>valine-admin</code>部署完成后，会出现两个函数<code>self_wake</code>，<code>resend_mails</code>。分别配置定时任务：</p>
+</li>
+</ol>
+<ul>
+<li>24小时自动唤醒： <code>创建定时任务</code>-&gt; <code>名称</code>自定-&gt;<code>运行目标</code>选择<code>云函数</code>-&gt;函数选择 <code>self_wake</code>-&gt;<code>运行周期</code>选择<code>Cron表达式</code>-&gt;框里的内容填<code>0 */30 0-23 * * ?</code>。</li>
+<li>每天0点补发邮件： <code>创建定时任务</code>-&gt; <code>名称</code>自定-&gt;<code>运行目标</code>选择<code>云函数</code>-&gt;函数选择 <code>resend_mails</code>-&gt;<code>运行周期</code>选择<code>Cron表达式</code>-&gt;框里的内容填<code>0 0 0 * * ?</code>。</li>
+</ul>
+<h3 id="hexo-next主题配置"><a href="#hexo-next主题配置" class="headerlink" title="hexo next主题配置"></a>hexo next主题配置</h3><ol>
+<li><p><code>themes\next\_config.yml</code>中，找到<code>valine</code>根节点修改如下：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">valine:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">appId:</span> <span class="string">lean</span> <span class="string">cloud</span> <span class="string">-&gt;blog应用-&gt;设置-&gt;应用凭证-&gt;Credentials-&gt;AppID</span></span><br><span class="line">  <span class="attr">appKey:</span> <span class="string">lean</span> <span class="string">cloud</span> <span class="string">-&gt;blog应用-&gt;设置-&gt;应用凭证-&gt;Credentials-&gt;AppKey</span></span><br><span class="line">  <span class="attr">placeholder:</span> <span class="string">Just</span> <span class="string">go</span> <span class="string">go</span> <span class="comment"># Comment box placeholder</span></span><br><span class="line">  <span class="attr">avatar:</span> <span class="string">mm</span> <span class="comment"># Gravatar style</span></span><br><span class="line">  <span class="attr">meta:</span> [<span class="string">nick</span>, <span class="string">mail</span>, <span class="string">link</span>] <span class="comment"># Custom comment header</span></span><br><span class="line">  <span class="attr">pageSize:</span> <span class="number">10</span> <span class="comment"># Pagination size</span></span><br><span class="line">  <span class="attr">language:</span> <span class="string">zh-cn</span> <span class="comment"># Language, available values: en, zh-cn</span></span><br><span class="line">  <span class="attr">visitor:</span> <span class="literal">true</span> <span class="comment"># Article reading statistic</span></span><br><span class="line">  <span class="attr">comment_count:</span> <span class="literal">true</span> <span class="comment"># If false, comment count will only be displayed in post page, not in home page</span></span><br><span class="line">  <span class="attr">recordIP:</span> <span class="literal">true</span> <span class="comment"># Whether to record the commenter IP</span></span><br><span class="line">  <span class="attr">serverURLs:</span> <span class="comment"># lean cloud -&gt;blog应用-&gt;设置-&gt;应用凭证-&gt;服务器地址-&gt;REST API 服务器地址</span></span><br></pre></td></tr></table></figure>
+<p>注意: <code>serverURLs</code>字段配置成 <code>lean cloud -&gt;blog应用-&gt;设置-&gt;应用凭证-&gt;服务器地址-&gt;REST API 服务器地址</code>,这里配的api服务器地址一定要用自定义域名的地址，否则会出现国内无法使用国际版api，导致评论功能不可用。</p>
+</li>
+<li><p><code>themes\next\_config.yml</code>中，找到<code>leancloud_visitors</code>根节点修改如下：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">leancloud_visitors:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">app_id:</span> <span class="string">54BeqijO3W4t2Ub51Zyz32xg-MdYXbMMI</span> <span class="comment"># &lt;your app id&gt;</span></span><br><span class="line">  <span class="attr">app_key:</span> <span class="string">BhzALDwfxypNydDEWwpdMmKW</span> <span class="comment"># &lt;your app key&gt;</span></span><br><span class="line">  <span class="comment"># Required for apps from CN region</span></span><br><span class="line">  <span class="attr">server_url:</span> <span class="comment"># lean cloud -&gt;blog应用-&gt;设置-&gt;应用凭证-&gt;服务器地址-&gt;REST API 服务器地址</span></span><br><span class="line">  <span class="comment"># Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security</span></span><br><span class="line">  <span class="comment"># If you don&#x27;t care about security in leancloud counter and just want to use it directly</span></span><br><span class="line">  <span class="comment"># (without hexo-leancloud-counter-security plugin), set `security` to `false`.</span></span><br><span class="line">  <span class="attr">security:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<p>注意: <code>server_url</code>字段配置成 <code>lean cloud -&gt;blog应用-&gt;设置-&gt;应用凭证-&gt;服务器地址-&gt;REST API 服务器地址</code>,这里配的api服务器地址一定要用自定义域名的地址，否则会出现国内无法使用国际版api，导致阅读次数功能不可用。</p>
+</li>
+<li><p>因为要使用自定义的域名，所以要调整一下代码配置，否则会获取默认的api访问地址。文件 <code>themes\next\layout\_third-party\statistics\lean-analytics.njk</code>找到下面代码，</p>
+<figure class="highlight arcade"><table><tr><td class="code"><pre><span class="line">let api_server = app_id.<span class="built_in">slice</span>(<span class="number">-9</span>) !== <span class="string">&#x27;-MdYXbMMI&#x27;</span> ? server_url : <span class="string">`https://<span class="subst">$&#123;app_id.<span class="built_in">slice</span>(<span class="number">0</span>, <span class="number">8</span>).toLowerCase()&#125;</span>.api.lncldglobal.com`</span>;</span><br></pre></td></tr></table></figure>
+<p>修改为<code>let api_server = server_url;</code></p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+        <tag>hexo</tag>
+        <tag>next</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>java基础 - 01.String常用方法</title>
+    <url>/posts/bbda4b22/</url>
+    <content><![CDATA[<h3 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h3><ul>
+<li><p><code>public String()</code> :初始化新创建的 String对象，以使其表示空字符序列。</p>
+</li>
+<li><p><code>public String(char[] value)</code> :通过当前参数中的字符数组来构造新的String。</p>
+</li>
+<li><p><code>public String(byte[] bytes)</code> :通过使用平台的默认字符集解码当前参数中的字节数组来构造新的String</p>
+<span id="more"></span></li>
+</ul>
+<h3 id="判断功能的方法"><a href="#判断功能的方法" class="headerlink" title="判断功能的方法"></a>判断功能的方法</h3><ul>
+<li><code>public boolean equals (Object anObject)</code> :将此字符串与指定对象进行比较。</li>
+<li><code>public boolean equalsIgnoreCase (String anotherString)</code> :将此字符串与指定对象进行比较，忽略大小<br>写。</li>
+</ul>
+<h3 id="获取功能的方法"><a href="#获取功能的方法" class="headerlink" title="获取功能的方法"></a>获取功能的方法</h3><ul>
+<li><code>public int length ()</code> :返回此字符串的长度。</li>
+<li><code>public String concat (String str)</code> :将指定的字符串连接到该字符串的末尾。</li>
+<li><code>public char charAt (int index)</code> :返回指定索引处的 char值。</li>
+<li><code>public int indexOf (String str)</code> :返回指定子字符串第一次出现在该字符串内的索引。</li>
+<li><code>public String substring (int beginIndex)</code> :返回一个子字符串，从beginIndex开始截取字符串到字符<br>串结尾。</li>
+<li><code>public String substring (int beginIndex, int endIndex)</code> :返回一个子字符串，从beginIndex到<br>endIndex截取字符串。含beginIndex，不含endIndex。例如：<code>s.substring(0, s.length())</code></li>
+</ul>
+<h3 id="转换功能的方法"><a href="#转换功能的方法" class="headerlink" title="转换功能的方法"></a>转换功能的方法</h3><ul>
+<li><code>public char[] toCharArray ()</code> :将此字符串转换为新的字符数组。</li>
+<li><code>public byte[] getBytes ()</code> :使用平台的默认字符集将该 String编码转换为新的字节数组。</li>
+<li><code>public String replace (CharSequence target, CharSequence replacement)</code> :将与target匹配的字符串使<br>用replacement字符串替换。</li>
+</ul>
+<h3 id="分割功能的方法"><a href="#分割功能的方法" class="headerlink" title="分割功能的方法"></a>分割功能的方法</h3><ul>
+<li><code>public String[] split(String regex)</code> :将此字符串按照给定的regex(规则)拆分为字符串数组</li>
+</ul>
+]]></content>
+      <categories>
+        <category>java基础</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>笔记</tag>
+        <tag>java基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>java - 02.接口</title>
+    <url>/posts/bff39eb3/</url>
+    <content><![CDATA[<p>接口，是Java语言中一种引用类型，是方法的集合，如果说类的内部封装了成员变量、构造方法和成员方法，那么 接口的内部主要就是封装了方法，包含抽象方法(JDK 7及以前)，默认方法和静态方法(JDK 8)，私有方法 (JDK 9)。</p>
+<span id="more"></span>
+
+<p>接口的定义，它与定义类方式相似，但是使用 interface 关键字。它也会被编译成.class文件，但一定要明确它并 不是类，而是另外一种引用数据类型。</p>
+<ul>
+<li>接口中，无法定义成员变量，但是可以定义常量，其值不可以改变，默认使用public static final修饰。 </li>
+<li>接口中，没有构造方法，不能创建对象。</li>
+<li>接口中，没有静态代码块。<figure class="highlight makefile"><table><tr><td class="code"><pre><span class="line"><span class="section">引用数据类型:数组，类，接口。</span></span><br></pre></td></tr></table></figure>
+接口的使用，它不能创建对象，但是可以被实现( implements ，类似于被继承)。一个实现接口的类(可以看做 是接口的子类)，需要实现接口中所有的抽象方法，创建该类对象，就可以调用方法了，否则它必须是一个抽象 类。</li>
+</ul>
+<h3 id="定义格式"><a href="#定义格式" class="headerlink" title="定义格式"></a>定义格式</h3><figure class="highlight haxe"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="title class_"><span class="keyword">interface</span> 接口名称 </span>&#123; </span><br><span class="line">  <span class="comment">// 抽象方法</span></span><br><span class="line">  <span class="comment">// 默认方法</span></span><br><span class="line">  <span class="comment">// 静态方法</span></span><br><span class="line">  <span class="comment">// 私有方法</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="含有抽象方法"><a href="#含有抽象方法" class="headerlink" title="含有抽象方法"></a>含有抽象方法</h3><p>抽象方法:使用 abstract 关键字修饰，可以省略，没有方法体。该方法供子类实现使用。 代码如下</p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"> <span class="keyword">public</span> <span class="keyword">interface</span> <span class="title">InterFaceName</span> &#123; </span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">method</span>()</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="含有默认方法和静态方法"><a href="#含有默认方法和静态方法" class="headerlink" title="含有默认方法和静态方法"></a>含有默认方法和静态方法</h3><p>默认方法:使用 <code>default</code> 修饰，不可省略，供子类调用或者子类重写。<br>静态方法:使用 <code>static</code> 修饰，供接口直接调用。</p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title">InterFaceName</span> &#123; </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="literal">default</span> <span class="keyword">void</span> <span class="title">method</span>()</span> &#123;</span><br><span class="line">    <span class="comment">// 执行语句 </span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">method2</span>()</span> &#123;</span><br><span class="line">    <span class="comment">// 执行语句</span></span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="含有私有方法和私有静态方法"><a href="#含有私有方法和私有静态方法" class="headerlink" title="含有私有方法和私有静态方法"></a>含有私有方法和私有静态方法</h3><p>私有方法:使用 private 修饰，供接口中的默认方法或者静态方法调用</p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"> <span class="keyword">public</span> <span class="keyword">interface</span> <span class="title">InterFaceName</span> &#123; </span><br><span class="line">     <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">method</span>()</span> &#123;</span><br><span class="line">     <span class="comment">// 执行语句</span></span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="接口实现"><a href="#接口实现" class="headerlink" title="接口实现"></a>接口实现</h3><p>类与接口的关系为实现关系，即<code>类实现接口</code>，该类可以称为接口的实现类，也可以称为接口的子类。实现的动作类 似继承，格式相仿，只是关键字不同，实现使用 <code>implements</code> 关键字。</p>
+<p>非抽象子类实现接口:</p>
+<ol>
+<li>必须重写接口中所有抽象方法。</li>
+<li>继承了接口的默认方法，即可以直接调用，也可以重写。</li>
+</ol>
+<p>实现格式:</p>
+<figure class="highlight haxe"><table><tr><td class="code"><pre><span class="line"><span class="title class_"><span class="keyword">class</span> 类名 <span class="keyword"><span class="keyword">implements</span> </span>接口名 </span>&#123; </span><br><span class="line">    <span class="comment">// 重写接口中抽象方法【必须】</span></span><br><span class="line">    <span class="comment">// 重写接口中默认方法【可选】</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="抽象方法的使用"><a href="#抽象方法的使用" class="headerlink" title="抽象方法的使用"></a>抽象方法的使用</h3><p>必须全部实现<br>定义接口:</p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"> <span class="keyword">public</span> <span class="keyword">interface</span> <span class="title">LiveAble</span> &#123; </span><br><span class="line">     <span class="comment">// 定义抽象方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">eat</span>()</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">sleep</span>()</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>定义实现类:</p>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Animal</span> <span class="keyword">implements</span> <span class="title class_">LiveAble</span> &#123; </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">void</span> <span class="title function_">eat</span>(<span class="params"></span>) &#123; </span><br><span class="line">        <span class="title class_">System</span>.<span class="property">out</span>.<span class="title function_">println</span>(<span class="string">&quot;吃东西&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">void</span> <span class="title function_">sleep</span>(<span class="params"></span>) &#123;             </span><br><span class="line">        <span class="title class_">System</span>.<span class="property">out</span>.<span class="title function_">println</span>(<span class="string">&quot;晚上睡&quot;</span>);</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>定义测试类:</p>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">InterfaceDemo</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">void</span> <span class="title function_">main</span>(<span class="params"><span class="built_in">String</span>[] args</span>) &#123;</span><br><span class="line">        <span class="comment">// 创建子类对象</span></span><br><span class="line">        <span class="title class_">Animal</span> a = <span class="keyword">new</span> <span class="title class_">Animal</span>(); </span><br><span class="line">        <span class="comment">// 调用实现后的方法 a.eat();</span></span><br><span class="line">        a.<span class="title function_">sleep</span>();</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br><span class="line">输出结果:</span><br><span class="line">吃东西</span><br><span class="line">晚上睡</span><br></pre></td></tr></table></figure>
+<h3 id="默认方法的使用"><a href="#默认方法的使用" class="headerlink" title="默认方法的使用"></a>默认方法的使用</h3><p>可以继承，可以重写，二选一，但是只能通过实现类的对象来调用。</p>
+<h4 id="1-继承默认方法，代码如下"><a href="#1-继承默认方法，代码如下" class="headerlink" title="1. 继承默认方法，代码如下:"></a>1. 继承默认方法，代码如下:</h4><p>定义接口:</p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title">LiveAble</span> &#123; </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="literal">default</span> <span class="keyword">void</span> <span class="title">fly</span>()</span>&#123;</span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">&quot;天上飞&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>定义实现类:</p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="symbol">Animal</span> <span class="symbol">implements</span> <span class="symbol">LiveAble</span> &#123; </span><br><span class="line">    <span class="comment">// 继承，什么都不用写，直接调用</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>定义测试类:</p>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">InterfaceDemo</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">void</span> <span class="title function_">main</span>(<span class="params"><span class="built_in">String</span>[] args</span>) &#123;</span><br><span class="line">        <span class="comment">// 创建子类对象</span></span><br><span class="line">        <span class="title class_">Animal</span> a = <span class="keyword">new</span> <span class="title class_">Animal</span>(); </span><br><span class="line">        <span class="comment">// 调用默认方法</span></span><br><span class="line">        a.<span class="title function_">fly</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">输出结果: </span><br><span class="line">天上飞</span><br></pre></td></tr></table></figure>
+<h4 id="2-重写默认方法，代码如下"><a href="#2-重写默认方法，代码如下" class="headerlink" title="2. 重写默认方法，代码如下:"></a>2. 重写默认方法，代码如下:</h4><p>定义接口:</p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title">LiveAble</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="literal">default</span> <span class="keyword">void</span> <span class="title">fly</span>()</span></span><br><span class="line"><span class="function">        System.<span class="keyword">out</span>.<span class="title">println</span>(<span class="params"><span class="string">&quot;天上飞&quot;</span></span>)</span>; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>定义实现类:</p>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Animal</span> <span class="keyword">implements</span> <span class="title class_">LiveAble</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">void</span> <span class="title function_">fly</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="title class_">System</span>.<span class="property">out</span>.<span class="title function_">println</span>(<span class="string">&quot;自由自在的飞&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>定义测试类:</p>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">InterfaceDemo</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">void</span> <span class="title function_">main</span>(<span class="params"><span class="built_in">String</span>[] args</span>) &#123;</span><br><span class="line">        <span class="comment">// 创建子类对象</span></span><br><span class="line">        <span class="title class_">Animal</span> a = <span class="keyword">new</span> <span class="title class_">Animal</span>(); </span><br><span class="line">        <span class="comment">// 调用重写方法</span></span><br><span class="line">        a.<span class="title function_">fly</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">输出结果:</span><br><span class="line">自由自在的飞</span><br></pre></td></tr></table></figure>
+
+<h3 id="静态方法的使用"><a href="#静态方法的使用" class="headerlink" title="静态方法的使用"></a>静态方法的使用</h3><p>静态与.class 文件相关，只能使用接口名调用，不可以通过实现类的类名或者实现类的对象调用，代码如下: </p>
+<p>定义接口:</p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title">LiveAble</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">run</span>()</span>&#123;</span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">&quot;跑起来~~~&quot;</span>); </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>定义实现类:</p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="symbol">Animal</span> <span class="symbol">implements</span> <span class="symbol">LiveAble</span> &#123; </span><br><span class="line">    <span class="comment">// 无法重写静态方法</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>定义测试类:</p>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">InterfaceDemo</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">void</span> <span class="title function_">main</span>(<span class="params"><span class="built_in">String</span>[] args</span>) &#123;</span><br><span class="line">        <span class="comment">// Animal.run(); </span></span><br><span class="line">        <span class="comment">// 【错误】无法继承方法,也无法调用</span></span><br><span class="line">        <span class="title class_">LiveAble</span>.<span class="title function_">run</span>(); <span class="comment">//</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">输出结果: </span><br><span class="line">跑起来~~~</span><br></pre></td></tr></table></figure>
+<h4 id="私有方法的使用"><a href="#私有方法的使用" class="headerlink" title="私有方法的使用"></a>私有方法的使用</h4><ul>
+<li>私有方法:只有默认方法可以调用。 </li>
+<li>私有静态方法:默认方法和静态方法可以调用。</li>
+</ul>
+<p>如果一个接口中有多个默认方法，并且方法中有重复的内容，那么可以抽取出来，封装到私有方法中，供默认方法<br>去调用。从设计的角度讲，私有的方法是对默认方法和静态方法的辅助。</p>
+<p>定义接口:</p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title">LiveAble</span> &#123; </span><br><span class="line">    <span class="function"><span class="literal">default</span> <span class="keyword">void</span> <span class="title">func</span>()</span>&#123;</span><br><span class="line">        func1();</span><br><span class="line">        func2();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">func1</span>()</span>&#123;    </span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">&quot;跑起来~~~&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">func2</span>()</span>&#123;  </span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">&quot;跑起来~~~&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="接口的多实现"><a href="#接口的多实现" class="headerlink" title="接口的多实现"></a>接口的多实现</h3><p>在继承体系中，一个类只能继承一个父类。而对于接口而言，一个类是可以实现多个接口的，这叫做接<br>口的多实现。并且，一个类能继承一个父类，同时实现多个接口。</p>
+<figure class="highlight haxe"><table><tr><td class="code"><pre><span class="line"><span class="title class_"><span class="keyword">class</span> 类名 [<span class="keyword"><span class="keyword">extends</span> </span>父类名] <span class="keyword"><span class="keyword">implements</span> </span>接口名1,接口名2,接口名3... </span>&#123; </span><br><span class="line">    <span class="comment">// 重写接口中抽象方法【必须】</span></span><br><span class="line">    <span class="comment">// 重写接口中默认方法【不重名时可选】</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>[ ]: 表示可选操作。</code></p>
+<h4 id="抽象方法"><a href="#抽象方法" class="headerlink" title="抽象方法"></a>抽象方法</h4><p>接口中，有多个抽象方法时，实现类必须重写所有抽象方法。如果抽象方法有重名的，只需要重写一次。代码如<br>下:</p>
+<p>定义多个接口:</p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title">A</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">showA</span>()</span>; </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">show</span>()</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">interface</span> <span class="title">B</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">showB</span>()</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">show</span>()</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>定义实现类:</p>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">C</span> <span class="keyword">implements</span> A,B&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">void</span> <span class="title function_">showA</span>(<span class="params"></span>) &#123;     </span><br><span class="line">        <span class="title class_">System</span>.<span class="property">out</span>.<span class="title function_">println</span>(<span class="string">&quot;showA&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">void</span> <span class="title function_">showB</span>(<span class="params"></span>) &#123;  </span><br><span class="line">        <span class="title class_">System</span>.<span class="property">out</span>.<span class="title function_">println</span>(<span class="string">&quot;showB&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">void</span> <span class="title function_">show</span>(<span class="params"></span>) &#123; </span><br><span class="line">        <span class="title class_">System</span>.<span class="property">out</span>.<span class="title function_">println</span>(<span class="string">&quot;show&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="默认方法"><a href="#默认方法" class="headerlink" title="默认方法"></a>默认方法</h4><p>接口中，有多个默认方法时，实现类都可继承使用。如果默认方法有重名的，必须重写一次。代码如下:</p>
+<p>定义多个接口：</p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title">A</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="literal">default</span> <span class="keyword">void</span> <span class="title">methodA</span>()</span>&#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="literal">default</span> <span class="keyword">void</span> <span class="title">method</span>()</span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">interface</span> <span class="title">B</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="literal">default</span> <span class="keyword">void</span> <span class="title">methodB</span>()</span>&#123;&#125; </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="literal">default</span> <span class="keyword">void</span> <span class="title">method</span>()</span>&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>定义实现类:</p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="symbol">C</span> <span class="symbol">implements</span> <span class="symbol">A,<span class="symbol">B</span></span>&#123; </span><br><span class="line">    @Override</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">void</span> method() &#123;    </span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">&quot;method&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="静态方法"><a href="#静态方法" class="headerlink" title="静态方法"></a>静态方法</h4><p>接口中，存在同名的静态方法并不会冲突，原因是只能通过各自接口名访问静态方法。</p>
+<h4 id="优先级的问题"><a href="#优先级的问题" class="headerlink" title="优先级的问题"></a>优先级的问题</h4><p>当一个类，既继承一个父类，又实现若干个接口时，父类中的成员方法与接口中的默认方法重名，子类就近选择执<br>行父类的成员方法。代码如下:<br>定义接口:</p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title">A</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="literal">default</span> <span class="keyword">void</span> <span class="title">methodA</span>()</span>&#123;</span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">&quot;AAAAAAAAAAAA&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>定义父类:</p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">D</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">methodA</span>()</span>&#123;</span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">&quot;DDDDDDDDDDDD&quot;</span>); </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>定义子类:</p>
+<figure class="highlight scala"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span> <span class="keyword">extends</span> <span class="title">D</span> <span class="title">implements</span> <span class="title">A</span> </span>&#123; </span><br><span class="line">    <span class="comment">// 未重写methodA方法</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>定义测试类:</p>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">void</span> <span class="title function_">main</span>(<span class="params"><span class="built_in">String</span>[] args</span>) &#123;</span><br><span class="line">        C c = <span class="keyword">new</span> <span class="title function_">C</span>();</span><br><span class="line">        c.<span class="title function_">methodA</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">输出结果:</span><br><span class="line"><span class="variable constant_">DDDDDDDDDDDD</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="接口的多继承"><a href="#接口的多继承" class="headerlink" title="接口的多继承"></a>接口的多继承</h3><p>一个接口能继承另一个或者多个接口，这和类之间的继承比较相似。接口的继承使用 extends 关键字，子接口继<br>承父接口的方法。<strong>如果父接口中的默认方法有重名的，那么子接口需要重写一次</strong>。代码如下:</p>
+<p>定义父接口:</p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title">A</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="literal">default</span> <span class="keyword">void</span> <span class="title">method</span>()</span>&#123;</span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">&quot;AAAAAAAAAAAAAAAAAAA&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">interface</span> <span class="title">B</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="literal">default</span> <span class="keyword">void</span> <span class="title">method</span>()</span>&#123;</span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">&quot;BBBBBBBBBBBBBBBBBBB&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>定义子接口:</p>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">interface</span> D <span class="keyword">extends</span> A,B&#123; </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">default</span> <span class="built_in">void</span> <span class="title function_">method</span>(<span class="params"></span>) &#123;   </span><br><span class="line">        <span class="title class_">System</span>.<span class="property">out</span>.<span class="title function_">println</span>(<span class="string">&quot;DDDDDDDDDDDDDD&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight actionscript"><table><tr><td class="code"><pre><span class="line">子接口重写默认方法时，<span class="keyword">default</span>关键字可以保留。 </span><br><span class="line">子类重写默认方法时，<span class="keyword">default</span>关键字不可以保留。</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>java基础</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>笔记</tag>
+        <tag>java基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>java基础 - 03.final关键字</title>
+    <url>/posts/f2b5981c/</url>
+    <content><![CDATA[<p>final: 不可改变。可以用于修饰类、方法和变量。</p>
+<ul>
+<li>类:被修饰的类，不能被继承。 </li>
+<li>方法:被修饰的方法，不能被重写。 </li>
+<li>变量:被修饰的变量，不能被重新赋值。</li>
+</ul>
+<span id="more"></span>
+
+<h4 id="修饰类"><a href="#修饰类" class="headerlink" title="修饰类"></a>修饰类</h4><figure class="highlight haxe"><table><tr><td class="code"><pre><span class="line"><span class="keyword">final</span> <span class="title class_"><span class="keyword">class</span> 类名 </span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="修饰方法"><a href="#修饰方法" class="headerlink" title="修饰方法"></a>修饰方法</h4><figure class="highlight actionscript"><table><tr><td class="code"><pre><span class="line">修饰符 <span class="keyword">final</span> 返回值类型 方法名(参数列表)&#123; </span><br><span class="line">    <span class="comment">//方法体</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>重写被 <code>final</code> 修饰的方法，编译时就会报错。</p>
+<h4 id="修饰变量"><a href="#修饰变量" class="headerlink" title="修饰变量"></a>修饰变量</h4><p><strong>1. 局部变量——基本类型</strong></p>
+<p>基本类型的局部变量，被final修饰后，只能赋值一次，不能再更改。</p>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">FinalDemo1</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">void</span> <span class="title function_">main</span>(<span class="params"><span class="built_in">String</span>[] args</span>) &#123;</span><br><span class="line">        <span class="comment">// 声明变量，使用final修饰 final int a;</span></span><br><span class="line">        <span class="comment">// 第一次赋值</span></span><br><span class="line">        a = <span class="number">10</span>;</span><br><span class="line">        <span class="comment">// 第二次赋值</span></span><br><span class="line">        a = <span class="number">20</span>; <span class="comment">// 报错,不可重新赋值</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>2. 局部变量——引用类型</strong></p>
+<p>引用类型的局部变量，被final修饰后，只能指向一个对象，地址不能再更改。但是不影响对象内部的成员变量值的<br>修改，代码如下:</p>
+<figure class="highlight haxe"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="title class_"><span class="keyword">class</span> <span class="title">FinalDemo2</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> void main(<span class="keyword">String</span>[] args) &#123;</span><br><span class="line">        <span class="comment">// 创建 User 对象</span></span><br><span class="line">        <span class="keyword">final</span> User u = <span class="keyword">new</span> <span class="type">User</span>();</span><br><span class="line">        <span class="comment">// 创建 另一个 User对象</span></span><br><span class="line">        u = <span class="keyword">new</span> <span class="type">User</span>(); <span class="comment">// 报错，指向了新的对象，地址值改变。</span></span><br><span class="line">        <span class="comment">// 调用setName方法</span></span><br><span class="line">        u.setName(<span class="string">&quot;张三&quot;</span>); <span class="comment">// 可以修改</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>3. 成员变量</strong></p>
+<p>成员变量涉及到初始化的问题，初始化方式有两种，只能二选一:</p>
+<ul>
+<li>显示初始化;<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">User</span> &#123;</span><br><span class="line">    <span class="keyword">final</span> <span class="type">String</span> USERNAME = <span class="string">&quot;张三&quot;</span>; </span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> age;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>构造方法初始化。<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">User</span> &#123;</span><br><span class="line">    <span class="keyword">final</span> <span class="type">String</span> USERNAME ;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> age;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">User</span><span class="params">(<span class="type">String</span> username, <span class="type">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.USERNAME = username;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<code>被final修饰的常量名称，一般都有书写规范，所有字母都大写。</code></li>
+</ul>
+]]></content>
+      <categories>
+        <category>java基础</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>笔记</tag>
+        <tag>java基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>java基础 - 04.匿名内部类</title>
+    <url>/posts/9cf3d23d/</url>
+    <content><![CDATA[<p>匿名内部类 :是内部类的简化写法。它的本质是一个带具体实现的父类或者父接口的匿名的子类对象。 开发中，最常用到的内部类就是匿名内部类了。以接口举例，当你使用一个接口时，得做如下几步操作：</p>
+<ol>
+<li>定义子类</li>
+<li>重写接口中的方法</li>
+<li>创建子类对象</li>
+<li>调用重写后的方法</li>
+</ol>
+<span id="more"></span>
+
+<p>匿名内部类必须继承一个父类或者实现一个父接口。</p>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span> 父类名或者接口名()&#123; </span><br><span class="line">    <span class="comment">// 方法重写</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">void</span> <span class="title function_">method</span>(<span class="params"></span>) &#123; </span><br><span class="line">    <span class="comment">// 执行语句</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h4><p>定义接口:</p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title">FlyAble</span>&#123; </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">fly</span>()</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>创建匿名内部类，并调用:</p>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">InnerDemo</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">void</span> <span class="title function_">main</span>(<span class="params"><span class="built_in">String</span>[] args</span>) &#123;</span><br><span class="line">        <span class="comment">/* 1.等号右边:是匿名内部类，定义并创建该接口的子类对象 </span></span><br><span class="line"><span class="comment">        2.等号左边:是多态赋值,接口类型引用指向子类对象</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">        <span class="title class_">FlyAble</span> f = <span class="keyword">new</span> <span class="title class_">FlyAble</span>()&#123;</span><br><span class="line">            <span class="keyword">public</span> <span class="built_in">void</span> <span class="title function_">fly</span>(<span class="params"></span>) &#123;   </span><br><span class="line">                <span class="title class_">System</span>.<span class="property">out</span>.<span class="title function_">println</span>(<span class="string">&quot;我飞了~~~&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="comment">//调用 fly方法,执行重写后的方法</span></span><br><span class="line">        f.<span class="title function_">fly</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>通常在方法的形式参数是接口或者抽象类时，也可以将匿名内部类作为参数传递。</p>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">InnerDemo2</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">void</span> <span class="title function_">main</span>(<span class="params"><span class="built_in">String</span>[] args</span>) &#123;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">         1.等号右边:定义并创建该接口的子类对象 </span></span><br><span class="line"><span class="comment">         2.等号左边:是多态,接口类型引用指向子类对象</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">        <span class="title class_">FlyAble</span> f = <span class="keyword">new</span> <span class="title class_">FlyAble</span>()&#123; </span><br><span class="line">            <span class="keyword">public</span> <span class="built_in">void</span> <span class="title function_">fly</span>(<span class="params"></span>) &#123;</span><br><span class="line">                <span class="title class_">System</span>.<span class="property">out</span>.<span class="title function_">println</span>(<span class="string">&quot;我飞了~~~&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="comment">// 将f传递给showFly方法中</span></span><br><span class="line">        <span class="title function_">showFly</span>(f);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">void</span> <span class="title function_">showFly</span>(<span class="params">FlyAble f</span>) &#123; </span><br><span class="line">        f.<span class="title function_">fly</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以上两步，也可以简化为一步，代码如下:</p>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">InnerDemo3</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">void</span> <span class="title function_">main</span>(<span class="params"><span class="built_in">String</span>[] args</span>) &#123;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        创建匿名内部类,直接传递给showFly(FlyAble f) */</span></span><br><span class="line">        <span class="title function_">showFly</span>( <span class="keyword">new</span> <span class="title class_">FlyAble</span>()&#123;</span><br><span class="line">            <span class="keyword">public</span> <span class="built_in">void</span> <span class="title function_">fly</span>(<span class="params"></span>) &#123;</span><br><span class="line">                <span class="title class_">System</span>.<span class="property">out</span>.<span class="title function_">println</span>(<span class="string">&quot;我飞了~~~&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">void</span> <span class="title function_">showFly</span>(<span class="params">FlyAble f</span>) &#123; </span><br><span class="line">        f.<span class="title function_">fly</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+]]></content>
+      <categories>
+        <category>java基础</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>笔记</tag>
+        <tag>java基础</tag>
       </tags>
   </entry>
   <entry>
@@ -514,8 +744,8 @@
       </categories>
       <tags>
         <tag>java</tag>
-        <tag>java基础</tag>
         <tag>笔记</tag>
+        <tag>java基础</tag>
       </tags>
   </entry>
   <entry>
@@ -582,8 +812,8 @@
       </categories>
       <tags>
         <tag>java</tag>
-        <tag>java基础</tag>
         <tag>笔记</tag>
+        <tag>java基础</tag>
       </tags>
   </entry>
   <entry>
@@ -618,8 +848,8 @@
         <category>tools</category>
       </categories>
       <tags>
-        <tag>Windows</tag>
         <tag>tools</tag>
+        <tag>Windows</tag>
         <tag>图床</tag>
       </tags>
   </entry>
@@ -646,8 +876,8 @@
         <category>tools</category>
       </categories>
       <tags>
-        <tag>Windows</tag>
         <tag>tools</tag>
+        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
@@ -686,8 +916,8 @@
         <category>tools</category>
       </categories>
       <tags>
-        <tag>Windows</tag>
         <tag>tools</tag>
+        <tag>Windows</tag>
       </tags>
   </entry>
 </search>
