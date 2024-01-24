@@ -303,7 +303,7 @@
 <tr>
 <td>SMTP_USER</td>
 <td>[必填] SMTP 用户名</td>
-<td><a href="mailto:&#x78;&#120;&#120;&#64;&#49;&#x36;&#x33;&#46;&#x63;&#x6f;&#109;">&#x78;&#120;&#120;&#64;&#49;&#x36;&#x33;&#46;&#x63;&#x6f;&#109;</a></td>
+<td><a href="mailto:&#x78;&#x78;&#x78;&#x40;&#49;&#x36;&#51;&#x2e;&#99;&#x6f;&#109;">&#x78;&#x78;&#x78;&#x40;&#49;&#x36;&#51;&#x2e;&#99;&#x6f;&#109;</a></td>
 </tr>
 <tr>
 <td>SMTP_PASS</td>
@@ -318,7 +318,7 @@
 <tr>
 <td>SENDER_EMAIL</td>
 <td>[必填] 发件邮箱</td>
-<td><a href="mailto:&#x78;&#x78;&#120;&#x40;&#x31;&#54;&#x33;&#46;&#99;&#111;&#x6d;">&#x78;&#x78;&#120;&#x40;&#x31;&#54;&#x33;&#46;&#99;&#111;&#x6d;</a></td>
+<td><a href="mailto:&#x78;&#120;&#120;&#x40;&#x31;&#54;&#51;&#x2e;&#99;&#x6f;&#x6d;">&#x78;&#120;&#120;&#x40;&#x31;&#54;&#51;&#x2e;&#99;&#x6f;&#x6d;</a></td>
 </tr>
 <tr>
 <td>MAIL_SUBJECT</td>
@@ -358,7 +358,7 @@
 <tr>
 <td>BLOGGER_EMAIL</td>
 <td>[选填] 博主通知收件地址，默认使用 SENDER_EMAIL</td>
-<td><a href="mailto:&#120;&#120;&#x78;&#64;&#49;&#x36;&#51;&#46;&#99;&#x6f;&#109;">&#120;&#120;&#x78;&#64;&#49;&#x36;&#51;&#46;&#99;&#x6f;&#109;</a></td>
+<td><a href="mailto:&#120;&#120;&#x78;&#64;&#49;&#54;&#51;&#46;&#99;&#111;&#x6d;">&#120;&#120;&#x78;&#64;&#49;&#54;&#51;&#46;&#99;&#111;&#x6d;</a></td>
 </tr>
 <tr>
 <td>ADMIN_URL</td>
@@ -617,78 +617,6 @@
       </tags>
   </entry>
   <entry>
-    <title>java基础 - 04.匿名内部类</title>
-    <url>/posts/9cf3d23d/</url>
-    <content><![CDATA[<p>匿名内部类 :是内部类的简化写法。它的本质是一个带具体实现的父类或者父接口的匿名的子类对象。 开发中，最常用到的内部类就是匿名内部类了。以接口举例，当你使用一个接口时，得做如下几步操作：</p>
-<ol>
-<li>定义子类</li>
-<li>重写接口中的方法</li>
-<li>创建子类对象</li>
-<li>调用重写后的方法</li>
-</ol>
-<span id="more"></span>
-
-<p>匿名内部类必须继承一个父类或者实现一个父接口。</p>
-<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span> 父类名或者接口名()&#123; </span><br><span class="line">    <span class="comment">// 方法重写</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">void</span> <span class="title function_">method</span>(<span class="params"></span>) &#123; </span><br><span class="line">    <span class="comment">// 执行语句</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h4 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h4><p>定义接口:</p>
-<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title">FlyAble</span>&#123; </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">fly</span>()</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>创建匿名内部类，并调用:</p>
-<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">InnerDemo</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">void</span> <span class="title function_">main</span>(<span class="params"><span class="built_in">String</span>[] args</span>) &#123;</span><br><span class="line">        <span class="comment">/* 1.等号右边:是匿名内部类，定义并创建该接口的子类对象 </span></span><br><span class="line"><span class="comment">        2.等号左边:是多态赋值,接口类型引用指向子类对象</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">        <span class="title class_">FlyAble</span> f = <span class="keyword">new</span> <span class="title class_">FlyAble</span>()&#123;</span><br><span class="line">            <span class="keyword">public</span> <span class="built_in">void</span> <span class="title function_">fly</span>(<span class="params"></span>) &#123;   </span><br><span class="line">                <span class="title class_">System</span>.<span class="property">out</span>.<span class="title function_">println</span>(<span class="string">&quot;我飞了~~~&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="comment">//调用 fly方法,执行重写后的方法</span></span><br><span class="line">        f.<span class="title function_">fly</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>通常在方法的形式参数是接口或者抽象类时，也可以将匿名内部类作为参数传递。</p>
-<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">InnerDemo2</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">void</span> <span class="title function_">main</span>(<span class="params"><span class="built_in">String</span>[] args</span>) &#123;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">         1.等号右边:定义并创建该接口的子类对象 </span></span><br><span class="line"><span class="comment">         2.等号左边:是多态,接口类型引用指向子类对象</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">        <span class="title class_">FlyAble</span> f = <span class="keyword">new</span> <span class="title class_">FlyAble</span>()&#123; </span><br><span class="line">            <span class="keyword">public</span> <span class="built_in">void</span> <span class="title function_">fly</span>(<span class="params"></span>) &#123;</span><br><span class="line">                <span class="title class_">System</span>.<span class="property">out</span>.<span class="title function_">println</span>(<span class="string">&quot;我飞了~~~&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="comment">// 将f传递给showFly方法中</span></span><br><span class="line">        <span class="title function_">showFly</span>(f);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">void</span> <span class="title function_">showFly</span>(<span class="params">FlyAble f</span>) &#123; </span><br><span class="line">        f.<span class="title function_">fly</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>以上两步，也可以简化为一步，代码如下:</p>
-<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">InnerDemo3</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">void</span> <span class="title function_">main</span>(<span class="params"><span class="built_in">String</span>[] args</span>) &#123;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        创建匿名内部类,直接传递给showFly(FlyAble f) */</span></span><br><span class="line">        <span class="title function_">showFly</span>( <span class="keyword">new</span> <span class="title class_">FlyAble</span>()&#123;</span><br><span class="line">            <span class="keyword">public</span> <span class="built_in">void</span> <span class="title function_">fly</span>(<span class="params"></span>) &#123;</span><br><span class="line">                <span class="title class_">System</span>.<span class="property">out</span>.<span class="title function_">println</span>(<span class="string">&quot;我飞了~~~&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">void</span> <span class="title function_">showFly</span>(<span class="params">FlyAble f</span>) &#123; </span><br><span class="line">        f.<span class="title function_">fly</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-]]></content>
-      <categories>
-        <category>java基础</category>
-      </categories>
-      <tags>
-        <tag>java</tag>
-        <tag>笔记</tag>
-        <tag>java基础</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>tools - PicGo+github图床</title>
-    <url>/posts/1a8bafa/</url>
-    <content><![CDATA[<p>Windows环境下配置以<code>github</code>为图床仓库的<code>PicGo</code>图床工具。</p>
-<span id="more"></span>
-
-<p>平时写<code>markdown</code>的时候，一般用<a href="https://chrome.google.com/webstore/detail/%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9A%E5%9B%BE%E5%BA%8A/fdfdnfpdplfbbnemmmoklbfjbhecpnhf">新浪微博图床</a>,但是怕万一以后图片挂掉用不了了，所以还是打算换个更稳定可靠的方式。<code>github</code>单仓库没有明确限制大小，但是推荐1G内，超过1G时会邮件提醒,参考<a href="https://docs.github.com/cn/github/managing-large-files/what-is-my-disk-quota#file-and-repository-size-limitations">官方文档说明</a>。<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200705020729-1.png" alt="image"></p>
-<h3 id="PicGo安装"><a href="#PicGo安装" class="headerlink" title="PicGo安装"></a>PicGo安装</h3><p><a href="https://github.com/Molunerfinn/PicGo">PicGo仓库</a>查看安装和使用方法。我这里是选择在Windows上配置的，<br>打开<code>powershell</code>或者别的终端，用<code>scoop</code>安装<code>picGo</code></p>
-<figure class="highlight armasm"><table><tr><td class="code"><pre><span class="line"><span class="symbol">scoop</span> bucket <span class="keyword">add</span> helbing https:<span class="comment">//github.com/helbing/scoop-bucket</span></span><br><span class="line"></span><br><span class="line"><span class="symbol">scoop</span> install picgo</span><br></pre></td></tr></table></figure>
-
-<h3 id="github仓库配置"><a href="#github仓库配置" class="headerlink" title="github仓库配置"></a>github仓库配置</h3><p>创建一个public的仓库，然后配置一个<code>token</code>，打开<code>settings</code>，<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200703001157.png" alt="image"><br><code>Personal access tokens</code>下点击<code>Generate new token</code>,<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200703000340.png" alt="image"><br>填<code>note</code>（备注信息），<code>repo</code>打钩。<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200703000437.png" alt="image"><br>点击最底下<code>Generate Token</code>按钮生成一份<code>token</code>，可以看到提示<code>Make sure to copy your new personal access token now. You won’t be able to see it again!</code>，所以复制并保存到起来。</p>
-<h3 id="配置PicGo"><a href="#配置PicGo" class="headerlink" title="配置PicGo"></a>配置PicGo</h3><p><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/PicGo20200703002510.png" alt="image"></p>
-<ul>
-<li><code>设定的仓库名</code>：<code>github用户名/仓库名</code></li>
-<li><code>分支名</code>: 仓库所属分支，仓库默认分支是<code>master</code>，所以这里一般也是填<code>master</code></li>
-<li><code>设定Token</code>: 将前面创建的token复制进来，如果后面忘记了，重新创建再复制进来就可以了。</li>
-<li><code>指定存储路径</code>: 指定图片在仓库的路径。留空就是根目录。为了管理方便，建议按自己喜欢的规则创建文件夹会比较有条理一些。</li>
-<li><code>设定自定义域名</code>：配置自定义域名的图片。<ul>
-<li>不配的话，图片url格式为<code>https://raw.githubusercontent.com/github用户名/仓库名/分支名/指定存储路径/图片名.png)</code>。</li>
-<li>可以使用<a href="https://www.jsdelivr.com/"><code>https://www.jsdelivr.com/</code></a>提供的免费cdn配置加速。格式为<code>https://cdn.jsdelivr.net/gh/github用户名/仓库名</code>,生成的图片url格式为<code>https://cdn.jsdelivr.net/gh/github用户名/仓库名/指定存储路径/图片名.png</code></li>
-</ul>
-</li>
-</ul>
-<h3 id="其他说明和采坑"><a href="#其他说明和采坑" class="headerlink" title="其他说明和采坑"></a>其他说明和采坑</h3><p>相册是本地的一个上传信息缓存，测试发现，只是提供之前图片上传记录用的，删除不会作用到仓库，只是删除这里的一条记录。<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200703004634.png" alt="image"></p>
-<p>出现<code>上传失败</code>错误时，先确认仓库名等信息是否填写准确，再确定选取的本地图片的路径是否包含空格和<code>+</code>等特殊符号。目前发现路径空格和<code>+</code>时会<code>上传失败</code>。<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200703003749.png" alt="image"></p>
-<p>比如我这里一开始把图片存放在c盘<code>图片</code>下的<code>保存的图片</code>下，<code>保存的图片</code>实际路径信息是<code>Saved Pictures</code>，带了空格，然后就上传失败。<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200703004241.png" alt="image"></p>
-<p>有时候<code>上传失败</code>是软件出问题了，可能需要<code>PicGo设置</code>-&gt;<code>设置Server</code>界面重新打开Server：点<code>关闭</code>、<code>确定</code>,再点击<code>开启</code>、<code>确定</code>。</p>
-]]></content>
-      <categories>
-        <category>tools</category>
-      </categories>
-      <tags>
-        <tag>tools</tag>
-        <tag>Windows</tag>
-        <tag>图床</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>java基础 - 05.java注解</title>
     <url>/posts/5a25ee7e/</url>
     <content><![CDATA[<p>定义：注解（Annotation），也叫元数据。一种代码级别的说明。它是JDK1.5及以后版本引入的一个特性，与类、接口、枚举是在同一个层次。它可以声明在包、类、字段、方法、局部变量、方法参数等的前面，用来对这些元素进行说明，注释。注解通过<code>@interface</code>关键字进行定义。</p>
@@ -854,23 +782,67 @@
       </tags>
   </entry>
   <entry>
-    <title>tools - chocolatey</title>
-    <url>/posts/af013f3b/</url>
-    <content><![CDATA[<p>Windows 基础开发环境包管理工具<code>chocolatey</code>。</p>
+    <title>java基础 - 04.匿名内部类</title>
+    <url>/posts/9cf3d23d/</url>
+    <content><![CDATA[<p>匿名内部类 :是内部类的简化写法。它的本质是一个带具体实现的父类或者父接口的匿名的子类对象。 开发中，最常用到的内部类就是匿名内部类了。以接口举例，当你使用一个接口时，得做如下几步操作：</p>
+<ol>
+<li>定义子类</li>
+<li>重写接口中的方法</li>
+<li>创建子类对象</li>
+<li>调用重写后的方法</li>
+</ol>
 <span id="more"></span>
 
-<h4 id="安装chocolatey"><a href="#安装chocolatey" class="headerlink" title="安装chocolatey"></a>安装chocolatey</h4><p>以管理员权限运行cmd.exe或powershell.exe</p>
-<p>cmd运行：</p>
-<figure class="highlight mel"><table><tr><td class="code"><pre><span class="line">@&quot;%SystemRoot%\System32\WindowsPowerShell\v1<span class="number">.0</span>\powershell.exe<span class="string">&quot; -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command &quot;</span>iex ((New-Object System.Net.WebClient).DownloadString(<span class="string">&#x27;https://chocolatey.org/install.ps1&#x27;</span>))<span class="string">&quot; &amp;&amp; SET &quot;</span>PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin<span class="string">&quot;</span></span><br></pre></td></tr></table></figure>
-<p>powershell运行：</p>
-<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Set</span>-ExecutionPolicy Bypass -Scope Process -Force; iex ((<span class="built_in">New</span>-<span class="keyword">Object</span> <span class="keyword">System</span>.Net.WebClient).DownloadString(<span class="string">&#x27;https://chocolatey.org/install.ps1&#x27;</span>))</span><br></pre></td></tr></table></figure>
-<p>安装完成，运行choco 或 choco -?检查一下是否安装正确</p>
-<p>chocolatey安装位置：<code>C:\ProgramData\Chocolatey</code>。无法配置包安装位置。<br>参考文章<a href="https://blog.csdn.net/u013205877/article/details/78993311">Windows 神器 Cmder Scoop Chocolatey Listary Seer</a>，可安装的应用程序默认安装在 <code>C:\Program Files\</code>，实际待考究。</p>
-<h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><figure class="highlight vim"><table><tr><td class="code"><pre><span class="line"><span class="built_in">search</span> - 搜索包 choco <span class="built_in">search</span> something</span><br><span class="line"><span class="keyword">list</span> - 列出包 choco <span class="keyword">list</span> -<span class="keyword">lo</span> 或者 choco <span class="keyword">list</span> --local-<span class="keyword">only</span></span><br><span class="line">install - 安装 choco install baretail</span><br><span class="line">pin - 固定包的版本，防止包被升级 choco pin windirstat</span><br><span class="line">upgrade - 安装包的升级 choco upgrade baretail</span><br><span class="line">uninstall - 安装包的卸载 choco uninstall baretail</span><br><span class="line">安装Ruby Gem - choco install compass -<span class="keyword">source</span> <span class="keyword">ruby</span></span><br><span class="line">安装Python Egg - choco install sphynx -<span class="keyword">source</span> <span class="keyword">python</span></span><br><span class="line">安装IIS服务器特性 - choco install IIS -<span class="keyword">source</span> windowsfeatures</span><br><span class="line">安装Webpi特性 - choco install IIS7.<span class="number">5</span>Express -<span class="keyword">source</span> webpi</span><br><span class="line"></span><br><span class="line">列出Windows系统已安装的软件 - choco <span class="keyword">list</span> -li 或者 choco <span class="keyword">list</span> -lai</span><br><span class="line">升级所有已安装的包 - choco upgrade <span class="keyword">all</span> -<span class="keyword">y</span></span><br></pre></td></tr></table></figure>
+<p>匿名内部类必须继承一个父类或者实现一个父接口。</p>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span> 父类名或者接口名()&#123; </span><br><span class="line">    <span class="comment">// 方法重写</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">void</span> <span class="title function_">method</span>(<span class="params"></span>) &#123; </span><br><span class="line">    <span class="comment">// 执行语句</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h4><p>定义接口:</p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title">FlyAble</span>&#123; </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">fly</span>()</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>创建匿名内部类，并调用:</p>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">InnerDemo</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">void</span> <span class="title function_">main</span>(<span class="params"><span class="built_in">String</span>[] args</span>) &#123;</span><br><span class="line">        <span class="comment">/* 1.等号右边:是匿名内部类，定义并创建该接口的子类对象 </span></span><br><span class="line"><span class="comment">        2.等号左边:是多态赋值,接口类型引用指向子类对象</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">        <span class="title class_">FlyAble</span> f = <span class="keyword">new</span> <span class="title class_">FlyAble</span>()&#123;</span><br><span class="line">            <span class="keyword">public</span> <span class="built_in">void</span> <span class="title function_">fly</span>(<span class="params"></span>) &#123;   </span><br><span class="line">                <span class="title class_">System</span>.<span class="property">out</span>.<span class="title function_">println</span>(<span class="string">&quot;我飞了~~~&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="comment">//调用 fly方法,执行重写后的方法</span></span><br><span class="line">        f.<span class="title function_">fly</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>window 下开发常用的开发环境应用</p>
-<figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line">choco <span class="keyword">install </span>autohotkey.portable    <span class="comment">#安装 AutoHotkey (Portable)</span></span><br><span class="line">choco <span class="keyword">install </span>nodejs.<span class="keyword">install </span> <span class="comment">#安装 node</span></span><br><span class="line">choco <span class="keyword">install </span>git.<span class="keyword">install </span>    <span class="comment">#安装 git</span></span><br><span class="line">choco <span class="keyword">install </span>ruby            <span class="comment">#安装 ruby</span></span><br><span class="line">choco <span class="keyword">install </span>python          <span class="comment">#安装 python</span></span><br><span class="line">choco <span class="keyword">install </span><span class="keyword">jdk8 </span>           <span class="comment">#安装 JDK8</span></span><br><span class="line">choco <span class="keyword">install </span>googlechrome    <span class="comment">#安装 Chrome</span></span><br><span class="line">choco <span class="keyword">install </span>google-chrome-x64 <span class="comment">#Google Chrome (64-bit only)</span></span><br><span class="line">choco <span class="keyword">install </span>firefox         <span class="comment">#安装 firefox</span></span><br><span class="line">choco <span class="keyword">install </span>notepadplusplus.<span class="keyword">install </span><span class="comment">#安装 notepad++</span></span><br><span class="line">choco <span class="keyword">install </span>Atom                    <span class="comment">#安装 Atom</span></span><br><span class="line">choco <span class="keyword">install </span><span class="keyword">SublimeText3 </span>           <span class="comment">#安装 SublimeText3</span></span><br></pre></td></tr></table></figure>
+<p>通常在方法的形式参数是接口或者抽象类时，也可以将匿名内部类作为参数传递。</p>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">InnerDemo2</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">void</span> <span class="title function_">main</span>(<span class="params"><span class="built_in">String</span>[] args</span>) &#123;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">         1.等号右边:定义并创建该接口的子类对象 </span></span><br><span class="line"><span class="comment">         2.等号左边:是多态,接口类型引用指向子类对象</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">        <span class="title class_">FlyAble</span> f = <span class="keyword">new</span> <span class="title class_">FlyAble</span>()&#123; </span><br><span class="line">            <span class="keyword">public</span> <span class="built_in">void</span> <span class="title function_">fly</span>(<span class="params"></span>) &#123;</span><br><span class="line">                <span class="title class_">System</span>.<span class="property">out</span>.<span class="title function_">println</span>(<span class="string">&quot;我飞了~~~&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="comment">// 将f传递给showFly方法中</span></span><br><span class="line">        <span class="title function_">showFly</span>(f);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">void</span> <span class="title function_">showFly</span>(<span class="params">FlyAble f</span>) &#123; </span><br><span class="line">        f.<span class="title function_">fly</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以上两步，也可以简化为一步，代码如下:</p>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">InnerDemo3</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">void</span> <span class="title function_">main</span>(<span class="params"><span class="built_in">String</span>[] args</span>) &#123;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        创建匿名内部类,直接传递给showFly(FlyAble f) */</span></span><br><span class="line">        <span class="title function_">showFly</span>( <span class="keyword">new</span> <span class="title class_">FlyAble</span>()&#123;</span><br><span class="line">            <span class="keyword">public</span> <span class="built_in">void</span> <span class="title function_">fly</span>(<span class="params"></span>) &#123;</span><br><span class="line">                <span class="title class_">System</span>.<span class="property">out</span>.<span class="title function_">println</span>(<span class="string">&quot;我飞了~~~&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">void</span> <span class="title function_">showFly</span>(<span class="params">FlyAble f</span>) &#123; </span><br><span class="line">        f.<span class="title function_">fly</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+
+]]></content>
+      <categories>
+        <category>java基础</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>笔记</tag>
+        <tag>java基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>tools - PicGo+github图床</title>
+    <url>/posts/1a8bafa/</url>
+    <content><![CDATA[<p>Windows环境下配置以<code>github</code>为图床仓库的<code>PicGo</code>图床工具。</p>
+<span id="more"></span>
+
+<p>平时写<code>markdown</code>的时候，一般用<a href="https://chrome.google.com/webstore/detail/%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9A%E5%9B%BE%E5%BA%8A/fdfdnfpdplfbbnemmmoklbfjbhecpnhf">新浪微博图床</a>,但是怕万一以后图片挂掉用不了了，所以还是打算换个更稳定可靠的方式。<code>github</code>单仓库没有明确限制大小，但是推荐1G内，超过1G时会邮件提醒,参考<a href="https://docs.github.com/cn/github/managing-large-files/what-is-my-disk-quota#file-and-repository-size-limitations">官方文档说明</a>。<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200705020729-1.png" alt="image"></p>
+<h3 id="PicGo安装"><a href="#PicGo安装" class="headerlink" title="PicGo安装"></a>PicGo安装</h3><p><a href="https://github.com/Molunerfinn/PicGo">PicGo仓库</a>查看安装和使用方法。我这里是选择在Windows上配置的，<br>打开<code>powershell</code>或者别的终端，用<code>scoop</code>安装<code>picGo</code></p>
+<figure class="highlight armasm"><table><tr><td class="code"><pre><span class="line"><span class="symbol">scoop</span> bucket <span class="keyword">add</span> helbing https:<span class="comment">//github.com/helbing/scoop-bucket</span></span><br><span class="line"></span><br><span class="line"><span class="symbol">scoop</span> install picgo</span><br></pre></td></tr></table></figure>
+
+<h3 id="github仓库配置"><a href="#github仓库配置" class="headerlink" title="github仓库配置"></a>github仓库配置</h3><p>创建一个public的仓库，然后配置一个<code>token</code>，打开<code>settings</code>，<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200703001157.png" alt="image"><br><code>Personal access tokens</code>下点击<code>Generate new token</code>,<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200703000340.png" alt="image"><br>填<code>note</code>（备注信息），<code>repo</code>打钩。<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200703000437.png" alt="image"><br>点击最底下<code>Generate Token</code>按钮生成一份<code>token</code>，可以看到提示<code>Make sure to copy your new personal access token now. You won’t be able to see it again!</code>，所以复制并保存到起来。</p>
+<h3 id="配置PicGo"><a href="#配置PicGo" class="headerlink" title="配置PicGo"></a>配置PicGo</h3><p><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/PicGo20200703002510.png" alt="image"></p>
+<ul>
+<li><code>设定的仓库名</code>：<code>github用户名/仓库名</code></li>
+<li><code>分支名</code>: 仓库所属分支，仓库默认分支是<code>master</code>，所以这里一般也是填<code>master</code></li>
+<li><code>设定Token</code>: 将前面创建的token复制进来，如果后面忘记了，重新创建再复制进来就可以了。</li>
+<li><code>指定存储路径</code>: 指定图片在仓库的路径。留空就是根目录。为了管理方便，建议按自己喜欢的规则创建文件夹会比较有条理一些。</li>
+<li><code>设定自定义域名</code>：配置自定义域名的图片。<ul>
+<li>不配的话，图片url格式为<code>https://raw.githubusercontent.com/github用户名/仓库名/分支名/指定存储路径/图片名.png)</code>。</li>
+<li>可以使用<a href="https://www.jsdelivr.com/"><code>https://www.jsdelivr.com/</code></a>提供的免费cdn配置加速。格式为<code>https://cdn.jsdelivr.net/gh/github用户名/仓库名</code>,生成的图片url格式为<code>https://cdn.jsdelivr.net/gh/github用户名/仓库名/指定存储路径/图片名.png</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="其他说明和采坑"><a href="#其他说明和采坑" class="headerlink" title="其他说明和采坑"></a>其他说明和采坑</h3><p>相册是本地的一个上传信息缓存，测试发现，只是提供之前图片上传记录用的，删除不会作用到仓库，只是删除这里的一条记录。<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200703004634.png" alt="image"></p>
+<p>出现<code>上传失败</code>错误时，先确认仓库名等信息是否填写准确，再确定选取的本地图片的路径是否包含空格和<code>+</code>等特殊符号。目前发现路径空格和<code>+</code>时会<code>上传失败</code>。<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200703003749.png" alt="image"></p>
+<p>比如我这里一开始把图片存放在c盘<code>图片</code>下的<code>保存的图片</code>下，<code>保存的图片</code>实际路径信息是<code>Saved Pictures</code>，带了空格，然后就上传失败。<br><img src="https://cdn.jsdelivr.net/gh/hxhowl/mdImages/img/picgo20200703004241.png" alt="image"></p>
+<p>有时候<code>上传失败</code>是软件出问题了，可能需要<code>PicGo设置</code>-&gt;<code>设置Server</code>界面重新打开Server：点<code>关闭</code>、<code>确定</code>,再点击<code>开启</code>、<code>确定</code>。</p>
 ]]></content>
       <categories>
         <category>tools</category>
@@ -878,6 +850,7 @@
       <tags>
         <tag>tools</tag>
         <tag>Windows</tag>
+        <tag>图床</tag>
       </tags>
   </entry>
   <entry>
@@ -912,6 +885,33 @@
 <p>解决办法: 把<code>Scoop Apps</code>目录加到<code>path</code>里, 目录在<code>C:\Users\fcying\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Scoop Apps</code></p>
 <p>参考：<a href="https://www.jianshu.com/p/bb0ba62b519c">Windows下的包管理工具scoop</a><br>常用软件git,curl,7zip安装；有些需要管理员权限的软件就需要先安装sudo，就是Linux中的那个sudo；</p>
 <figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line"><span class="keyword">scoop </span><span class="keyword">install </span>sudo</span><br><span class="line"><span class="keyword">scoop </span><span class="keyword">install </span>git curl <span class="number">7</span>zip</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>tools</category>
+      </categories>
+      <tags>
+        <tag>tools</tag>
+        <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>tools - chocolatey</title>
+    <url>/posts/af013f3b/</url>
+    <content><![CDATA[<p>Windows 基础开发环境包管理工具<code>chocolatey</code>。</p>
+<span id="more"></span>
+
+<h4 id="安装chocolatey"><a href="#安装chocolatey" class="headerlink" title="安装chocolatey"></a>安装chocolatey</h4><p>以管理员权限运行cmd.exe或powershell.exe</p>
+<p>cmd运行：</p>
+<figure class="highlight mel"><table><tr><td class="code"><pre><span class="line">@&quot;%SystemRoot%\System32\WindowsPowerShell\v1<span class="number">.0</span>\powershell.exe<span class="string">&quot; -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command &quot;</span>iex ((New-Object System.Net.WebClient).DownloadString(<span class="string">&#x27;https://chocolatey.org/install.ps1&#x27;</span>))<span class="string">&quot; &amp;&amp; SET &quot;</span>PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin<span class="string">&quot;</span></span><br></pre></td></tr></table></figure>
+<p>powershell运行：</p>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Set</span>-ExecutionPolicy Bypass -Scope Process -Force; iex ((<span class="built_in">New</span>-<span class="keyword">Object</span> <span class="keyword">System</span>.Net.WebClient).DownloadString(<span class="string">&#x27;https://chocolatey.org/install.ps1&#x27;</span>))</span><br></pre></td></tr></table></figure>
+<p>安装完成，运行choco 或 choco -?检查一下是否安装正确</p>
+<p>chocolatey安装位置：<code>C:\ProgramData\Chocolatey</code>。无法配置包安装位置。<br>参考文章<a href="https://blog.csdn.net/u013205877/article/details/78993311">Windows 神器 Cmder Scoop Chocolatey Listary Seer</a>，可安装的应用程序默认安装在 <code>C:\Program Files\</code>，实际待考究。</p>
+<h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><figure class="highlight vim"><table><tr><td class="code"><pre><span class="line"><span class="built_in">search</span> - 搜索包 choco <span class="built_in">search</span> something</span><br><span class="line"><span class="keyword">list</span> - 列出包 choco <span class="keyword">list</span> -<span class="keyword">lo</span> 或者 choco <span class="keyword">list</span> --local-<span class="keyword">only</span></span><br><span class="line">install - 安装 choco install baretail</span><br><span class="line">pin - 固定包的版本，防止包被升级 choco pin windirstat</span><br><span class="line">upgrade - 安装包的升级 choco upgrade baretail</span><br><span class="line">uninstall - 安装包的卸载 choco uninstall baretail</span><br><span class="line">安装Ruby Gem - choco install compass -<span class="keyword">source</span> <span class="keyword">ruby</span></span><br><span class="line">安装Python Egg - choco install sphynx -<span class="keyword">source</span> <span class="keyword">python</span></span><br><span class="line">安装IIS服务器特性 - choco install IIS -<span class="keyword">source</span> windowsfeatures</span><br><span class="line">安装Webpi特性 - choco install IIS7.<span class="number">5</span>Express -<span class="keyword">source</span> webpi</span><br><span class="line"></span><br><span class="line">列出Windows系统已安装的软件 - choco <span class="keyword">list</span> -li 或者 choco <span class="keyword">list</span> -lai</span><br><span class="line">升级所有已安装的包 - choco upgrade <span class="keyword">all</span> -<span class="keyword">y</span></span><br></pre></td></tr></table></figure>
+
+<p>window 下开发常用的开发环境应用</p>
+<figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line">choco <span class="keyword">install </span>autohotkey.portable    <span class="comment">#安装 AutoHotkey (Portable)</span></span><br><span class="line">choco <span class="keyword">install </span>nodejs.<span class="keyword">install </span> <span class="comment">#安装 node</span></span><br><span class="line">choco <span class="keyword">install </span>git.<span class="keyword">install </span>    <span class="comment">#安装 git</span></span><br><span class="line">choco <span class="keyword">install </span>ruby            <span class="comment">#安装 ruby</span></span><br><span class="line">choco <span class="keyword">install </span>python          <span class="comment">#安装 python</span></span><br><span class="line">choco <span class="keyword">install </span><span class="keyword">jdk8 </span>           <span class="comment">#安装 JDK8</span></span><br><span class="line">choco <span class="keyword">install </span>googlechrome    <span class="comment">#安装 Chrome</span></span><br><span class="line">choco <span class="keyword">install </span>google-chrome-x64 <span class="comment">#Google Chrome (64-bit only)</span></span><br><span class="line">choco <span class="keyword">install </span>firefox         <span class="comment">#安装 firefox</span></span><br><span class="line">choco <span class="keyword">install </span>notepadplusplus.<span class="keyword">install </span><span class="comment">#安装 notepad++</span></span><br><span class="line">choco <span class="keyword">install </span>Atom                    <span class="comment">#安装 Atom</span></span><br><span class="line">choco <span class="keyword">install </span><span class="keyword">SublimeText3 </span>           <span class="comment">#安装 SublimeText3</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
       <categories>
         <category>tools</category>
       </categories>
