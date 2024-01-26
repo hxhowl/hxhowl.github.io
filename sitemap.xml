@@ -166,7 +166,7 @@
 
   <url>
     <loc>https://blog.hxhowl.site/</loc>
-    <lastmod>2024-01-24</lastmod>
+    <lastmod>2024-01-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -174,63 +174,63 @@
   
   <url>
     <loc>https://blog.hxhowl.site/tags/java/</loc>
-    <lastmod>2024-01-24</lastmod>
+    <lastmod>2024-01-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.hxhowl.site/tags/%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2024-01-24</lastmod>
+    <lastmod>2024-01-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.hxhowl.site/tags/java%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2024-01-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.hxhowl.site/tags/blog/</loc>
-    <lastmod>2024-01-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.hxhowl.site/tags/hexo/</loc>
-    <lastmod>2024-01-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.hxhowl.site/tags/next/</loc>
-    <lastmod>2024-01-24</lastmod>
+    <lastmod>2024-01-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.hxhowl.site/tags/tools/</loc>
-    <lastmod>2024-01-24</lastmod>
+    <lastmod>2024-01-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.hxhowl.site/tags/Windows/</loc>
-    <lastmod>2024-01-24</lastmod>
+    <lastmod>2024-01-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.hxhowl.site/tags/blog/</loc>
+    <lastmod>2024-01-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.hxhowl.site/tags/hexo/</loc>
+    <lastmod>2024-01-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.hxhowl.site/tags/next/</loc>
+    <lastmod>2024-01-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.hxhowl.site/tags/%E5%9B%BE%E5%BA%8A/</loc>
-    <lastmod>2024-01-24</lastmod>
+    <lastmod>2024-01-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -239,21 +239,21 @@
   
   <url>
     <loc>https://blog.hxhowl.site/categories/java%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2024-01-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.hxhowl.site/categories/hexo/</loc>
-    <lastmod>2024-01-24</lastmod>
+    <lastmod>2024-01-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.hxhowl.site/categories/tools/</loc>
-    <lastmod>2024-01-24</lastmod>
+    <lastmod>2024-01-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.hxhowl.site/categories/hexo/</loc>
+    <lastmod>2024-01-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
