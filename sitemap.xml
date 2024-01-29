@@ -173,21 +173,21 @@
 
   
   <url>
-    <loc>https://blog.hxhowl.site/tags/java/</loc>
+    <loc>https://blog.hxhowl.site/tags/blog/</loc>
     <lastmod>2024-01-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.hxhowl.site/tags/%E7%AC%94%E8%AE%B0/</loc>
+    <loc>https://blog.hxhowl.site/tags/hexo/</loc>
     <lastmod>2024-01-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.hxhowl.site/tags/java%E5%9F%BA%E7%A1%80/</loc>
+    <loc>https://blog.hxhowl.site/tags/next/</loc>
     <lastmod>2024-01-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -215,21 +215,21 @@
   </url>
   
   <url>
-    <loc>https://blog.hxhowl.site/tags/blog/</loc>
+    <loc>https://blog.hxhowl.site/tags/java/</loc>
     <lastmod>2024-01-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.hxhowl.site/tags/hexo/</loc>
+    <loc>https://blog.hxhowl.site/tags/%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2024-01-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.hxhowl.site/tags/next/</loc>
+    <loc>https://blog.hxhowl.site/tags/java%E5%9F%BA%E7%A1%80/</loc>
     <lastmod>2024-01-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -238,7 +238,7 @@
 
   
   <url>
-    <loc>https://blog.hxhowl.site/categories/java%E5%9F%BA%E7%A1%80/</loc>
+    <loc>https://blog.hxhowl.site/categories/hexo/</loc>
     <lastmod>2024-01-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -252,7 +252,7 @@
   </url>
   
   <url>
-    <loc>https://blog.hxhowl.site/categories/hexo/</loc>
+    <loc>https://blog.hxhowl.site/categories/java%E5%9F%BA%E7%A1%80/</loc>
     <lastmod>2024-01-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
